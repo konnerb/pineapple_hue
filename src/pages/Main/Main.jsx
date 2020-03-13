@@ -14,9 +14,9 @@ export default class Main extends Component {
     }
 
     render() {
-        Vibrant.from(pineapple)
-        .getPalette((err, palette) => 
-        console.log(palette))
+        //Vibrant.from(pineapple)
+        //.getPalette((err, palette) => 
+        //console.log(palette))
     return (
         <section>
             <Hero />
