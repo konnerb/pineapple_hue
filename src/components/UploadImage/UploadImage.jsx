@@ -31,8 +31,8 @@ const [palette, setPalette] = useState({})
       } = useDropzone({
       onDrop,
       accept: 'image/jpeg, image/png',
-      maxSize: '2000000',
-      //multiple: 'true'
+      //multiple: 'true',
+      maxSize: '2000000'
     })
 
     const acceptedFilesItems = acceptedFiles.map(file => (
@@ -55,22 +55,7 @@ const [palette, setPalette] = useState({})
         if(err) {
           console.log(err);
         } else {
-          console.log(palette)
-          const vibColors = {
-            vibrantRgb: palette.Vibrant._rgb,
-            vibrantHsl: palette.Vibrant._hsl,
-            lightVibrantRgb: palette.LightVibrant._rgb,
-            lightVibrantHsl: palette.LightVibrant._hsl,
-            darkVibrantHsl: palette.DarkVibrant._hsl,
-            darkVibrantRgb: palette.DarkVibrant._rgb,
-            mutedRgb: palette.Muted._rgb,
-            mutedHsl: palette.Muted._hsl,
-            lightMutedRgb: palette.LightMuted._rgb,
-            lightMutedHsl: palette.LightMuted._hsl,
-            darkMutedRgb: palette.DarkMuted._rgb,
-            darkMutedHsl: palette.DarkMuted._hsl,
-          }
-          setPalette(vibColors);
+          setPalette(palette);
         }
       })
     }
@@ -117,6 +102,7 @@ const [palette, setPalette] = useState({})
     console.log(palette)
 
     return (
+      //backgroundColor: 'rgb('+palette.lightVibrantRgb[0]+','+palette.lightVibrantRgb[1]+','+palette.lightVibrantRgb[2]+')'
       <>
       <div {...getRootProps({style})}>
         <input {...getInputProps()} />
@@ -129,32 +115,86 @@ const [palette, setPalette] = useState({})
         <img src={img} style={{maxWidth: '500px', maxHeight: '500px'}}></img>
         <div>
           {
-            palette.vibrantRgb ? 
+            palette.Vibrant ? 
               <div style={{display: 'flex'}}>
                 <div style={{
-                  backgroundColor: 'rgb('+palette.vibrantRgb[0]+','+palette.vibrantRgb[1]+','+palette.vibrantRgb[2]+')',
-                  width: '10vw',
-                  height: '10vh',
+                  backgroundColor: `${palette.Vibrant.hex}`,
+                  color: `${palette.Vibrant.titleTextColor}`,
+                  width: '15vw',
+                  height: '20vh',
                   margin: '0px 3px'
-                }}></div>
+                }}>
+                <p>Vibrant</p>
+                <p>Hex:{palette.Vibrant.hex}</p>
+                <p>Rgb:{palette.Vibrant.hex}</p>
+                <p>Hsl:{palette.Vibrant.hex}</p>
+                </div>
+
                 <div style={{
-                  backgroundColor: 'rgb('+palette.lightVibrantRgb[0]+','+palette.lightVibrantRgb[1]+','+palette.lightVibrantRgb[2]+')',
-                  width: '10vw',
-                  height: '10vh',
+                  backgroundColor: `${palette.LightVibrant.hex}`,
+                  color: `${palette.LightVibrant.titleTextColor}`,
+                  width: '15vw',
+                  height: '20vh',
                   margin: '0px 3px'
-                }}></div>
+                }}>
+                <p>LighVibrant</p>
+                <p>Hex: {palette.LightVibrant.hex}</p>
+                <p>Rgb: {palette.LightVibrant.hex}</p>
+                <p>Hsl: {palette.LightVibrant.hex}</p>
+                </div>
+                
                 <div style={{
-                  backgroundColor: 'rgb('+palette.darkVibrantRgb[0]+','+palette.darkVibrantRgb[1]+','+palette.darkVibrantRgb[2]+')',
-                  width: '10vw',
-                  height: '10vh',
+                  backgroundColor: `${palette.DarkVibrant.hex}`,
+                  color: `${palette.DarkVibrant.titleTextColor}`,
+                  width: '15vw',
+                  height: '20vh',
                   margin: '0px 3px'
-                }}></div>
+                }}>
+                <p>DarkVibrant</p>
+                <p>Hex: {palette.DarkVibrant.hex}</p>
+                <p>Rgb: {palette.DarkVibrant.hex}</p>
+                <p>Hsl: {palette.DarkVibrant.hex}</p>
+                </div>
+
                 <div style={{
-                  backgroundColor: 'rgb('+palette.mutedRgb[0]+','+palette.mutedRgb[1]+','+palette.mutedRgb[2]+')',
-                  width: '10vw',
-                  height: '10vh',
+                  backgroundColor: `${palette.Muted.hex}`,
+                  color: `${palette.Muted.titleTextColor}`,
+                  width: '15vw',
+                  height: '20vh',
                   margin: '0px 3px'
-                }}></div>
+                }}>
+                <p>Muted</p>
+                <p>Hex: {palette.Muted.hex}</p>
+                <p>Rgb: {palette.Muted.hex}</p>
+                <p>Hsl: {palette.Muted.hex}</p>
+                </div>
+
+                <div style={{
+                  backgroundColor: `${palette.LightMuted.hex}`,
+                  color: `${palette.LightMuted.titleTextColor}`,
+                  width: '15vw',
+                  height: '20vh',
+                  margin: '0px 3px'
+                }}>
+                <p>LightMuted</p>
+                <p>Hex: {palette.LightMuted.hex}</p>
+                <p>Rgb: {palette.LightMuted.hex}</p>
+                <p>Hsl: {palette.LightMuted.hex}</p>
+                </div>
+
+                <div style={{
+                  backgroundColor: `${palette.DarkMuted.hex}`,
+                  color: `${palette.DarkMuted.titleTextColor}`,
+                  width: '15vw',
+                  height: '20vh',
+                  margin: '0px 3px'
+                }}>
+                <p>DarkMuted</p>
+                <p>Hex: {palette.DarkMuted.hex}</p>
+                <p>Rgb: {palette.DarkMuted.hex}</p>
+                <p>Hsl: {palette.DarkMuted.hex}</p>
+                </div>
+
             </div>
 
               : null
