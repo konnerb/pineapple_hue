@@ -1,111 +1,178 @@
-//import React from 'react'
-//import {useDropzone} from 'react-dropzone'
-//
-//function UploadImage(props) {
-//    const {acceptedFiles, rejectedFiles, getRootProps, getInputProps} = useDropzone({
-//      accept: 'image/jpeg, image/png'
-//    });
-//    
-//    const acceptedFilesItems = acceptedFiles.map(file => (
-//      <li key={file.path}>
-//        {file.path} - {file.size} bytes
-//      </li>
-//    ));
-//  
-//    const rejectedFilesItems = rejectedFiles.map(file => (
-//      <li key={file.path}>
-//        {file.path} - {file.size} bytes
-//      </li>
-//    ));
-//  
-//    return (
-//      <section className="container">
-//        <div {...getRootProps({className: 'dropzone'})}>
-//          <input {...getInputProps()} />
-//          <p>Drag 'n' drop some files here, or click to select files</p>
-//          <em>(Only *.jpeg and *.png images will be accepted)</em>
-//        </div>
-//        <aside>
-//          <h4>Accepted files</h4>
-//          <ul>
-//            {acceptedFilesItems}
-//          </ul>
-//          <h4>Rejected files</h4>
-//          <ul>
-//            {rejectedFilesItems}
-//          </ul>
-//        </aside>
-//      </section>
-//    );
-//  }
-//
-//export default UploadImage;
-
-import React, { useCallback, useState } from 'react'
-import {useDropzone} from 'react-dropzone'
+import React, { useCallback, useState, useEffect, useMemo } from 'react'
+import { useDropzone } from 'react-dropzone'
 import * as Vibrant from 'node-vibrant';
-import pineapple from '../../assets/images/pineapple.jpg';
-console.log(pineapple)
 
 function UploadImage() {
+const [img, setImg] = useState([])
+const [palette, setPalette] = useState({})
 
-const [img, setImg] = useState([null])
-const [palette, setPalette] = useState([null])
+  const onDrop = useCallback(acceptedFiles => {
+    acceptedFiles.forEach((blob) => {
+      const reader = new FileReader()
+        reader.onabort = () => console.log('file reading was aborted')
+        reader.onerror = () => console.log('file reading has failed')
+        reader.onload = () => {
+          const binaryStr = reader
+          console.log(binaryStr)
+          setImg(reader.result)
+        }
+        reader.readAsDataURL(blob)
+      })
+  }, [])
 
-    const onDrop = useCallback(acceptedFiles => {
-      acceptedFiles.forEach((blob) => {
-        const reader = new FileReader()
-          reader.onabort = () => console.log('file reading was aborted')
-          reader.onerror = () => console.log('file reading has failed')
-          reader.onload = () => {
-            const binaryStr = reader
-            console.log(binaryStr)
-            setImg(reader.result)
-          }
-          reader.readAsDataURL(blob)
-        })
-    }, [])
+    const {
+      getRootProps, 
+      getInputProps,
+      acceptedFiles, 
+      rejectedFiles, 
+      isDragActive, 
+      isDragAccept, 
+      isDragReject
+      } = useDropzone({
+      onDrop,
+      accept: 'image/jpeg, image/png',
+      maxSize: '2000000',
+      //multiple: 'true'
+    })
 
-    if (img === null || img === 0) { console.log('sorry')
+    const acceptedFilesItems = acceptedFiles.map(file => (
+      <li key={file.path}>
+        {file.path} - {file.size} bytes
+      </li>
+    ));
+  
+    const rejectedFilesItems = rejectedFiles.map(file => (
+      <li key={file.path}>
+        {file.path} - {file.size} bytes
+      </li>
+    ));
+
+  useEffect(() => {
+    if (img === null || img === 0) { console.log('No Img')
     } else {
       Vibrant.from(img)
       .getPalette((err, palette) => {
         if(err) {
-        console.log(err)
+          console.log(err);
         } else {
-        setPalette(palette)}
+          console.log(palette)
+          const vibColors = {
+            vibrantRgb: palette.Vibrant._rgb,
+            vibrantHsl: palette.Vibrant._hsl,
+            lightVibrantRgb: palette.LightVibrant._rgb,
+            lightVibrantHsl: palette.LightVibrant._hsl,
+            darkVibrantHsl: palette.DarkVibrant._hsl,
+            darkVibrantRgb: palette.DarkVibrant._rgb,
+            mutedRgb: palette.Muted._rgb,
+            mutedHsl: palette.Muted._hsl,
+            lightMutedRgb: palette.LightMuted._rgb,
+            lightMutedHsl: palette.LightMuted._hsl,
+            darkMutedRgb: palette.DarkMuted._rgb,
+            darkMutedHsl: palette.DarkMuted._hsl,
+          }
+          setPalette(vibColors);
+        }
       })
     }
+    },[img]);
 
-    const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+    const baseStyle = {
+      flex: 1,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: '20px',
+      borderWidth: 2,
+      borderRadius: 2,
+      borderColor: '#eeeeee',
+      borderStyle: 'dashed',
+      backgroundColor: '#fafafa',
+      color: '#bdbdbd',
+      outline: 'none',
+      transition: 'border .24s ease-in-out'
+    };
     
-    console.log(img)
+    const activeStyle = {
+      borderColor: '#2196f3'
+    };
+    
+    const acceptStyle = {
+      borderColor: '#00e676'
+    };
+    
+    const rejectStyle = {
+      borderColor: '#ff1744'
+    };
+
+    const style = useMemo(() => ({
+      ...baseStyle,
+      ...(isDragActive ? activeStyle : {}),
+      ...(isDragAccept ? acceptStyle : {}),
+      ...(isDragReject ? rejectStyle : {})
+    }), [
+      isDragActive,
+      isDragReject
+    ]);
+
     console.log(palette)
-//const vibrantRgb = palette.Vibrant._rgb
-//const vibrantHsl = palette.Vibrant._hsl
-//const lightVibrantRgb = palette.LightVibrant._rgb
-//const lightVibrantHsl = palette.LightVibrant._hsl
-//const darkVibrantHsl = palette.DarkVibrant._hsl
-//const darkVibrantRgb = palette.DarkVibrant._rgb
-//const mutedRgb = palette.Muted._rgb
-//const mutedHsl = palette.Muted._hsl
-//const lightMutedRgb = palette.LightMuted._rgb
-//const lightMutedHsl = palette.LightMuted._hsl
-//const darkMutedRgb = palette.DarkMuted._rgb
-//const darkMutedHsl = palette.DarkMuted._hsl
-//console.log(vibrantRgb)
-//console.log(vibrantHsl)
-    
+
     return (
-      <div {...getRootProps()}>
+      <>
+      <div {...getRootProps({style})}>
         <input {...getInputProps()} />
         {
           isDragActive ?
-            <p>Drop the files here ...</p> :
-            <p>Drag 'n' drop some files here, or click to select files</p>
+            <p>Drop image here ...</p> :
+            <p>Drag 'n' drop image here, or click to select image</p>
         }
-        <img src={img}></img>
-      </div>
+        </div>
+        <img src={img} style={{maxWidth: '500px', maxHeight: '500px'}}></img>
+        <div>
+          {
+            palette.vibrantRgb ? 
+              <div style={{display: 'flex'}}>
+                <div style={{
+                  backgroundColor: 'rgb('+palette.vibrantRgb[0]+','+palette.vibrantRgb[1]+','+palette.vibrantRgb[2]+')',
+                  width: '10vw',
+                  height: '10vh',
+                  margin: '0px 3px'
+                }}></div>
+                <div style={{
+                  backgroundColor: 'rgb('+palette.lightVibrantRgb[0]+','+palette.lightVibrantRgb[1]+','+palette.lightVibrantRgb[2]+')',
+                  width: '10vw',
+                  height: '10vh',
+                  margin: '0px 3px'
+                }}></div>
+                <div style={{
+                  backgroundColor: 'rgb('+palette.darkVibrantRgb[0]+','+palette.darkVibrantRgb[1]+','+palette.darkVibrantRgb[2]+')',
+                  width: '10vw',
+                  height: '10vh',
+                  margin: '0px 3px'
+                }}></div>
+                <div style={{
+                  backgroundColor: 'rgb('+palette.mutedRgb[0]+','+palette.mutedRgb[1]+','+palette.mutedRgb[2]+')',
+                  width: '10vw',
+                  height: '10vh',
+                  margin: '0px 3px'
+                }}></div>
+            </div>
+
+              : null
+            }
+          </div>
+         <aside>
+            <h4>Accepted files</h4>
+            <ul>
+              {acceptedFilesItems}
+            </ul>
+            <h4>Rejected files</h4>
+            <ul>
+              {rejectedFilesItems}
+            </ul>
+          </aside>
+    </>
     )
+
   }
+
   export default UploadImage;
