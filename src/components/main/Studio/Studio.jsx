@@ -6,9 +6,8 @@ import StudioWebsite from '../StudioWebsite/StudioWebsite'
 export default function Studio({ palette, image }) {
     return (
         <div className="studio">
-            {<img src={image} style={{maxWidth: '500px', maxHeight: '500px'}}></img>}
-            <StudioWebsite />
             <StudioPaletteBar palette={palette} image={image}  />
+            <StudioWebsite palette={palette} />
         </div>
     )
 } 

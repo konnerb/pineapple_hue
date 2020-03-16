@@ -4,9 +4,10 @@ import UploadImage from '../../components/UploadImage/UploadImage'
 
 export default function Hero({ fetchImgData }) {
     return (
-        <section>
-            <h1>Hero</h1>
-            < UploadImage fetchImgData={fetchImgData} />
+        <section className="hero">
+            <div className="hero__upload-image">
+                < UploadImage fetchImgData={fetchImgData} />
+            </div>
         </section>
     )
 }

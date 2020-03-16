@@ -65,6 +65,7 @@ function UploadImage({ fetchImgData }) {
   //},[img]);
 
     const baseStyle = {
+      width: '25%',
       flex: 1,
       display: 'flex',
       flexDirection: 'column',

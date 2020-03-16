@@ -1,0 +1,11 @@
+.palette {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    &__color {
+        width: 12vw;
+        height: 10vh;
+        //border-radius: 100%;
+        //margin: 0px 3px;
+    }
+}

@@ -34,7 +34,7 @@ export default class Main extends Component {
         <section> 
             <Hero fetchImgData={this.fetchImgData} />
         </section>
-        <main>
+        <main className="main">
             <Studio palette={this.state.palette} image={this.state.img} />
         </main>
     </>

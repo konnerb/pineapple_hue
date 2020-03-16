@@ -1,0 +1,10 @@
+.bar {
+    width: 33.33%;
+    height: 100%;
+    padding: 0px 16px;
+    border-right: 3px solid black;
+    &__uploadImg {
+        width: 66%;
+        height: 25%;
+    }
+}
