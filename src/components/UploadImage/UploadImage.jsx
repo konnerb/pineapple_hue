@@ -1,10 +1,10 @@
-import React, { useCallback, useState, useEffect, useMemo } from 'react'
+import React, { useCallback, useState, useMemo } from 'react'
 import { useDropzone } from 'react-dropzone'
-import * as Vibrant from 'node-vibrant';
 
-function UploadImage() {
-const [img, setImg] = useState([])
-const [palette, setPalette] = useState({})
+function UploadImage({ fetchImgData }) {
+
+//const [img, setImg] = useState([])
+//const [palette, setPalette] = useState({})
 
   const onDrop = useCallback(acceptedFiles => {
     acceptedFiles.forEach((blob) => {
@@ -14,10 +14,12 @@ const [palette, setPalette] = useState({})
         reader.onload = () => {
           const binaryStr = reader
           console.log(binaryStr)
-          setImg(reader.result)
+          //setImg(reader.result)
+          fetchImgData(reader.result)
         }
         reader.readAsDataURL(blob)
       })
+      console.log(acceptedFiles)
   }, [])
 
     const {
@@ -47,19 +49,20 @@ const [palette, setPalette] = useState({})
       </li>
     ));
 
-  useEffect(() => {
-    if (img === null || img === 0) { console.log('No Img')
-    } else {
-      Vibrant.from(img)
-      .getPalette((err, palette) => {
-        if(err) {
-          console.log(err);
-        } else {
-          setPalette(palette);
-        }
-      })
-    }
-    },[img]);
+  //eEffect(() => {
+  //if (img === null || img === 0) { console.log('No Img')
+  //} else {
+  //  Vibrant.from(img)
+  //  .getPalette((err, palette) => {
+  //    if(err) {
+  //      console.log(err);
+  //    } else {
+  //      fetchPalette(palette)
+  //      //setPalette(palette);
+  //    }
+  //  })
+  //}
+  //},[img]);
 
     const baseStyle = {
       flex: 1,
@@ -99,8 +102,6 @@ const [palette, setPalette] = useState({})
       isDragReject
     ]);
 
-    console.log(palette)
-
     return (
       //backgroundColor: 'rgb('+palette.lightVibrantRgb[0]+','+palette.lightVibrantRgb[1]+','+palette.lightVibrantRgb[2]+')'
       <>
@@ -108,98 +109,10 @@ const [palette, setPalette] = useState({})
         <input {...getInputProps()} />
         {
           isDragActive ?
-            <p>Drop image here ...</p> :
-            <p>Drag 'n' drop image here, or click to select image</p>
+          <p>Drop image here ...</p> :
+          <p>Drag 'n' drop image here, or click to select image</p>
         }
         </div>
-        <img src={img} style={{maxWidth: '500px', maxHeight: '500px'}}></img>
-        <div>
-          {
-            palette.Vibrant ? 
-              <div style={{display: 'flex'}}>
-                <div style={{
-                  backgroundColor: `${palette.Vibrant.hex}`,
-                  color: `${palette.Vibrant.titleTextColor}`,
-                  width: '15vw',
-                  height: '20vh',
-                  margin: '0px 3px'
-                }}>
-                <p>Vibrant</p>
-                <p>Hex:{palette.Vibrant.hex}</p>
-                <p>Rgb:{palette.Vibrant.hex}</p>
-                <p>Hsl:{palette.Vibrant.hex}</p>
-                </div>
-
-                <div style={{
-                  backgroundColor: `${palette.LightVibrant.hex}`,
-                  color: `${palette.LightVibrant.titleTextColor}`,
-                  width: '15vw',
-                  height: '20vh',
-                  margin: '0px 3px'
-                }}>
-                <p>LighVibrant</p>
-                <p>Hex: {palette.LightVibrant.hex}</p>
-                <p>Rgb: {palette.LightVibrant.hex}</p>
-                <p>Hsl: {palette.LightVibrant.hex}</p>
-                </div>
-                
-                <div style={{
-                  backgroundColor: `${palette.DarkVibrant.hex}`,
-                  color: `${palette.DarkVibrant.titleTextColor}`,
-                  width: '15vw',
-                  height: '20vh',
-                  margin: '0px 3px'
-                }}>
-                <p>DarkVibrant</p>
-                <p>Hex: {palette.DarkVibrant.hex}</p>
-                <p>Rgb: {palette.DarkVibrant.hex}</p>
-                <p>Hsl: {palette.DarkVibrant.hex}</p>
-                </div>
-
-                <div style={{
-                  backgroundColor: `${palette.Muted.hex}`,
-                  color: `${palette.Muted.titleTextColor}`,
-                  width: '15vw',
-                  height: '20vh',
-                  margin: '0px 3px'
-                }}>
-                <p>Muted</p>
-                <p>Hex: {palette.Muted.hex}</p>
-                <p>Rgb: {palette.Muted.hex}</p>
-                <p>Hsl: {palette.Muted.hex}</p>
-                </div>
-
-                <div style={{
-                  backgroundColor: `${palette.LightMuted.hex}`,
-                  color: `${palette.LightMuted.titleTextColor}`,
-                  width: '15vw',
-                  height: '20vh',
-                  margin: '0px 3px'
-                }}>
-                <p>LightMuted</p>
-                <p>Hex: {palette.LightMuted.hex}</p>
-                <p>Rgb: {palette.LightMuted.hex}</p>
-                <p>Hsl: {palette.LightMuted.hex}</p>
-                </div>
-
-                <div style={{
-                  backgroundColor: `${palette.DarkMuted.hex}`,
-                  color: `${palette.DarkMuted.titleTextColor}`,
-                  width: '15vw',
-                  height: '20vh',
-                  margin: '0px 3px'
-                }}>
-                <p>DarkMuted</p>
-                <p>Hex: {palette.DarkMuted.hex}</p>
-                <p>Rgb: {palette.DarkMuted.hex}</p>
-                <p>Hsl: {palette.DarkMuted.hex}</p>
-                </div>
-
-            </div>
-
-              : null
-            }
-          </div>
          <aside>
             <h4>Accepted files</h4>
             <ul>
@@ -212,7 +125,6 @@ const [palette, setPalette] = useState({})
           </aside>
     </>
     )
-
   }
 
   export default UploadImage;

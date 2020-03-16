@@ -8,8 +8,8 @@ import Header from './components/Header/Header'
 function App() {
   return (  
   <>
-    <Header />
     <BrowserRouter>
+    <Header />
       <Switch> 
         <Route path="/" component={ Main } />
         <Route path="/about" component={ About } />

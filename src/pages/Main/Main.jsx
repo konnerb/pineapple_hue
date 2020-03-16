@@ -2,27 +2,42 @@ import React, { Component } from 'react';
 import * as Vibrant from 'node-vibrant';
 import './Main.scss';
 import Hero from '../../components/Hero/Hero'
-import UploadImage from '../../components/UploadImage/UploadImage'
-import pineapple from '../../assets/images/pineapple.jpg';
+import Studio from '../../components/main/Studio/Studio'
 
 export default class Main extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            
+            img: {},
+            palette: [] 
         }
     }
 
-    render() {
-        //Vibrant.from(pineapple)
-        //.getPalette((err, palette) => 
-        //console.log(palette))
-    return (
-        <section>
-            <Hero />
-            <UploadImage />
+    fetchImgData = (img) => {
+        if (!img) return;
+        Vibrant.from(img)
+       .getPalette((err, palette) => {
+           if(err) {
+           console.log(err);
+           } else {
+           this.setState({ 
+               img, 
+               palette 
+            })
+           }
+       })
+   }
 
+    render() {
+    return (
+    <> 
+        <section> 
+            <Hero fetchImgData={this.fetchImgData} />
         </section>
+        <main>
+            <Studio palette={this.state.palette} image={this.state.img} />
+        </main>
+    </>
     )
     }
 } 

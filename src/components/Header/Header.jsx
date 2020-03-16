@@ -1,10 +1,15 @@
 import React from 'react';
 import './Header.scss'
+import { NavLink } from 'react-router-dom'
 
 export default function Header() {
     return (
-        <header>
-            <h1>Header</h1>
+        <header className="header">
+            <NavLink to="/" className="header__title links"><h1>Pineapplehue</h1></NavLink>
+            <div className="header__page-links">
+                <NavLink to="/features" className="links">Features</NavLink>
+                <NavLink to="/about" className="links">About</NavLink>
+            </div>
         </header>
     )
 } 

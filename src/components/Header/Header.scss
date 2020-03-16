@@ -1,0 +1,17 @@
+.header {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__page-links {
+        width: 300px;
+        justify-content: space-between;
+    }
+}
+
+.isActive {
+}
+
+.links {
+    text-decoration: none;
+}
