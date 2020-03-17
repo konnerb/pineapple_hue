@@ -4,14 +4,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    &__header {
+        padding: 0px 16px;
+    }
     &__main {
+        padding: 0px 16px;
         height: 50%;
     }
-    &__butons-container {
-
+    &__footer {
+        padding: 0px 16px;
+    }
+    &__buttons-container {
+        display: flex;
+        justify-content: space-evenly;
     }
     &__buttons {
-        width: 100px;
+        width: 90px;
         height: 30px;
         border-radius: 6px;
     }
