@@ -7,19 +7,26 @@ export default class Studio extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            Scrub: [] 
+            newPalette: {}
         }
+        this.handleChange = this.handleChange.bind(this);
     }
-    
-    handleChange(value) {
-        console.log(value)
-        //this.setState({value: event.target.value});
+
+    handleChange(event) {
+        const { target: { name, value} } = event;
+        let newPalette = { ...this.state.newPalette };
+        newPalette[name] = value;
+        this.setState({
+             newPalette
+        });
     }
+
     render() {
+        const modifiedPalette = { ...this.state, ...this.props }
     return (
         <div className="studio">
-            <StudioPaletteBar palette={this.props.palette} image={this.props.image} handleChange={this.handleChange}  />
-            <StudioWebsite palette={this.props.palette} />
+            <StudioPaletteBar { ...modifiedPalette }  handleChange={this.handleChange} />
+            <StudioWebsite { ...modifiedPalette } />
         </div>
     )
     }

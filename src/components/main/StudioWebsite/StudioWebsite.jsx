@@ -1,10 +1,13 @@
 import React from 'react';
 import './StudioWebsite.scss'
 
-export default function StudioWebsite({ palette }) {
+export default function StudioWebsite({ palette, newPalette }) {
+    const newColor = palette;
+    //newColor.find(color => {console.log(color)})
+    //console.log(newColor)
     return (
         <> 
-        {palette.Vibrant ?
+        {palette.Vibrant && newPalette ?
             <div className="website">
                 <header className="website__header" style={{
                   backgroundColor: `${palette.Vibrant.hex}`,
