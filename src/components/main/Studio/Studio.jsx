@@ -21,12 +21,18 @@ export default class Studio extends Component {
         });
     }
 
+    roundHue = (hue) => { return Math.round( (hue) * 360) }
+
+    roundSl = (sl) => { return Math.round( (sl) * 100) + "%" }
+
     render() {
+
         const modifiedPalette = { ...this.state, ...this.props }
+        
     return (
         <div className="studio">
-            <StudioPaletteBar { ...modifiedPalette }  handleChange={this.handleChange} />
-            <StudioWebsite { ...modifiedPalette } />
+            <StudioPaletteBar { ...modifiedPalette }  handleChange={this.handleChange} roundHue={this.roundHue} />
+            <StudioWebsite { ...modifiedPalette } roundHue={this.roundHue} roundSl={this.roundSl} />
         </div>
     )
     }

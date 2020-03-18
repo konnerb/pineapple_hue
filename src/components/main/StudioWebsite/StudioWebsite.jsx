@@ -1,16 +1,22 @@
 import React from 'react';
 import './StudioWebsite.scss'
 
-export default function StudioWebsite({ palette, newPalette }) {
-    const newColor = palette;
-    //newColor.find(color => {console.log(color)})
-    //console.log(newColor)
+export default function StudioWebsite({ palette, newPalette, roundHue, roundSl }) {
+    //console.log(newPalette)
+    //if(palette.Vibrant) {
+    //console.log(palette.Vibrant)
+    //console.log('hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+(Object.values(newPalette)+ "%")+')')
+    //}
+
+    //{console.log(palette.Vibrant._hsl[0])}
+    //const newColor = palette
+    //backgroundColor: 'rgb('+palette.Vibrant.r+','+palette.Vibrant.g+','+Object.values(newPalette)+')'
     return (
         <> 
         {palette.Vibrant && newPalette ?
             <div className="website">
                 <header className="website__header" style={{
-                  backgroundColor: `${palette.Vibrant.hex}`,
+                  backgroundColor: 'hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+(Object.values(newPalette)+ "%")+')',
                   color: `${palette.Vibrant.titleTextColor}`,
                 }}>
                     <p>Your Website!</p>
