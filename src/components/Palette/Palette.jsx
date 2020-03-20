@@ -11,9 +11,9 @@ export default function Palette({ palette }) {
                     backgroundColor: `${palette.hex}`,
                     color: `${palette.titleTextColor}`,
                   }}>
-                  <p>Hex:{palette.hex}</p>
-                  <p>Rgb:{palette.hex}</p>
-                  <p>Hsl:{palette.hex}</p>
+                  <p>Hex:{palette._hex}</p>
+                  <p>Rgb:{palette._hex}</p>
+                  <p>Hsl:{palette._hex}</p>
                 </div>
               </div>
             </div>

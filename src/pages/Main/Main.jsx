@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as Vibrant from 'node-vibrant';
 import './Main.scss';
 import Hero from '../../components/Hero/Hero'
+import PaletteView from '../../components/PaletteView/PaletteView'
 import Studio from '../../components/main/Studio/Studio'
 
 export default class Main extends Component {
@@ -12,7 +13,6 @@ export default class Main extends Component {
             palette: [] 
         }
     }
-
     fetchImgData = (img) => {
         if (!img) return;
         Vibrant.from(img)
@@ -28,14 +28,32 @@ export default class Main extends Component {
        })
    }
 
+   handlePaletteUpdate = (newPalette) => {
+    const newPaletteKey = Object.keys(newPalette)[0]; //Vibrant
+    console.log(newPaletteKey)
+    this.setState({
+        palette: {
+            ...this.state.palette,
+            [newPaletteKey]: {
+              ...this.state.palette[newPaletteKey],
+              hsl: [this.state.palette[newPaletteKey].hsl[0], 
+                     this.state.palette[newPaletteKey].hsl[1], 
+                     newPalette[newPaletteKey]]
+            }
+        }
+    })
+   }
+
     render() {
+
     return (
     <> 
         <section> 
             <Hero fetchImgData={this.fetchImgData} />
         </section>
         <main className="main">
-            <Studio palette={this.state.palette} image={this.state.img} />
+            <PaletteView palette={this.state.palette} />
+            <Studio palette={this.state.palette} handlePaletteUpdate={this.handlePaletteUpdate} image={this.state.img} />
         </main>
     </>
     )

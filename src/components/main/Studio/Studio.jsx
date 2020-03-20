@@ -7,18 +7,20 @@ export default class Studio extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            newPalette: {}
+            newPalette: {},
+            //oldPalette: {}
         }
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(event) {
+    handleChange(event, paletteType) {
         const { target: { name, value} } = event;
-        let newPalette = { ...this.state.newPalette };
-        newPalette[name] = value;
+        let newPalette = {};
+        newPalette[paletteType] = value;
         this.setState({
              newPalette
-        });
+        }, () => this.props.handlePaletteUpdate(this.state.newPalette) );
+        
     }
 
     roundHue = (hue) => { return Math.round( (hue) * 360) }
@@ -31,7 +33,7 @@ export default class Studio extends Component {
         
     return (
         <div className="studio">
-            <StudioPaletteBar { ...modifiedPalette }  handleChange={this.handleChange} roundHue={this.roundHue} />
+            <StudioPaletteBar { ...modifiedPalette } handleChange={this.handleChange} roundHue={this.roundHue} />
             <StudioWebsite { ...modifiedPalette } roundHue={this.roundHue} roundSl={this.roundSl} />
         </div>
     )
