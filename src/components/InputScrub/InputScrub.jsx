@@ -18,7 +18,7 @@ export default function InputScrub({ palette, handleChange, paletteType }) {
                     onChange={defaultValue => handleChange(defaultValue, paletteType)}>
                 </input>
             </div>
-            <div>
+            {/*<div>
                 <label>Staturation</label>
                 <input className="input-scrub__saturation" 
                     type="range" 
@@ -29,7 +29,7 @@ export default function InputScrub({ palette, handleChange, paletteType }) {
                     defaultValue={palette.hsl[1]} 
                     onChange={defaultValue => handleChange(defaultValue, paletteType)}>
                 </input>
-            </div>
+            </div>*/}
         </div>
         : null
     }

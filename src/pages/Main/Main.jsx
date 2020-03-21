@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import * as Vibrant from 'node-vibrant';
 import './Main.scss';
-import Hero from '../../components/Hero/Hero'
-import PaletteView from '../../components/PaletteView/PaletteView'
-import Studio from '../../components/main/Studio/Studio'
+import Hero from '../../components/Hero/Hero';
+import PaletteView from '../../components/PaletteView/PaletteView';
+import Studio from '../../components/main/Studio/Studio';
+import StudioComponents from '../../components/main/StudioComponents/StudioComponents';
 
 export default class Main extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ export default class Main extends Component {
             img: {},
             palette: [] 
         }
+        //this.renderColor = this.renderColor.bind(this);
     }
     fetchImgData = (img) => {
         if (!img) return;
@@ -43,17 +45,34 @@ export default class Main extends Component {
         }
     })
    }
+   roundHue = (hue) => { return Math.round( (hue) * 360) }
+   roundSl = (sl) => { return Math.round( (sl) * 100) + "%" }
 
     render() {
-
     return (
     <> 
         <section> 
             <Hero fetchImgData={this.fetchImgData} />
         </section>
+
         <main className="main">
-            <PaletteView palette={this.state.palette} />
-            <Studio palette={this.state.palette} handlePaletteUpdate={this.handlePaletteUpdate} image={this.state.img} />
+            <PaletteView 
+                palette={this.state.palette} 
+                roundHue={this.roundHue}
+            />
+            <Studio 
+                palette={this.state.palette} 
+                handlePaletteUpdate={this.handlePaletteUpdate} 
+                image={this.state.img}
+                roundHue={this.roundHue}
+                roundSl={this.roundSl}
+            />
+            <StudioComponents 
+                palette={this.state.palette} 
+                image={this.state.img} 
+                roundHue={this.roundHue}
+                roundSl={this.roundSl}
+            />
         </main>
     </>
     )
