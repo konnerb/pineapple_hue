@@ -1,42 +1,21 @@
 import React from 'react';
 import './StyleBar.scss';
-import Button from '../Button/Button';
+import StyleButton from '../StyleButton/StyleButton';
 
-export default function StyleBar({ palette, handleChange, paletteType, roundHue, roundSl }) {
+export default function StyleBar({ palette, handleClick }) {
     return (
     <>
-        { palette  ?
-        <div className="button">
-            <Button 
-            palette={palette} 
-            buttonText="Click Me" 
-            roundHue={roundHue}
-            roundSl={roundSl}
-            />
+        <div className="buttons">
 
-            <Button 
-            palette={palette} 
-            buttonText="Click Me" 
-            roundHue={roundHue}
-            roundSl={roundSl}
-            />
+            <StyleButton buttonText="Shadow" />
 
-            <Button 
-            palette={palette} 
-            buttonText="Click Me" 
-            roundHue={roundHue}
-            roundSl={roundSl}
-            />
+            <StyleButton buttonText="Opacity" />
 
-            <Button 
-            palette={palette} 
-            buttonText="Click Me" 
-            roundHue={roundHue}
-            roundSl={roundSl}
-            />
+            <StyleButton buttonText="Click Me" />
+
+            <StyleButton buttonText="Click Me" />
+            
         </div>
-        : null
-        }
     </>
     )
 } 

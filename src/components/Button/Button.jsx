@@ -11,7 +11,7 @@ export default function Button({ palette, handleChange, paletteType, buttonText,
                         backgroundColor: 'hsl('+roundHue(palette.hsl[0])+','+roundSl(palette.hsl[1])+','+roundSl(palette.hsl[2])+')',
                         color: `${palette.titleTextColor}`
                     }}
-                    onClick={defaultValue => handleChange(defaultValue, paletteType)}
+                    //onClick={defaultValue => handleChange(defaultValue, paletteType)}
                     >{buttonText}
                 </button>
         </div>
