@@ -9,7 +9,7 @@ import pinterest from '../../assets/icons/pinterest_icon-color.svg';
 import tumblr from '../../assets/icons/tumblr_icon-color.svg';
 import soundcloud from '../../assets/icons/soundcloud_icon-color.svg';
 
-export default function Icons({ iconName }) {
+export default function Icons({ iconName, percent }) {
      
     //iconName ? console.log('here') : console.log("not here")
     
@@ -28,7 +28,14 @@ export default function Icons({ iconName }) {
         <div className="icon">
             <div className="icon__container">
                 <div>
-                    <img src={icon} alt="facebook" className="icon__svg" />
+                    <img 
+                    src={icon} 
+                    alt={iconName}
+                    className="icon__svg"
+                    style={{
+                        opacity: `${percent}%`
+                    }}
+                />
                 </div>
             </div>
         </div>

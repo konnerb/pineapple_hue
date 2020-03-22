@@ -11,20 +11,21 @@ export default class StudioComponents extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            toggle: {}
+                toggleButtonsOpacity: false,
+                toggleIconsOpacity: false,
+                toggleImagesOpacity: false,
+                toggleButtonsShadow: false,
+                toggleIconsShadow: false,
+                toggleImagesShadow: false
         }
         this.handleToggle = this.handleToggle.bind(this);
     }
 
-    handleToggle(event, toggleType) {
-        console.log(event)
-        console.log(toggleType)
-        //const { target: { name, value} } = event;
-        //let toggle = {};
-        //toggle[toggleType] = value;
-        //this.setState({
-        //     toggle
-        //});
+    handleToggle(toggleType) {
+        let toggleStatus = this.state[toggleType]
+        this.setState({
+                 [toggleType]: !toggleStatus
+        });
         
     }
 
@@ -45,9 +46,18 @@ export default class StudioComponents extends Component {
                 <div className="studio-components__button-preview">
                     <h3>Buttons One</h3>
                     <StyleBar 
-                    palette={this.props.palette} 
-                    handleToggle={this.handleToggle}
+                        opacityType="toggleButtonsOpacity"
+                        shadowType="toggleButtonsShadow"
+                        palette={this.props.palette} 
+                        handleToggle={this.handleToggle}
                     />
+                    {this.state.toggleButtonsOpacity && 
+                        <InputPercent 
+                        handlePercentChange={handlePercentChange}
+                        nameInput="vibrantOpacityButton"
+                        defaultInputValue="80"
+                        />
+                    }
                     <div className="studio-components__buttons" 
                             style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
                         }}>
@@ -79,19 +89,23 @@ export default class StudioComponents extends Component {
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
-                        <InputPercent 
-                        handlePercentChange={handlePercentChange}
-                        nameInput="vibrantOpacityButton"
-                        defaultInputValue="80"
-                        />
                     </div>
                 </div>
                 <div className="studio-components__button-preview">
                     <h3>Buttons Two</h3>
                     <StyleBar 
-                    palette={this.props.palette} 
-                    handleToggle={this.handleToggle}
+                        opacityType="toggleButtonsOpacity"
+                        shadowType="toggleButtonsShadow"
+                        palette={this.props.palette} 
+                        handleToggle={this.handleToggle}
                     />
+                    {this.state.toggleButtonsOpacity && 
+                        <InputPercent 
+                        handlePercentChange={handlePercentChange}
+                        nameInput="mutedOpacityButton"
+                        defaultInputValue="80"
+                        />
+                    }
                     <div className="studio-components__buttons" 
                             style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
                         }}>
@@ -123,11 +137,6 @@ export default class StudioComponents extends Component {
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
-                        <InputPercent 
-                        handlePercentChange={handlePercentChange}
-                        nameInput="mutedOpacityButton"
-                        defaultInputValue="80"
-                        />
                     </div>
                 </div>
             </article>
@@ -135,47 +144,63 @@ export default class StudioComponents extends Component {
                 <div className="studio-components__button-preview">
                     <h3>Icons One</h3>
                     <StyleBar 
+                        opacityType="toggleIconsOpacity"
+                        shadowType="toggleIconsShadow"
                     palette={this.props.palette}
                     handleToggle={this.handleToggle}
                     />
+                    {this.state.toggleIconsOpacity && 
+                        <InputPercent 
+                        handlePercentChange={handlePercentChange}
+                        nameInput="iconOpacity"
+                        defaultInputValue="80"
+                        />
+                    }
                     <div className="studio-components__buttons" 
                             style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
                         }}>
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={Vibrant} 
                         iconName="facebook"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={DarkVibrant} 
                         iconName="twitter"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={Muted} 
                         iconName="linkedin"
                         />
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={DarkMuted} 
                         iconName="google"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={DarkMuted} 
                         iconName="pinterest"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={DarkMuted} 
                         iconName="tumblr"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={DarkMuted} 
                         iconName="soundcloud"
                         roundHue={roundHue}
@@ -186,47 +211,63 @@ export default class StudioComponents extends Component {
                 <div className="studio-components__button-preview">
                     <h3>Icons Two</h3>
                     <StyleBar 
+                        opacityType="toggleIconsOpacity"
+                        shadowType="toggleIconsShadow"
                     palette={this.props.palette} 
                     handleToggle={this.handleToggle}
                     />
+                    {this.state.toggleIconsOpacity && 
+                        <InputPercent 
+                        handlePercentChange={handlePercentChange}
+                        nameInput="iconOpacity"
+                        defaultInputValue="80"
+                        />
+                    }
                     <div className="studio-components__buttons" 
                             style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
                         }}>
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={Vibrant} 
                         iconName="facebook"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={DarkVibrant} 
                         iconName="twitter"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={Muted} 
                         iconName="linkedin"
                         />
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={DarkMuted} 
                         iconName="google"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={DarkMuted} 
                         iconName="pinterest"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={DarkMuted} 
                         iconName="tumblr"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Icons 
+                        percent={percents.iconOpacity}
                         palette={DarkMuted} 
                         iconName="soundcloud"
                         roundHue={roundHue}
@@ -239,103 +280,128 @@ export default class StudioComponents extends Component {
                 <div className="studio-components__images-preview">
                     <h3>Images</h3>
                     <StyleBar 
+                        opacityType="toggleImagesOpacity"
+                        shadowType="toggleImagesShadow"
                     palette={this.props.palette} 
                     handleToggle={this.handleToggle}
                     />
+                    {this.state.toggleImagesOpacity && 
+                        <InputPercent 
+                        handlePercentChange={handlePercentChange}
+                        nameInput="vibrantImageOpacity"
+                        defaultInputValue="80"
+                        />
+                    }
                     <div className="studio-components__images" 
                             style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
                         }}>
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="yogo"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="bar"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="basketball"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="beach"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="book"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="car"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="cat"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="coffeeShop"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="coffeeSwirls"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="darkAlley"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="dog"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="festival"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="toEast"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="ttcWinter"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="winterContrast"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.vibrantImageOpacity}
                         palette={Vibrant} 
                         iconName="dryVan"
                         roundHue={roundHue}
@@ -349,101 +415,125 @@ export default class StudioComponents extends Component {
                     <h3>Images</h3>
                     <StyleBar 
                     handleToggle={this.handleToggle}
-                    palette={this.props.palette} />
+                    palette={this.props.palette} 
+                    />
+                    {this.state.toggleImagesOpacity && 
+                        <InputPercent 
+                        handlePercentChange={handlePercentChange}
+                        nameInput="mutedImageOpacity"
+                        defaultInputValue="80"
+                        />
+                    }
                     <div className="studio-components__images" 
                             style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
                         }}>
                         <Image 
+                        percent={percents.mutedImageOpacity}
                         palette={Vibrant} 
                         iconName="yogo"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.mutedImageOpacity}
                         palette={Vibrant} 
                         iconName="bar"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.mutedImageOpacity}
                         palette={Vibrant} 
                         iconName="basketball"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.mutedImageOpacity}
                         palette={Vibrant} 
                         iconName="beach"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Image 
+                        percent={percents.mutedImageOpacity}
                         palette={Vibrant} 
                         iconName="book"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
-                        <Image 
+                        <Image
+                        percent={percents.mutedImageOpacity} 
                         palette={Vibrant} 
                         iconName="car"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
-                        <Image 
+                        <Image
+                        percent={percents.mutedImageOpacity} 
                         palette={Vibrant} 
                         iconName="cat"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
-                        <Image 
+                        <Image
+                        percent={percents.mutedImageOpacity} 
                         palette={Vibrant} 
                         iconName="coffeeShop"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
-                        <Image 
+                        <Image
+                        percent={percents.mutedImageOpacity} 
                         palette={Vibrant} 
                         iconName="coffeeSwirls"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
-                        <Image 
+                        <Image
+                        percent={percents.mutedImageOpacity} 
                         palette={Vibrant} 
                         iconName="darkAlley"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
-                        <Image 
+                        <Image
+                        percent={percents.mutedImageOpacity} 
                         palette={Vibrant} 
                         iconName="dog"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
-                        <Image 
+                        <Image
+                        percent={percents.mutedImageOpacity} 
                         palette={Vibrant} 
                         iconName="festival"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
-                        <Image 
+                        <Image
+                        percent={percents.mutedImageOpacity} 
                         palette={Vibrant} 
                         iconName="toEast"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
-                        <Image 
+                        <Image
+                        percent={percents.mutedImageOpacity} 
                         palette={Vibrant} 
                         iconName="ttcWinter"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
-                        <Image 
+                        <Image
+                        percent={percents.mutedImageOpacity} 
                         palette={Vibrant} 
                         iconName="winterContrast"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
-                        <Image 
+                        <Image
+                        percent={percents.mutedImageOpacity} 
                         palette={Vibrant} 
                         iconName="dryVan"
                         roundHue={roundHue}

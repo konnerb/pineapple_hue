@@ -17,7 +17,7 @@ import toEast from '../../assets/images/to_east.jpg';
 import ttcWinter from '../../assets/images/ttc_winter.jpg';
 import winterContrast from '../../assets/images/winter_contrast.jpg';
 
-export default function Image({ iconName }) {
+export default function Image({ iconName, percent }) {
     
     const images = 
             iconName === "yogo" ? yogo : null ||
@@ -42,7 +42,14 @@ export default function Image({ iconName }) {
         <div className="image">
             <div className="image__container">
                 <div>
-                    <img src={images} alt="facebook" className="image__the-image" />
+                    <img 
+                    src={images} 
+                    alt="facebook" 
+                    className="image__the-image" 
+                    style ={{
+                        opacity: `${percent}%`
+                    }}
+                    />
                 </div>
             </div>
         </div>
