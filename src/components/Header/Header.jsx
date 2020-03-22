@@ -7,7 +7,6 @@ export default function Header() {
         <header className="header">
             <NavLink to="/" className="header__title links"><h1>Pineapplehue</h1></NavLink>
             <div className="header__page-links">
-                <NavLink to="/features" className="links">Features</NavLink>
                 <NavLink to="/about" className="links">About</NavLink>
             </div>
         </header>

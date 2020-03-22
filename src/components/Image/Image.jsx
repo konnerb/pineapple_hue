@@ -36,7 +36,6 @@ export default function Image({ iconName }) {
             iconName === "ttcWinter" ? ttcWinter : null ||
             iconName === "winterContrast" ? winterContrast : null ||
             iconName === "dryVan" ? dryVan : null 
-        console.log(images)
 
     return (
     <>  

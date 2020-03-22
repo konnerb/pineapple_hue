@@ -1,13 +1,13 @@
 import React from 'react';
 import './StyleButton.scss'
 
-export default function StyleButton({handleClick,buttonText }) {
+export default function StyleButton({ handleToggle, buttonText }) {
     return (
     <> 
         <div>
                 <button className="style-button" 
                     name="style-button" 
-                    onClick={() => handleClick()}
+                    onClick={() => handleToggle(buttonText)}
                     >{buttonText}
                 </button>
         </div>

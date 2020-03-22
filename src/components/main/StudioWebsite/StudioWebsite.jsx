@@ -1,12 +1,7 @@
 import React from 'react';
 import './StudioWebsite.scss'
 
-export default function StudioWebsite({ palette, roundHue, roundSl }) {
-    if(palette.Vibrant) {
-        console.log('hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+roundSl(palette.Vibrant.hsl[2])+')')
-    //console.log(palette.Vibrant)
-    //console.log('hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+(Object.values(newPalette)+ "%")+')')
-    }
+export default function StudioWebsite({ hslToRgb, palette, roundHue, roundSl }) {
 
     //{console.log(palette.Vibrant._hsl[0])}
     //const newColor = palette
@@ -19,7 +14,7 @@ export default function StudioWebsite({ palette, roundHue, roundSl }) {
                   backgroundColor: 'hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+roundSl(palette.Vibrant.hsl[2])+')',
                   color: `${palette.Vibrant.titleTextColor}`,
                 }}>
-                    <p>Your Website!</p>
+                    <p>{hslToRgb(palette.Vibrant.hsl[0],palette.Vibrant.hsl[1],palette.Vibrant.hsl[2])}</p>
                 </header>
                 <main className="website__main" style={{
                   backgroundColor: 'hsl('+roundHue(palette.LightVibrant.hsl[0])+','+roundSl(palette.LightVibrant.hsl[1])+','+roundSl(palette.LightVibrant.hsl[2])+')',

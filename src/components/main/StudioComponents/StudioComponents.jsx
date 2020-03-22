@@ -5,25 +5,28 @@ import Button from '../../Button/Button'
 import StyleBar from '../../StyleBar/StyleBar'
 import Icons from '../../Icons/Icons'
 import Image from '../../Image/Image'
+import InputPercent from '../../InputPercent/InputPercent'
 
 export default class StudioComponents extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            toggle: {}
         }
-        //this.handleChange = this.handleChange.bind(this);
+        this.handleToggle = this.handleToggle.bind(this);
     }
 
-    //handleChange(event, paletteType) {
-    //    const { target: { name, value} } = event;
-    //    let newPalette = {};
-    //    newPalette[paletteType] = value;
-    //    this.setState({
-    //         newPalette
-    //    }, () => this.props.handlePaletteUpdate(this.state.newPalette) );
-    //    
-    //}
+    handleToggle(event, toggleType) {
+        console.log(event)
+        console.log(toggleType)
+        //const { target: { name, value} } = event;
+        //let toggle = {};
+        //toggle[toggleType] = value;
+        //this.setState({
+        //     toggle
+        //});
+        
+    }
 
     //roundHue = (hue) => { return Math.round( (hue) * 360) }
 
@@ -32,7 +35,7 @@ export default class StudioComponents extends Component {
     render() {
 
         const { Vibrant, LightVibrant, DarkVibrant, Muted, LightMuted, DarkMuted } = this.props.palette;
-        const { roundHue, roundSl } = this.props;
+        const { roundHue, roundSl, handlePercentChange, percents } = this.props;
         
     return (
     <>
@@ -41,65 +44,89 @@ export default class StudioComponents extends Component {
             <article className="studio-components__buttons-section">
                 <div className="studio-components__button-preview">
                     <h3>Buttons One</h3>
-                    <StyleBar palette={this.props.palette} />
+                    <StyleBar 
+                    palette={this.props.palette} 
+                    handleToggle={this.handleToggle}
+                    />
                     <div className="studio-components__buttons" 
                             style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
                         }}>
                         <Button 
+                        percent={percents.vibrantOpacityButton}
                         palette={Vibrant} 
                         buttonText="Click Me!" 
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Button 
+                        percent={percents.vibrantOpacityButton}
                         palette={DarkVibrant} 
                         buttonText="Click Me!" 
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Button 
+                        percent={percents.vibrantOpacityButton}
                         palette={Muted} 
                         buttonText="Click Me!" 
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Button 
+                        percent={percents.vibrantOpacityButton}
                         palette={DarkMuted} 
                         buttonText="Click Me!" 
                         roundHue={roundHue}
                         roundSl={roundSl}
+                        />
+                        <InputPercent 
+                        handlePercentChange={handlePercentChange}
+                        nameInput="vibrantOpacityButton"
+                        defaultInputValue="80"
                         />
                     </div>
                 </div>
                 <div className="studio-components__button-preview">
                     <h3>Buttons Two</h3>
-                    <StyleBar palette={this.props.palette} />
+                    <StyleBar 
+                    palette={this.props.palette} 
+                    handleToggle={this.handleToggle}
+                    />
                     <div className="studio-components__buttons" 
                             style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
                         }}>
                         <Button 
+                        percent={percents.mutedOpacityButton}
                         palette={Vibrant} 
                         buttonText="Click Me!" 
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Button 
+                        percent={percents.mutedOpacityButton}
                         palette={DarkVibrant} 
                         buttonText="Click Me!" 
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Button 
+                        percent={percents.mutedOpacityButton}
                         palette={Muted} 
                         buttonText="Click Me!" 
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
                         <Button 
+                        percent={percents.mutedOpacityButton}
                         palette={DarkMuted} 
                         buttonText="Click Me!" 
                         roundHue={roundHue}
                         roundSl={roundSl}
+                        />
+                        <InputPercent 
+                        handlePercentChange={handlePercentChange}
+                        nameInput="mutedOpacityButton"
+                        defaultInputValue="80"
                         />
                     </div>
                 </div>
@@ -107,7 +134,10 @@ export default class StudioComponents extends Component {
             <article className="studio-components__buttons-section">
                 <div className="studio-components__button-preview">
                     <h3>Icons One</h3>
-                    <StyleBar palette={this.props.palette} />
+                    <StyleBar 
+                    palette={this.props.palette}
+                    handleToggle={this.handleToggle}
+                    />
                     <div className="studio-components__buttons" 
                             style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
                         }}>
@@ -155,7 +185,10 @@ export default class StudioComponents extends Component {
                 </div>
                 <div className="studio-components__button-preview">
                     <h3>Icons Two</h3>
-                    <StyleBar palette={this.props.palette} />
+                    <StyleBar 
+                    palette={this.props.palette} 
+                    handleToggle={this.handleToggle}
+                    />
                     <div className="studio-components__buttons" 
                             style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
                         }}>
@@ -205,7 +238,10 @@ export default class StudioComponents extends Component {
             <article className="studio-components__buttons-section">
                 <div className="studio-components__images-preview">
                     <h3>Images</h3>
-                    <StyleBar palette={this.props.palette} />
+                    <StyleBar 
+                    palette={this.props.palette} 
+                    handleToggle={this.handleToggle}
+                    />
                     <div className="studio-components__images" 
                             style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
                         }}>
@@ -311,7 +347,9 @@ export default class StudioComponents extends Component {
             <article className="studio-components__buttons-section">
                 <div className="studio-components__images-preview">
                     <h3>Images</h3>
-                    <StyleBar palette={this.props.palette} />
+                    <StyleBar 
+                    handleToggle={this.handleToggle}
+                    palette={this.props.palette} />
                     <div className="studio-components__images" 
                             style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
                         }}>

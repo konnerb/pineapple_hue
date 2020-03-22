@@ -22,7 +22,6 @@ export default function Icons({ iconName }) {
             iconName === "pinterest" ? pinterest : null ||
             iconName === "tumblr" ? tumblr : null ||
             iconName === "soundcloud" ? soundcloud : null 
-        console.log(icon)
 
     return (
     <>  

@@ -1,14 +1,10 @@
 import React from 'react';
-import './Hero.scss';
-import UploadImage from '../../components/UploadImage/UploadImage'
+import './Footer.scss';
 
-export default function Hero({ fetchImgData }) {
+export default function Footer({ fetchImgData }) {
     return (
-        <section className="hero">
-            <div className="hero__upload-image">
-                < UploadImage fetchImgData={fetchImgData} />
-            </div>
-            <div className="hero__svg-container">
+        <div className="footer">
+            <div className="footer__svg-container">
                 <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
                     <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{ stroke: 'none', fill: 'rgb(250, 250, 250)' }}></path>
                 </svg>
@@ -18,6 +14,6 @@ export default function Hero({ fetchImgData }) {
                     <path d="M0,40 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{ stroke: 'none', fill: 'rgb(250, 250, 250)' }}></path>
                 </svg>
             </div>*/}
-        </section>
+        </div>
     )
 }

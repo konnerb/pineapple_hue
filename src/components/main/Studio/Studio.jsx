@@ -8,7 +8,6 @@ export default class Studio extends Component {
         super(props)
         this.state = {
             newPalette: {},
-            //oldPalette: {}
         }
         this.handleChange = this.handleChange.bind(this);
     }
