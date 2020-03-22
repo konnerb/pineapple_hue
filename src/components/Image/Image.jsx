@@ -17,7 +17,7 @@ import toEast from '../../assets/images/to_east.jpg';
 import ttcWinter from '../../assets/images/ttc_winter.jpg';
 import winterContrast from '../../assets/images/winter_contrast.jpg';
 
-export default function Image({ iconName, percent }) {
+export default function Image({ iconName, percent, toggleImagesBorder, toggleImagesShadow }) {
     
     const images = 
             iconName === "yogo" ? yogo : null ||
@@ -40,18 +40,16 @@ export default function Image({ iconName, percent }) {
     return (
     <>  
         <div className="image">
-            <div className="image__container">
-                <div>
-                    <img 
-                    src={images} 
-                    alt="facebook" 
-                    className="image__the-image" 
-                    style ={{
-                        opacity: `${percent}%`
-                    }}
-                    />
-                </div>
-            </div>
+            <img 
+            src={images} 
+            alt="facebook" 
+            className="image__the-image" 
+            style ={{
+                opacity: `${percent}%`,
+                boxShadow: toggleImagesShadow ? `5px 10px #888888` : `none`,
+                border: toggleImagesBorder ? `3px solid black` : `none`
+            }}
+            />
         </div>
     </>
     )

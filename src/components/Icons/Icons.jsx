@@ -9,7 +9,7 @@ import pinterest from '../../assets/icons/pinterest_icon-color.svg';
 import tumblr from '../../assets/icons/tumblr_icon-color.svg';
 import soundcloud from '../../assets/icons/soundcloud_icon-color.svg';
 
-export default function Icons({ iconName, percent }) {
+export default function Icons({ iconName, percent, toggleIconsBorder, toggleIconsShadow }) {
      
     //iconName ? console.log('here') : console.log("not here")
     
@@ -26,18 +26,16 @@ export default function Icons({ iconName, percent }) {
     return (
     <>  
         <div className="icon">
-            <div className="icon__container">
-                <div>
-                    <img 
-                    src={icon} 
-                    alt={iconName}
-                    className="icon__svg"
-                    style={{
-                        opacity: `${percent}%`
-                    }}
-                />
-                </div>
-            </div>
+            <img 
+            src={icon} 
+            alt={iconName}
+            className="icon__svg"
+            style={{
+                opacity: `${percent}%`,
+                boxShadow: toggleIconsShadow ? `5px 10px #888888` : `none`,
+                border: toggleIconsBorder ? `3px solid black` : `none`
+            }}
+            />
         </div>
     </>
     )

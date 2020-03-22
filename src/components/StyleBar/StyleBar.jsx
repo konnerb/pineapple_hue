@@ -2,30 +2,30 @@ import React from 'react';
 import './StyleBar.scss';
 import StyleButton from '../StyleButton/StyleButton';
 
-export default function StyleBar({ opacityType, shadowType, handleToggle, palette, handleClick }) {
+export default function StyleBar({ opacityType, shadowType, borderType, handleToggle, toggleShadow, toggleBorder, toggleOpacity, palette, handleClick }) {
     return (
     <>
         <div className="buttons">
 
             <StyleButton 
+            toggleType={borderType}
+            buttonText={ toggleBorder ? "- Border" : "+ Border" }
+            handleToggle={handleToggle}
+            />
+            <StyleButton 
             toggleType={shadowType}
-            buttonText="Shadow" 
+            buttonText={ toggleShadow ? "- Shadow" : "+ Shadow" }
             handleToggle={handleToggle}
             />
 
             <StyleButton 
             toggleType={opacityType}
-            buttonText="Opacity" 
+            buttonText={ toggleOpacity ? "- Opacity" : "+ Opacity" }
             handleToggle={handleToggle}
             />
 
             <StyleButton 
-            buttonText="Click Me" 
-            handleToggle={handleToggle}
-            />
-
-            <StyleButton 
-            buttonText="Click Me" 
+            buttonText="Reset" 
             handleToggle={handleToggle}
             />
             

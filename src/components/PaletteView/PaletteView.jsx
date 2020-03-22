@@ -5,6 +5,11 @@ export default function PaletteView({ palette }) {
     return (
     <>  { palette.Vibrant ?
         <section className="paletteView">
+            <div className="paletteView__svg-container">
+                <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+                    <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{ stroke: 'none', fill: 'rgb(10, 10, 10)' }}></path>
+                </svg>
+            </div>
             <div className="paletteView__color"  style={{
                   backgroundColor: `${palette.Vibrant.hex}`,
                   color: `${palette.Vibrant.titleTextColor}`,

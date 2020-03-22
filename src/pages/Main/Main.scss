@@ -5,3 +5,17 @@
     width: 100vw;      
     background-color: rgb(250, 250, 250);
 }
+.new-palette {
+    &__container {
+
+    }
+    &__button {
+        height: 100px;
+        width: 500px;
+        border-radius: 20px;
+        color: #00e676;
+        background-color: #fcd729;
+        border: 3px solid black;
+        font-size: 30px;
+    }
+}

@@ -5,31 +5,18 @@
     flex-direction: column;
     justify-content: space-between;
     &__header {
+        display: flex;
+        flex-grow: 1;
         padding: 0px 16px;
     }
     &__main {
         padding: 0px 16px;
-        height: 50%;
+        display: flex;
+        flex-grow: 1;
     }
     &__footer {
         padding: 0px 16px;
-    }
-    &__buttons-container {
         display: flex;
-        justify-content: space-evenly;
-    }
-    &__buttons {
-        width: 90px;
-        height: 30px;
-        border-radius: 6px;
-    }
-    &__cards-container {
-
-    }
-    &__cards {
-        background-color: white;
-        width: 50px;
-        height: 100px;
-        border-radius: 6px;
+        flex-grow: 1;
     }
 }

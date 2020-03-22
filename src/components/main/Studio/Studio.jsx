@@ -27,10 +27,15 @@ export default class Studio extends Component {
         const modifiedPalette = { ...this.state, ...this.props }
         
     return (
-        <section className="studio">
-            <StudioPaletteBar { ...modifiedPalette } handleChange={this.handleChange} />
-            <StudioWebsite { ...modifiedPalette } />
-        </section>
+        <>
+            { this.props.palette.Vibrant ?  
+            <section className="studio">
+                <StudioPaletteBar { ...modifiedPalette } handleChange={this.handleChange} />
+                <StudioWebsite { ...modifiedPalette } />
+            </section>
+            : null 
+            }
+        </>
     )
     }
 } 

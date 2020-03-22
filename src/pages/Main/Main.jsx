@@ -14,7 +14,8 @@ export default class Main extends Component {
             img: {},
             palette: [], 
             percents: {},
-            newRgb: []
+            newRgb: [],
+            togglePalette: false
         }
         this.handlePercentChange = this.handlePercentChange.bind(this);
         this.hslToRgb = this.hslToRgb.bind(this);
@@ -59,6 +60,13 @@ export default class Main extends Component {
         });
     }
     
+    handleTogglePalette() {
+    let toggleStatus = this.state.togglePalette
+    this.setState({
+                togglePalette: !toggleStatus
+    });
+        
+    }
     hslToRgb(h, s, l) {
         
         let r = null;
@@ -149,7 +157,21 @@ export default class Main extends Component {
                 handlePercentChange={this.handlePercentChange}
                 roundHue={this.roundHue}
                 roundSl={this.roundSl}
-            />
+            />  
+        { this.state.palette.Vibrant &&
+        <div className="new-palette__container">
+            <button 
+            className="new-palette__button"
+            onClick={() => this.handleTogglePalette()}
+            >{this.state.togglePalette ? `Whoa!` : `What's your pineapplehue!?`}</button>
+            { this.state.togglePalette &&
+                < PaletteView 
+                    palette={this.state.palette} 
+                    roundHue={this.roundHue}
+                />
+            }
+        </div>
+        }
         </main>
         <footer className="hero">
             <Footer  />
