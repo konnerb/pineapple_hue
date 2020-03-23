@@ -1,11 +1,9 @@
 .palette {
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
+    flex-grow: 1;
     &__color {
-        width: 12vw;
-        height: 10vh;
-        //border-radius: 100%;
-        //margin: 0px 3px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

@@ -8,8 +8,16 @@ export default class Studio extends Component {
         super(props)
         this.state = {
             newPalette: {},
+
+            toggleVirbant: false,
+            toggleLightVibrant: false,
+            toggleDarkVibrant: false,
+            toggleMuted: false,
+            toggleLightMuted: false,
+            toggleDarkMuted: false
         }
         this.handleChange = this.handleChange.bind(this);
+        this.toggleStudioPalette = this.toggleStudioPalette.bind(this);
     }
 
     handleChange(event, paletteType) {
@@ -22,6 +30,15 @@ export default class Studio extends Component {
         
     }
 
+    toggleStudioPalette(toggleType) {
+        console.log(toggleType)
+        let toggleStatus = this.state[toggleType]
+        this.setState({
+                 [toggleType]: !toggleStatus
+        });
+        
+    }
+
     render() {
 
         const modifiedPalette = { ...this.state, ...this.props }
@@ -30,8 +47,15 @@ export default class Studio extends Component {
         <>
             { this.props.palette.Vibrant ?  
             <section className="studio">
-                <StudioPaletteBar { ...modifiedPalette } handleChange={this.handleChange} />
-                <StudioWebsite { ...modifiedPalette } />
+                <StudioPaletteBar 
+                { ...modifiedPalette } 
+                />
+
+                <StudioWebsite 
+                { ...modifiedPalette }  
+                handleChange={this.handleChange} 
+                toggleStudioPalette={this.toggleStudioPalette}
+                />
             </section>
             : null 
             }

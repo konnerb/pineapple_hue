@@ -10,7 +10,7 @@ export default function InputScrub({ palette, handleChange, paletteType }) {
                 <label>Lightness</label>
                 <input className="input-scrub__lightness" 
                     type="range" 
-                    name="Lightness" 
+                    name="Adjust Lightness" 
                     step="any" 
                     min="0" 
                     max="1" 

@@ -39,17 +39,30 @@
     }
     &__images-section {
         display: flex;
-        align-items: center;
     }
     &__images-preview {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-around;    
+        max-width: 1200px;
     }
     &__images {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         width: 100%;
+        border-radius: 25px;
     }
+}
+.buttons-top {
+    border-radius: 0px 25px 0px 0px;
+}
+.buttons-bottom {
+    border-radius: 0px 0px 25px 0px    
+}
+.icons-top {
+    border-radius: 0px 25px 0px 0px;
+}
+.icons-bottom {
+    border-radius: 0px 0px 25px 0px      
 }

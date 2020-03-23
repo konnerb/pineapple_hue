@@ -1,48 +1,192 @@
 import React from 'react';
-import './StudioWebsite.scss'
+import './StudioWebsite.scss';
+import StyleButton from '../../StyleButton/StyleButton'
+import InputScrub from '../../InputScrub/InputScrub'
 
-export default function StudioWebsite({ hslToRgb, palette, roundHue, roundSl }) {
+export default function StudioWebsite({ hslToRgb, handleChange, toggleStudioPalette, toggleVibrant, toggleLightVibrant, toggleDarkVibrant, toggleMuted, toggleLightMuted, toggleDarkMuted, palette, roundHue, roundSl }) {
 
     //{console.log(palette.Vibrant._hsl[0])}
     //const newColor = palette
     //backgroundColor: 'rgb('+palette.Vibrant.r+','+palette.Vibrant.g+','+Object.values(newPalette)+')'
     return (
         <> 
-        {palette.Vibrant ?
+        { palette.Vibrant ?
             <div className="website">
-                <header className="website__header" style={{
+              
+                <div className="website__color" style={{
                   backgroundColor: 'hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+roundSl(palette.Vibrant.hsl[2])+')',
                   color: `${palette.Vibrant.titleTextColor}`,
                 }}>
-                    <p>{hslToRgb(palette.Vibrant.hsl[0],palette.Vibrant.hsl[1],palette.Vibrant.hsl[2])}</p>
-                </header>
-                <main className="website__main" style={{
+                { !toggleVibrant &&
+                  <div className="website__toggle-button">
+                    <StyleButton 
+                      toggleType="toggleVibrant"
+                      buttonText="+ Adjust Lightness"
+                      handleToggle={toggleStudioPalette}
+                    />
+                  </div>
+                }
+                { toggleVibrant &&
+                  <div className="website__toggle-lightness">
+                    <StyleButton 
+                      toggleType="toggleVibrant"
+                      buttonText="X"
+                      handleToggle={toggleStudioPalette}
+                    />
+                    <InputScrub 
+                      handleChange={handleChange} 
+                      roundHue={roundHue} 
+                      paletteType="Vibrant" 
+                      palette={palette.Vibrant} 
+                    />
+                  </div>
+                }
+                </div>
+                <div className="website__color" style={{
                   backgroundColor: 'hsl('+roundHue(palette.LightVibrant.hsl[0])+','+roundSl(palette.LightVibrant.hsl[1])+','+roundSl(palette.LightVibrant.hsl[2])+')',
                   color: `${palette.LightVibrant.titleTextColor}`,
                 }}>
-                    {/*<p>I'm baby in messenger bag neutra 3 wolf moon succulents. Banh mi snackwave unicorn, vice gluten-free hot chicken sed commodo keytar woke. Fam drinking vinegar man bun try-hard put a bird on it heirloom etsy celiac vinyl. Consectetur kogi chartreuse, vape quinoa la croix DIY incididunt est semiotics next level ethical austin.</p>*/}
-                </main>
-                <footer className="website__footer" style={{
+                { !toggleLightVibrant &&
+                  <div className="website__toggle-button">
+                    <StyleButton 
+                      toggleType="toggleLightVibrant"
+                      buttonText="+ Adjust Lightness"
+                      handleToggle={toggleStudioPalette}
+                    />
+                  </div>
+                }
+                { toggleLightVibrant &&
+                  <div className="website__toggle-lightness">
+                    <StyleButton 
+                      toggleType="toggleLightVibrant"
+                      buttonText="X"
+                      handleToggle={toggleStudioPalette}
+                    />
+                    <InputScrub 
+                      handleChange={handleChange} 
+                      roundHue={roundHue} 
+                      paletteType="LightVibrant" 
+                      palette={palette.LightVibrant} 
+                    />
+                  </div>
+                }
+                </div>
+                <div className="website__color" style={{
                   backgroundColor: 'hsl('+roundHue(palette.DarkVibrant.hsl[0])+','+roundSl(palette.DarkVibrant.hsl[1])+','+roundSl(palette.DarkVibrant.hsl[2])+')',
                   color: `${palette.DarkVibrant.titleTextColor}`,
                 }}>
-                </footer>
-                <header className="website__header" style={{
+                { !toggleDarkVibrant &&
+                  <div className="website__toggle-button">
+                    <StyleButton 
+                      toggleType="toggleDarkVibrant"
+                      buttonText="+ Adjust Lightness"
+                      handleToggle={toggleStudioPalette}
+                    />
+                  </div>
+                }
+                { toggleDarkVibrant &&
+                  <div className="website__toggle-lightness">
+                    <StyleButton 
+                      toggleType="toggleDarkVibrant"
+                      buttonText="X"
+                      handleToggle={toggleStudioPalette}
+                    />
+                    <InputScrub 
+                      handleChange={handleChange} 
+                      roundHue={roundHue} 
+                      paletteType="DarkVibrant" 
+                      palette={palette.DarkVibrant} 
+                    />
+                  </div>
+                }
+                </div>
+                <div className="website__color" style={{
                   backgroundColor: 'hsl('+roundHue(palette.Muted.hsl[0])+','+roundSl(palette.Muted.hsl[1])+','+roundSl(palette.Muted.hsl[2])+')',
                   color: `${palette.Muted.titleTextColor}`,
                 }}>
-                </header>
-                <main className="website__main" style={{
+                { !toggleMuted &&
+                  <div className="website__toggle-button">
+                    <StyleButton 
+                      toggleType="toggleMuted"
+                      buttonText="+ Adjust Lightness"
+                      handleToggle={toggleStudioPalette}
+                    />
+                  </div>
+                }
+                { toggleMuted &&
+                  <div className="website__toggle-lightness">
+                    <StyleButton 
+                      toggleType="toggleMuted"
+                      buttonText="X"
+                      handleToggle={toggleStudioPalette}
+                    />
+                    <InputScrub 
+                      handleChange={handleChange} 
+                      roundHue={roundHue} 
+                      paletteType="Muted" 
+                      palette={palette.Muted} 
+                    />
+                  </div>
+                }
+                </div>
+                <div className="website__color" style={{
                   backgroundColor: 'hsl('+roundHue(palette.LightMuted.hsl[0])+','+roundSl(palette.LightMuted.hsl[1])+','+roundSl(palette.LightMuted.hsl[2])+')',
                   color: `${palette.LightMuted.titleTextColor}`,
                 }}>
-                    {/*<p>Labore fanny pack veniam adipisicing etsy selfies, eu la croix nostrud cornhole. Pickled ut PBR&B 90's single-origin coffee pariatur ut ipsum chicharrones. Umami letterpress hashtag, nostrud readymade consequat forage chia selvage ullamco ex non laboris taiyaki tumeric. Cupidatat mumblecore laborum everyday carry venmo bicycle rights tote bag retro tbh labore minim pickled next level.</p>*/}
-                </main>
-                <footer className="website__footer" style={{
+                { !toggleLightMuted &&
+                  <div className="website__toggle-button">
+                    <StyleButton 
+                      toggleType="toggleLightMuted"
+                      buttonText="+ Adjust Lightness"
+                      handleToggle={toggleStudioPalette}
+                    />
+                  </div>
+                }
+                { toggleLightMuted &&
+                  <div className="website__toggle-lightness">
+                    <StyleButton 
+                      toggleType="toggleLightMuted"
+                      buttonText="X"
+                      handleToggle={toggleStudioPalette}
+                    />
+                    <InputScrub 
+                      handleChange={handleChange} 
+                      roundHue={roundHue} 
+                      paletteType="LightMuted" 
+                      palette={palette.LightMuted} 
+                    />
+                  </div>
+                }
+                </div>
+                <div className="website__color" style={{
                   backgroundColor:  'hsl('+roundHue(palette.DarkMuted.hsl[0])+','+roundSl(palette.DarkMuted.hsl[1])+','+roundSl(palette.DarkMuted.hsl[2])+')',
                   color: `${palette.DarkMuted.titleTextColor}`,
                 }}>
-                </footer>
+                { !toggleDarkMuted &&
+                  <div className="website__toggle-button">
+                    <StyleButton 
+                      toggleType="toggleDarkMuted"
+                      buttonText="+ Adjust Lightness"
+                      handleToggle={toggleStudioPalette}
+                    />
+                  </div>
+                }
+                { toggleDarkMuted &&
+                  <div className="website__toggle-lightness">
+                    <StyleButton 
+                      toggleType="toggleDarkMuted"
+                      buttonText="X"
+                      handleToggle={toggleStudioPalette}
+                    />
+                    <InputScrub 
+                      handleChange={handleChange} 
+                      roundHue={roundHue} 
+                      paletteType="DarkMuted" 
+                      palette={palette.DarkMuted} 
+                    />
+                  </div>
+                }
+                </div>
             </div>
             : null
         }

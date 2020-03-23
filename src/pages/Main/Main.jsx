@@ -167,7 +167,9 @@ export default class Main extends Component {
             { this.state.togglePalette &&
                 < PaletteView 
                     palette={this.state.palette} 
+                    togglePalette={this.state.togglePalette}
                     roundHue={this.roundHue}
+                    roundSl={this.roundSl}
                 />
             }
         </div>

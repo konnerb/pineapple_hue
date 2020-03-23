@@ -66,7 +66,7 @@ export default class StudioComponents extends Component {
                         />
                     }
                 <div className="studio-components__button-preview">
-                    <div className="studio-components__buttons" 
+                    <div className="studio-components__buttons buttons-top" 
                             style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
                         }}>
                         <Button 
@@ -106,7 +106,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                     </div>
-                    <div className="studio-components__buttons" 
+                    <div className="studio-components__buttons buttons-bottom" 
                             style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
                         }}>
                         <Button 
@@ -167,7 +167,7 @@ export default class StudioComponents extends Component {
                         />
                     }
                 <div className="studio-components__icons-preview">
-                    <div className="studio-components__icons" 
+                    <div className="studio-components__icons icons-top" 
                             style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
                         }}>
                         <Icons 
@@ -232,7 +232,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                     </div>
-                    <div className="studio-components__icons" 
+                    <div className="studio-components__icons icons-bottom" 
                             style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
                         }}>
                         <Icons 
@@ -300,7 +300,7 @@ export default class StudioComponents extends Component {
                 </div>
             </article>
             <article className="studio-components__images-section">
-                    <h3>Images</h3>
+                <div className="studio-components__images-buttons">
                     <StyleBar 
                         opacityType="toggleImagesOpacity"
                         shadowType="toggleImagesShadow"
@@ -318,6 +318,7 @@ export default class StudioComponents extends Component {
                         defaultInputValue="80"
                         />
                     }
+                </div>
                 <div className="studio-components__images-preview">
                     <div className="studio-components__images" 
                             style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'

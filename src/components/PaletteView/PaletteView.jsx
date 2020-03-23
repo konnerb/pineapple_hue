@@ -1,7 +1,7 @@
 import React from 'react';
 import './PaletteView.scss';
 
-export default function PaletteView({ palette }) {
+export default function PaletteView({ palette, togglePalette, roundHue, roundSl }) {
     return (
     <>  { palette.Vibrant ?
         <section className="paletteView">
@@ -11,58 +11,69 @@ export default function PaletteView({ palette }) {
                 </svg>
             </div>
             <div className="paletteView__color"  style={{
-                backgroundColor: `${palette.Vibrant.hex}`,
+                backgroundColor: togglePalette ? 
+                'hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+roundSl(palette.Vibrant.hsl[2])+')'
+                :`${palette.Vibrant.hex}`,
                 color: `${palette.Vibrant.titleTextColor}`,
                 }}>
                 <p>Hex: {palette.Vibrant._hex}</p>
-                <p>RGB: {'rgb('+palette.Vibrant.r+','+palette.Vibrant.g+','+palette.Vibrant.b+')'}</p>
-                <p>HSL:</p>
-                <p>Text Colour: {palette.Vibrant.titleTextColor}</p>
+                {/*<p>RGB: {'rgb('+palette.Vibrant._rgb[0]+','+palette.Vibrant._rgb[1]+','+palette.Vibrant._rgb[2]+')'}</p>
+                <p>Text Colour: {palette.Vibrant.titleTextColor}</p>*/}
             </div>
             <div className="paletteView__color"  style={{
-                backgroundColor: `${palette.LightVibrant.hex}`,
+                backgroundColor: togglePalette ? 
+                'hsl('+roundHue(palette.LightVibrant.hsl[0])+','+roundSl(palette.LightVibrant.hsl[1])+','+roundSl(palette.LightVibrant.hsl[2])+')'
+                :`${palette.LightVibrant.hex}`,
                 color: `${palette.LightVibrant.titleTextColor}`,
                 }}>
                 <p>Hex: {palette.LightVibrant._hex}</p>
-                <p>RGB: {'rgb('+palette.LightVibrant.r+','+palette.LightVibrant.g+','+palette.LightVibrant.b+')'}</p>
+                {/*<p>RGB: {'rgb('+palette.LightVibrant._rgb[0]+','+palette.LightVibrant._rgb[1]+','+palette.LightVibrant._rgb[2]+')'}</p>
                 <p>HSL:</p>
-                <p>Text Colour: {palette.LightVibrant.titleTextColor}</p>
+                <p>Text Colour: {palette.LightVibrant.titleTextColor}</p>*/}
             </div>
             <div className="paletteView__color"  style={{
-                backgroundColor: `${palette.DarkVibrant.hex}`,
+                backgroundColor: togglePalette ? 
+                'hsl('+roundHue(palette.DarkVibrant.hsl[0])+','+roundSl(palette.DarkVibrant.hsl[1])+','+roundSl(palette.DarkVibrant.hsl[2])+')'
+                :`${palette.DarkVibrant.hex}`,
                 color: `${palette.DarkVibrant.titleTextColor}`,
                 }}>
                 <p>Hex:{ palette.DarkVibrant._hex}</p>
-                <p>RGB: {'rgb('+palette.DarkVibrant.r+','+palette.DarkVibrant.g+','+palette.DarkVibrant.b+')'}</p>
+                {/*<p>RGB: {'rgb('+palette.DarkVibrant._rgb[0]+','+palette.DarkVibrant._rgb[1]+','+palette.DarkVibrant._rgb[2]+')'}</p>
                 <p>HSL:</p>
-                <p>Text Colour: {palette.DarkVibrant.titleTextColor}</p>
+                <p>Text Colour: {palette.DarkVibrant.titleTextColor}</p>*/}
             </div>
             <div className="paletteView__color"  style={{
-                backgroundColor: `${palette.Muted.hex}`,
+                backgroundColor: togglePalette ? 
+                'hsl('+roundHue(palette.Muted.hsl[0])+','+roundSl(palette.Muted.hsl[1])+','+roundSl(palette.Muted.hsl[2])+')'
+                :`${palette.Muted.hex}`,
                 color: `${palette.Muted.titleTextColor}`,
                 }}>
                 <p>Hex: {palette.Muted._hex}</p>
-                <p>RGB: {'rgb('+palette.Muted.r+','+palette.Muted.g+','+palette.Muted.b+')'}</p>
+                {/*<p>RGB: {'rgb('+palette.Muted._rgb[0]+','+palette.Muted._rgb[1]+','+palette.Muted._rgb[2]+')'}</p>
                 <p>HSL:</p>
-                <p>Text Colour: {palette.Muted.titleTextColor}</p>
+                <p>Text Colour: {palette.Muted.titleTextColor}</p>*/}
             </div>
             <div className="paletteView__color"  style={{
-                backgroundColor: `${palette.LightMuted.hex}`,
+                backgroundColor: togglePalette ? 
+                'hsl('+roundHue(palette.LightMuted.hsl[0])+','+roundSl(palette.LightMuted.hsl[1])+','+roundSl(palette.LightMuted.hsl[2])+')'
+                :`${palette.LightMuted.hex}`,
                 color: `${palette.LightMuted.titleTextColor}`,
                 }}>
                 <p>Hex: {palette.LightMuted._hex}</p>
-                <p>RGB: {'rgb('+palette.LightMuted.r+','+palette.LightMuted.g+','+palette.LightMuted.b+')'}</p>
+                {/*<p>RGB: {'rgb('+palette.LightMuted._rgb[0]+','+palette.LightMuted._rgb[1]+','+palette.LightMuted._rgb[2]+')'}</p>
                 <p>HSL:</p>
-                <p>Text Colour: {palette.LightMuted.titleTextColor}</p>
+                <p>Text Colour: {palette.LightMuted.titleTextColor}</p>*/}
             </div>
             <div className="paletteView__color"  style={{
-                backgroundColor: `${palette.DarkMuted.hex}`,
+                backgroundColor: togglePalette ? 
+                'hsl('+roundHue(palette.DarkMuted.hsl[0])+','+roundSl(palette.DarkMuted.hsl[1])+','+roundSl(palette.DarkMuted.hsl[2])+')'
+                :`${palette.DarkMuted.hex}`,
                 color: `${palette.DarkMuted.titleTextColor}`,
                 }}> 
                 <p>Hex: {palette.DarkMuted._hex}</p>
-                <p>RGB: {'rgb('+palette.DarkMuted.r+','+palette.DarkMuted.g+','+palette.DarkMuted.b+')'}</p>
+                {/*<p>RGB: {'rgb('+palette.DarkMuted._rgb[0]+','+palette.DarkMuted._rgb[1]+','+palette.DarkMuted._rgb[2]+')'}</p>
                 <p>HSL:</p>
-                <p>Text Colour: {palette.DarkMuted.titleTextColor}</p>
+                <p>Text Colour: {palette.DarkMuted.titleTextColor}</p>*/}
             </div>
             <div className="paletteView__svg-container bottom">
                 <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">

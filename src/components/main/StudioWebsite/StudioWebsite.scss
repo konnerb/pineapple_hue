@@ -4,19 +4,38 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    &__header {
-        display: flex;
-        flex-grow: 1;
-        padding: 0px 16px;
-    }
-    &__main {
-        padding: 0px 16px;
+    &__color {
         display: flex;
         flex-grow: 1;
     }
-    &__footer {
-        padding: 0px 16px;
+    &__toggle-button {
         display: flex;
-        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+        opacity: 0%;
+        width: 100%;
+        height: 100%;
+        &:hover {
+            opacity: 100%;
+        }
+    }
+    &__toggle-button button {
+        background-color: transparent;
+    }
+    &__toggle-lightness {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        //opacity: 0%;
+        //&:hover {
+        //    opacity: 100%;
+        //}
+    }
+    &__toggle-lightness button {
+        background-color: transparent;
+        width: 20px;
+        height: 20px;
     }
 }
