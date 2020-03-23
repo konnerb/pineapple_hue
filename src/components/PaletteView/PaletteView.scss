@@ -1,6 +1,7 @@
 .paletteView {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 100vh;
     width: 100vw;
     &__color {
@@ -10,14 +11,15 @@
         align-items: center;
         height: 100%;
         flex-grow: 1;
+        box-shadow: 0 10px 3px black inset;
     }
     &__svg-container {
         display: inline-block;
-        position: relative;
+        position: absolute;
         width: 100%;
+        height: 100%;
         vertical-align: middle;
         overflow: hidden;
-        transform: rotate(180deg);
     }
 }
 .svg {
@@ -25,4 +27,11 @@
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.top {
+    transform: rotate(180deg);
+}
+.bottom {
+    //transform: rotate(180deg);
 }

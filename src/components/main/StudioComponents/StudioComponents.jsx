@@ -61,7 +61,7 @@ export default class StudioComponents extends Component {
                     {this.state.toggleButtonsOpacity && 
                         <InputPercent 
                         handlePercentChange={handlePercentChange}
-                        nameInput="vibrantOpacityButton"
+                        nameInput="opacityButton"
                         defaultInputValue="80"
                         />
                     }
@@ -70,7 +70,7 @@ export default class StudioComponents extends Component {
                             style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
                         }}>
                         <Button 
-                        percent={percents.vibrantOpacityButton}
+                        percent={percents.opacityButton}
                         toggleButtonsShadow={this.state.toggleButtonsShadow}
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={Vibrant} 
@@ -79,7 +79,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Button 
-                        percent={percents.vibrantOpacityButton}
+                        percent={percents.opacityButton}
                         toggleButtonsShadow={this.state.toggleButtonsShadow}
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={DarkVibrant} 
@@ -88,7 +88,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Button 
-                        percent={percents.vibrantOpacityButton}
+                        percent={percents.opacityButton}
                         toggleButtonsShadow={this.state.toggleButtonsShadow}
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={Muted} 
@@ -97,7 +97,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Button 
-                        percent={percents.vibrantOpacityButton}
+                        percent={percents.opacityButton}
                         toggleButtonsShadow={this.state.toggleButtonsShadow}
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={DarkMuted} 
@@ -106,13 +106,11 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                     </div>
-                </div>
-                <div className="studio-components__button-preview">
                     <div className="studio-components__buttons" 
                             style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
                         }}>
                         <Button 
-                        percent={percents.mutedOpacityButton}
+                        percent={percents.opacityButton}
                         toggleButtonsShadow={this.state.toggleButtonsShadow}
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={Vibrant} 
@@ -121,7 +119,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Button 
-                        percent={percents.mutedOpacityButton}
+                        percent={percents.opacityButton}
                         toggleButtonsShadow={this.state.toggleButtonsShadow}
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={DarkVibrant} 
@@ -130,7 +128,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Button 
-                        percent={percents.mutedOpacityButton}
+                        percent={percents.opacityButton}
                         toggleButtonsShadow={this.state.toggleButtonsShadow}
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={Muted} 
@@ -139,7 +137,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Button 
-                        percent={percents.mutedOpacityButton}
+                        percent={percents.opacityButton}
                         toggleButtonsShadow={this.state.toggleButtonsShadow}
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={DarkMuted} 
@@ -150,8 +148,7 @@ export default class StudioComponents extends Component {
                     </div>
                 </div>
             </article>
-            <article className="studio-components__buttons-section">
-                <div className="studio-components__button-preview">
+            <article className="studio-components__icons-section">
                     <StyleBar 
                         opacityType="toggleIconsOpacity"
                         shadowType="toggleIconsShadow"
@@ -169,7 +166,8 @@ export default class StudioComponents extends Component {
                         defaultInputValue="80"
                         />
                     }
-                    <div className="studio-components__buttons" 
+                <div className="studio-components__icons-preview">
+                    <div className="studio-components__icons" 
                             style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
                         }}>
                         <Icons 
@@ -234,9 +232,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                     </div>
-                </div>
-                <div className="studio-components__button-preview">
-                    <div className="studio-components__buttons" 
+                    <div className="studio-components__icons" 
                             style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
                         }}>
                         <Icons 
@@ -303,8 +299,7 @@ export default class StudioComponents extends Component {
                     </div>
                 </div>
             </article>
-            <article className="studio-components__buttons-section">
-                <div className="studio-components__images-preview">
+            <article className="studio-components__images-section">
                     <h3>Images</h3>
                     <StyleBar 
                         opacityType="toggleImagesOpacity"
@@ -323,6 +318,7 @@ export default class StudioComponents extends Component {
                         defaultInputValue="80"
                         />
                     }
+                <div className="studio-components__images-preview">
                     <div className="studio-components__images" 
                             style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
                         }}>
@@ -471,10 +467,6 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                     </div>
-                </div>
-            </article>
-            <article className="studio-components__buttons-section">
-                <div className="studio-components__images-preview">
                     <div className="studio-components__images" 
                             style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
                         }}>
