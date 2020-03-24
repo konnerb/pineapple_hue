@@ -47,7 +47,10 @@ export default class StudioComponents extends Component {
     <>
     {Vibrant ?  
         <section className="studio-components">
-            <article className="studio-components__buttons-section">
+            <article className="studio-components__buttons-section"
+                style={{backgroundColor: 'hsl('+roundHue(Vibrant.hsl[0])+','+roundSl(Vibrant.hsl[1])+','+roundSl(Vibrant.hsl[2] * 1.25)+')'
+                }}
+            >
                     <StyleBar 
                         opacityType="toggleButtonsOpacity"
                         shadowType="toggleButtonsShadow"
@@ -57,6 +60,8 @@ export default class StudioComponents extends Component {
                         toggleOpacity={this.state.toggleButtonsOpacity}
                         palette={this.props.palette} 
                         handleToggle={this.handleToggle}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
                     />
                     {this.state.toggleButtonsOpacity && 
                         <InputPercent 
@@ -148,7 +153,10 @@ export default class StudioComponents extends Component {
                     </div>
                 </div>
             </article>
-            <article className="studio-components__icons-section">
+            <article className="studio-components__icons-section"
+                        style={{backgroundColor: 'hsl('+roundHue(Vibrant.hsl[0])+','+roundSl(Vibrant.hsl[1])+','+roundSl(Vibrant.hsl[2] * 1.25)+')'
+                    }}
+            >
                     <StyleBar 
                         opacityType="toggleIconsOpacity"
                         shadowType="toggleIconsShadow"
@@ -158,6 +166,8 @@ export default class StudioComponents extends Component {
                         toggleOpacity={this.state.toggleIconsOpacity}
                         palette={this.props.palette}
                         handleToggle={this.handleToggle}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
                     />
                     {this.state.toggleIconsOpacity && 
                         <InputPercent 
@@ -299,7 +309,10 @@ export default class StudioComponents extends Component {
                     </div>
                 </div>
             </article>
-            <article className="studio-components__images-section">
+            <article className="studio-components__images-section"
+                        style={{backgroundColor: 'hsl('+roundHue(Vibrant.hsl[0])+','+roundSl(Vibrant.hsl[1])+','+roundSl(Vibrant.hsl[2] * 1.25)+')'
+                    }}
+            >
                 <div className="studio-components__images-buttons">
                     <StyleBar 
                         opacityType="toggleImagesOpacity"
@@ -310,6 +323,8 @@ export default class StudioComponents extends Component {
                         toggleOpacity={this.state.toggleImagesOpacity}
                         palette={this.props.palette} 
                         handleToggle={this.handleToggle}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
                     />
                     {this.state.toggleImagesOpacity && 
                         <InputPercent 
@@ -468,7 +483,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                     </div>
-                    <div className="studio-components__images" 
+                    <div className="studio-components__images image_bottom-margin" 
                             style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
                         }}>
                         <Image 

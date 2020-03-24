@@ -65,7 +65,7 @@ function UploadImage({ fetchImgData }) {
   //},[img]);
 
     const baseStyle = {
-      width: '25%',
+      width: '55%',
       flex: 1,
       display: 'flex',
       flexDirection: 'column',
@@ -106,24 +106,26 @@ function UploadImage({ fetchImgData }) {
     return (
       //backgroundColor: 'rgb('+palette.lightVibrantRgb[0]+','+palette.lightVibrantRgb[1]+','+palette.lightVibrantRgb[2]+')'
       <>
-      <div {...getRootProps({style})}>
-        <input {...getInputProps()} />
-        {
-          isDragActive ?
-          <p>Drop image here ...</p> :
-          <p>Drag 'n' drop image here, or click to select image</p>
-        }
-        </div>
-         <aside>
-            <h4>Accepted files</h4>
-            <ul>
-              {acceptedFilesItems}
-            </ul>
-            <h4>Rejected files</h4>
-            <ul>
-              {rejectedFilesItems}
-            </ul>
+      <div className="upload-wrapper">
+        <div {...getRootProps({style})}>
+          <input {...getInputProps()} />
+          {
+            isDragActive ?
+            <p>Drop image here ...</p> :
+            <p>Drag 'n' drop image here, or click to select image</p>
+          }
+          </div>
+          <aside>
+              <h4>Accepted files</h4>
+              <ul>
+                {acceptedFilesItems}
+              </ul>
+              <h4>Rejected files</h4>
+              <ul>
+                {rejectedFilesItems}
+              </ul>
           </aside>
+      </div>
     </>
     )
   }

@@ -132,7 +132,7 @@ export default class Main extends Component {
     render() {
     return (
     <> 
-        <section className="hero"> 
+        <section className="hero-component"> 
             <Hero fetchImgData={this.fetchImgData} />
         </section>
 
