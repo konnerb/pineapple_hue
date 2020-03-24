@@ -11,7 +11,10 @@ export default function StudioPaletteBar({ palette, image, roundHue }) {
                 {/*<img src={image} className="bar__uploadImg"></img>*/}
                 <div className="bar__container">
                     <div className="bar__palette-container">
-                        <Palette palette={palette.Vibrant} />
+                        <Palette 
+                        palette={palette.Vibrant} 
+                        borderRadiusType='topLeft'
+                        />
                     </div>
 
                     <div className="bar__palette-container">
@@ -31,7 +34,10 @@ export default function StudioPaletteBar({ palette, image, roundHue }) {
                     </div>
 
                     <div className="bar__palette-container">    
-                        <Palette palette={palette.DarkMuted} />
+                        <Palette 
+                        palette={palette.DarkMuted} 
+                        borderRadiusType='bottomLeft'
+                        />
                     </div>
                 </div>
                 </div>

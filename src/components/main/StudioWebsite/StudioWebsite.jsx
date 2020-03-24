@@ -13,7 +13,7 @@ export default function StudioWebsite({ hslToRgb, handleChange, toggleStudioPale
         { palette.Vibrant ?
             <div className="website">
               
-                <div className="website__color" style={{
+                <div className="website__color color_top-right" style={{
                   backgroundColor: 'hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+roundSl(palette.Vibrant.hsl[2])+')',
                   color: `${palette.Vibrant.titleTextColor}`,
                 }}>
@@ -158,7 +158,7 @@ export default function StudioWebsite({ hslToRgb, handleChange, toggleStudioPale
                   </div>
                 }
                 </div>
-                <div className="website__color" style={{
+                <div className="website__color color_bottom-right" style={{
                   backgroundColor:  'hsl('+roundHue(palette.DarkMuted.hsl[0])+','+roundSl(palette.DarkMuted.hsl[1])+','+roundSl(palette.DarkMuted.hsl[2])+')',
                   color: `${palette.DarkMuted.titleTextColor}`,
                 }}>

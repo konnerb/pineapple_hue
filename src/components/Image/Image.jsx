@@ -20,21 +20,21 @@ import winterContrast from '../../assets/images/winter_contrast.jpg';
 export default function Image({ iconName, percent, toggleImagesBorder, toggleImagesShadow }) {
     
     const images = 
-            iconName === "yogo" ? yogo : null ||
-            iconName === "bar" ? bar : null ||
-            iconName === "basketball" ? basketball : null ||
-            iconName === "beach" ? beach : null ||
-            iconName === "book" ? book : null ||
-            iconName === "car" ? car : null ||
-            iconName === "cat" ? cat : null ||
-            iconName === "coffeeShop" ? coffeeShop : null ||
-            iconName === "coffeeSwirls" ? coffeeSwirls : null ||
-            iconName === "darkAlley" ? darkAlley : null ||
-            iconName === "dog" ? dog : null ||
-            iconName === "festival" ? festival : null ||
-            iconName === "toEast" ? toEast : null ||
-            iconName === "ttcWinter" ? ttcWinter : null ||
-            iconName === "winterContrast" ? winterContrast : null ||
+            iconName === "yogo" ? yogo : 
+            iconName === "bar" ? bar : 
+            iconName === "basketball" ? basketball : 
+            iconName === "beach" ? beach : 
+            iconName === "book" ? book : 
+            iconName === "car" ? car : 
+            iconName === "cat" ? cat : 
+            iconName === "coffeeShop" ? coffeeShop : 
+            iconName === "coffeeSwirls" ? coffeeSwirls : 
+            iconName === "darkAlley" ? darkAlley : 
+            iconName === "dog" ? dog : 
+            iconName === "festival" ? festival : 
+            iconName === "toEast" ? toEast : 
+            iconName === "ttcWinter" ? ttcWinter : 
+            iconName === "winterContrast" ? winterContrast : 
             iconName === "dryVan" ? dryVan : null 
 
     return (

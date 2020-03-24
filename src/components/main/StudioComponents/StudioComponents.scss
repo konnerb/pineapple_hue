@@ -1,58 +1,67 @@
 .studio-components {
-    &__button-preview {
-        display: flex;
-        flex-direction: column;
-        width: 100vw;
-        height: 100%;
-    }
-    &__icons-preview {
-        display: flex;
-        flex-direction: column;
-        width: 100vw;
-        height: 100%;
-    }
-    &__buttons {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
-        height: 50%;
-    }
-    &__icons {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
-        height: 50%;
-    }
-    &__buttons-section {
-        display: flex;
-        align-items: center;
-        width: 75vw;
-        height: 50vh;
-    }
-    &__icons-section {
-        display: flex;
-        align-items: center;
-        width: 75vw;
-        height: 50vh;
-    }
-    &__images-section {
-        display: flex;
-    }
-    &__images-preview {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;    
-        max-width: 1200px;
-    }
-    &__images {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        width: 100%;
-        border-radius: 25px;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+        &__button-preview {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+        &__icons-preview {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+        &__buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 50%;
+        }
+        &__icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 50%;
+        }
+        &__buttons-section {
+            display: flex;
+            align-items: center;
+            width: 50vw;
+            height: 50vh;
+        }
+        &__icons-section {
+            display: flex;
+            align-items: center;
+            width: 50vw;
+            height: 50vh;
+        }
+        &__images-section {
+            display: flex;
+        }
+        &__images-preview {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;    
+            max-width: 1200px;
+        }
+        &__images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 16px;
+            width: 100%;
+            border-radius: 25px;
+        }
+        &__images-buttons {
+            height: 100%;
+        }
 }
 .buttons-top {
     border-radius: 0px 25px 0px 0px;
