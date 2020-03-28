@@ -39,6 +39,8 @@
             width: 50vw;
             height: 50vh;
             margin-bottom: 55px;
+            box-shadow: 3px 3px 5px 6px #ccc;
+            border-radius: 25px;
         }
         &__icons-section {
             border-radius: 25px;
@@ -47,11 +49,15 @@
             width: 50vw;
             height: 50vh;
             margin-bottom: 55px;
+            box-shadow: 3px 3px 5px 6px #ccc;
+            border-radius: 25px;    
         }
         &__images-section {
             border-radius: 25px;
             display: flex;
             margin-bottom: 55px;
+            box-shadow: 3px 3px 5px 6px #ccc;
+            border-radius: 25px;
         }
         &__images-preview {
             display: flex;

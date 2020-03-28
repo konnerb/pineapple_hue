@@ -20,6 +20,7 @@ export default function Hero({ fetchImgData }) {
                     <path d="M0,40 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{ stroke: 'none', fill: 'rgb(250, 250, 250)' }}></path>
                 </svg>
             </div>*/}
+            <h4 className="hero__upload-reminder">Please Upload Image To See Your Colour Palette!</h4>
         </section>
     )
 }

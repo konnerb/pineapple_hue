@@ -20,6 +20,7 @@ export default class Main extends Component {
         this.handlePercentChange = this.handlePercentChange.bind(this);
         this.hslToRgb = this.hslToRgb.bind(this);
     }
+
     fetchImgData = (img) => {
         if (!img) return;
         Vibrant.from(img)
@@ -63,10 +64,11 @@ export default class Main extends Component {
     handleTogglePalette() {
     let toggleStatus = this.state.togglePalette
     this.setState({
-                togglePalette: !toggleStatus
+        togglePalette: !toggleStatus
     });
         
     }
+
     hslToRgb(h, s, l) {
         
         let r = null;
@@ -94,7 +96,25 @@ export default class Main extends Component {
             
         return console.log([Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)]);
     }
+
+    luminanace(r, g, b) {
+        let color = [r, g, b].map(value => {
+            value /= 255;
+            return value <= 0.03928
+                ? value / 12.92
+                : Math.pow( (value + 0.055) / 1.055, 2.4 );
+        });
+        return color[0] * 0.2126 + color[1] * 0.7152 + color[2] * 0.0722;
+    }
     
+    contrast = (rgb1, rgb2) => {
+        let lum1 = this.luminanace(rgb1[0], rgb1[1], rgb1[2]);
+        let lum2 = this.luminanace(rgb2[0], rgb2[1], rgb2[2]);
+        let brightest = Math.max(lum1, lum2);
+        let darkest = Math.min(lum1, lum2);
+        return Math.round((brightest + 0.05) / (darkest + 0.05));
+    }
+
 //hslToRgb(h, s, l) {
 //    h /= 360;
 //    s /= 100;
@@ -130,6 +150,8 @@ export default class Main extends Component {
    roundSl = (sl) => { return Math.round( (sl) * 100) + "%" }
 
     render() {
+        //console.log(this.contrast([255, 255, 255], [255, 255, 0]));
+        //console.log(this.contrast([255, 255, 255], [0, 0, 255]));
     return (
     <> 
         <section className="hero-component"> 
@@ -138,6 +160,7 @@ export default class Main extends Component {
 
         <main className="main">
             <PaletteView 
+                contrast={this.contrast}
                 palette={this.state.palette} 
                 roundHue={this.roundHue}
             />
@@ -166,6 +189,7 @@ export default class Main extends Component {
             >{this.state.togglePalette ? `Whoa!` : `What's your pineapplehue!?`}</button>
             { this.state.togglePalette &&
                 < PaletteView 
+                    contrast={this.contrast}
                     palette={this.state.palette} 
                     togglePalette={this.state.togglePalette}
                     roundHue={this.roundHue}
