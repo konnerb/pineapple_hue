@@ -10,17 +10,15 @@ import tumblr from '../../assets/icons/tumblr_icon-color.svg';
 import soundcloud from '../../assets/icons/soundcloud_icon-color.svg';
 
 export default function Icons({ iconName, percent, toggleIconsBorder, toggleIconsShadow }) {
-     
-    //iconName ? console.log('here') : console.log("not here")
-    
+         
     const icon = 
-            iconName === "facebook" ? facebook : null ||
-            iconName === "twitter" ? twitter : null ||
-            iconName === "linkedin" ? linkedin : null ||
-            iconName === "instagram" ? instagram : null ||
-            iconName === "google" ? google : null ||
-            iconName === "pinterest" ? pinterest : null ||
-            iconName === "tumblr" ? tumblr : null ||
+            iconName === "facebook" ? facebook : 
+            iconName === "twitter" ? twitter : 
+            iconName === "linkedin" ? linkedin : 
+            iconName === "instagram" ? instagram : 
+            iconName === "google" ? google : 
+            iconName === "pinterest" ? pinterest : 
+            iconName === "tumblr" ? tumblr : 
             iconName === "soundcloud" ? soundcloud : null 
 
     return (

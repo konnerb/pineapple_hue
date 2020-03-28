@@ -26,17 +26,14 @@ export default class StudioComponents extends Component {
         this.handleToggle = this.handleToggle.bind(this);
     }
 
+    //Handles toggle for StyleBar/Style Button Components
+
     handleToggle(toggleType) {
         let toggleStatus = this.state[toggleType]
         this.setState({
                  [toggleType]: !toggleStatus
-        });
-        
+        }); 
     }
-
-    //roundHue = (hue) => { return Math.round( (hue) * 360) }
-
-    //roundSl = (sl) => { return Math.round( (sl) * 100) + "%" }
 
     render() {
 

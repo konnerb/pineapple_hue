@@ -20,6 +20,10 @@ export default class Studio extends Component {
         this.toggleStudioPalette = this.toggleStudioPalette.bind(this);
     }
 
+    /*Handles Palette Change From InputScrub, updates Studio State, then handlePaletteUpdate fetches the newPalette Data and
+    updates the Main Component palette state
+    */
+
     handleChange(event, paletteType) {
         const { target: { name, value} } = event;
         let newPalette = {};
@@ -27,9 +31,10 @@ export default class Studio extends Component {
         this.setState({
              newPalette
         }, () => this.props.handlePaletteUpdate(this.state.newPalette) );
-        
     }
 
+    //Toggles StudioWebsite Componets color palette to adjust InputScrub Component
+    
     toggleStudioPalette(toggleType) {
         console.log(toggleType)
         let toggleStatus = this.state[toggleType]

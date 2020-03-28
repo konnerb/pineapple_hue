@@ -1,7 +1,7 @@
 import React from 'react';
 import './PaletteView.scss';
 
-export default function PaletteView({ palette, contrast, togglePalette, roundHue, roundSl }) {
+export default function PaletteView({ palette, contrast, contrastHsl, togglePalette, roundHue, roundSl }) {
     return (
     <>  { palette.Vibrant ?
         <section className="paletteView">
@@ -17,7 +17,7 @@ export default function PaletteView({ palette, contrast, togglePalette, roundHue
                 color: `${palette.Vibrant.titleTextColor}`,
                 }}>
                 <p>Hex: {palette.Vibrant._hex}</p>
-            <p>Contrast Ratio: {contrast(palette.Vibrant.rgb, palette.LightVibrant.rgb)}</p>
+            <p>Contrast Ratio: {contrastHsl(palette.Vibrant.hsl, palette.DarkVibrant.hsl)+`:1`}</p>
                 {/*<p>RGB: {'rgb('+palette.Vibrant._rgb[0]+','+palette.Vibrant._rgb[1]+','+palette.Vibrant._rgb[2]+')'}</p>
                 <p>Text Colour: {palette.Vibrant.titleTextColor}</p>*/}
             </div>

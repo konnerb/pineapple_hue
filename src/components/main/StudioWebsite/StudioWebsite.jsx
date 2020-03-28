@@ -4,17 +4,32 @@ import StyleButton from '../../StyleButton/StyleButton'
 import InputScrub from '../../InputScrub/InputScrub'
 
 export default function StudioWebsite({ hslToRgb, handleChange, toggleStudioPalette, toggleVibrant, toggleLightVibrant, toggleDarkVibrant, toggleMuted, toggleLightMuted, toggleDarkMuted, palette, roundHue, roundSl }) {
+    
+  const colorVibrant = 
+    'hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+roundSl(palette.Vibrant.hsl[2])+')';
 
-    //{console.log(palette.Vibrant._hsl[0])}
-    //const newColor = palette
-    //backgroundColor: 'rgb('+palette.Vibrant.r+','+palette.Vibrant.g+','+Object.values(newPalette)+')'
-    return (
+  const colorLightVibrant = 
+    'hsl('+roundHue(palette.LightVibrant.hsl[0])+','+roundSl(palette.LightVibrant.hsl[1])+','+roundSl(palette.LightVibrant.hsl[2])+')';
+
+  const colorDarkVibrant = 
+    'hsl('+roundHue(palette.DarkVibrant.hsl[0])+','+roundSl(palette.DarkVibrant.hsl[1])+','+roundSl(palette.DarkVibrant.hsl[2])+')';
+
+  const colorMuted = 
+    'hsl('+roundHue(palette.Muted.hsl[0])+','+roundSl(palette.Muted.hsl[1])+','+roundSl(palette.Muted.hsl[2])+')';
+
+  const colorLightMuted = 
+    'hsl('+roundHue(palette.LightMuted.hsl[0])+','+roundSl(palette.LightMuted.hsl[1])+','+roundSl(palette.LightMuted.hsl[2])+')';
+
+  const colorDarkMuted = 
+    'hsl('+roundHue(palette.DarkMuted.hsl[0])+','+roundSl(palette.DarkMuted.hsl[1])+','+roundSl(palette.DarkMuted.hsl[2])+')';
+
+  return (
         <> 
-        { palette.Vibrant ?
+        { colorVibrant ?
             <div className="website">
               
                 <div className="website__color color_top-right" style={{
-                  backgroundColor: 'hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+roundSl(palette.Vibrant.hsl[2])+')',
+                  backgroundColor: colorVibrant,
                   color: `${palette.Vibrant.titleTextColor}`,
                 }}>
                 { !toggleVibrant &&
@@ -43,7 +58,7 @@ export default function StudioWebsite({ hslToRgb, handleChange, toggleStudioPale
                 }
                 </div>
                 <div className="website__color" style={{
-                  backgroundColor: 'hsl('+roundHue(palette.LightVibrant.hsl[0])+','+roundSl(palette.LightVibrant.hsl[1])+','+roundSl(palette.LightVibrant.hsl[2])+')',
+                  backgroundColor: colorLightVibrant,
                   color: `${palette.LightVibrant.titleTextColor}`,
                 }}>
                 { !toggleLightVibrant &&
@@ -72,7 +87,7 @@ export default function StudioWebsite({ hslToRgb, handleChange, toggleStudioPale
                 }
                 </div>
                 <div className="website__color" style={{
-                  backgroundColor: 'hsl('+roundHue(palette.DarkVibrant.hsl[0])+','+roundSl(palette.DarkVibrant.hsl[1])+','+roundSl(palette.DarkVibrant.hsl[2])+')',
+                  backgroundColor: colorDarkVibrant,
                   color: `${palette.DarkVibrant.titleTextColor}`,
                 }}>
                 { !toggleDarkVibrant &&
@@ -101,7 +116,7 @@ export default function StudioWebsite({ hslToRgb, handleChange, toggleStudioPale
                 }
                 </div>
                 <div className="website__color" style={{
-                  backgroundColor: 'hsl('+roundHue(palette.Muted.hsl[0])+','+roundSl(palette.Muted.hsl[1])+','+roundSl(palette.Muted.hsl[2])+')',
+                  backgroundColor: colorMuted,
                   color: `${palette.Muted.titleTextColor}`,
                 }}>
                 { !toggleMuted &&
@@ -130,7 +145,7 @@ export default function StudioWebsite({ hslToRgb, handleChange, toggleStudioPale
                 }
                 </div>
                 <div className="website__color" style={{
-                  backgroundColor: 'hsl('+roundHue(palette.LightMuted.hsl[0])+','+roundSl(palette.LightMuted.hsl[1])+','+roundSl(palette.LightMuted.hsl[2])+')',
+                  backgroundColor: colorLightMuted,
                   color: `${palette.LightMuted.titleTextColor}`,
                 }}>
                 { !toggleLightMuted &&
@@ -159,7 +174,7 @@ export default function StudioWebsite({ hslToRgb, handleChange, toggleStudioPale
                 }
                 </div>
                 <div className="website__color color_bottom-right" style={{
-                  backgroundColor:  'hsl('+roundHue(palette.DarkMuted.hsl[0])+','+roundSl(palette.DarkMuted.hsl[1])+','+roundSl(palette.DarkMuted.hsl[2])+')',
+                  backgroundColor: colorDarkMuted,
                   color: `${palette.DarkMuted.titleTextColor}`,
                 }}>
                 { !toggleDarkMuted &&

@@ -12,9 +12,8 @@ function UploadImage({ fetchImgData }) {
         reader.onabort = () => console.log('file reading was aborted')
         reader.onerror = () => console.log('file reading has failed')
         reader.onload = () => {
-          const binaryStr = reader
-          console.log(binaryStr)
-          //setImg(reader.result)
+          //const binaryStr = reader
+          //console.log(binaryStr)
           fetchImgData(reader.result)
         }
         reader.readAsDataURL(blob)
@@ -48,21 +47,6 @@ function UploadImage({ fetchImgData }) {
         {file.path} - {file.size} bytes
       </li>
     ));
-
-  //eEffect(() => {
-  //if (img === null || img === 0) { console.log('No Img')
-  //} else {
-  //  Vibrant.from(img)
-  //  .getPalette((err, palette) => {
-  //    if(err) {
-  //      console.log(err);
-  //    } else {
-  //      fetchPalette(palette)
-  //      //setPalette(palette);
-  //    }
-  //  })
-  //}
-  //},[img]);
 
     const baseStyle = {
       width: '55%',
@@ -104,8 +88,7 @@ function UploadImage({ fetchImgData }) {
     ]);
 
     return (
-      //backgroundColor: 'rgb('+palette.lightVibrantRgb[0]+','+palette.lightVibrantRgb[1]+','+palette.lightVibrantRgb[2]+')'
-      <>
+    <>
       <div className="upload-wrapper">
         <div {...getRootProps({style})}>
           <input {...getInputProps()} />
