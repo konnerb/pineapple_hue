@@ -1,7 +1,10 @@
 import React from 'react';
 import './PaletteView.scss';
 
-export default function PaletteView({ palette, contrast, contrastHsl, togglePalette, roundHue, roundSl }) {
+export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, contrastHsl, togglePalette, roundHue, roundSl }) {
+    //if (palette.Vibrant) {
+    //console.log( hslToRgb('hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+roundSl(palette.Vibrant.hsl[2])+')'))
+    //} 
     return (
     <>  { palette.Vibrant ?
         <section className="paletteView">
@@ -17,9 +20,15 @@ export default function PaletteView({ palette, contrast, contrastHsl, togglePale
                 color: `${palette.Vibrant.titleTextColor}`,
                 }}>
                 <p>Hex: {palette.Vibrant._hex}</p>
-            <p>Contrast Ratio: {contrastHsl(palette.Vibrant.hsl, palette.DarkVibrant.hsl)+`:1`}</p>
-                {/*<p>RGB: {'rgb('+palette.Vibrant._rgb[0]+','+palette.Vibrant._rgb[1]+','+palette.Vibrant._rgb[2]+')'}</p>
-                <p>Text Colour: {palette.Vibrant.titleTextColor}</p>*/}
+            <p>Contrast Ratio: 
+                {contrast(
+                    [ roundHue(palette.Vibrant.hsl[0]), (Math.round(palette.Vibrant.hsl[1] * 100000) / 1000), (Math.round(palette.Vibrant.hsl[2] * 100000) / 1000) ],
+                    [ roundHue(palette.DarkVibrant.hsl[0]), (Math.round(palette.DarkVibrant.hsl[1] * 100000) / 1000), (Math.round(palette.DarkVibrant.hsl[2] * 100000) / 1000) ]
+                )+`:1`
+                }</p>
+            <p>RGB: ({hslToRgb(roundHue(palette.Vibrant.hsl[0]), (Math.round(palette.Vibrant.hsl[1] * 100000) / 1000), (Math.round(palette.Vibrant.hsl[2] * 100000) / 1000), true )})</p>
+            <p>Hex: {hslToHex(roundHue(palette.Vibrant.hsl[0]), (Math.round(palette.Vibrant.hsl[1] * 100000) / 1000), (Math.round(palette.Vibrant.hsl[2] * 100000) / 1000) ) } </p>
+            {/*<p>Text Colour: {palette.Vibrant.titleTextColor}</p>*/}
             </div>
             <div className="paletteView__color"  style={{
                 backgroundColor: togglePalette ? 

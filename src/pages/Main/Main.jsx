@@ -78,37 +78,84 @@ export default class Main extends Component {
 
     //Converts HSL values to RGB
 
-    hslToRgb(h, s, l) {
+    hslToRgb (h, s, l, isComa ) {
+        console.log(h, s, l)
+        s /= 100;
+        l /= 100;
+      
+        let c = (1 - Math.abs(2 * l - 1)) * s,
+            x = c * (1 - Math.abs((h / 60) % 2 - 1)),
+            m = l - c/2,
+            r = 0,
+            g = 0,
+            b = 0;
         
-        let r = null;
-        let g = null;
-        let b = null;
-
-        if(s == 0){
-            r = g = b = l; // achromatic
-        }else{
-            let hue2rgb = function hue2rgb(p, q, t){
-                if(t < 0) t += 1;
-                if(t > 1) t -= 1;
-                if(t < 1/6) return p + (q - p) * 6 * t;
-                if(t < 1/2) return q;
-                if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-                return p;
-            }
-
-            let q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-            let p = 2 * l - q;
-            r = hue2rgb(p, q, h + 1/3);
-            g = hue2rgb(p, q, h);
-            b = hue2rgb(p, q, h - 1/3);
+        if (0 <= h && h < 60) {
+            r = c; g = x; b = 0;
+        } else if (60 <= h && h < 120) {
+            r = x; g = c; b = 0;
+        } else if (120 <= h && h < 180) {
+            r = 0; g = c; b = x;
+        } else if (180 <= h && h < 240) {
+            r = 0; g = x; b = c;
+        } else if (240 <= h && h < 300) {
+            r = x; g = 0; b = c;
+        } else if (300 <= h && h < 360) {
+            r = c; g = 0; b = x;
         }
-            
-        return console.log([Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)]);
+        r = Math.floor(((r + m) * 256), 255);
+        g = Math.floor(((g + m) * 256), 255);
+        b = Math.floor(((b + m) * 256), 255);
+        console.log(r,g,b)
+        return isComa 
+            ? r + "," + g + "," + b 
+            : [r, g, b ];
+    }
+
+    hslToHex(h, s, l) {
+        s /= 100;
+        l /= 100;
+        
+        let c = (1 - Math.abs(2 * l - 1)) * s,
+            x = c * (1 - Math.abs((h / 60) % 2 - 1)),
+            m = l - c/2,
+            r = 0,
+            g = 0,
+            b = 0;
+        
+        if (0 <= h && h < 60) {
+          r = c; g = x; b = 0;
+        } else if (60 <= h && h < 120) {
+          r = x; g = c; b = 0;
+        } else if (120 <= h && h < 180) {
+          r = 0; g = c; b = x;
+        } else if (180 <= h && h < 240) {
+          r = 0; g = x; b = c;
+        } else if (240 <= h && h < 300) {
+          r = x; g = 0; b = c;
+        } else if (300 <= h && h < 360) {
+          r = c; g = 0; b = x;
+        }
+        // Having obtained RGB, convert channels to hex
+        r = Math.round((r + m) * 255).toString(16);
+        g = Math.round((g + m) * 255).toString(16);
+        b = Math.round((b + m) * 255).toString(16);
+      
+        // Prepend 0s, if necessary
+        if (r.length == 1)
+          r = "0" + r;
+        if (g.length == 1)
+          g = "0" + g;
+        if (b.length == 1)
+          b = "0" + b;
+      
+        return "#" + r + g + b;
     }
 
     //Luminanace is a helper function for breaking down the required values for comparison in the contrast function
 
     luminanace(r, g, b) {
+        console.log(r, g, b)
         let color = [r, g, b].map(value => {
             value /= 255;
             return value <= 0.03928
@@ -120,66 +167,37 @@ export default class Main extends Component {
 
     //Contrast function declares the WCAG contrast ratio between colors
     
-    contrast = (rgb1, rgb2) => {
-        let lum1 = rgb1 ? this.luminanace(rgb1[0], rgb1[1], rgb1[2]) : [];
-        let lum2 = rgb2 ? this.luminanace(rgb2[0], rgb2[1], rgb2[2]) : [];
+    contrast = (hsl1, hsl2) => {
+        let lumHsl1 = hsl1 ? this.hslToRgb(hsl1[0], hsl1[1], hsl1[2], false) : [];
+        let lumHsl2 = hsl2 ? this.hslToRgb(hsl2[0], hsl2[1], hsl2[2], false) : [];
+        console.log(lumHsl1, lumHsl2)
+        let lum1 = lumHsl1 ? this.luminanace(lumHsl1[0], lumHsl1[1], lumHsl1[2]) : [];
+        let lum2 = lumHsl2 ? this.luminanace(lumHsl2[0], lumHsl2[1], lumHsl2[2]) : [];
+        console.log(lumHsl1, lumHsl2)
         let brightest = Math.max(lum1, lum2);
         let darkest = Math.min(lum1, lum2);
-        return console.log((brightest + 0.05) / (darkest + 0.05));
+        return Math.round( (brightest + 0.05) / (darkest + 0.05) * 100 ) / 100;
     }
-
-    //hslLuminance(hsl) {
-    //    let color = [hsl].map(value => {
-    //        value /= 255;
-    //        return value <= 0.03928
-    //            ? value / 12.92
-    //            : Math.pow( (value + 0.055) / 1.055, 2.4 );
-    //    });
-    //    return color    
-    //}
     
-    
-    contrastHsl = (hsl1, hsl2) => {
-        let lum1 = (((hsl1[0] * 360) * hsl1[1]) * hsl1[2] );
-        let lum2 = (((hsl2[0] * 360) * hsl2[1]) * hsl2[2] );
-
-        
-        console.log(lum1, lum2)
-        let brightest = Math.max(lum1, lum2)
-        let darkest = Math.min(lum1, lum2)
-        return Math.round( (brightest / darkest) * 100 ) / 100;
-    }
-
-//hslToRgb(h, s, l) {
-//    h /= 360;
-//    s /= 100;
-//    l /= 100;
-//    let r;
-//    let g;
-//    let b;
-//    if (s === 0) {
-//    r = g = b = l; // achromatic
-//    } else {
-//    const hue2rgb = (p, q, t) => {
-//        if (t < 0) t += 1;
-//        if (t > 1) t -= 1;
-//        if (t < 1 / 6) return p + (q - p) * 6 * t;
-//        if (t < 1 / 2) return q;
-//        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-//        return p;
-//    };
-//    const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-//    const p = 2 * l - q;
-//    r = hue2rgb(p, q, h + 1 / 3);
-//    g = hue2rgb(p, q, h);
-//    b = hue2rgb(p, q, h - 1 / 3);
-//    }
-//    const toHex = x => {
-//    const hex = Math.round(x * 255).toString(16);
-//    return hex.length === 1 ? '0' + hex : hex;
-//    };
-//    return console.log(`#${toHex(r)}${toHex(g)}${toHex(b)}`);
+    //contrastHsl = (hsl1, hsl2) => {
+    //    console.log( hsl1, hsl2)
+    //    let lum1 = (( (hsl1[0] * 360) * ((hsl1[1] / 2) * hsl1[2]) ));
+    //    let lum2 = (( (hsl2[0] * 360) * ((hsl2[1] / 2) * hsl2[2]) ));
+    //    
+    //    //const newlum1 = lum1 <= 0.03928 
+    //    //    ? ((lum1 / 12.92) * 0.9999999)
+    //    //    : (Math.pow( (lum1 + 0.055) / 1.055, 2.4 ) * 0.9999999);
+    //    //
+    //    //const newlum2 = lum2 <= 0.03928 
+    //    //    ? ((lum2 / 12.92) * 0.9999999)
+    //    //    : (Math.pow( (lum2 + 0.055) / 1.055, 2.4 ) * 0.9999999);
 //
+    //    console.log(lum1, lum2)
+    //    let brightest = Math.max(lum1, lum2)
+    //    let darkest = Math.min(lum1, lum2)
+    //    return Math.round( (brightest + 0.05) / (darkest + 0.5) * 100 ) / 100;
+    //}
+
     //RoundHue converts the a HSL hue value into a whole number
 
     roundHue = (hue) => { return Math.round( (hue) * 360) }
@@ -241,6 +259,9 @@ export default class Main extends Component {
                 contrastHsl={this.contrastHsl}
                 palette={this.state.palette} 
                 roundHue={this.roundHue}
+                roundSl={this.roundSl}
+                hslToRgb={this.hslToRgb}
+                hslToHex={this.hslToHex}
             />
             <Studio 
                 hslToRgb={this.hslToRgb}
@@ -273,6 +294,8 @@ export default class Main extends Component {
                     togglePalette={this.state.togglePalette}
                     roundHue={this.roundHue}
                     roundSl={this.roundSl}
+                    hslToRgb={this.hslToRgb}
+                    hslToHex={this.hslToHex}
                 />
             }
         </div>
