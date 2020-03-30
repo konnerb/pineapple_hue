@@ -1,5 +1,6 @@
 import React, { useCallback, useState, useMemo } from 'react'
 import { useDropzone } from 'react-dropzone'
+import './UploadImage.scss';
 
 function UploadImage({ fetchImgData }) {
 

@@ -7,16 +7,16 @@
     background-color: #fcd729;
     &__upload-image {
         display: flex;
-        position: relative;
-        top: 15%;
-        padding-left: 100px;
-        
+        align-items: center;
+        //position: relative;
+        //top: 15%;
+        padding-left: 100px;  
     }
     &__upload-pineapple {
-        width: 31%;
+        width: 21%;
         height: 100%;
         position: relative;
-        bottom: 110px;
+        //bottom: 110px;
         margin-left: 390px;
         
     }

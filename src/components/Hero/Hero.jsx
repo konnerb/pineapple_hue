@@ -3,7 +3,7 @@ import './Hero.scss';
 import UploadImage from '../../components/UploadImage/UploadImage'
 import pineappleJump from '../../assets/icons/pineapple_jump-01.svg'
 
-export default function Hero({ fetchImgData }) {
+export default function Hero({ fetchImgData, palette }) {
     return (
         <section className="hero">
             <div className="hero__upload-image">
@@ -20,7 +20,9 @@ export default function Hero({ fetchImgData }) {
                     <path d="M0,40 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{ stroke: 'none', fill: 'rgb(250, 250, 250)' }}></path>
                 </svg>
             </div>*/}
-            <h4 className="hero__upload-reminder">Please Upload Image To See Your Colour Palette!</h4>
+            { !palette.Vibrant &&
+                <h4 className="hero__upload-reminder">Please Upload Image To See Your Colour Palette!</h4>
+            }
         </section>
     )
 }

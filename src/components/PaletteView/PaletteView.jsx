@@ -1,5 +1,6 @@
 import React from 'react';
 import './PaletteView.scss';
+import ColorCode from '../ColorCode/ColorCode'
 
 export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, contrastHsl, togglePalette, roundHue, roundSl }) {
     //if (palette.Vibrant) {
@@ -19,16 +20,16 @@ export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, con
                 :`${palette.Vibrant.hex}`,
                 color: `${palette.Vibrant.titleTextColor}`,
                 }}>
-                <p>Hex: {palette.Vibrant._hex}</p>
-            <p>Contrast Ratio: 
-                {contrast(
-                    [ roundHue(palette.Vibrant.hsl[0]), (Math.round(palette.Vibrant.hsl[1] * 100000) / 1000), (Math.round(palette.Vibrant.hsl[2] * 100000) / 1000) ],
-                    [ roundHue(palette.DarkVibrant.hsl[0]), (Math.round(palette.DarkVibrant.hsl[1] * 100000) / 1000), (Math.round(palette.DarkVibrant.hsl[2] * 100000) / 1000) ]
-                )+`:1`
-                }</p>
-            <p>RGB: ({hslToRgb(roundHue(palette.Vibrant.hsl[0]), (Math.round(palette.Vibrant.hsl[1] * 100000) / 1000), (Math.round(palette.Vibrant.hsl[2] * 100000) / 1000), true )})</p>
-            <p>Hex: {hslToHex(roundHue(palette.Vibrant.hsl[0]), (Math.round(palette.Vibrant.hsl[1] * 100000) / 1000), (Math.round(palette.Vibrant.hsl[2] * 100000) / 1000) ) } </p>
-            {/*<p>Text Colour: {palette.Vibrant.titleTextColor}</p>*/}
+                < ColorCode 
+                    palette={palette}
+                    roundHue={roundHue}
+                    roundSl={roundSl}
+                    contrast={contrast}
+                    hslToRgb={hslToRgb}
+                    hslToHex={hslToHex}
+                    paletteName='Vibrant'
+                    colorCode={true}
+                />
             </div>
             <div className="paletteView__color"  style={{
                 backgroundColor: togglePalette ? 
@@ -36,10 +37,16 @@ export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, con
                 :`${palette.LightVibrant.hex}`,
                 color: `${palette.LightVibrant.titleTextColor}`,
                 }}>
-                <p>Hex: {palette.LightVibrant._hex}</p>
-                {/*<p>RGB: {'rgb('+palette.LightVibrant._rgb[0]+','+palette.LightVibrant._rgb[1]+','+palette.LightVibrant._rgb[2]+')'}</p>
-                <p>HSL:</p>
-                <p>Text Colour: {palette.LightVibrant.titleTextColor}</p>*/}
+                < ColorCode 
+                    palette={palette}
+                    roundHue={roundHue}
+                    roundSl={roundSl}
+                    contrast={contrast}
+                    hslToRgb={hslToRgb}
+                    hslToHex={hslToHex}
+                    paletteName='LightVibrant'
+                    colorCode={true}
+                />
             </div>
             <div className="paletteView__color"  style={{
                 backgroundColor: togglePalette ? 
@@ -47,10 +54,16 @@ export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, con
                 :`${palette.DarkVibrant.hex}`,
                 color: `${palette.DarkVibrant.titleTextColor}`,
                 }}>
-                <p>Hex:{ palette.DarkVibrant._hex}</p>
-                {/*<p>RGB: {'rgb('+palette.DarkVibrant._rgb[0]+','+palette.DarkVibrant._rgb[1]+','+palette.DarkVibrant._rgb[2]+')'}</p>
-                <p>HSL:</p>
-                <p>Text Colour: {palette.DarkVibrant.titleTextColor}</p>*/}
+                < ColorCode 
+                    palette={palette}
+                    roundHue={roundHue}
+                    roundSl={roundSl}
+                    contrast={contrast}
+                    hslToRgb={hslToRgb}
+                    hslToHex={hslToHex}
+                    paletteName='DarkVibrant'
+                    colorCode={true}
+                />
             </div>
             <div className="paletteView__color"  style={{
                 backgroundColor: togglePalette ? 
@@ -58,10 +71,16 @@ export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, con
                 :`${palette.Muted.hex}`,
                 color: `${palette.Muted.titleTextColor}`,
                 }}>
-                <p>Hex: {palette.Muted._hex}</p>
-                {/*<p>RGB: {'rgb('+palette.Muted._rgb[0]+','+palette.Muted._rgb[1]+','+palette.Muted._rgb[2]+')'}</p>
-                <p>HSL:</p>
-                <p>Text Colour: {palette.Muted.titleTextColor}</p>*/}
+                < ColorCode 
+                    palette={palette}
+                    roundHue={roundHue}
+                    roundSl={roundSl}
+                    contrast={contrast}
+                    hslToRgb={hslToRgb}
+                    hslToHex={hslToHex}
+                    paletteName='Muted'
+                    colorCode={true}
+                />
             </div>
             <div className="paletteView__color"  style={{
                 backgroundColor: togglePalette ? 
@@ -69,10 +88,16 @@ export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, con
                 :`${palette.LightMuted.hex}`,
                 color: `${palette.LightMuted.titleTextColor}`,
                 }}>
-                <p>Hex: {palette.LightMuted._hex}</p>
-                {/*<p>RGB: {'rgb('+palette.LightMuted._rgb[0]+','+palette.LightMuted._rgb[1]+','+palette.LightMuted._rgb[2]+')'}</p>
-                <p>HSL:</p>
-                <p>Text Colour: {palette.LightMuted.titleTextColor}</p>*/}
+                < ColorCode 
+                    palette={palette}
+                    roundHue={roundHue}
+                    roundSl={roundSl}
+                    contrast={contrast}
+                    hslToRgb={hslToRgb}
+                    hslToHex={hslToHex}
+                    paletteName='LightMuted'
+                    colorCode={true}
+                />
             </div>
             <div className="paletteView__color"  style={{
                 backgroundColor: togglePalette ? 
@@ -80,10 +105,16 @@ export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, con
                 :`${palette.DarkMuted.hex}`,
                 color: `${palette.DarkMuted.titleTextColor}`,
                 }}> 
-                <p>Hex: {palette.DarkMuted._hex}</p>
-                {/*<p>RGB: {'rgb('+palette.DarkMuted._rgb[0]+','+palette.DarkMuted._rgb[1]+','+palette.DarkMuted._rgb[2]+')'}</p>
-                <p>HSL:</p>
-                <p>Text Colour: {palette.DarkMuted.titleTextColor}</p>*/}
+                < ColorCode 
+                    palette={palette}
+                    roundHue={roundHue}
+                    roundSl={roundSl}
+                    contrast={contrast}
+                    hslToRgb={hslToRgb}
+                    hslToHex={hslToHex}
+                    paletteName='DarkMuted'
+                    colorCode={true}
+                />
             </div>
             <div className="paletteView__svg-container bottom">
                 <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">

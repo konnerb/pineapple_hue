@@ -250,7 +250,10 @@ export default class Main extends Component {
     return (
     <> 
         <section className="hero-component"> 
-            <Hero fetchImgData={this.fetchImgData} />
+            <Hero 
+            fetchImgData={this.fetchImgData} 
+            palette={this.state.palette} 
+            />
         </section>
 
         <main className="main">
