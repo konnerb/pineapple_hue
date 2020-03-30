@@ -56,6 +56,7 @@ function UploadImage({ fetchImgData }) {
       flexDirection: 'column',
       alignItems: 'center',
       padding: '20px',
+      marginBottom: '16px',
       borderWidth: 2,
       borderRadius: 2,
       borderColor: '#eeeeee',
@@ -99,13 +100,13 @@ function UploadImage({ fetchImgData }) {
             <p>Drag 'n' drop image here, or click to select image</p>
           }
           </div>
-          <aside>
-              <h4>Accepted files</h4>
-              <ul>
+          <aside className="upload-wrapper__aside">
+              <h4 className="upload-wrapper__status-type">Accepted files</h4>
+              <ul className="upload-wrapper__file-name">
                 {acceptedFilesItems}
               </ul>
-              <h4>Rejected files</h4>
-              <ul>
+              <h4 className="upload-wrapper__status-type">Rejected files</h4>
+              <ul className="upload-wrapper__file-name">
                 {rejectedFilesItems}
               </ul>
           </aside>

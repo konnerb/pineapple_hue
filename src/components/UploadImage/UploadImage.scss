@@ -4,4 +4,10 @@
     position: relative;
     top: 30%;
     height: 100%;
+    &__status-type {
+        padding: 8px 0px;
+    }
+    &__file-name {
+        margin-left: 30px;
+    }
 }
