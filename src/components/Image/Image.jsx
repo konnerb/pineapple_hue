@@ -42,7 +42,7 @@ export default function Image({ iconName, percent, toggleImagesBorder, toggleIma
         <div className="image">
             <img 
             src={images} 
-            alt="facebook" 
+            alt={iconName}
             className="image__the-image" 
             style ={{
                 opacity: `${percent}%`,
