@@ -6,7 +6,11 @@ export default function StyleBar({ opacityType, shadowType, borderType, handleTo
     return (
     <>
         <div className="buttons" style={{
-                  backgroundColor:  'hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+roundSl(palette.Vibrant.hsl[2])+')'
+                backgroundColor: 
+                    'hsl('
+                        +roundHue(palette.Vibrant.hsl[0])+','
+                        +roundSl(palette.Vibrant.hsl[1])+','
+                        +roundSl(palette.Vibrant.hsl[2])+')'
                 }}
             >
 

@@ -45,7 +45,11 @@ export default class StudioComponents extends Component {
     {Vibrant ?  
         <section className="studio-components">
             <article className="studio-components__buttons-section"
-                style={{backgroundColor: 'hsl('+roundHue(Vibrant.hsl[0])+','+roundSl(Vibrant.hsl[1])+','+roundSl(Vibrant.hsl[2] * 1.25)+')'
+                style={{backgroundColor: 
+                    'hsl('
+                        +roundHue(Vibrant.hsl[0])+','
+                        +roundSl(Vibrant.hsl[1])+','
+                        +roundSl(Vibrant.hsl[2] * 1.25)+')'
                 }}
             >
                     <StyleBar 
@@ -69,8 +73,13 @@ export default class StudioComponents extends Component {
                     }
                 <div className="studio-components__button-preview">
                     <div className="studio-components__buttons buttons-top" 
-                            style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
-                        }}>
+                        style={{backgroundColor: 
+                            'hsl('
+                                +roundHue(LightVibrant.hsl[0])+','
+                                +roundSl(LightVibrant.hsl[1])+','
+                                +roundSl(LightVibrant.hsl[2])+')'
+                        }}
+                    >
                         <Button 
                         percent={percents.opacityButton}
                         toggleButtonsShadow={this.state.toggleButtonsShadow}
@@ -109,8 +118,13 @@ export default class StudioComponents extends Component {
                         />
                     </div>
                     <div className="studio-components__buttons buttons-bottom" 
-                            style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
-                        }}>
+                            style={{backgroundColor: 
+                                'hsl('
+                                    +roundHue(LightMuted.hsl[0])+','
+                                    +roundSl(LightMuted.hsl[1])+','
+                                    +roundSl(LightMuted.hsl[2])+')'
+                            }}
+                    >
                         <Button 
                         percent={percents.opacityButton}
                         toggleButtonsShadow={this.state.toggleButtonsShadow}
@@ -151,8 +165,12 @@ export default class StudioComponents extends Component {
                 </div>
             </article>
             <article className="studio-components__icons-section"
-                        style={{backgroundColor: 'hsl('+roundHue(Vibrant.hsl[0])+','+roundSl(Vibrant.hsl[1])+','+roundSl(Vibrant.hsl[2] * 1.25)+')'
-                    }}
+                        style={{backgroundColor: 
+                            'hsl('
+                                +roundHue(Vibrant.hsl[0])+','
+                                +roundSl(Vibrant.hsl[1])+','
+                                +roundSl(Vibrant.hsl[2] * 1.25)+')'
+                        }}
             >
                     <StyleBar 
                         opacityType="toggleIconsOpacity"
@@ -175,8 +193,13 @@ export default class StudioComponents extends Component {
                     }
                 <div className="studio-components__icons-preview">
                     <div className="studio-components__icons icons-top" 
-                            style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
-                        }}>
+                            style={{backgroundColor: 
+                                'hsl('
+                                    +roundHue(LightVibrant.hsl[0])+','
+                                    +roundSl(LightVibrant.hsl[1])+','
+                                    +roundSl(LightVibrant.hsl[2])+')'
+                            }}
+                    >
                         <Icons 
                         percent={percents.iconOpacity}
                         toggleIconsShadow={this.state.toggleIconsShadow}
@@ -240,8 +263,13 @@ export default class StudioComponents extends Component {
                         />
                     </div>
                     <div className="studio-components__icons icons-bottom" 
-                            style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
-                        }}>
+                            style={{backgroundColor: 
+                                'hsl('
+                                    +roundHue(LightMuted.hsl[0])+','
+                                    +roundSl(LightMuted.hsl[1])+','
+                                    +roundSl(LightMuted.hsl[2])+')'
+                            }}
+                        >
                         <Icons 
                         percent={percents.iconOpacity}
                         toggleIconsShadow={this.state.toggleIconsShadow}
@@ -307,8 +335,12 @@ export default class StudioComponents extends Component {
                 </div>
             </article>
             <article className="studio-components__images-section"
-                        style={{backgroundColor: 'hsl('+roundHue(Vibrant.hsl[0])+','+roundSl(Vibrant.hsl[1])+','+roundSl(Vibrant.hsl[2] * 1.25)+')'
-                    }}
+                        style={{backgroundColor: 
+                            'hsl('
+                                +roundHue(Vibrant.hsl[0])+','
+                                +roundSl(Vibrant.hsl[1])+','
+                                +roundSl(Vibrant.hsl[2] * 1.25)+')'
+                        }}
             >
                 <div className="studio-components__images-buttons">
                     <StyleBar 
@@ -333,8 +365,13 @@ export default class StudioComponents extends Component {
                 </div>
                 <div className="studio-components__images-preview">
                     <div className="studio-components__images" 
-                            style={{backgroundColor: 'hsl('+roundHue(LightVibrant.hsl[0])+','+roundSl(LightVibrant.hsl[1])+','+roundSl(LightVibrant.hsl[2])+')'
-                        }}>
+                            style={{backgroundColor: 
+                                'hsl('
+                                    +roundHue(LightVibrant.hsl[0])+','
+                                    +roundSl(LightVibrant.hsl[1])+','
+                                    +roundSl(LightVibrant.hsl[2])+')'
+                            }}
+                    >
                         <Image 
                         percent={percents.vibrantImageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
@@ -481,8 +518,13 @@ export default class StudioComponents extends Component {
                         />
                     </div>
                     <div className="studio-components__images image_bottom-margin" 
-                            style={{backgroundColor: 'hsl('+roundHue(LightMuted.hsl[0])+','+roundSl(LightMuted.hsl[1])+','+roundSl(LightMuted.hsl[2])+')'
-                        }}>
+                            style={{backgroundColor: 
+                                'hsl('
+                                    +roundHue(LightMuted.hsl[0])+','
+                                    +roundSl(LightMuted.hsl[1])+','
+                                    +roundSl(LightMuted.hsl[2])+')'
+                            }}
+                    >
                         <Image 
                         percent={percents.vibrantImageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}

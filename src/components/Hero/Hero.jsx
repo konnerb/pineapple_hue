@@ -12,16 +12,13 @@ export default function Hero({ fetchImgData, palette }) {
             </div>
             <div className="hero__svg-container">
                 <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
-                    <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{ stroke: 'none', fill: 'rgb(250, 250, 250)' }}></path>
+                    <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" 
+                        style={{ stroke: 'none', fill: 'rgb(250, 250, 250)' }}>
+                    </path>
                 </svg>
             </div>
-            {/*<div class="container">
-                <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
-                    <path d="M0,40 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{ stroke: 'none', fill: 'rgb(250, 250, 250)' }}></path>
-                </svg>
-            </div>*/}
             { !palette.Vibrant &&
-                <h4 className="hero__upload-reminder">Please Upload Image To See Your Colour Palette!</h4>
+                <h4 className="hero__upload-reminder">Please Upload Image To See Your Colour Palette !</h4>
             }
         </section>
     )

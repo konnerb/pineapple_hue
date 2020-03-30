@@ -6,22 +6,40 @@ import InputScrub from '../../InputScrub/InputScrub'
 export default function StudioWebsite({ hslToRgb, handleChange, toggleStudioPalette, toggleVibrant, toggleLightVibrant, toggleDarkVibrant, toggleMuted, toggleLightMuted, toggleDarkMuted, palette, roundHue, roundSl }) {
     
   const colorVibrant = 
-    'hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+roundSl(palette.Vibrant.hsl[2])+')';
+    'hsl('
+      +roundHue(palette.Vibrant.hsl[0])+','
+      +roundSl(palette.Vibrant.hsl[1])+','
+      +roundSl(palette.Vibrant.hsl[2])+')';
 
   const colorLightVibrant = 
-    'hsl('+roundHue(palette.LightVibrant.hsl[0])+','+roundSl(palette.LightVibrant.hsl[1])+','+roundSl(palette.LightVibrant.hsl[2])+')';
+    'hsl('
+      +roundHue(palette.LightVibrant.hsl[0])+','
+      +roundSl(palette.LightVibrant.hsl[1])+','
+      +roundSl(palette.LightVibrant.hsl[2])+')';
 
   const colorDarkVibrant = 
-    'hsl('+roundHue(palette.DarkVibrant.hsl[0])+','+roundSl(palette.DarkVibrant.hsl[1])+','+roundSl(palette.DarkVibrant.hsl[2])+')';
+    'hsl('
+      +roundHue(palette.DarkVibrant.hsl[0])+','
+      +roundSl(palette.DarkVibrant.hsl[1])+','
+      +roundSl(palette.DarkVibrant.hsl[2])+')';
 
   const colorMuted = 
-    'hsl('+roundHue(palette.Muted.hsl[0])+','+roundSl(palette.Muted.hsl[1])+','+roundSl(palette.Muted.hsl[2])+')';
+    'hsl('
+      +roundHue(palette.Muted.hsl[0])+','
+      +roundSl(palette.Muted.hsl[1])+','
+      +roundSl(palette.Muted.hsl[2])+')';
 
   const colorLightMuted = 
-    'hsl('+roundHue(palette.LightMuted.hsl[0])+','+roundSl(palette.LightMuted.hsl[1])+','+roundSl(palette.LightMuted.hsl[2])+')';
+    'hsl('
+      +roundHue(palette.LightMuted.hsl[0])+','
+      +roundSl(palette.LightMuted.hsl[1])+','
+      +roundSl(palette.LightMuted.hsl[2])+')';
 
   const colorDarkMuted = 
-    'hsl('+roundHue(palette.DarkMuted.hsl[0])+','+roundSl(palette.DarkMuted.hsl[1])+','+roundSl(palette.DarkMuted.hsl[2])+')';
+    'hsl('
+      +roundHue(palette.DarkMuted.hsl[0])+','
+      +roundSl(palette.DarkMuted.hsl[1])+','
+      +roundSl(palette.DarkMuted.hsl[2])+')';
 
   return (
         <> 

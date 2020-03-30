@@ -1,7 +1,7 @@
 import React from 'react';
 import './ColorCode.scss'
 
-export default function ColorCode({ palette, paletteName, colorCode, roundSl, roundHue, hslToHex, hslToRgb, contrast }) {
+export default function ColorCode({ palette, paletteName, colorCode, roundHue, hslToHex, hslToRgb, contrast }) {
     
 
     const h = palette[paletteName] && roundHue(palette[paletteName].hsl[0]);
@@ -19,9 +19,6 @@ export default function ColorCode({ palette, paletteName, colorCode, roundSl, ro
 
     const hex = hslToHex(h, ( (s * 1000)  / 1000), ( ( l * 1000) / 1000) );
     
-    console.log(rgb)
-    console.log(hex)
-    
     return (
     <>  
         <div className="color-code">
@@ -33,7 +30,7 @@ export default function ColorCode({ palette, paletteName, colorCode, roundSl, ro
                 <p className="color-code__value">Rgb:( {rgb} )</p>
             }
             { colorCode && 
-                <p className="color-code__value">HSL:{h, s, l}</p>
+                <p className="color-code__value">Hsl:( {h} )</p>
             }
             { contrast && 
                 <p className="color-code__value">Contrast:{colorContrast}</p>
