@@ -8,16 +8,18 @@
     &__upload-image {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         //position: relative;
         //top: 15%;
-        padding-left: 100px;  
+        padding: 0px 100px;  
+        height: 275px;
     }
     &__upload-pineapple {
         width: 25%;
         height: 100%;
         position: relative;
         //bottom: 110px;
-        margin-left: 390px;
+        //margin-left: 390px;
         
     }
     &__svg-container {
