@@ -29,7 +29,7 @@ export default function Icons({ iconName, percent, toggleIconsBorder, toggleIcon
             alt={iconName}
             className="icon__svg"
             style={{
-                opacity: `${percent}%`,
+                opacity: `${percent}`,
                 boxShadow: toggleIconsShadow ? `5px 10px #888888` : `none`,
                 border: toggleIconsBorder ? `3px solid black` : `none`
             }}

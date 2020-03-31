@@ -61,7 +61,7 @@ export default class Main extends Component {
    handlePercentChange(event, nameInput) {
         const { target: { name, value} } = event;
         let percents = {};
-        percents[nameInput] = value;
+        percents[nameInput] = Math.round(value * 100) / 100;
         this.setState({
             percents
         });

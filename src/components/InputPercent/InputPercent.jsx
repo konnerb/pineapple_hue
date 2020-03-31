@@ -9,9 +9,9 @@ export default function InputPercent({ handlePercentChange, nameInput, defaultIn
             <input className="input-percent" 
                 type="range" 
                 name={nameInput}
-                step="1" 
+                step="any" 
                 min="0" 
-                max="100" 
+                max="1" 
                 defaultValue={defaultInputValue} 
                 onChange={defaultValue => handlePercentChange(defaultValue, nameInput)}>
             </input>

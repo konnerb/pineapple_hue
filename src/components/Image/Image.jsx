@@ -45,7 +45,7 @@ export default function Image({ iconName, percent, toggleImagesBorder, toggleIma
             alt={iconName}
             className="image__the-image" 
             style ={{
-                opacity: `${percent}%`,
+                opacity: `${percent}`,
                 boxShadow: toggleImagesShadow ? `5px 10px #888888` : `none`,
                 border: toggleImagesBorder ? `3px solid black` : `none`
             }}

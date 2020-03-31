@@ -68,7 +68,7 @@ export default class StudioComponents extends Component {
                         <InputPercent 
                         handlePercentChange={handlePercentChange}
                         nameInput="opacityButton"
-                        defaultInputValue="80"
+                        defaultInputValue="0.80"
                         />
                     }
                 <div className="studio-components__button-preview">
@@ -188,7 +188,7 @@ export default class StudioComponents extends Component {
                         <InputPercent 
                         handlePercentChange={handlePercentChange}
                         nameInput="iconOpacity"
-                        defaultInputValue="80"
+                        defaultInputValue="0.80"
                         />
                     }
                 <div className="studio-components__icons-preview">
@@ -359,7 +359,7 @@ export default class StudioComponents extends Component {
                         <InputPercent 
                         handlePercentChange={handlePercentChange}
                         nameInput="vibrantImageOpacity"
-                        defaultInputValue="80"
+                        defaultInputValue="0.80"
                         />
                     }
                 </div>
