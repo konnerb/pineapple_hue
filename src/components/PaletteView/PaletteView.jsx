@@ -2,7 +2,7 @@ import React from 'react';
 import './PaletteView.scss';
 import ColorCode from '../ColorCode/ColorCode'
 
-export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, contrastHsl, togglePalette, roundHue, roundSl }) {
+export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, colorCode, codeType, contrastHsl, togglePalette, roundHue, roundSl }) {
     //if (palette.Vibrant) {
     //console.log( hslToRgb('hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+roundSl(palette.Vibrant.hsl[2])+')'))
     //} 
@@ -36,7 +36,8 @@ export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, con
                     hslToRgb={hslToRgb}
                     hslToHex={hslToHex}
                     paletteName='Vibrant'
-                    colorCode={true}
+                    colorCode={colorCode}
+                    codeType={codeType}
                 />
             </div>
             <div className="paletteView__color"  style={{
@@ -59,7 +60,8 @@ export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, con
                     hslToRgb={hslToRgb}
                     hslToHex={hslToHex}
                     paletteName='LightVibrant'
-                    colorCode={true}
+                    colorCode={colorCode}
+                    codeType={codeType}
                 />
             </div>
             <div className="paletteView__color"  style={{
@@ -82,7 +84,8 @@ export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, con
                     hslToRgb={hslToRgb}
                     hslToHex={hslToHex}
                     paletteName='DarkVibrant'
-                    colorCode={true}
+                    colorCode={colorCode}
+                    codeType={codeType}
                 />
             </div>
             <div className="paletteView__color"  style={{
@@ -105,7 +108,8 @@ export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, con
                     hslToRgb={hslToRgb}
                     hslToHex={hslToHex}
                     paletteName='Muted'
-                    colorCode={true}
+                    colorCode={colorCode}
+                    codeType={codeType}
                 />
             </div>
             <div className="paletteView__color"  style={{
@@ -128,7 +132,8 @@ export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, con
                     hslToRgb={hslToRgb}
                     hslToHex={hslToHex}
                     paletteName='LightMuted'
-                    colorCode={true}
+                    colorCode={colorCode}
+                    codeType={codeType}
                 />
             </div>
             <div className="paletteView__color"  style={{
@@ -151,7 +156,8 @@ export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, con
                     hslToRgb={hslToRgb}
                     hslToHex={hslToHex}
                     paletteName='DarkMuted'
-                    colorCode={true}
+                    colorCode={colorCode}
+                    codeType={codeType}
                 />
             </div>
             <div className="paletteView__svg-container bottom">

@@ -19,6 +19,7 @@ export default function StyleBar({ opacityType, shadowType, borderType, handleTo
             buttonText={ toggleBorder ? "- Border" : "+ Border" }
             handleToggle={handleToggle}
             />
+            
             <StyleButton 
             toggleType={shadowType}
             buttonText={ toggleShadow ? "- Shadow" : "+ Shadow" }

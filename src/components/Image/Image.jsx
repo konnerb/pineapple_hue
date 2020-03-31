@@ -17,32 +17,34 @@ import toEast from '../../assets/images/to_east.jpg';
 import ttcWinter from '../../assets/images/ttc_winter.jpg';
 import winterContrast from '../../assets/images/winter_contrast.jpg';
 
-export default function Image({ iconName, percent, toggleImagesBorder, toggleImagesShadow }) {
+export default function Image({ imageName, percent, toggleImagesBorder, toggleImagesShadow }) {
     
+    //Searches for a match between iconName and imported photos
+
     const images = 
-            iconName === "yogo" ? yogo : 
-            iconName === "bar" ? bar : 
-            iconName === "basketball" ? basketball : 
-            iconName === "beach" ? beach : 
-            iconName === "book" ? book : 
-            iconName === "car" ? car : 
-            iconName === "cat" ? cat : 
-            iconName === "coffeeShop" ? coffeeShop : 
-            iconName === "coffeeSwirls" ? coffeeSwirls : 
-            iconName === "darkAlley" ? darkAlley : 
-            iconName === "dog" ? dog : 
-            iconName === "festival" ? festival : 
-            iconName === "toEast" ? toEast : 
-            iconName === "ttcWinter" ? ttcWinter : 
-            iconName === "winterContrast" ? winterContrast : 
-            iconName === "dryVan" ? dryVan : null 
+            imageName === "yogo" ? yogo : 
+            imageName === "bar" ? bar : 
+            imageName === "basketball" ? basketball : 
+            imageName === "beach" ? beach : 
+            imageName === "book" ? book : 
+            imageName === "car" ? car : 
+            imageName === "cat" ? cat : 
+            imageName === "coffeeShop" ? coffeeShop : 
+            imageName === "coffeeSwirls" ? coffeeSwirls : 
+            imageName === "darkAlley" ? darkAlley : 
+            imageName === "dog" ? dog : 
+            imageName === "festival" ? festival : 
+            imageName === "toEast" ? toEast : 
+            imageName === "ttcWinter" ? ttcWinter : 
+            imageName === "winterContrast" ? winterContrast : 
+            imageName === "dryVan" ? dryVan : null 
 
     return (
     <>  
         <div className="image">
             <img 
             src={images} 
-            alt={iconName}
+            alt={imageName}
             className="image__the-image" 
             style ={{
                 opacity: `${percent}`,

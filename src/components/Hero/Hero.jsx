@@ -18,7 +18,7 @@ export default function Hero({ fetchImgData, palette }) {
                 </svg>
             </div>
             { !palette.Vibrant &&
-                <h4 className="hero__upload-reminder">Please Upload Image To See Your Colour Palette !</h4>
+                <h4 className="hero__upload-reminder">Please Upload An Image To See Your Colour Palette !</h4>
             }
         </section>
     )

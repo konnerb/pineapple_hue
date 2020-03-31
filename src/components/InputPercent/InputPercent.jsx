@@ -5,7 +5,7 @@ export default function InputPercent({ handlePercentChange, nameInput, defaultIn
     return (
     <>
         <div>
-            <label>Opacity</label>
+    <label>Opacity:</label>
             <input className="input-percent" 
                 type="range" 
                 name={nameInput}

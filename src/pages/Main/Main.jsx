@@ -78,7 +78,7 @@ export default class Main extends Component {
 
     //Converts HSL values to RGB
 
-    hslToRgb (h, s, l, isComa ) {
+    hslToRgb (h, s, l, isComa = true ) {
         //console.log(h, s, l)
         s /= 100;
         l /= 100;
@@ -112,6 +112,8 @@ export default class Main extends Component {
             : [r, g, b ];
     }
 
+    //Converts HSL values to HEX
+    
     hslToHex(h, s, l) {
         s /= 100;
         l /= 100;
@@ -265,6 +267,8 @@ export default class Main extends Component {
                 roundSl={this.roundSl}
                 hslToRgb={this.hslToRgb}
                 hslToHex={this.hslToHex}
+                colorCode={false}
+                codeType='hex'
             />
             <Studio 
                 hslToRgb={this.hslToRgb}
@@ -300,6 +304,8 @@ export default class Main extends Component {
                     roundSl={this.roundSl}
                     hslToRgb={this.hslToRgb}
                     hslToHex={this.hslToHex}
+                    colorCode={true}
+                    codeType=''
                 />
             }
         </div>

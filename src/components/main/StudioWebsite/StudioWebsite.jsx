@@ -4,7 +4,9 @@ import StyleButton from '../../StyleButton/StyleButton'
 import InputScrub from '../../InputScrub/InputScrub'
 
 export default function StudioWebsite({ hslToRgb, handleChange, toggleStudioPalette, toggleVibrant, toggleLightVibrant, toggleDarkVibrant, toggleMuted, toggleLightMuted, toggleDarkMuted, palette, roundHue, roundSl }) {
-    
+  
+  //Coverts Hsl palette values into vairables 
+  
   const colorVibrant = 
     'hsl('
       +roundHue(palette.Vibrant.hsl[0])+','

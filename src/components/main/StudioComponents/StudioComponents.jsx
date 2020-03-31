@@ -377,7 +377,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="yogo"
+                        imageName="yogo"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -386,7 +386,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="bar"
+                        imageName="bar"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -395,7 +395,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="basketball"
+                        imageName="basketball"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -404,7 +404,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="beach"
+                        imageName="beach"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -413,7 +413,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="book"
+                        imageName="book"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -422,7 +422,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="car"
+                        imageName="car"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -431,7 +431,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="cat"
+                        imageName="cat"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -440,7 +440,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="coffeeShop"
+                        imageName="coffeeShop"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -449,7 +449,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="coffeeSwirls"
+                        imageName="coffeeSwirls"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -458,7 +458,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="darkAlley"
+                        imageName="darkAlley"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -467,7 +467,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="dog"
+                        imageName="dog"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -476,7 +476,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="festival"
+                        imageName="festival"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -485,7 +485,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="toEast"
+                        imageName="toEast"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -494,7 +494,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="ttcWinter"
+                        imageName="ttcWinter"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -503,7 +503,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="winterContrast"
+                        imageName="winterContrast"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -512,7 +512,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="dryVan"
+                        imageName="dryVan"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -530,7 +530,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="yogo"
+                        imageName="yogo"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -539,7 +539,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="bar"
+                        imageName="bar"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -548,7 +548,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="basketball"
+                        imageName="basketball"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -557,7 +557,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="beach"
+                        imageName="beach"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -566,7 +566,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        iconName="book"
+                        imageName="book"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -575,7 +575,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
-                        iconName="car"
+                        imageName="car"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -584,7 +584,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
-                        iconName="cat"
+                        imageName="cat"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -593,7 +593,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
-                        iconName="coffeeShop"
+                        imageName="coffeeShop"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -602,7 +602,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
-                        iconName="coffeeSwirls"
+                        imageName="coffeeSwirls"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -611,7 +611,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
-                        iconName="darkAlley"
+                        imageName="darkAlley"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -620,7 +620,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
-                        iconName="dog"
+                        imageName="dog"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -629,7 +629,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
-                        iconName="festival"
+                        imageName="festival"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -638,7 +638,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
-                        iconName="toEast"
+                        imageName="toEast"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -647,7 +647,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
-                        iconName="ttcWinter"
+                        imageName="ttcWinter"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -656,7 +656,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
-                        iconName="winterContrast"
+                        imageName="winterContrast"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />
@@ -665,7 +665,7 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
-                        iconName="dryVan"
+                        imageName="dryVan"
                         roundHue={roundHue}
                         roundSl={roundSl}
                         />

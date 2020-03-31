@@ -11,6 +11,8 @@ import soundcloud from '../../assets/icons/soundcloud_icon-color.svg';
 
 export default function Icons({ iconName, percent, toggleIconsBorder, toggleIconsShadow }) {
          
+    //Searches for a match between iconName and imported photos
+
     const icon = 
             iconName === "facebook" ? facebook : 
             iconName === "twitter" ? twitter : 
