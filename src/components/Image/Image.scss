@@ -1,9 +1,15 @@
+@import '../../styles/base';
+
 .image {
     padding: 8px 0px 8px 0px;
     &__the-image {
         //opacity: 80%;
-        width: 250px;
-        height: 180px;
+        width: 170px;
+        height: 150px;
         border-radius: 20px;
+        @include tablet {
+            width: 250px;
+            height: 180px;   
+        }
     }
 }

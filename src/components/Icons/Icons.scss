@@ -1,5 +1,10 @@
+@import '../../styles/base';
+
 .icon {
-    margin: 25px;
+    margin: 10px;
+        @include tablet {
+            margin: 21px;  
+        }
     &__svg {
         width: 50px;
     }

@@ -1,9 +1,19 @@
+@import '../../styles/base';
+
 .upload-wrapper {
     //display: flex;
     //flex-direction: column;
     position: relative;
-    top: 30%;
-    height: 100%;
+        @include laptop {
+            top: 30%;
+            height: 100%;
+        }
+    &__input-box {
+        width: 100% !important;
+        @include laptop {
+            width: 55% !important;
+        }
+    }
     &__status-type {
         padding: 8px 0px;
     }

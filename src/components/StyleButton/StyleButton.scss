@@ -1,9 +1,16 @@
+@import '../../styles/base';
+
 .style-button { 
-    width: 100px;
+    width: 100%;
     font-size: 15px;
     font-weight: 600;
     color: white;
     background-color: transparent;
     height: 50px;
-    border-radius: 5px;
+    border-radius: 15px;
+    @include tablet {
+        width: 100px;
+        border-radius: 5px;
+ 
+    }
 }

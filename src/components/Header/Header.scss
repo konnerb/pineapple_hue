@@ -1,3 +1,5 @@
+@import '../../styles/base';
+
 .header {
     background-color: #53E0B3;
     width: 100vw;
@@ -18,7 +20,14 @@
 .links {
     text-decoration: none;
     color: #fcd729;
-    margin-left: 100px;
+    margin-left: 16px;
+        @include tablet {
+            margin-left: 24px;  
+        };
+        @include laptop {
+            margin-left: 100px;
+        };
+
     //:hover {
     //  //color:#2196f3;
     //  color: #00e676;

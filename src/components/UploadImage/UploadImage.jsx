@@ -92,7 +92,7 @@ function UploadImage({ fetchImgData }) {
     return (
     <>
       <div className="upload-wrapper">
-        <div {...getRootProps({style})}>
+        <div className="upload-wrapper__input-box" {...getRootProps({style})}>
           <input {...getInputProps()} />
           {
             isDragActive ?

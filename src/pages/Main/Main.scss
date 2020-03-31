@@ -1,3 +1,5 @@
+@import '../../styles/base';
+
 .main {
     display: flex;
     justify-content: center;
@@ -14,14 +16,19 @@
 
     }
     &__button {
-        height: 100px;
-        width: 500px;
+        height: 70px;
+        width: 250px;
         border-radius: 20px;
         color: #00e676;
         background-color: #fcd729;
         border: 3px solid black;
-        font-size: 30px;
+        font-size: 17px;
         margin-bottom: 16px;
         box-shadow: 3px 3px 5px 6px #ccc;
+            @include tablet {
+                height: 100px;
+                width: 500px;
+                font-size: 30px;
+            }
     }
 }

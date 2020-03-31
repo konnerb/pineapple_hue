@@ -1,3 +1,5 @@
+@import '../../../styles/base';
+
 .website {
     width: 66.68%;
     height: 100%;
@@ -37,10 +39,13 @@
     &__toggle-lightness button {
         position: absolute;
         top: 32px;
-        right: 110px;
+        right: 20px;
         background-color: transparent;
         width: 20px;
         height: 20px;
+            @include tablet {
+                right: 110px;
+            }
     }
 }
 .color_top-right {

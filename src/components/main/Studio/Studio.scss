@@ -1,9 +1,15 @@
+@import '../../../styles/base';
+
 .studio {
     display: flex;
     flex-direction: row;
-    width: 700px;
-    height: 700px;
+    width: 300px;
+    height: 550px;
     margin-top: 26px;
     box-shadow: 3px 3px 5px 6px #ccc;
     border-radius: 25px;
+    @include tablet {
+        width: 700px;
+        height: 700px;
+    }
 }
