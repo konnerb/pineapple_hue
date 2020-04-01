@@ -2,10 +2,24 @@ import React from 'react';
 import './PaletteView.scss';
 import ColorCode from '../ColorCode/ColorCode'
 
-export default function PaletteView({ palette, contrast, hslToRgb, hslToHex, colorCode, codeType, contrastHsl, togglePalette, roundHue, roundSl }) {
+export default function PaletteView(
+
+    { palette, 
+        contrast, 
+        hslToRgb, 
+        hslToHex, 
+        colorCode, 
+        codeType, 
+        contrastHsl, 
+        togglePalette, 
+        roundHue, 
+        roundSl 
+    }) {
+
     //if (palette.Vibrant) {
     //console.log( hslToRgb('hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+roundSl(palette.Vibrant.hsl[2])+')'))
     //} 
+    
     return (
     <>  { palette.Vibrant ?
         <section className="paletteView">

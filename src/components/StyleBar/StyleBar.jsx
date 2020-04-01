@@ -2,7 +2,22 @@ import React from 'react';
 import './StyleBar.scss';
 import StyleButton from '../StyleButton/StyleButton';
 
-export default function StyleBar({ opacityType, shadowType, borderType, handleToggle, toggleShadow, toggleBorder, toggleOpacity, palette, roundHue, roundSl, handleClick }) {
+export default function StyleBar(
+
+    {   
+        opacityType, 
+        shadowType, 
+        borderType, 
+        handleToggle, 
+        toggleShadow, 
+        toggleBorder, 
+        toggleOpacity, 
+        palette, 
+        roundHue, 
+        roundSl, 
+        handleClick 
+    }) {
+
     return (
     <>
         <div className="buttons" style={{

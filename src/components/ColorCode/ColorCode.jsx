@@ -1,7 +1,18 @@
 import React from 'react';
 import './ColorCode.scss'
 
-export default function ColorCode({ palette, paletteName, colorCode, codeType, roundHue, hslToHex, hslToRgb, contrast }) {
+export default function ColorCode(
+    
+    { 
+        palette, 
+        paletteName, 
+        colorCode, 
+        codeType, 
+        roundHue, 
+        hslToHex, 
+        hslToRgb, 
+        contrast 
+    }) {
 
     const h = palette[paletteName] && roundHue(palette[paletteName].hsl[0]);
     const s = palette[paletteName] && Math.round( (palette[paletteName].hsl[1]) * 100);

@@ -180,25 +180,6 @@ export default class Main extends Component {
         let darkest = Math.min(lum1, lum2);
         return Math.round( (brightest + 0.05) / (darkest + 0.05) * 100 ) / 100;
     }
-    
-    //contrastHsl = (hsl1, hsl2) => {
-    //    console.log( hsl1, hsl2)
-    //    let lum1 = (( (hsl1[0] * 360) * ((hsl1[1] / 2) * hsl1[2]) ));
-    //    let lum2 = (( (hsl2[0] * 360) * ((hsl2[1] / 2) * hsl2[2]) ));
-    //    
-    //    //const newlum1 = lum1 <= 0.03928 
-    //    //    ? ((lum1 / 12.92) * 0.9999999)
-    //    //    : (Math.pow( (lum1 + 0.055) / 1.055, 2.4 ) * 0.9999999);
-    //    //
-    //    //const newlum2 = lum2 <= 0.03928 
-    //    //    ? ((lum2 / 12.92) * 0.9999999)
-    //    //    : (Math.pow( (lum2 + 0.055) / 1.055, 2.4 ) * 0.9999999);
-//
-    //    console.log(lum1, lum2)
-    //    let brightest = Math.max(lum1, lum2)
-    //    let darkest = Math.min(lum1, lum2)
-    //    return Math.round( (brightest + 0.05) / (darkest + 0.5) * 100 ) / 100;
-    //}
 
     //RoundHue converts the a HSL hue value into a whole number
 
@@ -209,6 +190,7 @@ export default class Main extends Component {
     roundSl = (sl) => { return Math.round( (sl) * 100) + "%" }
 
     render() {
+        
     //this.palette.Vibrant && {
     //colorAdjust = {
     //    colorVibrant: 
@@ -249,6 +231,7 @@ export default class Main extends Component {
     //}
     //}
     //console.log(colorAdjust)
+
     return (
     <> 
         <section className="hero-component"> 

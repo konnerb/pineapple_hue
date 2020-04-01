@@ -1,7 +1,20 @@
 import React from 'react';
 import './Button.scss'
 
-export default function Button({ palette, percent, toggleButtonsShadow, toggleButtonsBorder, handleChange, paletteType, buttonText, roundHue, roundSl }) {
+export default function Button(
+    
+    { 
+        palette, 
+        percent, 
+        toggleButtonsShadow, 
+        toggleButtonsBorder, 
+        handleChange, 
+        paletteType, 
+        buttonText, 
+        roundHue, 
+        roundSl 
+    }) {
+
     return (
     <>  { palette ?
         <div className="button">
