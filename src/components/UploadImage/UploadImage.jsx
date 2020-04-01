@@ -19,7 +19,6 @@ function UploadImage({ fetchImgData }) {
         }
         reader.readAsDataURL(blob)
       })
-      console.log(acceptedFiles)
   }, [])
 
     const {

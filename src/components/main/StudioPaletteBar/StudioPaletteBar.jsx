@@ -1,12 +1,11 @@
 import React from 'react';
 import './StudioPaletteBar.scss'
 import Palette from '../../Palette/Palette'
-import InputScrub from '../../InputScrub/InputScrub'
 
 export default function StudioPaletteBar({ palette, image, roundHue }) {
     return (
     <>
-        { palette.Vibrant ?  
+        { palette.Vibrant &&  
             <div className="bar">
                 {/*<img src={image} className="bar__uploadImg"></img>*/}
                 <div className="bar__container">
@@ -41,7 +40,6 @@ export default function StudioPaletteBar({ palette, image, roundHue }) {
                     </div>
                 </div>
                 </div>
-            : null 
             }
     </>
     )

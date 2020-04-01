@@ -21,7 +21,7 @@ export default function PaletteView(
     //} 
     
     return (
-    <>  { palette.Vibrant ?
+    <>  { palette.Vibrant &&
         <section className="paletteView">
             <div className="paletteView__svg-container top">
                 <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
@@ -182,7 +182,6 @@ export default function PaletteView(
                 </svg>
             </div>
         </section>
-        : null
         }
     </>
     )

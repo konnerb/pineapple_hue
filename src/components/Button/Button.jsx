@@ -16,7 +16,7 @@ export default function Button(
     }) {
 
     return (
-    <>  { palette ?
+    <>  { palette &&
         <div className="button">
                 <button className="button__main-button" 
                     name={paletteType} 
@@ -31,7 +31,6 @@ export default function Button(
                     >{buttonText}
                 </button>
         </div>
-        : null
         }
     </>
     )

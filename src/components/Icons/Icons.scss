@@ -1,13 +1,13 @@
 @import '../../styles/base';
 
 .icon {
-    margin: 8px;
+    margin: 5px;
         @include tablet {
             margin: 21px;  
         }
     &__svg {   
         border-radius: 100%;
-        width: 38px;
+        width: 35px;
             @include tablet {
                 width: 50px;
             }

@@ -44,7 +44,6 @@ export default class Main extends Component {
 
    handlePaletteUpdate = (newPalette) => {
     const newPaletteKey = Object.keys(newPalette)[0]; //Vibrant
-    console.log(newPaletteKey)
     this.setState({
         palette: {
             ...this.state.palette,
@@ -61,7 +60,7 @@ export default class Main extends Component {
    //Handles opacity percent change on Icon, Button, and Image Components
 
    handlePercentChange(event, nameInput) {
-        const { target: { name, value} } = event;
+        const { target: { value} } = event;
         let percents = {};
         percents[nameInput] = Math.round(value * 100) / 100;
         this.setState({
@@ -146,11 +145,11 @@ export default class Main extends Component {
         b = Math.round((b + m) * 255).toString(16);
       
         // Prepend 0s, if necessary
-        if (r.length == 1)
+        if (r.length === 1)
           r = "0" + r;
-        if (g.length == 1)
+        if (g.length === 1)
           g = "0" + g;
-        if (b.length == 1)
+        if (b.length === 1)
           b = "0" + b;
       
         return "#" + r + g + b;

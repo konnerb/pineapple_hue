@@ -25,7 +25,7 @@ export default class Studio extends Component {
     */
 
     handleChange(event, paletteType) {
-        const { target: { name, value} } = event;
+        const { target: { value} } = event;
         let newPalette = {};
         newPalette[paletteType] = value;
         this.setState({
@@ -36,7 +36,6 @@ export default class Studio extends Component {
     //Toggles StudioWebsite Componets color palette to adjust InputScrub Component
     
     toggleStudioPalette(toggleType) {
-        console.log(toggleType)
         let toggleStatus = this.state[toggleType]
         this.setState({
                  [toggleType]: !toggleStatus
@@ -50,7 +49,7 @@ export default class Studio extends Component {
         
     return (
         <>
-            { this.props.palette.Vibrant ?  
+            { this.props.palette.Vibrant && 
             <section className="studio">
                 <StudioPaletteBar 
                 { ...modifiedPalette } 
@@ -62,7 +61,6 @@ export default class Studio extends Component {
                 toggleStudioPalette={this.toggleStudioPalette}
                 />
             </section>
-            : null 
             }
         </>
     )

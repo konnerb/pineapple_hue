@@ -63,7 +63,7 @@ export default function StudioWebsite(
 
   return (
         <> 
-        { colorVibrant ?
+        { colorVibrant &&
             <div className="website">
               
                 <div className="website__color color_top-right" style={{
@@ -385,7 +385,6 @@ export default function StudioWebsite(
                 }
                 </div>
             </div>
-            : null
         }
         </>
     )

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './StudioComponents.scss'
-import StudioPaletteBar from '../StudioPaletteBar/StudioPaletteBar'
 import Button from '../../Button/Button'
 import StyleBar from '../../StyleBar/StyleBar'
 import Icons from '../../Icons/Icons'
@@ -42,7 +41,7 @@ export default class StudioComponents extends Component {
         
     return (
     <>
-    {Vibrant ?  
+    { Vibrant && 
         <section className="studio-components">
             <article className="studio-components__buttons-section"
                 style={{backgroundColor: 
@@ -678,7 +677,6 @@ export default class StudioComponents extends Component {
                 </div>
             </article>
         </section>
-    : null
     }
     </>
     )
