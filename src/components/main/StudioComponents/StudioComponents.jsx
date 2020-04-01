@@ -347,6 +347,7 @@ export default class StudioComponents extends Component {
                         opacityType="toggleImagesOpacity"
                         shadowType="toggleImagesShadow"
                         borderType="toggleImagesBorder"
+                        isImage={true}
                         toggleShadow={this.state.toggleImagesShadow}
                         toggleBorder={this.state.toggleImagesBorder}
                         toggleOpacity={this.state.toggleImagesOpacity}

@@ -15,7 +15,8 @@ export default function StyleBar(
         palette, 
         roundHue, 
         roundSl, 
-        handleClick 
+        handleClick,
+        isImage
     }) {
 
     return (
@@ -25,7 +26,10 @@ export default function StyleBar(
                     'hsl('
                         +roundHue(palette.Vibrant.hsl[0])+','
                         +roundSl(palette.Vibrant.hsl[1])+','
-                        +roundSl(palette.Vibrant.hsl[2])+')'
+                        +roundSl(palette.Vibrant.hsl[2])+')',
+                borderRadius: isImage && `25px 25px 0px 0px`,
+                flexDirection: isImage && `row`,
+                padding: isImage && `20px 0px`
                 }}
             >
 
