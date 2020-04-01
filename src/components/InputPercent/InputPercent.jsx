@@ -1,12 +1,12 @@
 import React from 'react';
 import './InputPercent.scss'
 
-export default function InputPercent({ handlePercentChange, percents, nameInput, defaultInputValue }) {
+export default function InputPercent({ handlePercentChange, percents, isImage, nameInput, defaultInputValue }) {
     return (
     <>
-        <div>
-    <label>Opacity: {percents}</label>
-            <input className="input-percent" 
+        <div className="input">
+            <label>Opacity: {percents || defaultInputValue}</label>
+            <input className="input__percent" style={{ transform: isImage && 'none' }} 
                 type="range" 
                 name={nameInput}
                 step="any" 

@@ -1,0 +1,9 @@
+
+.input {
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    &__percent {
+        transform: rotate(270deg);
+    }
+}

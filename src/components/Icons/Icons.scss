@@ -5,7 +5,8 @@
         @include tablet {
             margin: 21px;  
         }
-    &__svg {
+    &__svg {   
+        border-radius: 100%;
         width: 38px;
             @include tablet {
                 width: 50px;

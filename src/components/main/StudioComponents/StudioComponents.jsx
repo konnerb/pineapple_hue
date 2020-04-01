@@ -187,7 +187,7 @@ export default class StudioComponents extends Component {
                     />
                     {this.state.toggleIconsOpacity && 
                         <InputPercent 
-                        percents={percents.iconsButton}
+                        percents={percents.iconOpacity}
                         handlePercentChange={handlePercentChange}
                         nameInput="iconOpacity"
                         defaultInputValue="0.80"
@@ -360,6 +360,7 @@ export default class StudioComponents extends Component {
                     />
                     {this.state.toggleImagesOpacity && 
                         <InputPercent 
+                        isImage={true}
                         percents={percents.imageOpacity}
                         handlePercentChange={handlePercentChange}
                         nameInput="imageOpacity"
@@ -367,8 +368,8 @@ export default class StudioComponents extends Component {
                         />
                     }
                 </div>
-                <div className="studio-components__images-preview image_top">
-                    <div className="studio-components__images" 
+                <div className="studio-components__images-preview">
+                    <div className="studio-components__images image_top" 
                             style={{backgroundColor: 
                                 'hsl('
                                     +roundHue(LightVibrant.hsl[0])+','

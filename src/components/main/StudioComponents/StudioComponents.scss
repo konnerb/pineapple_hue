@@ -47,9 +47,6 @@
             margin-bottom: 55px;
             box-shadow: 3px 3px 5px 6px #ccc;
             border-radius: 25px; 
-                @include tablet {
-                    width: 50vw; 
-                }
         }
         &__icons-section {
             border-radius: 25px;
@@ -59,9 +56,6 @@
             margin-bottom: 55px;
             box-shadow: 3px 3px 5px 6px #ccc;
             border-radius: 25px;   
-                @include tablet {
-                    width: 50vw; 
-                } 
         }
         &__images-section {
             border-radius: 25px;
@@ -86,7 +80,6 @@
             justify-content: space-around;
             padding: 16px;
             width: 50%;
-            border-radius: 25px 0px 25px 25px;
                 @include tablet {
                     width: 100%;
                     border-radius: 0px 25px 25px 25px;
@@ -112,10 +105,15 @@
 }
 
 .image_top {
-
+    border-radius: 0px 25px 25px 25px;
+        @include tablet {
+            border-radius: none;   
+        }
 }
 .image_bottom {
+    border-radius: 25px 0px 25px 25px;
         @include tablet {
-            margin: 55px 0px;      
+            margin: 55px 0px;   
+            border-radius: none;   
         }
 }
