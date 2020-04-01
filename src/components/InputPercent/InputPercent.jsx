@@ -1,11 +1,11 @@
 import React from 'react';
 import './InputPercent.scss'
 
-export default function InputPercent({ handlePercentChange, nameInput, defaultInputValue }) {
+export default function InputPercent({ handlePercentChange, percents, nameInput, defaultInputValue }) {
     return (
     <>
         <div>
-    <label>Opacity:</label>
+    <label>Opacity: {percents}</label>
             <input className="input-percent" 
                 type="range" 
                 name={nameInput}

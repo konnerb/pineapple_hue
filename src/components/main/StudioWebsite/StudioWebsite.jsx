@@ -2,11 +2,14 @@ import React from 'react';
 import './StudioWebsite.scss';
 import StyleButton from '../../StyleButton/StyleButton'
 import InputScrub from '../../InputScrub/InputScrub'
+import ColorCode from '../../ColorCode/ColorCode'
 
 export default function StudioWebsite(
 
   { 
-    hslToRgb, 
+    hslToRgb,
+    hslToHex, 
+    contrast,
     handleChange, 
     toggleStudioPalette, 
     toggleVibrant, 
@@ -78,17 +81,41 @@ export default function StudioWebsite(
                 }
                 { toggleVibrant &&
                   <div className="website__toggle-lightness">
-                    <StyleButton 
-                      toggleType="toggleVibrant"
-                      buttonText="X"
-                      handleToggle={toggleStudioPalette}
-                    />
-                    <InputScrub 
-                      handleChange={handleChange} 
-                      roundHue={roundHue} 
-                      paletteType="Vibrant" 
-                      palette={palette.Vibrant} 
-                    />
+                      <StyleButton 
+                        toggleType="toggleVibrant"
+                        buttonText="X"
+                        handleToggle={toggleStudioPalette}
+                      />
+                      <InputScrub 
+                        handleChange={handleChange} 
+                        roundHue={roundHue} 
+                        paletteType="Vibrant" 
+                        palette={palette.Vibrant} 
+                      />
+                    <div className="website__toggle-code">
+                      < ColorCode
+                        palette={palette}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        contrast={contrast}
+                        hslToRgb={hslToRgb}
+                        hslToHex={hslToHex}
+                        paletteName='Vibrant'
+                        colorCode={false}
+                        codeType='hex'
+                      />
+                      < ColorCode
+                        palette={palette}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        contrast={contrast}
+                        hslToRgb={hslToRgb}
+                        hslToHex={hslToHex}
+                        paletteName='Vibrant'
+                        colorCode={false}
+                        codeType='contrast'
+                      />
+                    </div>
                   </div>
                 }
                 </div>
@@ -118,6 +145,30 @@ export default function StudioWebsite(
                       paletteType="LightVibrant" 
                       palette={palette.LightVibrant} 
                     />
+                    <div className="website__toggle-code">
+                      < ColorCode
+                        palette={palette}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        contrast={contrast}
+                        hslToRgb={hslToRgb}
+                        hslToHex={hslToHex}
+                        paletteName='LightVibrant'
+                        colorCode={false}
+                        codeType='hex'
+                      />
+                      < ColorCode
+                        palette={palette}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        contrast={contrast}
+                        hslToRgb={hslToRgb}
+                        hslToHex={hslToHex}
+                        paletteName='LightVibrant'
+                        colorCode={false}
+                        codeType='contrast'
+                      />
+                    </div>
                   </div>
                 }
                 </div>
@@ -147,6 +198,30 @@ export default function StudioWebsite(
                       paletteType="DarkVibrant" 
                       palette={palette.DarkVibrant} 
                     />
+                    <div className="website__toggle-code">
+                      < ColorCode
+                        palette={palette}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        contrast={contrast}
+                        hslToRgb={hslToRgb}
+                        hslToHex={hslToHex}
+                        paletteName='DarkVibrant'
+                        colorCode={false}
+                        codeType='hex'
+                      />
+                      < ColorCode
+                        palette={palette}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        contrast={contrast}
+                        hslToRgb={hslToRgb}
+                        hslToHex={hslToHex}
+                        paletteName='DarkVibrant'
+                        colorCode={false}
+                        codeType='contrast'
+                      />
+                    </div>
                   </div>
                 }
                 </div>
@@ -176,6 +251,30 @@ export default function StudioWebsite(
                       paletteType="Muted" 
                       palette={palette.Muted} 
                     />
+                    <div className="website__toggle-code">
+                      < ColorCode
+                        palette={palette}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        contrast={contrast}
+                        hslToRgb={hslToRgb}
+                        hslToHex={hslToHex}
+                        paletteName='Muted'
+                        colorCode={false}
+                        codeType='hex'
+                      />
+                      < ColorCode
+                        palette={palette}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        contrast={contrast}
+                        hslToRgb={hslToRgb}
+                        hslToHex={hslToHex}
+                        paletteName='Muted'
+                        colorCode={false}
+                        codeType='contrast'
+                      />
+                    </div>
                   </div>
                 }
                 </div>
@@ -205,6 +304,30 @@ export default function StudioWebsite(
                       paletteType="LightMuted" 
                       palette={palette.LightMuted} 
                     />
+                    <div className="website__toggle-code">
+                      < ColorCode
+                        palette={palette}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        contrast={contrast}
+                        hslToRgb={hslToRgb}
+                        hslToHex={hslToHex}
+                        paletteName='LightMuted'
+                        colorCode={false}
+                        codeType='hex'
+                      />
+                      < ColorCode
+                        palette={palette}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        contrast={contrast}
+                        hslToRgb={hslToRgb}
+                        hslToHex={hslToHex}
+                        paletteName='LightMuted'
+                        colorCode={false}
+                        codeType='contrast'
+                      />
+                    </div>
                   </div>
                 }
                 </div>
@@ -234,6 +357,30 @@ export default function StudioWebsite(
                       paletteType="DarkMuted" 
                       palette={palette.DarkMuted} 
                     />
+                    <div className="website__toggle-code">
+                      < ColorCode
+                        palette={palette}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        contrast={contrast}
+                        hslToRgb={hslToRgb}
+                        hslToHex={hslToHex}
+                        paletteName='DarkMuted'
+                        colorCode={false}
+                        codeType='hex'
+                      />
+                      < ColorCode
+                        palette={palette}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        contrast={contrast}
+                        hslToRgb={hslToRgb}
+                        hslToHex={hslToHex}
+                        paletteName='DarkMuted'
+                        colorCode={false}
+                        codeType='contrast'
+                      />
+                    </div>
                   </div>
                 }
                 </div>

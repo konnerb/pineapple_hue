@@ -24,6 +24,16 @@
     &__toggle-button button {
         background-color: transparent;
     }
+    &__toggle-code {
+        position: absolute;
+        display: flex;
+        align-self: flex-end;
+        width: 90%;
+        justify-content: space-between;
+            @include tablet {
+                width: 50%;
+            }
+    }
     &__toggle-lightness {
         position: relative;
         display: flex;

@@ -86,6 +86,7 @@
             justify-content: space-around;
             padding: 16px;
             width: 50%;
+            border-radius: 25px 0px 25px 25px;
                 @include tablet {
                     width: 100%;
                     border-radius: 0px 25px 25px 25px;
@@ -110,7 +111,10 @@
     border-radius: 0px 0px 25px 0px      
 }
 
-.image_bottom-margin {
+.image_top {
+
+}
+.image_bottom {
         @include tablet {
             margin: 55px 0px;      
         }

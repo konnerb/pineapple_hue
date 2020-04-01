@@ -19,6 +19,8 @@ export default class Main extends Component {
         }
         this.handlePercentChange = this.handlePercentChange.bind(this);
         this.hslToRgb = this.hslToRgb.bind(this);
+        this.hslToHex = this.hslToHex.bind(this);
+        this.contrast = this.contrast.bind(this);
     }
 
     //Fetches Image Data from React-DropZone UploadPage Component and sets state
@@ -175,7 +177,7 @@ export default class Main extends Component {
         //console.log(lumHsl1, lumHsl2)
         let lum1 = lumHsl1 ? this.luminanace(lumHsl1[0], lumHsl1[1], lumHsl1[2]) : [];
         let lum2 = lumHsl2 ? this.luminanace(lumHsl2[0], lumHsl2[1], lumHsl2[2]) : [];
-        //console.log(lumHsl1, lumHsl2)
+        //console.log(lum1, lum2)
         let brightest = Math.max(lum1, lum2);
         let darkest = Math.min(lum1, lum2);
         return Math.round( (brightest + 0.05) / (darkest + 0.05) * 100 ) / 100;
@@ -255,6 +257,8 @@ export default class Main extends Component {
             />
             <Studio 
                 hslToRgb={this.hslToRgb}
+                hslToHex={this.hslToHex}
+                contrast={this.contrast}
                 palette={this.state.palette} 
                 handlePaletteUpdate={this.handlePaletteUpdate} 
                 image={this.state.img}

@@ -66,6 +66,7 @@ export default class StudioComponents extends Component {
                     />
                     {this.state.toggleButtonsOpacity && 
                         <InputPercent 
+                        percents={percents.opacityButton}
                         handlePercentChange={handlePercentChange}
                         nameInput="opacityButton"
                         defaultInputValue="0.80"
@@ -186,6 +187,7 @@ export default class StudioComponents extends Component {
                     />
                     {this.state.toggleIconsOpacity && 
                         <InputPercent 
+                        percents={percents.iconsButton}
                         handlePercentChange={handlePercentChange}
                         nameInput="iconOpacity"
                         defaultInputValue="0.80"
@@ -358,13 +360,14 @@ export default class StudioComponents extends Component {
                     />
                     {this.state.toggleImagesOpacity && 
                         <InputPercent 
+                        percents={percents.imageOpacity}
                         handlePercentChange={handlePercentChange}
-                        nameInput="vibrantImageOpacity"
+                        nameInput="imageOpacity"
                         defaultInputValue="0.80"
                         />
                     }
                 </div>
-                <div className="studio-components__images-preview">
+                <div className="studio-components__images-preview image_top">
                     <div className="studio-components__images" 
                             style={{backgroundColor: 
                                 'hsl('
@@ -374,7 +377,7 @@ export default class StudioComponents extends Component {
                             }}
                     >
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -383,7 +386,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -392,7 +395,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -401,7 +404,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -410,7 +413,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -419,7 +422,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -428,7 +431,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -437,7 +440,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -446,7 +449,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -455,7 +458,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -464,7 +467,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -473,7 +476,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -482,7 +485,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -491,7 +494,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -500,7 +503,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -509,7 +512,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -518,7 +521,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                     </div>
-                    <div className="studio-components__images image_bottom-margin" 
+                    <div className="studio-components__images image_bottom" 
                             style={{backgroundColor: 
                                 'hsl('
                                     +roundHue(LightMuted.hsl[0])+','
@@ -527,7 +530,7 @@ export default class StudioComponents extends Component {
                             }}
                     >
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -536,7 +539,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -545,7 +548,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -554,7 +557,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -563,7 +566,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image 
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
@@ -572,7 +575,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
@@ -581,7 +584,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
@@ -590,7 +593,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
@@ -599,7 +602,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
@@ -608,7 +611,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
@@ -617,7 +620,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
@@ -626,7 +629,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
@@ -635,7 +638,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
@@ -644,7 +647,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
@@ -653,7 +656,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 
@@ -662,7 +665,7 @@ export default class StudioComponents extends Component {
                         roundSl={roundSl}
                         />
                         <Image
-                        percent={percents.vibrantImageOpacity}
+                        percent={percents.imageOpacity}
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder} 
                         palette={Vibrant} 

@@ -1,7 +1,12 @@
+@import '../../../styles/base';
+
 .bar {
     width: 33.33%;
     height: 100%;
-    border-right: 3px solid black;
+    border-right: 1px solid $light-grey;
+        @include tablet {
+            border-right: 2px solid $light-grey;
+        }
     &__uploadImg {
         width: 50%;
         height: 15%;    
