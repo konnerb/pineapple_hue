@@ -8,6 +8,7 @@
     justify-content: space-between;
     &__color {
         display: flex;
+        align-items: center;
         flex-grow: 1;
     }
     &__toggle-button {

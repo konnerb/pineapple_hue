@@ -33,7 +33,7 @@ function UploadImage({ fetchImgData }) {
       onDrop,
       accept: 'image/jpeg, image/png',
       //multiple: 'true',
-      maxSize: '2000000'
+      maxSize: '3000000'
     })
 
     const acceptedFilesItems = acceptedFiles.map(file => (
