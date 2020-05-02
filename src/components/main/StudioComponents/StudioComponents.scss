@@ -82,7 +82,6 @@
             width: 50%;
                 @include tablet {
                     width: 100%;
-                    border-radius: 0px 25px 25px 25px;
                 }
         }
         &__images-buttons {
@@ -107,13 +106,13 @@
 .image_top {
     border-radius: 0px 0px 25px 25px;
         @include tablet {
-            border-radius: none;   
+            border-radius:  0px 25px 25px 25px;;   
         }
 }
 .image_bottom {
     border-radius: 0px 0px 25px 25px;
         @include tablet {
             margin: 55px 0px;   
-            border-radius: none;   
+            border-radius: 25px 25px 25px 25px;;   
         }
 }

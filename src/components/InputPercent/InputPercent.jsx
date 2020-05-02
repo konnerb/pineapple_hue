@@ -6,7 +6,7 @@ export default function InputPercent({ handlePercentChange, percents, isImage, n
     <>
         <div className="input">
             <label className="input__opacity">Opacity: {percents || defaultInputValue}</label>
-            <input className="input__percent" style={{ transform: isImage && 'none' }} 
+            <input className="input__percent"
                 type="range" 
                 name={nameInput}
                 step="any" 

@@ -98,15 +98,6 @@ const store = {
       title: "soundcloud"
     }
   ]
-
 }
-export default store;
 
-//import facebook from '../../assets/icons/facebook_icon-color.svg';
-//import twitter from '../../assets/icons/twitter_icon-color.svg';
-//import linkedin from '../../assets/icons/linkedin_icon-color.svg';
-//import instagram from '../../assets/icons/instagram_icon-color.svg';
-//import google from '../../assets/icons/google-plus_icon-color.svg';
-//import pinterest from '../../assets/icons/pinterest_icon-color.svg';
-//import tumblr from '../../assets/icons/tumblr_icon-color.svg';
-//import soundcloud from '../../assets/icons/soundcloud_icon-color.svg';
+export default store;

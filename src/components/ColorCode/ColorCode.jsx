@@ -33,7 +33,7 @@ export default function ColorCode(
 
     return (
     <>  
-        <div className="color-code">
+        <div className="color-code" >
 
             { (colorCode || codeType === 'hex') && 
                 <p className="color-code__value">Hex: {hex}</p>

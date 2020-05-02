@@ -80,7 +80,6 @@ export default class Main extends Component {
     //Converts HSL values to RGB
 
     hslToRgb (h, s, l, isComa = true ) {
-        //console.log(h, s, l)
         s /= 100;
         l /= 100;
       
@@ -158,7 +157,6 @@ export default class Main extends Component {
     //Luminanace is a helper function for breaking down the required values for comparison in the contrast function
 
     luminanace(r, g, b) {
-        //console.log(r, g, b)
         let color = [r, g, b].map(value => {
             value /= 255;
             return value <= 0.03928
@@ -173,10 +171,10 @@ export default class Main extends Component {
     contrast = (hsl1, hsl2) => {
         let lumHsl1 = hsl1 ? this.hslToRgb(hsl1[0], hsl1[1], hsl1[2], false) : [];
         let lumHsl2 = hsl2 ? this.hslToRgb(hsl2[0], hsl2[1], hsl2[2], false) : [];
-        //console.log(lumHsl1, lumHsl2)
+
         let lum1 = lumHsl1 ? this.luminanace(lumHsl1[0], lumHsl1[1], lumHsl1[2]) : [];
         let lum2 = lumHsl2 ? this.luminanace(lumHsl2[0], lumHsl2[1], lumHsl2[2]) : [];
-        //console.log(lum1, lum2)
+
         let brightest = Math.max(lum1, lum2);
         let darkest = Math.min(lum1, lum2);
         return Math.round( (brightest + 0.05) / (darkest + 0.05) * 100 ) / 100;
@@ -238,20 +236,20 @@ export default class Main extends Component {
                 onClick={() => this.handleTogglePalette()}
             > {this.state.togglePalette ? `Whoa!` : `What's your pineapplehue!?`}
             </button>
-            { this.state.togglePalette &&
-                < PaletteView 
-                    contrast={this.contrast}
-                    contrastHsl={this.contrastHsl}
-                    palette={this.state.palette} 
-                    togglePalette={this.state.togglePalette}
-                    roundHue={this.roundHue}
-                    roundSl={this.roundSl}
-                    hslToRgb={this.hslToRgb}
-                    hslToHex={this.hslToHex}
-                    colorCode={true}
-                    codeType=''
-                />
-            }
+        { this.state.togglePalette &&
+            < PaletteView 
+                contrast={this.contrast}
+                contrastHsl={this.contrastHsl}
+                palette={this.state.palette} 
+                togglePalette={this.state.togglePalette}
+                roundHue={this.roundHue}
+                roundSl={this.roundSl}
+                hslToRgb={this.hslToRgb}
+                hslToHex={this.hslToHex}
+                colorCode={true}
+                codeType=''
+            />
+        }
         </div>
         }
         </main>

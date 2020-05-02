@@ -202,21 +202,20 @@ export default class StudioComponents extends Component {
                                     +roundSl(LightVibrant.hsl[2])+')'
                             }}
                     >
-                        {icons.map(({ icon, title }, i) => (
+                    {icons.map(({ icon, title }, i) => (
 
-                            <Icons 
-                            key={i}
-                            palette={Vibrant} 
-                            icon={icon}
-                            percent={percents.iconOpacity}
-                            toggleIconsShadow={this.state.toggleIconsShadow}
-                            toggleIconsBorder={this.state.toggleIconsBorder}
-                            iconName={title}
-                            roundHue={roundHue}
-                            roundSl={roundSl}
-                            />
-
-                        ))}
+                        <Icons 
+                        key={i}
+                        palette={Vibrant} 
+                        icon={icon}
+                        percent={percents.iconOpacity}
+                        toggleIconsShadow={this.state.toggleIconsShadow}
+                        toggleIconsBorder={this.state.toggleIconsBorder}
+                        iconName={title}
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        />
+                    ))}
 
                     </div>
                     <div className="studio-components__icons icons-bottom" 
@@ -227,21 +226,20 @@ export default class StudioComponents extends Component {
                                     +roundSl(LightMuted.hsl[2])+')'
                             }}
                         >
-                        {icons.map(({ icon, title }, i) => (
+                    {icons.map(({ icon, title }, i) => (
 
-                            <Icons 
-                            key={i}
-                            icon={icon}
-                            iconName={title}      
-                            percent={percents.iconOpacity}
-                            toggleIconsShadow={this.state.toggleIconsShadow}
-                            toggleIconsBorder={this.state.toggleIconsBorder}
-                            palette={Vibrant} 
-                            roundHue={roundHue}
-                            roundSl={roundSl}
-                            />
-
-                        ))}
+                        <Icons 
+                        key={i}
+                        icon={icon}
+                        iconName={title}      
+                        percent={percents.iconOpacity}
+                        toggleIconsShadow={this.state.toggleIconsShadow}
+                        toggleIconsBorder={this.state.toggleIconsBorder}
+                        palette={Vibrant} 
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        />
+                    ))}
                     </div>
                 </div>
             </article>
@@ -286,20 +284,19 @@ export default class StudioComponents extends Component {
                                     +roundSl(LightVibrant.hsl[2])+')'
                             }}
                     >   
-                        {images.map(({ image, title }, i) => (
-                            <Image 
-                            key={i}
-                            image={image}
-                            imageName={title}
-                            percent={percents.imageOpacity}
-                            toggleImagesShadow={this.state.toggleImagesShadow}
-                            toggleImagesBorder={this.state.toggleImagesBorder}
-                            palette={Vibrant} 
-                            roundHue={roundHue}
-                            roundSl={roundSl}
-                            />
-
-                        ))}
+                    {images.map(({ image, title }, i) => (
+                        <Image 
+                        key={i}
+                        image={image}
+                        imageName={title}
+                        percent={percents.imageOpacity}
+                        toggleImagesShadow={this.state.toggleImagesShadow}
+                        toggleImagesBorder={this.state.toggleImagesBorder}
+                        palette={Vibrant} 
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        />
+                    ))}
                     </div>
                     <div className="studio-components__images image_bottom" 
                             style={{backgroundColor: 
@@ -309,20 +306,19 @@ export default class StudioComponents extends Component {
                                     +roundSl(LightMuted.hsl[2])+')'
                             }}
                     >
-                        {images.map(({ image, title }, i) => (
-                            <Image 
-                            key={i}
-                            image={image}
-                            imageName={title}
-                            percent={percents.imageOpacity}
-                            toggleImagesShadow={this.state.toggleImagesShadow}
-                            toggleImagesBorder={this.state.toggleImagesBorder}
-                            palette={Vibrant} 
-                            roundHue={roundHue}
-                            roundSl={roundSl}
-                            />
-
-                        ))}
+                    {images.map(({ image, title }, i) => (
+                        <Image 
+                        key={i}
+                        image={image}
+                        imageName={title}
+                        percent={percents.imageOpacity}
+                        toggleImagesShadow={this.state.toggleImagesShadow}
+                        toggleImagesBorder={this.state.toggleImagesBorder}
+                        palette={Vibrant} 
+                        roundHue={roundHue}
+                        roundSl={roundSl}
+                        />
+                    ))}
                     </div>
                 </div>
             </article>

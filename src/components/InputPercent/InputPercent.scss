@@ -1,6 +1,8 @@
+@import '../../styles/base';
 
 .input {
     height: 50%;
+    padding-left: 8px;
     display: flex;
     flex-wrap: wrap;
     &__percent {
@@ -8,5 +10,8 @@
     }
     &__opacity {
         width: 50px;
+        @include tablet {
+            padding-left: 16px;
+        }
     }
 }
