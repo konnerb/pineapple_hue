@@ -25,6 +25,9 @@
         font-size: 17px;
         margin-bottom: 16px;
         box-shadow: 3px 3px 5px 6px #ccc;
+        &:hover {
+            cursor: pointer;
+        }
             @include tablet {
                 border: 3px solid black;
                 height: 100px;

@@ -191,48 +191,6 @@ export default class Main extends Component {
     roundSl = (sl) => { return Math.round( (sl) * 100) + "%" }
 
     render() {
-        
-    //this.palette.Vibrant && {
-    //colorAdjust = {
-    //    colorVibrant: 
-    //        'hsl('
-    //            +this.roundHue(this.palette.Vibrant.hsl[0])+','
-    //            +this.roundSl(this.palette.Vibrant.hsl[1])+','
-    //            +this.roundSl(this.palette.Vibrant.hsl[2])+')',
-    //
-    //    colorLightVibrant: 
-    //        'hsl('
-    //            +this.roundHue(this.palette.LightVibrant.hsl[0])+','
-    //            +this.roundSl(this.palette.LightVibrant.hsl[1])+','
-    //            +this.roundSl(this.palette.LightVibrant.hsl[2])+')',
-    //
-    //    colorDarkVibrant: 
-    //        'hsl('
-    //            +this.roundHue(this.palette.DarkVibrant.hsl[0])+','
-    //            +this.roundSl(this.palette.DarkVibrant.hsl[1])+','
-    //            +this.roundSl(this.palette.DarkVibrant.hsl[2])+')',
-    //
-    //    colorMuted: 
-    //        'hsl('
-    //            +this.roundHue(this.palette.Muted.hsl[0])+','
-    //            +this.roundSl(this.palette.Muted.hsl[1])+','
-    //            +this.roundSl(this.palette.Muted.hsl[2])+')',
-    //
-    //    colorLightMuted: 
-    //        'hsl('
-    //            +this.roundHue(this.palette.LightMuted.hsl[0])+','
-    //            +this.roundSl(this.palette.LightMuted.hsl[1])+','
-    //            +this.roundSl(this.palette.LightMuted.hsl[2])+')',
-    //
-    //    colorDarkMuted:
-    //        'hsl('
-    //            +this.roundHue(this.palette.DarkMuted.hsl[0])+','
-    //            +this.roundSl(this.palette.DarkMuted.hsl[1])+','
-    //            +this.roundSl(this.palette.DarkMuted.hsl[2])+')'
-    //}
-    //}
-    //console.log(colorAdjust)
-
     return (
     <> 
         <section className="hero-component"> 

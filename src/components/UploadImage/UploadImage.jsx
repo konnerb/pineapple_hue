@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useMemo } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { useDropzone } from 'react-dropzone'
 import './UploadImage.scss';
 
@@ -13,8 +13,6 @@ function UploadImage({ fetchImgData }) {
         reader.onabort = () => console.log('file reading was aborted')
         reader.onerror = () => console.log('file reading has failed')
         reader.onload = () => {
-          //const binaryStr = reader
-          //console.log(binaryStr)
           fetchImgData(reader.result)
         }
         reader.readAsDataURL(blob)

@@ -5,7 +5,7 @@ import StyleBar from '../../StyleBar/StyleBar'
 import Icons from '../../Icons/Icons'
 import Image from '../../Image/Image'
 import InputPercent from '../../InputPercent/InputPercent'
-
+import store from '../../../store'
 export default class StudioComponents extends Component {
     constructor(props) {
         super(props)
@@ -35,7 +35,8 @@ export default class StudioComponents extends Component {
     }
 
     render() {
-
+        //console.log(store.images.map(({ image, title }, i) => console.log(image, title, i)) )
+        const { images, icons } = store;
         const { Vibrant, LightVibrant, DarkVibrant, Muted, LightMuted, DarkMuted } = this.props.palette;
         const { roundHue, roundSl, handlePercentChange, percents } = this.props;
         
@@ -50,7 +51,7 @@ export default class StudioComponents extends Component {
                         +roundSl(Vibrant.hsl[1])+','
                         +roundSl(Vibrant.hsl[2] * 1.25)+')'
                 }}
-            >
+            > 
                     <StyleBar 
                         opacityType="toggleButtonsOpacity"
                         shadowType="toggleButtonsShadow"
@@ -201,67 +202,22 @@ export default class StudioComponents extends Component {
                                     +roundSl(LightVibrant.hsl[2])+')'
                             }}
                     >
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={Vibrant} 
-                        iconName="facebook"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={DarkVibrant} 
-                        iconName="twitter"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={Muted} 
-                        iconName="linkedin"
-                        />
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={DarkMuted} 
-                        iconName="google"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={DarkMuted} 
-                        iconName="pinterest"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={DarkMuted} 
-                        iconName="tumblr"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={DarkMuted} 
-                        iconName="soundcloud"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
+                        {icons.map(({ icon, title }, i) => (
+
+                            <Icons 
+                            key={i}
+                            palette={Vibrant} 
+                            icon={icon}
+                            percent={percents.iconOpacity}
+                            toggleIconsShadow={this.state.toggleIconsShadow}
+                            toggleIconsBorder={this.state.toggleIconsBorder}
+                            iconName={title}
+                            roundHue={roundHue}
+                            roundSl={roundSl}
+                            />
+
+                        ))}
+
                     </div>
                     <div className="studio-components__icons icons-bottom" 
                             style={{backgroundColor: 
@@ -271,67 +227,21 @@ export default class StudioComponents extends Component {
                                     +roundSl(LightMuted.hsl[2])+')'
                             }}
                         >
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={Vibrant} 
-                        iconName="facebook"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={DarkVibrant} 
-                        iconName="twitter"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={Muted} 
-                        iconName="linkedin"
-                        />
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={DarkMuted} 
-                        iconName="google"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={DarkMuted} 
-                        iconName="pinterest"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={DarkMuted} 
-                        iconName="tumblr"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Icons 
-                        percent={percents.iconOpacity}
-                        toggleIconsShadow={this.state.toggleIconsShadow}
-                        toggleIconsBorder={this.state.toggleIconsBorder}
-                        palette={DarkMuted} 
-                        iconName="soundcloud"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
+                        {icons.map(({ icon, title }, i) => (
+
+                            <Icons 
+                            key={i}
+                            icon={icon}
+                            iconName={title}      
+                            percent={percents.iconOpacity}
+                            toggleIconsShadow={this.state.toggleIconsShadow}
+                            toggleIconsBorder={this.state.toggleIconsBorder}
+                            palette={Vibrant} 
+                            roundHue={roundHue}
+                            roundSl={roundSl}
+                            />
+
+                        ))}
                     </div>
                 </div>
             </article>
@@ -375,151 +285,21 @@ export default class StudioComponents extends Component {
                                     +roundSl(LightVibrant.hsl[1])+','
                                     +roundSl(LightVibrant.hsl[2])+')'
                             }}
-                    >
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="yogo"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="bar"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="basketball"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="beach"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="book"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="car"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="cat"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="coffeeShop"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="coffeeSwirls"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="darkAlley"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="dog"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="festival"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="toEast"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="ttcWinter"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="winterContrast"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="dryVan"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
+                    >   
+                        {images.map(({ image, title }, i) => (
+                            <Image 
+                            key={i}
+                            image={image}
+                            imageName={title}
+                            percent={percents.imageOpacity}
+                            toggleImagesShadow={this.state.toggleImagesShadow}
+                            toggleImagesBorder={this.state.toggleImagesBorder}
+                            palette={Vibrant} 
+                            roundHue={roundHue}
+                            roundSl={roundSl}
+                            />
+
+                        ))}
                     </div>
                     <div className="studio-components__images image_bottom" 
                             style={{backgroundColor: 
@@ -529,150 +309,20 @@ export default class StudioComponents extends Component {
                                     +roundSl(LightMuted.hsl[2])+')'
                             }}
                     >
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="yogo"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="bar"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="basketball"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="beach"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image 
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder}
-                        palette={Vibrant} 
-                        imageName="book"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder} 
-                        palette={Vibrant} 
-                        imageName="car"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder} 
-                        palette={Vibrant} 
-                        imageName="cat"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder} 
-                        palette={Vibrant} 
-                        imageName="coffeeShop"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder} 
-                        palette={Vibrant} 
-                        imageName="coffeeSwirls"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder} 
-                        palette={Vibrant} 
-                        imageName="darkAlley"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder} 
-                        palette={Vibrant} 
-                        imageName="dog"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder} 
-                        palette={Vibrant} 
-                        imageName="festival"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder} 
-                        palette={Vibrant} 
-                        imageName="toEast"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder} 
-                        palette={Vibrant} 
-                        imageName="ttcWinter"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder} 
-                        palette={Vibrant} 
-                        imageName="winterContrast"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
-                        <Image
-                        percent={percents.imageOpacity}
-                        toggleImagesShadow={this.state.toggleImagesShadow}
-                        toggleImagesBorder={this.state.toggleImagesBorder} 
-                        palette={Vibrant} 
-                        imageName="dryVan"
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        />
+                        {images.map(({ image, title }, i) => (
+                            <Image 
+                            key={i}
+                            image={image}
+                            imageName={title}
+                            percent={percents.imageOpacity}
+                            toggleImagesShadow={this.state.toggleImagesShadow}
+                            toggleImagesBorder={this.state.toggleImagesBorder}
+                            palette={Vibrant} 
+                            roundHue={roundHue}
+                            roundSl={roundSl}
+                            />
+
+                        ))}
                     </div>
                 </div>
             </article>
