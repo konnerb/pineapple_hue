@@ -1,14 +1,14 @@
 import React from 'react';
 import './Hero.scss';
 import UploadImage from '../../components/UploadImage/UploadImage'
-import pineappleJump from '../../assets/icons/pineapple_jump-01.svg'
+//import pineappleJump from '/icons/pineapple_jump-01.svg'
 
 export default function Hero({ fetchImgData, palette }) {
     return (
         <section className="hero">
             <div className="hero__upload-image">
                 < UploadImage fetchImgData={fetchImgData} />
-                <img className="hero__upload-pineapple" src={pineappleJump} alt="Pineapple jumping up!"></img>
+                <img className="hero__upload-pineapple" src="/icons/pineapple_jump-01.svg" alt="Pineapple jumping up!"></img>
             </div>
             <div className="hero__svg-container">
                 <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
