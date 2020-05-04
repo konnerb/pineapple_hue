@@ -6,21 +6,20 @@
     display: flex;
     flex-direction: column;
     background-color: #fcd729;
-        @include tablet { 
+        @include laptop { 
             height: 100vh;
         }
     &__upload-image {
         align-items: center;
         justify-content: space-between;
-        //position: relative;
-        //top: 15%;
         padding: 16px 16px;  
         height: 275px;
-            @include tablet {
-                display: flex;
-                padding: 0px 24px;  
-            }
+            //@include tablet {
+            //    display: flex;
+            //    padding: 0px 24px;  
+            //}
             @include laptop {
+                display: flex;
                 padding: 0px 100px; 
             }
     }
@@ -30,8 +29,12 @@
         position: relative;
         //bottom: 110px;
         //margin-left: 390px;
+            @include tablet {
+                height: 200%; 
+            }
             @include laptop {
                 width: 25%; 
+                height: 100%; 
             }
     }
     &__svg-container {
@@ -49,6 +52,10 @@
         text-align: center;
         margin: 0;
         padding: 0px 16px;
+        padding-bottom: 16px;
+        @include tablet {
+            padding-bottom: 0px;
+        }
         @include laptop {
             font-size: 40px;
 

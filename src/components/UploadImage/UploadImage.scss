@@ -10,8 +10,14 @@
         }
     &__input-box {
         width: 100% !important;
+        @include tablet {
+            justify-content: center;
+            height: 120px;
+        }
         @include laptop {
+            justify-content: none;
             width: 55% !important;
+            height: none;
         }
     }
     &__status-type {
