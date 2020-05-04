@@ -209,6 +209,7 @@ export default class StudioComponents extends Component {
                         palette={Vibrant} 
                         icon={icon}
                         percent={percents.iconOpacity}
+                        toggleOpacity={this.state.toggleIconsOpacity}
                         toggleIconsShadow={this.state.toggleIconsShadow}
                         toggleIconsBorder={this.state.toggleIconsBorder}
                         iconName={title}
@@ -233,6 +234,7 @@ export default class StudioComponents extends Component {
                         icon={icon}
                         iconName={title}      
                         percent={percents.iconOpacity}
+                        toggleOpacity={this.state.toggleIconsOpacity}
                         toggleIconsShadow={this.state.toggleIconsShadow}
                         toggleIconsBorder={this.state.toggleIconsBorder}
                         palette={Vibrant} 

@@ -9,7 +9,7 @@
         border-radius: 100%;
         width: 32px;
             @include tablet {
-                width: 50px;
+                width: 50px !important;
             }
     }
 }
