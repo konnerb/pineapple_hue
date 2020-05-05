@@ -1,29 +1,27 @@
 @import '../../styles/base';
 
 .upload-wrapper {
-    //display: flex;
-    //flex-direction: column;
-    position: relative;
-        @include laptop {
-            top: 30%;
-            height: 100%;
-        }
-    &__input-box {
-        width: 100% !important;
-        @include tablet {
-            justify-content: center;
-            height: 120px;
-        }
-        @include laptop {
-            justify-content: none;
-            width: 55% !important;
-            height: none;
-        }
+  position: relative;
+    @include laptop {
+      top: 30%;
+      height: 100%;
     }
-    &__status-type {
-        padding: 8px 0px;
+  &__input-box {
+    width: 100% !important;
+    @include tablet {
+      justify-content: center;
+      height: 120px;
     }
-    &__file-name {
-        margin-left: 30px;
+    @include laptop {
+      justify-content: none;
+      width: 55% !important;
+      height: none;
     }
+  }
+  &__status-type {
+    padding: 8px 0px;
+  }
+  &__file-name {
+    margin-left: 30px;
+  }
 }

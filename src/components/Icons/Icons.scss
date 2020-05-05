@@ -1,15 +1,15 @@
 @import '../../styles/base';
 
 .icon {
-    margin: 5px;
-        @include tablet {
-            margin: 21px;  
-        }
-    &__svg {   
-        border-radius: 100%;
-        width: 32px;
-            @include tablet {
-                width: 50px !important;
-            }
+  margin: 5px;
+    @include tablet {
+      margin: 21px;  
     }
+  &__svg {   
+    border-radius: 100%;
+    width: 32px;
+      @include tablet {
+          width: 50px !important;
+      }
+  }
 }

@@ -1,16 +1,16 @@
 @import '../../styles/base';
 
 .palette {
-    flex-grow: 1;
-    &__color {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 15px;
-        font-weight: 500;
-            @include tablet {
-                font-size: 25px;
-            }
-    }
+  flex-grow: 1;
+  &__color {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+      @include tablet {
+        font-size: 25px;
+      }
+  }
 }

@@ -4,65 +4,62 @@ import StudioPaletteBar from '../StudioPaletteBar/StudioPaletteBar'
 import StudioWebsite from '../StudioWebsite/StudioWebsite'
 
 export default class Studio extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            newPalette: {},
+  constructor(props) {
+    super(props)
+    this.state = {
+      newPalette: {},
 
-            toggleVirbant: false,
-            toggleLightVibrant: false,
-            toggleDarkVibrant: false,
-            toggleMuted: false,
-            toggleLightMuted: false,
-            toggleDarkMuted: false
-        }
-        this.handleChange = this.handleChange.bind(this);
-        this.toggleStudioPalette = this.toggleStudioPalette.bind(this);
+      toggleVirbant: false,
+      toggleLightVibrant: false,
+      toggleDarkVibrant: false,
+      toggleMuted: false,
+      toggleLightMuted: false,
+      toggleDarkMuted: false
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.toggleStudioPalette = this.toggleStudioPalette.bind(this);
+  }
 
-    /*Handles Palette Change From InputScrub, updates Studio State, then handlePaletteUpdate fetches the newPalette Data and
-    updates the Main Component palette state
-    */
+  /*Handles Palette Change From InputScrub, updates Studio State, then handlePaletteUpdate fetches the newPalette Data and
+  updates the Main Component palette state
+  */
 
-    handleChange(event, paletteType) {
-        const { target: { value} } = event;
-        let newPalette = {};
-        newPalette[paletteType] = value;
-        this.setState({
-             newPalette
-        }, () => this.props.handlePaletteUpdate(this.state.newPalette) );
+  handleChange(event, paletteType) {
+    const { target: { value} } = event;
+    let newPalette = {};
+    newPalette[paletteType] = value;
+    this.setState({
+          newPalette
+    }, () => this.props.handlePaletteUpdate(this.state.newPalette) );
+  }
+
+  //Toggles StudioWebsite Componets color palette to adjust InputScrub Component
+  
+  toggleStudioPalette(toggleType) {
+    let toggleStatus = this.state[toggleType]
+    this.setState({
+              [toggleType]: !toggleStatus
+    }); 
+  }
+
+  render() {
+    const modifiedPalette = { ...this.state, ...this.props }
+  return (
+    <>
+    { this.props.palette.Vibrant && 
+      <section className="studio">
+        <StudioPaletteBar 
+        { ...modifiedPalette } 
+        />
+
+        <StudioWebsite 
+        { ...modifiedPalette }  
+        handleChange={this.handleChange} 
+        toggleStudioPalette={this.toggleStudioPalette}
+        />
+      </section>
     }
-
-    //Toggles StudioWebsite Componets color palette to adjust InputScrub Component
-    
-    toggleStudioPalette(toggleType) {
-        let toggleStatus = this.state[toggleType]
-        this.setState({
-                 [toggleType]: !toggleStatus
-        });
-        
-    }
-
-    render() {
-
-        const modifiedPalette = { ...this.state, ...this.props }
-        
-    return (
-        <>
-            { this.props.palette.Vibrant && 
-            <section className="studio">
-                <StudioPaletteBar 
-                { ...modifiedPalette } 
-                />
-
-                <StudioWebsite 
-                { ...modifiedPalette }  
-                handleChange={this.handleChange} 
-                toggleStudioPalette={this.toggleStudioPalette}
-                />
-            </section>
-            }
-        </>
-    )
-    }
+  </>
+  )
+  }
 } 

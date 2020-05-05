@@ -1,41 +1,40 @@
 @import '../../styles/base';
 
 .header {
-    background-color: #53E0B3;
-    width: 100vw;
-    height: 10vh;
-    display: flex;
-    align-items: center;
+  background-color: #53E0B3;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__page-links {
     justify-content: space-between;
-    &__page-links {
-        //width: 300px;
-        justify-content: space-between;
-        font-size: 1.75rem;
-        font-weight: 500;
-        margin-right: 16px;
-        @include tablet {
-            margin-right: 24px;  
-        };
-        @include laptop {
-            margin-right: 100px;
-        };
-    }
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-right: 16px;
+    @include tablet {
+        margin-right: 24px;  
+    };
+    @include laptop {
+        margin-right: 100px;
+    };
+  }
 }
 
 .isActive {
-    color: #2196f3;
+  color: #2196f3;
 }
 .links {
-    text-decoration: none;
-    color: #fcd729;
-    margin-left: 16px;
-        @include tablet {
-            margin-left: 24px;  
-        };
-        @include laptop {
-            margin-left: 100px;
-        };
+  text-decoration: none;
+  color: #fcd729;
+  margin-left: 16px;
+    @include tablet {
+      margin-left: 24px;  
+    };
+    @include laptop {
+      margin-left: 100px;
+    };
 }
 .selected {
-    border-bottom: 3px solid
+  border-bottom: 3px solid
 }

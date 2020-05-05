@@ -1,17 +1,14 @@
 @import '../../styles/base';
 
 .input {
-    height: 50%;
-    padding-left: 8px;
-    display: flex;
-    flex-wrap: wrap;
-    &__percent {
-        transform: rotate(270deg);
-    }
-    &__opacity {
-        width: 20px;
-        @include tablet {
-            padding-left: 16px;
-        }
-    }
+  height: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  &__percent {
+    transform: rotate(270deg);
+  }
+  &__opacity {
+    width: 100%;
+    text-align: center;
+  }
 }

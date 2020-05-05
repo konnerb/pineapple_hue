@@ -1,15 +1,14 @@
 @import '../../styles/base';
 
 .image {
-    padding: 8px 0px 8px 0px;
-    &__the-image {
-        //opacity: 80%;
-        width: 120px;
-        height: 100px;
-        border-radius: 20px;
-        @include tablet {
-            width: 250px;
-            height: 180px;   
-        }
+  padding: 8px 0px 8px 0px;
+  &__the-image {
+    width: 120px;
+    height: 100px;
+    border-radius: 20px;
+    @include tablet {
+      width: 250px;
+      height: 180px;   
     }
+  }
 }

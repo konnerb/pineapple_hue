@@ -8,7 +8,11 @@
     position: absolute;
     bottom: 30%;
     width: 100%;
+    max-width: 700px;
     @include global-padding;
+    @include tablet {
+      bottom: 40%;
+    }
   }
   &__text {
     text-align: center;
@@ -16,5 +20,6 @@
   }
   &__text a {
     text-decoration: none;
+    color: black;
   }
 }

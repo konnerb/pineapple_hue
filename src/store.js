@@ -21,23 +21,23 @@ const store = {
     {
       image: "/images/book_fall.jpg",
       title: "book"
+    },
+    {
+      image: "/images/car.jpg",
+      title: "car"
+    },
+    {
+      image: "/images/cat_fall.jpg",
+      title: "cat"
+    },
+    {
+      image: "/images/coffee_swirls.jpg",
+      title: "coffee swirls"
     }
-    //{
-    //  image: "/images/car.jpg",
-    //  title: "car"
-    //},
-    //{
-    //  image: "/images/cat_fall.jpg",
-    //  title: "cat"
-    //},
-    //{
-    //  image: "/images/coffee_swirls.jpg",
-    //  title: "coffee swirls"
-    //},
     //{
     //  image: "/images/coffee_shop.jpg",
     //  title: "coffee shop"
-    //},
+    //}
     //{
     //  image: "/images/dark_alley.jpg",
     //  title: "dark alley"
