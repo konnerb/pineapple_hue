@@ -1,0 +1,12 @@
+@import '../../styles/base';
+
+.about {
+  width: 100%;
+  position: relative;
+  &__text {
+    position: absolute;
+    bottom: 50%;
+    text-align: center;
+    width: 100%;
+  }
+}

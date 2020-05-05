@@ -4,10 +4,11 @@ import UploadImage from '../../components/UploadImage/UploadImage'
 //import pineappleJump from '/icons/pineapple_jump-01.svg'
 
 export default function Hero({ fetchImgData, palette }) {
+    console.log(palette)
     return (
         <section className="hero">
             <div className="hero__upload-image">
-                < UploadImage fetchImgData={fetchImgData} />
+            {fetchImgData && <UploadImage fetchImgData={fetchImgData} />}
                 <img className="hero__upload-pineapple" src="/icons/pineapple_jump-01.svg" alt="Pineapple jumping up!"></img>
             </div>
             <div className="hero__svg-container">
@@ -17,7 +18,7 @@ export default function Hero({ fetchImgData, palette }) {
                     </path>
                 </svg>
             </div>
-            { !palette.Vibrant &&
+            { (palette && palette.length === 0) &&
                 <h4 className="hero__upload-reminder">Please Upload An Image To See Your Colour Palette !</h4>
             }
         </section>

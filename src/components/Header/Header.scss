@@ -8,15 +8,23 @@
     align-items: center;
     justify-content: space-between;
     &__page-links {
-        width: 300px;
+        //width: 300px;
         justify-content: space-between;
+        font-size: 1.75rem;
+        font-weight: 500;
+        margin-right: 16px;
+        @include tablet {
+            margin-right: 24px;  
+        };
+        @include laptop {
+            margin-right: 100px;
+        };
     }
 }
 
 .isActive {
     color: #2196f3;
 }
-
 .links {
     text-decoration: none;
     color: #fcd729;
@@ -27,9 +35,7 @@
         @include laptop {
             margin-left: 100px;
         };
-
-    //:hover {
-    //  //color:#2196f3;
-    //  color: #00e676;
-    //}
+}
+.selected {
+    border-bottom: 3px solid
 }
