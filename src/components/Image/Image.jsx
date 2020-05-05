@@ -8,7 +8,7 @@ export default function Image({ imageName, percent, image, toggleImagesBorder, t
         <div className="image">
             <img 
             src={image} 
-            alt={`An image called "${imageName}" with an opacity of ${percent ? percent * 100 + " percent" : "80 percent"}, ${toggleImagesBorder ? "a 3 pixel solid black border" : "no border"}, and ${toggleImagesShadow ? "a 5 pixel by 10 pixel light-grey shadow" : "no shadow"}`}
+            alt={`${imageName} has an opacity of ${percent ? percent * 100 + " percent" : "80 percent"}, ${toggleImagesBorder ? "a 3 pixel solid black border" : "no border"}, and ${toggleImagesShadow ? "a 5 pixel by 10 pixel light-grey shadow" : "no shadow"}`}
             className="image__the-image" 
             style ={{
                 opacity: `${percent}`,

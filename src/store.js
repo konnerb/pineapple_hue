@@ -21,47 +21,47 @@ const store = {
     {
       image: "/images/book_fall.jpg",
       title: "book"
-    },
-    {
-      image: "/images/car.jpg",
-      title: "car"
-    },
-    {
-      image: "/images/cat_fall.jpg",
-      title: "cat"
-    },
-    {
-      image: "/images/coffee_swirls.jpg",
-      title: "coffee swirls"
-    },
-    {
-      image: "/images/coffee_shop.jpg",
-      title: "coffee shop"
-    },
-    {
-      image: "/images/dark_alley.jpg",
-      title: "dark alley"
-    },
-    {
-      image: "/images/dog.jpg",
-      title: "dog"
-    },
-    {
-      image: "/images/dry_van.jpg",
-      title: "dry van"
-    },
-    {
-      image: "/images/to_east.jpg",
-      title: "to east"
-    },
-    {
-      image: "/images/ttc_winter.jpg",
-      title: "ttc winter"
-    },
-    {
-      image: "/images/winter_contrast.jpg",
-      title: "winter contrast"
     }
+    //{
+    //  image: "/images/car.jpg",
+    //  title: "car"
+    //},
+    //{
+    //  image: "/images/cat_fall.jpg",
+    //  title: "cat"
+    //},
+    //{
+    //  image: "/images/coffee_swirls.jpg",
+    //  title: "coffee swirls"
+    //},
+    //{
+    //  image: "/images/coffee_shop.jpg",
+    //  title: "coffee shop"
+    //},
+    //{
+    //  image: "/images/dark_alley.jpg",
+    //  title: "dark alley"
+    //},
+    //{
+    //  image: "/images/dog.jpg",
+    //  title: "dog"
+    //},
+    //{
+    //  image: "/images/dry_van.jpg",
+    //  title: "dry van"
+    //},
+    //{
+    //  image: "/images/to_east.jpg",
+    //  title: "to east"
+    //},
+    //{
+    //  image: "/images/ttc_winter.jpg",
+    //  title: "ttc winter"
+    //},
+    //{
+    //  image: "/images/winter_contrast.jpg",
+    //  title: "winter contrast"
+    //}
   ],
 
   icons: [

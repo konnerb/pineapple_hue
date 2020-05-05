@@ -31,9 +31,16 @@
         align-self: flex-end;
         width: 95%;
         justify-content: space-between;
+        padding-bottom: 5px;
             @include tablet {
                 width: 50%;
             }
+        & .color-code__value {
+            width: 73px;
+            @include tablet {
+                width: 120px;
+            }
+        }
     }
     &__toggle-lightness {
         position: relative;
@@ -50,12 +57,13 @@
     }
     &__toggle-lightness button {
         position: absolute;
-        top: 32px;
+        top: 20px;
         right: 20px;
         background-color: transparent;
         width: 20px;
         height: 20px;
             @include tablet {
+                top: 32px;
                 right: 110px;
             }
     }

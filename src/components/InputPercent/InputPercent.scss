@@ -8,11 +8,6 @@
     &__percent {
         transform: rotate(270deg);
     }
-    &__percent-image {
-        height: 0px;
-        margin: 0 auto;
-        width: 50%;
-    }
     &__opacity {
         width: 20px;
         @include tablet {

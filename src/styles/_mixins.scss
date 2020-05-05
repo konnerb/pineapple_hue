@@ -17,3 +17,13 @@
     @content;
   }
 }
+
+@mixin global-padding {
+padding:0px 16px;
+  @include tablet {
+      padding: 0px 24px;  
+  };
+  @include laptop {
+      padding: 0px 100px;
+  };
+}

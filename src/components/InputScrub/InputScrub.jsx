@@ -7,7 +7,7 @@ export default function InputScrub({ palette, handleChange, paletteType }) {
     { palette ?
         <div>
             <div className="input-scrub">
-                <label>Adjust Lightness: { Math.round(palette.hsl[2] * 100) }%</label>
+                <label>Lightness: { Math.round(palette.hsl[2] * 100) }%</label>
                 <input className="input-scrub__lightness" 
                     type="range" 
                     name="Adjust Lightness" 
