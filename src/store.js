@@ -1,6 +1,5 @@
 
 const store = {
-
   images: [
     {
       image: "/images/yogo.jpg",

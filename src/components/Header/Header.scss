@@ -25,9 +25,26 @@
   color: #2196f3;
 }
 .links {
+  //position: relative;
   text-decoration: none;
   color: #fcd729;
   margin-left: 16px;
+  //&:after {
+  //  background: none repeat scroll 0 0 transparent;
+  //  bottom: 0;
+  //  content: "";
+  //  height: 1px;
+  //  left: 50%;
+  //  position: absolute;
+  //  background: #fcd729;;
+  //  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  //  width: 0;
+  //}
+  //&:hover:after {
+  //  width: 100%; 
+  //  height: 3px;
+  //  left: 0; 
+  //}
     @include tablet {
       margin-left: 24px;  
     };
@@ -36,5 +53,5 @@
     };
 }
 .selected {
-  border-bottom: 3px solid
+  border-bottom: 2.5px solid
 }

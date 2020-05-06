@@ -1,5 +1,11 @@
 @import '../../styles/base';
 
+.input-scrub {
+  &__label {
+    font-weight: 500;
+  }
+}
+
 input[type=range] {
     height: 20px;
     -webkit-appearance: none;

@@ -3,23 +3,37 @@
 .about {
   width: 100%;
   position: relative;
+  & .hero__upload-image {
+    @include laptop {
+      justify-content: center;
+    }
+  }
 
   &__text-container {
     position: absolute;
-    bottom: 30%;
+    font-size: 0.9rem;
+    top: 42%;
     width: 100%;
     max-width: 700px;
     @include global-padding;
     @include tablet {
-      bottom: 40%;
+      //font-size: 1.25rem;
+      top: 50%;
+    }
+    @include laptop {
+      font-size: 1rem;
+      //font-weight: 500;
+      top: 40%;
     }
   }
   &__text {
-    text-align: center;
+    //text-align: center;
     color: black;
+    &:last-child {
+      text-align: end;
+    }
   }
   &__text a {
-    text-decoration: none;
     color: black;
   }
 }

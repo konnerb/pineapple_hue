@@ -31,14 +31,14 @@
         align-self: flex-end;
         width: 95%;
         justify-content: space-between;
-        //padding-bottom: 5px;
-            @include tablet {
-                width: 50%;
-            }
+          @include tablet {
+              width: 50%;
+          }
         & .color-code__value {
+            font-weight: 500;
             width: 73px;
             @include tablet {
-                width: 120px;
+              width: 120px;
             }
         }
     }
