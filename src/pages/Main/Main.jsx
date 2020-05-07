@@ -253,9 +253,11 @@ export default class Main extends Component {
         </div>
       }
     </main>
+
     <footer className="hero">
       <Footer />
     </footer>
+    
   </>
   )
   }

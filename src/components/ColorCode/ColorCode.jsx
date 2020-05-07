@@ -36,7 +36,7 @@ return (
   <div className="color-code" >
 
     { (colorCode || codeType === 'hex') && 
-      <p className="color-code__value">Hex: {hex}</p>
+      <p className="color-code__value">Hex: {codeType === 'hex' ? palette[paletteName]._hex : hex}</p>
     }
     { (colorCode || codeType === 'rgb') && 
       <p className="color-code__value display-none">Rgb:( {rgb} )</p>

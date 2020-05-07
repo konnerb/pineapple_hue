@@ -36,7 +36,8 @@
           }
         & .color-code__value {
             font-weight: 500;
-            width: 73px;
+            text-align: start;
+            width: 75px;
             @include tablet {
               width: 120px;
             }

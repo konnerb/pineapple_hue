@@ -2,8 +2,12 @@
 
 .input {
   height: 40%;
+  width: 100px;
   display: flex;
   flex-wrap: wrap;
+  @include tablet {
+    height: 150px;
+  }
   &__percent {
     transform: rotate(270deg);
   }
