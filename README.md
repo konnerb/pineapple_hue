@@ -1,4 +1,4 @@
-### 'Welcome to the repo of pinapplehue!' 
+## Welcome to the repo of pinapplehue!
 
 pinapplehue is a visual colour tool developed in React that utilizes react-dropzone for handling the image uploads and vibrant.js to parse the image data into colour palettes. 
 
@@ -6,7 +6,7 @@ Once an image is uploaded, the person can scroll down to discover what their new
 
 If the person is happy with their new colour scheme, they can scroll towards the bottom of the website and click on "What's your pineapplehue". Once clicked, they'll have access to their new palette and Hex, Rgb, or Hsl colour codes.
 
-What's next? 
+### What's next? 
 
 In the near future, contrast ratio helpers will be implemented to guide the person in choosing the right colour combinations under the WCAG standards.
 
