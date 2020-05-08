@@ -102,6 +102,7 @@ export default function StudioWebsite(
                         hslToHex={hslToHex}
                         paletteName='Vibrant'
                         colorCode={false}
+                        isToggled={toggleVibrant}
                         codeType='hex'
                       />
                       < ColorCode
@@ -112,6 +113,7 @@ export default function StudioWebsite(
                         hslToRgb={hslToRgb}
                         hslToHex={hslToHex}
                         paletteName='Vibrant'
+                        isToggled={toggleVibrant}
                         colorCode={false}
                         codeType='contrast'
                       />
@@ -154,6 +156,7 @@ export default function StudioWebsite(
                         hslToRgb={hslToRgb}
                         hslToHex={hslToHex}
                         paletteName='LightVibrant'
+                        isToggled={toggleLightVibrant}
                         colorCode={false}
                         codeType='hex'
                       />
@@ -165,6 +168,7 @@ export default function StudioWebsite(
                         hslToRgb={hslToRgb}
                         hslToHex={hslToHex}
                         paletteName='LightVibrant'
+                        isToggled={toggleLightVibrant}
                         colorCode={false}
                         codeType='contrast'
                       />
@@ -207,6 +211,7 @@ export default function StudioWebsite(
                         hslToRgb={hslToRgb}
                         hslToHex={hslToHex}
                         paletteName='DarkVibrant'
+                        isToggled={toggleDarkVibrant}
                         colorCode={false}
                         codeType='hex'
                       />
@@ -218,6 +223,7 @@ export default function StudioWebsite(
                         hslToRgb={hslToRgb}
                         hslToHex={hslToHex}
                         paletteName='DarkVibrant'
+                        isToggled={toggleDarkVibrant}
                         colorCode={false}
                         codeType='contrast'
                       />
@@ -260,6 +266,7 @@ export default function StudioWebsite(
                         hslToRgb={hslToRgb}
                         hslToHex={hslToHex}
                         paletteName='Muted'
+                        isToggled={toggleMuted}
                         colorCode={false}
                         codeType='hex'
                       />
@@ -271,6 +278,7 @@ export default function StudioWebsite(
                         hslToRgb={hslToRgb}
                         hslToHex={hslToHex}
                         paletteName='Muted'
+                        isToggled={toggleMuted}
                         colorCode={false}
                         codeType='contrast'
                       />
@@ -313,6 +321,7 @@ export default function StudioWebsite(
                         hslToRgb={hslToRgb}
                         hslToHex={hslToHex}
                         paletteName='LightMuted'
+                        isToggled={toggleLightMuted}
                         colorCode={false}
                         codeType='hex'
                       />
@@ -324,6 +333,7 @@ export default function StudioWebsite(
                         hslToRgb={hslToRgb}
                         hslToHex={hslToHex}
                         paletteName='LightMuted'
+                        isToggled={toggleLightMuted}
                         colorCode={false}
                         codeType='contrast'
                       />
@@ -366,6 +376,7 @@ export default function StudioWebsite(
                         hslToRgb={hslToRgb}
                         hslToHex={hslToHex}
                         paletteName='DarkMuted'
+                        isToggled={toggleDarkMuted}
                         colorCode={false}
                         codeType='hex'
                       />
@@ -377,6 +388,7 @@ export default function StudioWebsite(
                         hslToRgb={hslToRgb}
                         hslToHex={hslToHex}
                         paletteName='DarkMuted'
+                        isToggled={toggleDarkMuted}
                         colorCode={false}
                         codeType='contrast'
                       />

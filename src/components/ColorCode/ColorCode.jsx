@@ -11,7 +11,8 @@ export default function ColorCode(
     roundHue, 
     hslToHex, 
     hslToRgb, 
-    contrast 
+    contrast,
+    isToggled
   }) {
 
   const h = palette[paletteName] && roundHue(palette[paletteName].hsl[0]);
@@ -29,19 +30,22 @@ export default function ColorCode(
 
   const rgb = hslToRgb(h, ( (s * 1000)  / 1000 ), ( (l * 1000) / 1000), true );
 
-  const hex = hslToHex(h, ( (s * 1000)  / 1000 ), ( (l * 1000) / 1000) );
+  const hex = 
+        ( (isToggled === true && codeType === 'hex') || colorCode === true ) 
+        ? hslToHex(h, ( (s * 1000)  / 1000 ), ( (l * 1000) / 1000) )
+        : palette[paletteName]._hex
 
 return (
   <>  
   <div className="color-code" >
 
-    { (colorCode || codeType === 'hex') && 
-      <p className="color-code__value">Hex: {codeType === 'hex' ? palette[paletteName]._hex : hex}</p>
+    { (colorCode === true || codeType === 'hex') && 
+      <p className="color-code__value">Hex: {hex}</p>
     }
-    { (colorCode || codeType === 'rgb') && 
+    { (colorCode === true || codeType === 'rgb') && 
       <p className="color-code__value display-none">Rgb:( {rgb} )</p>
     }
-    { (colorCode || codeType === 'hsl') && 
+    { (colorCode === true || codeType === 'hsl') && 
       <p className="color-code__value display-none">Hsl:( {h}, {s}%, {l}% )</p>
     }
     { codeType === 'contrast' && 

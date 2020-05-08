@@ -106,7 +106,7 @@ export default class Main extends Component {
     r = Math.floor(((r + m) * 256), 255);
     g = Math.floor(((g + m) * 256), 255);
     b = Math.floor(((b + m) * 256), 255);
-    //console.log(r,g,b)
+    
     return isComa 
         ? r + "," + g + "," + b 
         : [r, g, b ];
