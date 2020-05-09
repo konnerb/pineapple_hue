@@ -1,7 +1,7 @@
 import React from 'react';
-import './Palette.scss'
+import './BarPalette.scss'
 
-export default function Palette({ palette, borderRadiusType  }) {
+export default function BarPalette({ palette, borderRadiusType  }) {
   return (
   <>
     { palette &&

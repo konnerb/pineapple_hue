@@ -1,6 +1,6 @@
 import React from 'react';
 import './StudioPaletteBar.scss'
-import Palette from '../../Palette/Palette'
+import BarPalette from '../../BarPalette/BarPalette'
 
 export default function StudioPaletteBar({ palette }) {
   return (
@@ -9,30 +9,30 @@ export default function StudioPaletteBar({ palette }) {
       <div className="bar">
         <div className="bar__container">
           <div className="bar__palette-container">
-            <Palette 
+            <BarPalette 
             palette={palette.Vibrant} 
             borderRadiusType='topLeft'
             />
           </div>
 
           <div className="bar__palette-container">
-            <Palette palette={palette.LightVibrant} />
+            <BarPalette palette={palette.LightVibrant} />
           </div>
 
           <div className="bar__palette-container">
-            <Palette palette={palette.DarkVibrant} />
+            <BarPalette palette={palette.DarkVibrant} />
           </div>
 
           <div className="bar__palette-container">
-            <Palette palette={palette.Muted} />
+            <BarPalette palette={palette.Muted} />
           </div>
 
           <div className="bar__palette-container">
-            <Palette palette={palette.LightMuted} />
+            <BarPalette palette={palette.LightMuted} />
           </div>
 
           <div className="bar__palette-container">    
-            <Palette 
+            <BarPalette 
             palette={palette.DarkMuted} 
             borderRadiusType='bottomLeft'
             />

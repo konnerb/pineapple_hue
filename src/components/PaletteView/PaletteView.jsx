@@ -15,119 +15,125 @@ export default function PaletteView({ palette, colorCode, codeType, togglePalett
                     </path>
                 </svg>
             </div>
-            <div className="paletteView__color"  style={{
-                    backgroundColor: 
-                        togglePalette 
-                        ? 'hsl('
-                            +roundHue(palette.Vibrant.hsl[0])+','
-                            +roundSl(palette.Vibrant.hsl[1])+','
-                            +roundSl(palette.Vibrant.hsl[2])+')'
-                        : `${palette.Vibrant.hex}`,
+            <div className="paletteView__color"  
+              style={{
+                backgroundColor: 
+                  togglePalette 
+                  ? 'hsl('
+                      +roundHue(palette.Vibrant.hsl[0])+','
+                      +roundSl(palette.Vibrant.hsl[1])+','
+                      +roundSl(palette.Vibrant.hsl[2])+')'
+                  : `${palette.Vibrant.hex}`,
 
-                        color: `${palette.Vibrant.titleTextColor}`
-                    }}
+                color: `${palette.Vibrant.titleTextColor}`
+              }}
             >
-                < ColorCode 
-                    palette={palette}
-                    paletteName='Vibrant'
-                    colorCode={colorCode}
-                    codeType={codeType}
-                />
+              <ColorCode 
+                palette={palette}
+                paletteName='Vibrant'
+                colorCode={colorCode}
+                codeType={codeType}
+              />
             </div>
-            <div className="paletteView__color"  style={{
-                    backgroundColor: 
-                        togglePalette 
-                        ? 'hsl('
-                            +roundHue(palette.LightVibrant.hsl[0])+','
-                            +roundSl(palette.LightVibrant.hsl[1])+','
-                            +roundSl(palette.LightVibrant.hsl[2])+')'
-                        : `${palette.LightVibrant.hex}`,
+            <div className="paletteView__color"  
+              style={{
+                backgroundColor: 
+                  togglePalette 
+                  ? 'hsl('
+                      +roundHue(palette.LightVibrant.hsl[0])+','
+                      +roundSl(palette.LightVibrant.hsl[1])+','
+                      +roundSl(palette.LightVibrant.hsl[2])+')'
+                  : `${palette.LightVibrant.hex}`,
 
-                        color: `${palette.LightVibrant.titleTextColor}`
-                    }}
-                >
-                < ColorCode 
-                    palette={palette}
-                    paletteName='LightVibrant'
-                    colorCode={colorCode}
-                    codeType={codeType}
-                />
+                color: `${palette.LightVibrant.titleTextColor}`
+              }}
+            >
+              <ColorCode 
+                palette={palette}
+                paletteName='LightVibrant'
+                colorCode={colorCode}
+                codeType={codeType}
+              />
             </div>
-            <div className="paletteView__color"  style={{
-                    backgroundColor: 
-                        togglePalette 
-                        ? 'hsl('
-                            +roundHue(palette.DarkVibrant.hsl[0])+','
-                            +roundSl(palette.DarkVibrant.hsl[1])+','
-                            +roundSl(palette.DarkVibrant.hsl[2])+')'
-                        : `${palette.DarkVibrant.hex}`,
+            <div className="paletteView__color"  
+              style={{
+                backgroundColor: 
+                  togglePalette 
+                  ? 'hsl('
+                      +roundHue(palette.DarkVibrant.hsl[0])+','
+                      +roundSl(palette.DarkVibrant.hsl[1])+','
+                      +roundSl(palette.DarkVibrant.hsl[2])+')'
+                  : `${palette.DarkVibrant.hex}`,
 
-                        color: `${palette.DarkVibrant.titleTextColor}`
-                    }}
-                >
-                < ColorCode 
-                    palette={palette}
-                    paletteName='DarkVibrant'
-                    colorCode={colorCode}
-                    codeType={codeType}
-                />
+                color: `${palette.DarkVibrant.titleTextColor}`
+              }}
+            >
+              <ColorCode 
+                palette={palette}
+                paletteName='DarkVibrant'
+                colorCode={colorCode}
+                codeType={codeType}
+              />
             </div>
-            <div className="paletteView__color"  style={{
-                    backgroundColor: 
-                        togglePalette 
-                        ? 'hsl('
-                            +roundHue(palette.Muted.hsl[0])+','
-                            +roundSl(palette.Muted.hsl[1])+','
-                            +roundSl(palette.Muted.hsl[2])+')'
-                        : `${palette.Muted.hex}`,
+            <div className="paletteView__color"  
+              style={{
+                backgroundColor: 
+                  togglePalette 
+                  ? 'hsl('
+                      +roundHue(palette.Muted.hsl[0])+','
+                      +roundSl(palette.Muted.hsl[1])+','
+                      +roundSl(palette.Muted.hsl[2])+')'
+                  : `${palette.Muted.hex}`,
+                
+                color: `${palette.Muted.titleTextColor}`,
+              }}
+            >
+              <ColorCode 
+                palette={palette}
+                paletteName='Muted'
+                colorCode={colorCode}
+                codeType={codeType}
+              />
+            </div>
+            <div className="paletteView__color"  
+              style={{
+                backgroundColor: 
+                  togglePalette 
+                  ? 'hsl('
+                      +roundHue(palette.LightMuted.hsl[0])+','
+                      +roundSl(palette.LightMuted.hsl[1])+','
+                      +roundSl(palette.LightMuted.hsl[2])+')'
+                  : `${palette.LightMuted.hex}`,
+
+                color: `${palette.LightMuted.titleTextColor}`,
+              }}
+            >
+              <ColorCode 
+                palette={palette}
+                paletteName='LightMuted'
+                colorCode={colorCode}
+                codeType={codeType}
+              />
+            </div>
+            <div className="paletteView__color"  
+              style={{
+                backgroundColor: 
+                  togglePalette 
+                  ? 'hsl('
+                      +roundHue(palette.DarkMuted.hsl[0])+','
+                      +roundSl(palette.DarkMuted.hsl[1])+','
+                      +roundSl(palette.DarkMuted.hsl[2])+')'
+                  : `${palette.DarkMuted.hex}`,
                     
-                    color: `${palette.Muted.titleTextColor}`,
-                    }}
-                >
-                < ColorCode 
-                    palette={palette}
-                    paletteName='Muted'
-                    colorCode={colorCode}
-                    codeType={codeType}
-                />
-            </div>
-            <div className="paletteView__color"  style={{
-                    backgroundColor: 
-                        togglePalette 
-                        ? 'hsl('
-                            +roundHue(palette.LightMuted.hsl[0])+','
-                            +roundSl(palette.LightMuted.hsl[1])+','
-                            +roundSl(palette.LightMuted.hsl[2])+')'
-                        : `${palette.LightMuted.hex}`,
-
-                        color: `${palette.LightMuted.titleTextColor}`,
-                    }}
-                >
-                < ColorCode 
-                    palette={palette}
-                    paletteName='LightMuted'
-                    colorCode={colorCode}
-                    codeType={codeType}
-                />
-            </div>
-            <div className="paletteView__color"  style={{
-                    backgroundColor: 
-                        togglePalette 
-                        ? 'hsl('
-                            +roundHue(palette.DarkMuted.hsl[0])+','
-                            +roundSl(palette.DarkMuted.hsl[1])+','
-                            +roundSl(palette.DarkMuted.hsl[2])+')'
-                        : `${palette.DarkMuted.hex}`,
-                        
-                    color: `${palette.DarkMuted.titleTextColor}`,
-                    }}
-                > 
-                < ColorCode 
-                    palette={palette}
-                    paletteName='DarkMuted'
-                    colorCode={colorCode}
-                    codeType={codeType}
-                />
+                color: `${palette.DarkMuted.titleTextColor}`,
+              }}
+            > 
+              <ColorCode 
+                palette={palette}
+                paletteName='DarkMuted'
+                colorCode={colorCode}
+                codeType={codeType}
+              />
             </div>
             <div className="paletteView__svg-container bottom">
                 <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">

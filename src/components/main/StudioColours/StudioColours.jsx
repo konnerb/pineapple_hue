@@ -5,7 +5,7 @@ import InputScrub from '../../InputScrub/InputScrub'
 import ColorCode from '../../ColorCode/ColorCode'
 import { roundHue, roundSl } from '../../../utlis';
 
-export default function StudioWebsite(
+export default function StudioColours(
 
   { 
     handleChange, 
