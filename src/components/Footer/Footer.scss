@@ -5,7 +5,7 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background-color: #fcd729;
+  background-color: $yellow;
   display: none;
   @include laptop {
     display: flex;

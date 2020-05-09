@@ -29,7 +29,7 @@ input[type=range] {
     cursor: pointer;
     animate: 0.2s;
     box-shadow: 1px 1px 1px #000000;
-    background: #fafafa;
+    background: $light-grey;
     border-radius: 5px;
     border: 1px solid #000000;
       @include tablet {
@@ -53,7 +53,7 @@ input[type=range] {
       }
   }
   input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #fafafa;
+    background: $light-grey;
   }
   input[type=range]::-moz-range-track {
     width: 100%;
@@ -61,7 +61,7 @@ input[type=range] {
     cursor: pointer;
     animate: 0.2s;
     box-shadow: 1px 1px 1px #000000;
-    background: #fafafa;
+    background: $light-grey;
     border-radius: 5px;
     border: 1px solid #000000;
       @include tablet {
@@ -93,13 +93,13 @@ input[type=range] {
       }
   }
   input[type=range]::-ms-fill-lower {
-    background: #fafafa;
+    background: $light-grey;
     border: 1px solid #000000;
     border-radius: 10px;
     box-shadow: 1px 1px 1px #000000;
   }
   input[type=range]::-ms-fill-upper {
-    background: #fafafa;
+    background: $light-grey;
     border: 1px solid #000000;
     border-radius: 10px;
     box-shadow: 1px 1px 1px #000000;
@@ -118,8 +118,8 @@ input[type=range] {
       }
   }
   input[type=range]:focus::-ms-fill-lower {
-    background: #fafafa;
+    background: $light-grey;
   }
   input[type=range]:focus::-ms-fill-upper {
-    background: #fafafa;
+    background: $light-grey;
   }

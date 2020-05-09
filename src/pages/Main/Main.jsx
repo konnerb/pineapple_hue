@@ -104,19 +104,20 @@ export default class Main extends Component {
       { this.state.palette.Vibrant &&
         <div className="new-palette__container">
           <button 
-              className="new-palette__button"
-              onClick={() => this.handleTogglePalette()}
+            className="new-palette__button"
+            onClick={() => this.handleTogglePalette()}
           > {this.state.togglePalette ? `Whoa!` : `What's your pineapplehue!?`}
           </button>
-        { this.state.togglePalette &&
-          <PaletteView 
-            contrast={this.contrast}
-            palette={this.state.palette} 
-            togglePalette={this.state.togglePalette}
-            colorCode={true}
-            codeType=''
-          />
-        }
+
+          { this.state.togglePalette &&
+            <PaletteView 
+              contrast={this.contrast}
+              palette={this.state.palette} 
+              togglePalette={this.state.togglePalette}
+              colorCode={true}
+              codeType=''
+            />
+          }
         </div>
       }
     </main>

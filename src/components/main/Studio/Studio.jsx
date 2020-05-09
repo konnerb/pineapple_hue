@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Studio.scss'
 import StudioPaletteBar from '../StudioPaletteBar/StudioPaletteBar'
-import StudioWebsite from '../StudioWebsite/StudioWebsite'
+import StudioColours from '../StudioColours/StudioColours'
 
 export default class Studio extends Component {
   constructor(props) {
@@ -29,7 +29,7 @@ export default class Studio extends Component {
     let newPalette = {};
     newPalette[paletteType] = value;
     this.setState({
-          newPalette
+      newPalette
     }, () => this.props.handlePaletteUpdate(this.state.newPalette) );
   }
 
@@ -38,7 +38,7 @@ export default class Studio extends Component {
   toggleStudioPalette(toggleType) {
     let toggleStatus = this.state[toggleType]
     this.setState({
-              [toggleType]: !toggleStatus
+      [toggleType]: !toggleStatus
     }); 
   }
 
@@ -49,13 +49,13 @@ export default class Studio extends Component {
     { this.props.palette.Vibrant && 
       <section className="studio">
         <StudioPaletteBar 
-        { ...modifiedPalette } 
+          { ...modifiedPalette } 
         />
 
-        <StudioWebsite 
-        { ...modifiedPalette }  
-        handleChange={this.handleChange} 
-        toggleStudioPalette={this.toggleStudioPalette}
+        <StudioColours 
+          { ...modifiedPalette }  
+          handleChange={this.handleChange} 
+          toggleStudioPalette={this.toggleStudioPalette}
         />
       </section>
     }

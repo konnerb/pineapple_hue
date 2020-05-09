@@ -1,5 +1,5 @@
 import React from 'react';
-import './StudioWebsite.scss';
+import './StudioColours.scss';
 import StyleButton from '../../StyleButton/StyleButton'
 import InputScrub from '../../InputScrub/InputScrub'
 import ColorCode from '../../ColorCode/ColorCode'
