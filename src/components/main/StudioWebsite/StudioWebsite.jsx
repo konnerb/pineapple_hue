@@ -3,13 +3,11 @@ import './StudioWebsite.scss';
 import StyleButton from '../../StyleButton/StyleButton'
 import InputScrub from '../../InputScrub/InputScrub'
 import ColorCode from '../../ColorCode/ColorCode'
+import { roundHue, roundSl } from '../../../utlis';
 
 export default function StudioWebsite(
 
   { 
-    hslToRgb,
-    hslToHex, 
-    contrast,
     handleChange, 
     toggleStudioPalette, 
     toggleVibrant, 
@@ -18,9 +16,7 @@ export default function StudioWebsite(
     toggleMuted, 
     toggleLightMuted, 
     toggleDarkMuted, 
-    palette, 
-    roundHue, 
-    roundSl 
+    palette
   }) {
   
   //Coverts Hsl palette values into vairables 
@@ -88,18 +84,12 @@ export default function StudioWebsite(
                       />
                       <InputScrub 
                         handleChange={handleChange} 
-                        roundHue={roundHue} 
                         paletteType="Vibrant" 
                         palette={palette.Vibrant} 
                       />
                     <div className="website__toggle-code">
                       < ColorCode
                         palette={palette}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        contrast={contrast}
-                        hslToRgb={hslToRgb}
-                        hslToHex={hslToHex}
                         paletteName='Vibrant'
                         colorCode={false}
                         isToggled={toggleVibrant}
@@ -107,11 +97,6 @@ export default function StudioWebsite(
                       />
                       < ColorCode
                         palette={palette}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        contrast={contrast}
-                        hslToRgb={hslToRgb}
-                        hslToHex={hslToHex}
                         paletteName='Vibrant'
                         isToggled={toggleVibrant}
                         colorCode={false}
@@ -143,18 +128,12 @@ export default function StudioWebsite(
                     />
                     <InputScrub 
                       handleChange={handleChange} 
-                      roundHue={roundHue} 
                       paletteType="LightVibrant" 
                       palette={palette.LightVibrant} 
                     />
                     <div className="website__toggle-code">
                       < ColorCode
                         palette={palette}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        contrast={contrast}
-                        hslToRgb={hslToRgb}
-                        hslToHex={hslToHex}
                         paletteName='LightVibrant'
                         isToggled={toggleLightVibrant}
                         colorCode={false}
@@ -162,11 +141,6 @@ export default function StudioWebsite(
                       />
                       < ColorCode
                         palette={palette}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        contrast={contrast}
-                        hslToRgb={hslToRgb}
-                        hslToHex={hslToHex}
                         paletteName='LightVibrant'
                         isToggled={toggleLightVibrant}
                         colorCode={false}
@@ -198,18 +172,12 @@ export default function StudioWebsite(
                     />
                     <InputScrub 
                       handleChange={handleChange} 
-                      roundHue={roundHue} 
                       paletteType="DarkVibrant" 
                       palette={palette.DarkVibrant} 
                     />
                     <div className="website__toggle-code">
                       < ColorCode
                         palette={palette}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        contrast={contrast}
-                        hslToRgb={hslToRgb}
-                        hslToHex={hslToHex}
                         paletteName='DarkVibrant'
                         isToggled={toggleDarkVibrant}
                         colorCode={false}
@@ -217,11 +185,6 @@ export default function StudioWebsite(
                       />
                       < ColorCode
                         palette={palette}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        contrast={contrast}
-                        hslToRgb={hslToRgb}
-                        hslToHex={hslToHex}
                         paletteName='DarkVibrant'
                         isToggled={toggleDarkVibrant}
                         colorCode={false}
@@ -253,18 +216,12 @@ export default function StudioWebsite(
                     />
                     <InputScrub 
                       handleChange={handleChange} 
-                      roundHue={roundHue} 
                       paletteType="Muted" 
                       palette={palette.Muted} 
                     />
                     <div className="website__toggle-code">
                       < ColorCode
                         palette={palette}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        contrast={contrast}
-                        hslToRgb={hslToRgb}
-                        hslToHex={hslToHex}
                         paletteName='Muted'
                         isToggled={toggleMuted}
                         colorCode={false}
@@ -272,11 +229,6 @@ export default function StudioWebsite(
                       />
                       < ColorCode
                         palette={palette}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        contrast={contrast}
-                        hslToRgb={hslToRgb}
-                        hslToHex={hslToHex}
                         paletteName='Muted'
                         isToggled={toggleMuted}
                         colorCode={false}
@@ -308,18 +260,12 @@ export default function StudioWebsite(
                     />
                     <InputScrub 
                       handleChange={handleChange} 
-                      roundHue={roundHue} 
                       paletteType="LightMuted" 
                       palette={palette.LightMuted} 
                     />
                     <div className="website__toggle-code">
                       < ColorCode
                         palette={palette}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        contrast={contrast}
-                        hslToRgb={hslToRgb}
-                        hslToHex={hslToHex}
                         paletteName='LightMuted'
                         isToggled={toggleLightMuted}
                         colorCode={false}
@@ -327,11 +273,6 @@ export default function StudioWebsite(
                       />
                       < ColorCode
                         palette={palette}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        contrast={contrast}
-                        hslToRgb={hslToRgb}
-                        hslToHex={hslToHex}
                         paletteName='LightMuted'
                         isToggled={toggleLightMuted}
                         colorCode={false}
@@ -363,18 +304,12 @@ export default function StudioWebsite(
                     />
                     <InputScrub 
                       handleChange={handleChange} 
-                      roundHue={roundHue} 
                       paletteType="DarkMuted" 
                       palette={palette.DarkMuted} 
                     />
                     <div className="website__toggle-code">
                       < ColorCode
                         palette={palette}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        contrast={contrast}
-                        hslToRgb={hslToRgb}
-                        hslToHex={hslToHex}
                         paletteName='DarkMuted'
                         isToggled={toggleDarkMuted}
                         colorCode={false}
@@ -382,11 +317,6 @@ export default function StudioWebsite(
                       />
                       < ColorCode
                         palette={palette}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
-                        contrast={contrast}
-                        hslToRgb={hslToRgb}
-                        hslToHex={hslToHex}
                         paletteName='DarkMuted'
                         isToggled={toggleDarkMuted}
                         colorCode={false}

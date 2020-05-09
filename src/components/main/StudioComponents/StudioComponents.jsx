@@ -6,6 +6,8 @@ import Icons from '../../Icons/Icons'
 import Image from '../../Image/Image'
 import InputPercent from '../../InputPercent/InputPercent'
 import store from '../../../store'
+import { roundHue, roundSl } from '../../../utlis';
+
 export default class StudioComponents extends Component {
     constructor(props) {
         super(props)
@@ -38,7 +40,7 @@ export default class StudioComponents extends Component {
         //console.log(store.images.map(({ image, title }, i) => console.log(image, title, i)) )
         const { images, icons } = store;
         const { Vibrant, LightVibrant, DarkVibrant, Muted, LightMuted, DarkMuted } = this.props.palette;
-        const { roundHue, roundSl, handlePercentChange, percents } = this.props;
+        const { handlePercentChange, percents } = this.props;
         
     return (
     <>
@@ -61,8 +63,6 @@ export default class StudioComponents extends Component {
                         toggleOpacity={this.state.toggleButtonsOpacity}
                         palette={this.props.palette} 
                         handleToggle={this.handleToggle}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                     />
                     {this.state.toggleButtonsOpacity && 
                         <InputPercent 
@@ -88,8 +88,6 @@ export default class StudioComponents extends Component {
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={Vibrant} 
                         buttonText="Click Me!" 
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                         />
                         <Button 
                         percent={percents.opacityButton}
@@ -98,8 +96,6 @@ export default class StudioComponents extends Component {
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={DarkVibrant} 
                         buttonText="Click Me!" 
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                         />
                         <Button 
                         percent={percents.opacityButton}
@@ -108,8 +104,6 @@ export default class StudioComponents extends Component {
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={Muted} 
                         buttonText="Click Me!" 
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                         />
                         <Button 
                         percent={percents.opacityButton}
@@ -118,8 +112,6 @@ export default class StudioComponents extends Component {
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={DarkMuted} 
                         buttonText="Click Me!" 
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                         />
                     </div>
                     <div className="studio-components__buttons buttons-bottom" 
@@ -137,8 +129,6 @@ export default class StudioComponents extends Component {
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={Vibrant} 
                         buttonText="Click Me!" 
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                         />
                         <Button 
                         percent={percents.opacityButton}
@@ -147,8 +137,6 @@ export default class StudioComponents extends Component {
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={DarkVibrant} 
                         buttonText="Click Me!" 
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                         />
                         <Button 
                         percent={percents.opacityButton}
@@ -157,8 +145,6 @@ export default class StudioComponents extends Component {
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={Muted} 
                         buttonText="Click Me!" 
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                         />
                         <Button 
                         percent={percents.opacityButton}
@@ -167,8 +153,6 @@ export default class StudioComponents extends Component {
                         toggleButtonsBorder={this.state.toggleButtonsBorder}
                         palette={DarkMuted} 
                         buttonText="Click Me!" 
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                         />
                     </div>
                 </div>
@@ -190,8 +174,6 @@ export default class StudioComponents extends Component {
                         toggleOpacity={this.state.toggleIconsOpacity}
                         palette={this.props.palette}
                         handleToggle={this.handleToggle}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                     />
                     {this.state.toggleIconsOpacity && 
                         <InputPercent 
@@ -221,8 +203,6 @@ export default class StudioComponents extends Component {
                         toggleIconsShadow={this.state.toggleIconsShadow}
                         toggleIconsBorder={this.state.toggleIconsBorder}
                         iconName={title}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                         />
                     ))}
 
@@ -246,8 +226,6 @@ export default class StudioComponents extends Component {
                         toggleIconsShadow={this.state.toggleIconsShadow}
                         toggleIconsBorder={this.state.toggleIconsBorder}
                         palette={Vibrant} 
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                         />
                     ))}
                     </div>
@@ -272,8 +250,6 @@ export default class StudioComponents extends Component {
                         toggleOpacity={this.state.toggleImagesOpacity}
                         palette={this.props.palette} 
                         handleToggle={this.handleToggle}
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                     />
                     {this.state.toggleImagesOpacity && 
                         <InputPercent 
@@ -303,8 +279,6 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                         />
                     ))}
                     </div>
@@ -325,8 +299,6 @@ export default class StudioComponents extends Component {
                         toggleImagesShadow={this.state.toggleImagesShadow}
                         toggleImagesBorder={this.state.toggleImagesBorder}
                         palette={Vibrant} 
-                        roundHue={roundHue}
-                        roundSl={roundSl}
                         />
                     ))}
                     </div>

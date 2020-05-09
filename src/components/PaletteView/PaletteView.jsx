@@ -1,24 +1,9 @@
 import React from 'react';
 import './PaletteView.scss';
 import ColorCode from '../ColorCode/ColorCode'
+import { roundHue, roundSl } from '../../utlis';
 
-export default function PaletteView(
-
-    { palette, 
-        contrast, 
-        hslToRgb, 
-        hslToHex, 
-        colorCode, 
-        codeType, 
-        contrastHsl, 
-        togglePalette, 
-        roundHue, 
-        roundSl 
-    }) {
-
-    //if (palette.Vibrant) {
-    //console.log( hslToRgb('hsl('+roundHue(palette.Vibrant.hsl[0])+','+roundSl(palette.Vibrant.hsl[1])+','+roundSl(palette.Vibrant.hsl[2])+')'))
-    //} 
+export default function PaletteView({ palette, colorCode, codeType, togglePalette }) {
     
     return (
     <>  { palette.Vibrant &&
@@ -44,11 +29,6 @@ export default function PaletteView(
             >
                 < ColorCode 
                     palette={palette}
-                    roundHue={roundHue}
-                    roundSl={roundSl}
-                    contrast={contrast}
-                    hslToRgb={hslToRgb}
-                    hslToHex={hslToHex}
                     paletteName='Vibrant'
                     colorCode={colorCode}
                     codeType={codeType}
@@ -68,11 +48,6 @@ export default function PaletteView(
                 >
                 < ColorCode 
                     palette={palette}
-                    roundHue={roundHue}
-                    roundSl={roundSl}
-                    contrast={contrast}
-                    hslToRgb={hslToRgb}
-                    hslToHex={hslToHex}
                     paletteName='LightVibrant'
                     colorCode={colorCode}
                     codeType={codeType}
@@ -92,11 +67,6 @@ export default function PaletteView(
                 >
                 < ColorCode 
                     palette={palette}
-                    roundHue={roundHue}
-                    roundSl={roundSl}
-                    contrast={contrast}
-                    hslToRgb={hslToRgb}
-                    hslToHex={hslToHex}
                     paletteName='DarkVibrant'
                     colorCode={colorCode}
                     codeType={codeType}
@@ -116,11 +86,6 @@ export default function PaletteView(
                 >
                 < ColorCode 
                     palette={palette}
-                    roundHue={roundHue}
-                    roundSl={roundSl}
-                    contrast={contrast}
-                    hslToRgb={hslToRgb}
-                    hslToHex={hslToHex}
                     paletteName='Muted'
                     colorCode={colorCode}
                     codeType={codeType}
@@ -140,11 +105,6 @@ export default function PaletteView(
                 >
                 < ColorCode 
                     palette={palette}
-                    roundHue={roundHue}
-                    roundSl={roundSl}
-                    contrast={contrast}
-                    hslToRgb={hslToRgb}
-                    hslToHex={hslToHex}
                     paletteName='LightMuted'
                     colorCode={colorCode}
                     codeType={codeType}
@@ -164,11 +124,6 @@ export default function PaletteView(
                 > 
                 < ColorCode 
                     palette={palette}
-                    roundHue={roundHue}
-                    roundSl={roundSl}
-                    contrast={contrast}
-                    hslToRgb={hslToRgb}
-                    hslToHex={hslToHex}
                     paletteName='DarkMuted'
                     colorCode={colorCode}
                     codeType={codeType}

@@ -1,6 +1,7 @@
 import React from 'react';
 import './StyleBar.scss';
 import StyleButton from '../StyleButton/StyleButton';
+import { roundHue, roundSl } from '../../utlis';
 
 export default function StyleBar(
 
@@ -13,9 +14,6 @@ export default function StyleBar(
     toggleBorder, 
     toggleOpacity, 
     palette, 
-    roundHue, 
-    roundSl, 
-    handleClick,
     isImage
   }) {
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './InputPercent.scss'
 
-export default function InputPercent({ handlePercentChange, percents, isImage, nameInput, defaultInputValue }) {
+export default function InputPercent({ handlePercentChange, percents, nameInput, defaultInputValue }) {
   return (
   <>
     <div className="input">

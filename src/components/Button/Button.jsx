@@ -1,5 +1,6 @@
 import React from 'react';
-import './Button.scss'
+import './Button.scss';
+import { roundHue, roundSl } from '../../utlis';
 
 export default function Button(
     
@@ -9,11 +10,8 @@ export default function Button(
         toggleButtonsShadow, 
         toggleButtonsBorder, 
         toggleOpacity,
-        handleChange, 
         paletteType, 
-        buttonText, 
-        roundHue, 
-        roundSl 
+        buttonText
     }) {
 
     return (

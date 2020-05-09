@@ -1,7 +1,16 @@
 import React from 'react';
 import './Icons.scss';
 
-export default function Icons({ iconName, icon, percent, toggleIconsBorder, toggleOpacity, toggleIconsShadow }) {
+export default function Icons(
+
+  { 
+    iconName, 
+    icon, 
+    percent,
+    toggleIconsBorder, 
+    toggleOpacity, 
+    toggleIconsShadow 
+  }) {
 
     return (
     <>  

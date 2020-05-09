@@ -1,5 +1,6 @@
 import React from 'react';
-import './ColorCode.scss'
+import './ColorCode.scss';
+import { hslToHex, hslToRgb, roundHue, contrast } from '../../utlis';
 
 export default function ColorCode(
     
@@ -8,10 +9,6 @@ export default function ColorCode(
     paletteName, 
     colorCode, 
     codeType, 
-    roundHue, 
-    hslToHex, 
-    hslToRgb, 
-    contrast,
     isToggled
   }) {
 

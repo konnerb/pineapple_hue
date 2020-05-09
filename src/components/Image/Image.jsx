@@ -1,7 +1,15 @@
 import React from 'react';
 import './Image.scss';
 
-export default function Image({ imageName, percent, image, toggleImagesBorder, toggleImagesShadow }) {
+export default function Image(
+  
+  { 
+    imageName, 
+    percent, 
+    image, 
+    toggleImagesBorder, 
+    toggleImagesShadow 
+  }) {
 
   return (
   <>  
