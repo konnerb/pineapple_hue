@@ -9,12 +9,14 @@ export default class Studio extends Component {
     this.state = {
       newPalette: {},
 
-      toggleVirbant: false,
-      toggleLightVibrant: false,
-      toggleDarkVibrant: false,
-      toggleMuted: false,
-      toggleLightMuted: false,
-      toggleDarkMuted: false
+      toggle: {
+        Virbant: false,
+        LightVibrant: false,
+        DarkVibrant: false,
+        Muted: false,
+        LightMuted: false,
+        DarkMuted: false
+      }
     }
     this.handleChange = this.handleChange.bind(this);
     this.toggleStudioPalette = this.toggleStudioPalette.bind(this);
@@ -36,9 +38,11 @@ export default class Studio extends Component {
   //Toggles StudioWebsite Componets color palette to adjust InputScrub Component
   
   toggleStudioPalette(toggleType) {
-    let toggleStatus = this.state[toggleType]
+    let toggleStatus = this.state.toggle[toggleType]
     this.setState({
-      [toggleType]: !toggleStatus
+      toggle: {
+        [toggleType] : !toggleStatus
+      }
     }); 
   }
 
