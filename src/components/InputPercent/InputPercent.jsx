@@ -2,7 +2,6 @@ import React from 'react';
 import './InputPercent.scss'
 
 export default function InputPercent({ handlePercentChange, percents, nameInput, defaultInputValue }) {
-  console.log(percents >= 0)
   return (
   <>
     <div className="input">

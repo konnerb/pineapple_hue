@@ -37,7 +37,7 @@ export default class StudioComponents extends Component {
   }
 
   render() {
-    //console.log(store.images.map(({ image, title }, i) => console.log(image, title, i)) )
+    //console.log(store.components)
     const { images, icons } = store;
     const { Vibrant, LightVibrant, DarkVibrant, Muted, LightMuted, DarkMuted } = this.props.palette;
     const { handlePercentChange, percents } = this.props;

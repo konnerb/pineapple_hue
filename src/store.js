@@ -96,6 +96,16 @@ const store = {
       icon: "/icons/soundcloud_icon-color.svg",
       title: "soundcloud"
     }
+  ],
+  components: [
+    {
+      buttons: {
+        button: [1,2,3,4],
+        button: [1,2,3,4]
+      },
+      icons: [1,2],
+      images: [1,2]
+    }
   ]
 }
 
