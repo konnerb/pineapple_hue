@@ -15,6 +15,11 @@
       }
     }
 }
+
+.white {
+  color: white;
+}
+
 .display-none {
   display: none;
   @include tablet {

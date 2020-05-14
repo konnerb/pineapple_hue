@@ -13,6 +13,17 @@ export default function StudioColours(
     toggle,
     palette
   }) {
+    
+  const isAAA = (colour) => (
+    contrast(
+      [roundHue(palette[colour].hsl[0]), 
+      Math.round(palette[colour].hsl[1] * 100), 
+      Math.round(palette[colour].hsl[2] * 100)
+      ],
+      [0, 1, 1],
+      true
+    )
+  )
 
   return (
     <> 
@@ -38,6 +49,7 @@ export default function StudioColours(
                     toggleType={colour}
                     buttonText="+ Adjust Lightness"
                     handleToggle={toggleStudioPalette}
+                    isAAA={isAAA(colour)}
                   />
                 </div>
               }
@@ -47,11 +59,13 @@ export default function StudioColours(
                     toggleType={colour}
                     buttonText="X"
                     handleToggle={toggleStudioPalette}
+                    isAAA={isAAA(colour)}
                   />
                   <InputScrub 
                     handleChange={handleChange} 
                     paletteType={colour} 
                     palette={palette[colour]}
+                    isAAA={isAAA(colour)}
                   />
                   <div className="website__toggle-code">
                     <ColorCode
@@ -60,6 +74,7 @@ export default function StudioColours(
                       colorCode={false}
                       isToggled={toggle[colour]}
                       codeType='hex'
+                      isAAA={isAAA(colour)}
                     />
                     <ColorCode
                       palette={palette}
@@ -67,6 +82,7 @@ export default function StudioColours(
                       isToggled={toggle[colour]}
                       colorCode={false}
                       codeType='contrast'
+                      isAAA={isAAA(colour)}
                     />
                   </div>
                 </div>

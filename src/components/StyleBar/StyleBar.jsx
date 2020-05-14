@@ -14,7 +14,8 @@ export default function StyleBar(
     toggleBorder, 
     toggleOpacity, 
     palette, 
-    isImage
+    isImage,
+    isAAA
   }) {
 
   return (
@@ -35,23 +36,27 @@ export default function StyleBar(
         toggleType={borderType}
         buttonText={ toggleBorder ? "- Border" : "+ Border" }
         handleToggle={handleToggle}
+        isAAA={isAAA}
       />
       
       <StyleButton 
         toggleType={shadowType}
         buttonText={ toggleShadow ? "- Shadow" : "+ Shadow" }
         handleToggle={handleToggle}
+        isAAA={isAAA}
       />
 
       <StyleButton 
         toggleType={opacityType}
         buttonText={ toggleOpacity ? "- Opacity" : "+ Opacity" }
         handleToggle={handleToggle}
+        isAAA={isAAA}
       />
 
       <StyleButton 
         buttonText="Reset" 
         handleToggle={handleToggle}
+        isAAA={isAAA}
       />
   
     </div>

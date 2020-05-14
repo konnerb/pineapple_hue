@@ -6,7 +6,7 @@ import Icons from '../../Icons/Icons'
 import Image from '../../Image/Image'
 import InputPercent from '../../InputPercent/InputPercent'
 import store from '../../../store'
-import { roundHue, roundSl } from '../../../utlis';
+import { roundHue, roundSl, contrast } from '../../../utlis';
 
 export default class StudioComponents extends Component {
   constructor(props) {
@@ -37,10 +37,19 @@ export default class StudioComponents extends Component {
   }
 
   render() {
-    //console.log(store.components)
+
     const { images, icons } = store;
     const { Vibrant, LightVibrant, DarkVibrant, Muted, LightMuted, DarkMuted } = this.props.palette;
     const { handlePercentChange, percents } = this.props;
+
+    const isAAA = contrast(
+      [roundHue(Vibrant && Vibrant.hsl[0]), 
+      Math.round(Vibrant && Vibrant.hsl[1] * 100), 
+      Math.round(Vibrant && Vibrant.hsl[2] * 100)
+      ],
+      [0, 1, 1],
+      true
+    )
       
   return (
   <>
@@ -63,6 +72,7 @@ export default class StudioComponents extends Component {
           toggleOpacity={this.state.toggleButtonsOpacity}
           palette={this.props.palette} 
           handleToggle={this.handleToggle}
+          isAAA={isAAA}
         />
         {this.state.toggleButtonsOpacity && 
           <InputPercent 
@@ -70,6 +80,7 @@ export default class StudioComponents extends Component {
             handlePercentChange={handlePercentChange}
             nameInput="opacityButton"
             defaultInputValue="0.80"
+            isAAA={isAAA}
             />
         }
         <div className="studio-components__button-preview">
@@ -175,6 +186,7 @@ export default class StudioComponents extends Component {
           toggleOpacity={this.state.toggleIconsOpacity}
           palette={this.props.palette}
           handleToggle={this.handleToggle}
+          isAAA={isAAA}
         />
         {this.state.toggleIconsOpacity && 
           <InputPercent 
@@ -182,6 +194,7 @@ export default class StudioComponents extends Component {
             handlePercentChange={handlePercentChange}
             nameInput="iconOpacity"
             defaultInputValue="0.80"
+            isAAA={isAAA}
           />
         }
         <div className="studio-components__icons-preview">
@@ -250,6 +263,7 @@ export default class StudioComponents extends Component {
             toggleOpacity={this.state.toggleImagesOpacity}
             palette={this.props.palette} 
             handleToggle={this.handleToggle}
+            isAAA={isAAA}
           />
           {this.state.toggleImagesOpacity && 
             <InputPercent 
@@ -258,6 +272,7 @@ export default class StudioComponents extends Component {
               handlePercentChange={handlePercentChange}
               nameInput="imageOpacity"
               defaultInputValue="0.80"
+              isAAA={isAAA}
             />
           }
       </div>

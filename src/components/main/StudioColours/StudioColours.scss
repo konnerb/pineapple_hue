@@ -7,66 +7,66 @@
     flex-direction: column;
     justify-content: space-between;
     &__color {
-        display: flex;
-        align-items: center;
-        flex-grow: 1;
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
     }
     &__toggle-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        opacity: 0.3;
-        width: 100%;
-        height: 100%;
-        &:hover {
-            opacity: 1;
-        }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0.3;
+      width: 100%;
+      height: 100%;
+      &:hover {
+          opacity: 1;
+      }
     }
     &__toggle-button button {
-        background-color: transparent;
+      background-color: transparent;
     }
     &__toggle-code {
-        position: absolute;
-        display: flex;
-        align-self: flex-end;
-        width: 95%;
-        justify-content: space-between;
-          @include tablet {
-              width: 50%;
-          }
-        & .color-code__value {
-            font-weight: 500;
-            text-align: start;
-            width: 75px;
-            @include tablet {
-              width: 120px;
-            }
+      position: absolute;
+      display: flex;
+      align-self: flex-end;
+      width: 95%;
+      justify-content: space-between;
+        @include tablet {
+          width: 50%;
         }
+      & .color-code__value {
+        font-weight: 500;
+        text-align: start;
+        width: 75px;
+        @include tablet {
+          width: 123px;
+        }
+      }
     }
     &__toggle-lightness {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        padding: 0px 8px;
-        //opacity: 0%;
-        //&:hover {
-        //    opacity: 100%;
-        //}
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 0px 8px;
+      //opacity: 0%;
+      //&:hover {
+      //    opacity: 100%;
+      //}
     }
     &__toggle-lightness button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background-color: transparent;
-        width: 20px;
-        height: 20px;
-            @include tablet {
-                top: 32px;
-                right: 110px;
-            }
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: transparent;
+      width: 20px;
+      height: 20px;
+        @include tablet {
+          top: 32px;
+          right: 110px;
+        }
     }
 }
 .color_top-right {
