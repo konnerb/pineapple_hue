@@ -13,9 +13,9 @@ export default function ColorCode(
     isAAA
   }) {
     
-  const h = palette[paletteName] && roundHue(palette[paletteName].hsl[0]);
-  const s = palette[paletteName] && Math.round( (palette[paletteName].hsl[1]) * 100);
-  const l = palette[paletteName] && Math.round( (palette[paletteName].hsl[2]) * 100);
+  const h = palette[paletteName] && palette[paletteName].hsl[0];
+  const s = palette[paletteName] && parseFloat(palette[paletteName].hsl[1]);
+  const l = palette[paletteName] && parseFloat(palette[paletteName].hsl[2]);
 
   const h2 = palette[paletteName] && roundHue(palette[paletteName]._hsl[0]);
   const s2 = palette[paletteName] && Math.round( (palette[paletteName]._hsl[1]) * 100);

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Button.scss';
-import { roundHue, roundSl, contrast } from '../../utlis';
+import { contrast } from '../../utlis';
 
 export default function Button(
     
@@ -14,14 +14,7 @@ export default function Button(
         buttonText
     }) {
 
-    const isAAA = contrast(
-      [roundHue(palette.hsl[0]), 
-      Math.round(palette.hsl[1] * 100), 
-      Math.round(palette.hsl[2] * 100)
-      ],
-      [0, 1, 1],
-      true
-    )
+    const isAAA = (colour => contrast( palette[colour].hsl, [0, 1, 1], true ) )
 
     return (
     <>  { palette &&
@@ -29,7 +22,7 @@ export default function Button(
                 <button className="button__main-button" 
                     name={paletteType} 
                     style={{
-                        backgroundColor: 'hsl('+roundHue(palette.hsl[0])+','+roundSl(palette.hsl[1])+','+roundSl(palette.hsl[2])+')',
+                        backgroundColor: `hsl(${palette.hsl.toString()})`,
                         fontSize: toggleOpacity && "12px",
                         color: `${ (isAAA && isAAA !== undefined) ? "white" : "black" }`,
                         opacity: percent ? `${percent}` : `100%`,

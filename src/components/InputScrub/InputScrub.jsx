@@ -2,6 +2,7 @@ import React from 'react';
 import './InputScrub.scss'
 
 export default function InputScrub({ palette, handleChange, paletteType, isAAA }) {
+
   return (
   <>
   { palette &&
@@ -9,15 +10,15 @@ export default function InputScrub({ palette, handleChange, paletteType, isAAA }
       <div className="input-scrub">
         <label 
           className={isAAA && isAAA !== undefined ? "input-scrub__label white" :"input-scrub__label"}
-          >Lightness: { Math.round(palette.hsl[2] * 100) }%
+          >Lightness: {palette.hsl[2]}
         </label>
         <input className="input-scrub__lightness" 
             type="range" 
             name="Adjust Lightness" 
-            step="any" 
-            min="0" 
-            max="1" 
-            defaultValue={palette.hsl[2]} 
+            step="1" 
+            min="1" 
+            max="100" 
+            defaultValue={parseFloat(palette.hsl[2])} 
             onChange={defaultValue => handleChange(defaultValue, paletteType)}>
         </input>
       </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import './StyleBar.scss';
 import StyleButton from '../StyleButton/StyleButton';
-import { roundHue, roundSl } from '../../utlis';
 
 export default function StyleBar(
 
@@ -21,11 +20,7 @@ export default function StyleBar(
   return (
   <>
     <div className="buttons" style={{
-        backgroundColor: 
-            'hsl('
-                +roundHue(palette.Vibrant.hsl[0])+','
-                +roundSl(palette.Vibrant.hsl[1])+','
-                +roundSl(palette.Vibrant.hsl[2])+')',
+        backgroundColor: `hsl(${palette.Vibrant.hsl.toString()})`,
         borderRadius: isImage && `25px 25px 0px 0px`,
         flexDirection: isImage && `row`,
         padding: isImage && `20px 0px`

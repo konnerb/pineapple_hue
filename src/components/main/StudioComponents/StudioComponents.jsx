@@ -6,7 +6,7 @@ import Icons from '../../Icons/Icons'
 import Image from '../../Image/Image'
 import InputPercent from '../../InputPercent/InputPercent'
 import store from '../../../store'
-import { roundHue, roundSl, contrast } from '../../../utlis';
+import { contrast, roundHue, roundSl } from '../../../utlis';
 
 export default class StudioComponents extends Component {
   constructor(props) {
@@ -42,14 +42,7 @@ export default class StudioComponents extends Component {
     const { Vibrant, LightVibrant, DarkVibrant, Muted, LightMuted, DarkMuted } = this.props.palette;
     const { handlePercentChange, percents } = this.props;
 
-    const isAAA = contrast(
-      [roundHue(Vibrant && Vibrant.hsl[0]), 
-      Math.round(Vibrant && Vibrant.hsl[1] * 100), 
-      Math.round(Vibrant && Vibrant.hsl[2] * 100)
-      ],
-      [0, 1, 1],
-      true
-    )
+    const isAAA = contrast( Vibrant && Vibrant.hsl, [0, 1, 1], true )
       
   return (
   <>
@@ -85,12 +78,7 @@ export default class StudioComponents extends Component {
         }
         <div className="studio-components__button-preview">
           <div className="studio-components__buttons buttons-top" 
-            style={{backgroundColor: 
-              'hsl('
-                +roundHue(LightVibrant.hsl[0])+','
-                +roundSl(LightVibrant.hsl[1])+','
-                +roundSl(LightVibrant.hsl[2])+')'
-            }}
+            style={{backgroundColor: `hsl(${LightVibrant.hsl.toString()})` }}
           >
               <Button 
                 percent={percents.opacityButton}
@@ -126,12 +114,7 @@ export default class StudioComponents extends Component {
               />
           </div>
           <div className="studio-components__buttons buttons-bottom" 
-            style={{backgroundColor: 
-              'hsl('
-                +roundHue(LightMuted.hsl[0])+','
-                +roundSl(LightMuted.hsl[1])+','
-                +roundSl(LightMuted.hsl[2])+')'
-            }}
+            style={{backgroundColor: `hsl(${LightMuted.hsl.toString()})` }}
           >
             <Button 
               percent={percents.opacityButton}
@@ -199,12 +182,7 @@ export default class StudioComponents extends Component {
         }
         <div className="studio-components__icons-preview">
           <div className="studio-components__icons icons-top" 
-            style={{backgroundColor: 
-              'hsl('
-                +roundHue(LightVibrant.hsl[0])+','
-                +roundSl(LightVibrant.hsl[1])+','
-                +roundSl(LightVibrant.hsl[2])+')'
-            }}
+            style={{backgroundColor: `hsl(${LightVibrant.hsl.toString()})` }}
           >
             {icons.map(({ icon, title }, i) => (
               <Icons 
@@ -221,12 +199,7 @@ export default class StudioComponents extends Component {
           </div>
 
           <div className="studio-components__icons icons-bottom" 
-            style={{backgroundColor: 
-              'hsl('
-                +roundHue(LightMuted.hsl[0])+','
-                +roundSl(LightMuted.hsl[1])+','
-                +roundSl(LightMuted.hsl[2])+')'
-            }}
+            style={{backgroundColor: `hsl(${LightMuted.hsl.toString()})`}}
           >
             {icons.map(({ icon, title }, i) => (
               <Icons 
@@ -246,10 +219,10 @@ export default class StudioComponents extends Component {
 
       <article className="studio-components__images-section"
         style={{backgroundColor: 
-          'hsl('
-            +roundHue(Vibrant.hsl[0])+','
-            +roundSl(Vibrant.hsl[1])+','
-            +roundSl(Vibrant.hsl[2] * 1.25)+')'
+        'hsl('
+          +roundHue(Vibrant.hsl[0])+','
+          +roundSl(Vibrant.hsl[1])+','
+          +roundSl(Vibrant.hsl[2] * 1.25)+')'
         }}
       >
       <div className="studio-components__images-buttons">
@@ -278,12 +251,7 @@ export default class StudioComponents extends Component {
       </div>
       <div className="studio-components__images-preview">
         <div className="studio-components__images image_top" 
-          style={{backgroundColor: 
-            'hsl('
-              +roundHue(LightVibrant.hsl[0])+','
-              +roundSl(LightVibrant.hsl[1])+','
-              +roundSl(LightVibrant.hsl[2])+')'
-          }}
+          style={{backgroundColor: `hsl(${LightVibrant.hsl.toString()})` }}
         >   
           {images.map(({ image, title }, i) => (
             <Image 
@@ -299,12 +267,7 @@ export default class StudioComponents extends Component {
         </div>
 
         <div className="studio-components__images image_bottom" 
-          style={{backgroundColor: 
-            'hsl('
-              +roundHue(LightMuted.hsl[0])+','
-              +roundSl(LightMuted.hsl[1])+','
-              +roundSl(LightMuted.hsl[2])+')'
-          }}
+          style={{backgroundColor: `hsl(${LightMuted.hsl.toString()})` }}
         >
           {images.map(({ image, title }, i) => (
               <Image 
@@ -323,6 +286,5 @@ export default class StudioComponents extends Component {
     </section>
   }
   </>
-  )
-  }
+  )}
 } 

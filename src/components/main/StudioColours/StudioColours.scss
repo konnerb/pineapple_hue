@@ -7,6 +7,7 @@
     flex-direction: column;
     justify-content: space-between;
     &__color {
+      position: relative;
       display: flex;
       align-items: center;
       flex-grow: 1;
@@ -26,9 +27,9 @@
       background-color: transparent;
     }
     &__toggle-code {
-      position: absolute;
+      position: relative;
       display: flex;
-      align-self: flex-end;
+      //align-self: flex-end;
       width: 95%;
       justify-content: space-between;
         @include tablet {
@@ -39,13 +40,14 @@
         text-align: start;
         width: 75px;
         @include tablet {
-          width: 123px;
+          width: 128px;
         }
       }
     }
     &__toggle-lightness {
-      position: relative;
+      //position: relative;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       width: 100%;

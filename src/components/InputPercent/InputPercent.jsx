@@ -2,6 +2,7 @@ import React from 'react';
 import './InputPercent.scss'
 
 export default function InputPercent({ handlePercentChange, percents, nameInput, defaultInputValue, isAAA}) {
+
   return (
   <>
     <div className="input">
@@ -14,8 +15,8 @@ export default function InputPercent({ handlePercentChange, percents, nameInput,
           type="range" 
           name={nameInput}
           step="any" 
-          min="0.0" 
-          max="1.0" 
+          min="0.01" 
+          max="1.00" 
           defaultValue={defaultInputValue} 
           onChange={defaultValue => handlePercentChange(defaultValue, nameInput)}>
       </input>

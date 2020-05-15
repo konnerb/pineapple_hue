@@ -92,8 +92,8 @@
   
   export const contrast = (hsl1, hsl2, isAAA = false) => {
     
-    let lumHsl1 = hsl1 ? hslToRgb(hsl1[0], ( (hsl1[1] * 1000) / 1000), ( (hsl1[2] * 1000) / 1000), false) : [];
-    let lumHsl2 = hsl2 ? hslToRgb(hsl2[0], ( (hsl2[1] * 1000) / 1000), ( (hsl2[2] * 1000) / 1000), false) : [];
+    let lumHsl1 = hsl1 ? hslToRgb(hsl1[0], ( (parseFloat(hsl1[1]) * 1000) / 1000), ( (parseFloat(hsl1[2]) * 1000) / 1000), false) : [];
+    let lumHsl2 = hsl2 ? hslToRgb(hsl2[0], ( (parseFloat(hsl2[1]) * 1000) / 1000), ( (parseFloat(hsl2[2]) * 1000) / 1000), false) : [];
 
     let lum1 = lumHsl1 ? luminanace(lumHsl1[0], lumHsl1[1], lumHsl1[2]) : [];
     let lum2 = lumHsl2 ? luminanace(lumHsl2[0], lumHsl2[1], lumHsl2[2]) : [];

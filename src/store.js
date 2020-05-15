@@ -100,8 +100,8 @@ const store = {
   components: [
     {
       buttons: {
-        button: [1,2,3,4],
-        button: [1,2,3,4]
+        button1: [1,2,3,4],
+        button2: [1,2,3,4]
       },
       icons: [1,2],
       images: [1,2]

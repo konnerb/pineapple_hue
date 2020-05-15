@@ -3,7 +3,7 @@ import './StudioColours.scss';
 import StyleButton from '../../StyleButton/StyleButton'
 import InputScrub from '../../InputScrub/InputScrub'
 import ColorCode from '../../ColorCode/ColorCode'
-import { roundHue, roundSl, contrast } from '../../../utlis';
+import { contrast } from '../../../utlis';
 
 export default function StudioColours(
 
@@ -14,16 +14,7 @@ export default function StudioColours(
     palette
   }) {
     
-  const isAAA = (colour) => (
-    contrast(
-      [roundHue(palette[colour].hsl[0]), 
-      Math.round(palette[colour].hsl[1] * 100), 
-      Math.round(palette[colour].hsl[2] * 100)
-      ],
-      [0, 1, 1],
-      true
-    )
-  )
+  const isAAA = (colour => contrast( palette[colour].hsl, [0, 1, 1], true ) )
 
   return (
     <> 
@@ -37,10 +28,7 @@ export default function StudioColours(
                 : i === 5 ? "website__color color_bottom-right" 
                 : "website__color"}
                 style={{
-                  backgroundColor:'hsl('
-                    +roundHue(palette[colour].hsl[0])+','
-                    +roundSl(palette[colour].hsl[1])+','
-                    +roundSl(palette[colour].hsl[2])+')',
+                  backgroundColor: `hsl(${palette[colour].hsl.toString()})`,
                   color: palette[colour].titleTextColor
               }}>
               { !toggle[colour] &&

@@ -6,15 +6,14 @@ import PaletteView from '../../components/PaletteView/PaletteView';
 import Studio from '../../components/main/Studio/Studio';
 import StudioComponents from '../../components/main/StudioComponents/StudioComponents';
 import Footer from '../../components/Footer/Footer';
+import { roundHue, roundSl } from '../../utlis'
 
 export default class Main extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      img: {},
       palette: [], 
       percents: {},
-      newRgb: [],
       togglePalette: false
     }
     this.handlePercentChange = this.handlePercentChange.bind(this);
@@ -29,26 +28,82 @@ export default class Main extends Component {
       if(err) {
       console.log(err);
       } else {
-      this.setState({ 
-          img, 
+        this.setState({ 
           palette 
-      })
+        }, () => this.modifyState() )
       }
+    })
+  }
+
+  modifyState = () => {
+    
+    let newState = {}
+    const cloneState = this.state.palette
+
+      newState = {
+        ...cloneState,
+        Vibrant: {
+          ...cloneState.Vibrant,
+          hsl: 
+            [roundHue(cloneState.Vibrant.hsl[0]), 
+            roundSl(cloneState.Vibrant.hsl[1]), 
+            roundSl(cloneState.Vibrant.hsl[2])]
+        },
+        LightVibrant: {
+          ...cloneState.LightVibrant,
+          hsl: 
+            [roundHue(cloneState.LightVibrant.hsl[0]), 
+            roundSl(cloneState.LightVibrant.hsl[1]), 
+            roundSl(cloneState.LightVibrant.hsl[2])]
+        },
+        DarkVibrant: {
+          ...cloneState.DarkVibrant,
+          hsl: 
+            [roundHue(cloneState.DarkVibrant.hsl[0]), 
+            roundSl(cloneState.DarkVibrant.hsl[1]), 
+            roundSl(cloneState.DarkVibrant.hsl[2])]
+        },
+        Muted: {
+          ...cloneState.Muted,
+          hsl: 
+            [roundHue(cloneState.Muted.hsl[0]), 
+            roundSl(cloneState.Muted.hsl[1]), 
+            roundSl(cloneState.Muted.hsl[2])]
+        },
+        LightMuted: {
+          ...cloneState.LightMuted,
+          hsl: 
+            [roundHue(cloneState.LightMuted.hsl[0]), 
+            roundSl(cloneState.LightMuted.hsl[1]), 
+            roundSl(cloneState.LightMuted.hsl[2])]
+        },
+        DarkMuted: {
+          ...cloneState.DarkMuted,
+          hsl: 
+            [roundHue(cloneState.DarkMuted.hsl[0]), 
+            roundSl(cloneState.DarkMuted.hsl[1]), 
+            roundSl(cloneState.DarkMuted.hsl[2])]
+        }
+      }
+
+    this.setState({
+      palette: newState
     })
   }
 
   //Updates Palette HSL colors from InputScrub Component and updates state
 
   handlePaletteUpdate = (newPalette) => {
-  const newPaletteKey = Object.keys(newPalette)[0]; //Vibrant
+  const newPaletteKey = Object.keys(newPalette)[0]; 
   this.setState({
     palette: {
       ...this.state.palette,
       [newPaletteKey]: {
         ...this.state.palette[newPaletteKey],
-        hsl: [this.state.palette[newPaletteKey].hsl[0], 
-                this.state.palette[newPaletteKey].hsl[1], 
-                newPalette[newPaletteKey]]
+        hsl: 
+          [this.state.palette[newPaletteKey].hsl[0], 
+          this.state.palette[newPaletteKey].hsl[1], 
+          newPalette[newPaletteKey]]
       }
     }
   })
@@ -127,6 +182,5 @@ export default class Main extends Component {
     </footer>
     
   </>
-  )
-  }
+  )}
 } 

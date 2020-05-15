@@ -29,7 +29,7 @@ export default class Studio extends Component {
   handleChange(event, paletteType) {
     const { target: { value} } = event;
     let newPalette = {};
-    newPalette[paletteType] = value;
+    newPalette[paletteType] = value + "%";
     this.setState({
       newPalette
     }, () => this.props.handlePaletteUpdate(this.state.newPalette) );
@@ -64,6 +64,5 @@ export default class Studio extends Component {
       </section>
     }
   </>
-  )
-  }
+  )}
 } 
