@@ -7,8 +7,7 @@ export default class Studio extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      newPalette: {},
-
+      updatePalette: {},
       toggle: {
         Virbant: false,
         LightVibrant: false,
@@ -26,13 +25,13 @@ export default class Studio extends Component {
   updates the Main Component palette state
   */
 
-  handleChange(event, paletteType) {
+  handleChange(event, paletteName) {
     const { target: { value} } = event;
-    let newPalette = {};
-    newPalette[paletteType] = value + "%";
+    let updatePalette = {};
+    updatePalette[paletteName] = value + "%";
     this.setState({
-      newPalette
-    }, () => this.props.handlePaletteUpdate(this.state.newPalette) );
+      updatePalette
+    }, () => this.props.handlePaletteUpdate(this.state.updatePalette) );
   }
 
   //Toggles StudioWebsite Componets color palette to adjust InputScrub Component

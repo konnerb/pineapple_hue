@@ -30,80 +30,83 @@ export default class Main extends Component {
       } else {
         this.setState({ 
           palette 
-        }, () => this.modifyState() )
+        }, () => this.modifyPalette() )
       }
     })
   }
 
-  modifyState = () => {
-    
-    let newState = {}
-    const cloneState = this.state.palette
+  //Safely updates original Vibrant.js HSL values to whole numbers
 
-      newState = {
-        ...cloneState,
+  modifyPalette = () => {
+    
+    const clonePalette = this.state.palette
+    let newPalette = {}
+
+      newPalette = {
+        ...clonePalette,
         Vibrant: {
-          ...cloneState.Vibrant,
+          ...clonePalette.Vibrant,
           hsl: 
-            [roundHue(cloneState.Vibrant.hsl[0]), 
-            roundSl(cloneState.Vibrant.hsl[1]), 
-            roundSl(cloneState.Vibrant.hsl[2])]
+            [roundHue(clonePalette.Vibrant.hsl[0]), 
+            roundSl(clonePalette.Vibrant.hsl[1]), 
+            roundSl(clonePalette.Vibrant.hsl[2])]
         },
         LightVibrant: {
-          ...cloneState.LightVibrant,
+          ...clonePalette.LightVibrant,
           hsl: 
-            [roundHue(cloneState.LightVibrant.hsl[0]), 
-            roundSl(cloneState.LightVibrant.hsl[1]), 
-            roundSl(cloneState.LightVibrant.hsl[2])]
+            [roundHue(clonePalette.LightVibrant.hsl[0]), 
+            roundSl(clonePalette.LightVibrant.hsl[1]), 
+            roundSl(clonePalette.LightVibrant.hsl[2])]
         },
         DarkVibrant: {
-          ...cloneState.DarkVibrant,
+          ...clonePalette.DarkVibrant,
           hsl: 
-            [roundHue(cloneState.DarkVibrant.hsl[0]), 
-            roundSl(cloneState.DarkVibrant.hsl[1]), 
-            roundSl(cloneState.DarkVibrant.hsl[2])]
+            [roundHue(clonePalette.DarkVibrant.hsl[0]), 
+            roundSl(clonePalette.DarkVibrant.hsl[1]), 
+            roundSl(clonePalette.DarkVibrant.hsl[2])]
         },
         Muted: {
-          ...cloneState.Muted,
+          ...clonePalette.Muted,
           hsl: 
-            [roundHue(cloneState.Muted.hsl[0]), 
-            roundSl(cloneState.Muted.hsl[1]), 
-            roundSl(cloneState.Muted.hsl[2])]
+            [roundHue(clonePalette.Muted.hsl[0]), 
+            roundSl(clonePalette.Muted.hsl[1]), 
+            roundSl(clonePalette.Muted.hsl[2])]
         },
         LightMuted: {
-          ...cloneState.LightMuted,
+          ...clonePalette.LightMuted,
           hsl: 
-            [roundHue(cloneState.LightMuted.hsl[0]), 
-            roundSl(cloneState.LightMuted.hsl[1]), 
-            roundSl(cloneState.LightMuted.hsl[2])]
+            [roundHue(clonePalette.LightMuted.hsl[0]), 
+            roundSl(clonePalette.LightMuted.hsl[1]), 
+            roundSl(clonePalette.LightMuted.hsl[2])]
         },
         DarkMuted: {
-          ...cloneState.DarkMuted,
+          ...clonePalette.DarkMuted,
           hsl: 
-            [roundHue(cloneState.DarkMuted.hsl[0]), 
-            roundSl(cloneState.DarkMuted.hsl[1]), 
-            roundSl(cloneState.DarkMuted.hsl[2])]
+            [roundHue(clonePalette.DarkMuted.hsl[0]), 
+            roundSl(clonePalette.DarkMuted.hsl[1]), 
+            roundSl(clonePalette.DarkMuted.hsl[2])]
         }
       }
 
     this.setState({
-      palette: newState
+      palette: newPalette
     })
   }
 
-  //Updates Palette HSL colors from InputScrub Component and updates state
+  //Safely updates Palette HSL colors from InputScrub Component and updates state
 
-  handlePaletteUpdate = (newPalette) => {
-  const newPaletteKey = Object.keys(newPalette)[0]; 
+  handlePaletteUpdate = (paletteName) => {
+  const clonePalette = this.state.palette
+  const key = Object.keys(paletteName)[0]; 
   this.setState({
     palette: {
-      ...this.state.palette,
-      [newPaletteKey]: {
-        ...this.state.palette[newPaletteKey],
+      ...clonePalette,
+      [key]: {
+        ...clonePalette[key],
         hsl: 
-          [this.state.palette[newPaletteKey].hsl[0], 
-          this.state.palette[newPaletteKey].hsl[1], 
-          newPalette[newPaletteKey]]
+          [clonePalette[key].hsl[0], 
+          clonePalette[key].hsl[1], 
+          paletteName[key]]
       }
     }
   })
