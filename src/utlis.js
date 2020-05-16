@@ -76,7 +76,7 @@
     return "#" + r + g + b;
   }
 
-  //Luminanace is a helper function for breaking down the required values for comparison in the contrast function
+//Luminanace is a helper function for breaking down the required values for comparison in the contrast function
 
     const luminanace = (r, g, b) => {
       let color = [r, g, b].map(value => {
@@ -87,10 +87,14 @@
       });
       return color[0] * 0.2126 + color[1] * 0.7152 + color[2] * 0.0722;
     }
-
-//Contrast function declares the WCAG contrast ratio between colors
   
-  export const contrast = (hsl1, hsl2, isAAA = false) => {
+//findRating is a helpter function that returns a string value of AAA, AA, or fail when contrast rating is enabled.
+
+    const findRating = (ratio => ratio >= 7.00 ? 'AAA' : ratio >= 5.00 && ratio <= 7.00 ? 'AA' : 'fail')
+
+//Contrast function returns the WCAG contrast ratio between colors
+  
+  export const contrast = (hsl1, hsl2, rating = false) => {
     
     let lumHsl1 = hsl1 ? hslToRgb(hsl1[0], ( (parseFloat(hsl1[1]) * 1000) / 1000), ( (parseFloat(hsl1[2]) * 1000) / 1000), false) : [];
     let lumHsl2 = hsl2 ? hslToRgb(hsl2[0], ( (parseFloat(hsl2[1]) * 1000) / 1000), ( (parseFloat(hsl2[2]) * 1000) / 1000), false) : [];
@@ -102,9 +106,8 @@
     let darkest = Math.min(lum1, lum2);
 
     let ratio = Math.round( (brightest + 0.05) / (darkest + 0.05) * 100 ) / 100;
-    let rating = ratio <= 7.00;
 
-    return isAAA ? rating : ratio;
+    return rating ? findRating(ratio) : ratio;
   }
 
 //RoundHue converts the a HSL hue value into a whole number

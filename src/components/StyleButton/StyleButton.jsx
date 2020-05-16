@@ -6,7 +6,7 @@ export default function StyleButton({ handleToggle, toggleType, buttonText, isAA
   return (
   <> 
     <div>
-      <button className={isAAA && isAAA !== undefined ? "style-button white" : "style-button"}
+      <button className={isAAA === 'AAA' && isAAA !== undefined ? "style-button" : "style-button white"}
         name="style-button" 
         onClick={() => handleToggle(toggleType)}
         >{buttonText}

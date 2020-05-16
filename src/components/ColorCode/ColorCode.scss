@@ -10,8 +10,11 @@
     //width: 50%;
     //padding: 8px 0px;
       @include tablet {
-        font-size: 18px;
+        font-size: 15px;
         text-align: start;
+      }
+      @include laptop {
+        font-size: 25px;
       }
     }
 }

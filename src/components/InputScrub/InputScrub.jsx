@@ -9,7 +9,7 @@ export default function InputScrub({ palette, handleChange, paletteType, isAAA }
     <div>
       <div className="input-scrub">
         <label 
-          className={isAAA && isAAA !== undefined ? "input-scrub__label white" :"input-scrub__label"}
+          className={isAAA === 'AAA' && isAAA !== undefined ? "input-scrub__label" :"input-scrub__label white"}
           >Lightness: {palette.hsl[2]}
         </label>
         <input className="input-scrub__lightness" 

@@ -10,11 +10,11 @@ export default function Button(
         toggleButtonsShadow, 
         toggleButtonsBorder, 
         toggleOpacity,
-        paletteType, 
-        buttonText
+        paletteType,
+        paletteBackground
     }) {
 
-    const isAAA = (colour => contrast( palette[colour].hsl, [0, 1, 1], true ) )
+    const isAAA = contrast( palette.hsl, [0, 1, 1], true )
 
     return (
     <>  { palette &&
@@ -24,12 +24,12 @@ export default function Button(
                     style={{
                         backgroundColor: `hsl(${palette.hsl.toString()})`,
                         fontSize: toggleOpacity && "12px",
-                        color: `${ (isAAA && isAAA !== undefined) ? "white" : "black" }`,
+                        color: `${ (isAAA === 'AAA' && isAAA !== undefined) ? "black" : "white" }`,
                         opacity: percent ? `${percent}` : `100%`,
                         boxShadow: toggleButtonsShadow ? `5px 10px #888888` : `none`,
                         border: toggleButtonsBorder ? `2px solid black` : `none`
                     }}
-                    >{buttonText}
+                    >{contrast(palette.hsl, paletteBackground.hsl, true )}
                 </button>
         </div>
         }

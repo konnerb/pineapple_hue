@@ -28,6 +28,7 @@
       height: 200%; 
     }
     @include laptop {
+      margin-right: 15%;
       width: 25%; 
       height: 100%; 
     }

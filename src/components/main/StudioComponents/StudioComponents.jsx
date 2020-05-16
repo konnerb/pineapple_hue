@@ -86,7 +86,7 @@ export default class StudioComponents extends Component {
                 toggleButtonsShadow={this.state.toggleButtonsShadow}
                 toggleButtonsBorder={this.state.toggleButtonsBorder}
                 palette={Vibrant} 
-                buttonText="Click Me!" 
+                paletteBackground={LightVibrant}
               />
               <Button 
                 percent={percents.opacityButton}
@@ -94,7 +94,7 @@ export default class StudioComponents extends Component {
                 toggleButtonsShadow={this.state.toggleButtonsShadow}
                 toggleButtonsBorder={this.state.toggleButtonsBorder}
                 palette={DarkVibrant} 
-                buttonText="Click Me!" 
+                paletteBackground={LightVibrant}
               />
               <Button 
                 percent={percents.opacityButton}
@@ -102,7 +102,7 @@ export default class StudioComponents extends Component {
                 toggleButtonsShadow={this.state.toggleButtonsShadow}
                 toggleButtonsBorder={this.state.toggleButtonsBorder}
                 palette={Muted} 
-                buttonText="Click Me!" 
+                paletteBackground={LightVibrant}
               />
               <Button 
                 percent={percents.opacityButton}
@@ -110,7 +110,7 @@ export default class StudioComponents extends Component {
                 toggleButtonsShadow={this.state.toggleButtonsShadow}
                 toggleButtonsBorder={this.state.toggleButtonsBorder}
                 palette={DarkMuted} 
-                buttonText="Click Me!" 
+                paletteBackground={LightVibrant}
               />
           </div>
           <div className="studio-components__buttons buttons-bottom" 
@@ -122,7 +122,7 @@ export default class StudioComponents extends Component {
               toggleButtonsShadow={this.state.toggleButtonsShadow}
               toggleButtonsBorder={this.state.toggleButtonsBorder}
               palette={Vibrant} 
-              buttonText="Click Me!" 
+              paletteBackground={LightMuted}
             />
             <Button 
               percent={percents.opacityButton}
@@ -130,7 +130,7 @@ export default class StudioComponents extends Component {
               toggleButtonsShadow={this.state.toggleButtonsShadow}
               toggleButtonsBorder={this.state.toggleButtonsBorder}
               palette={DarkVibrant} 
-              buttonText="Click Me!" 
+              paletteBackground={LightMuted}
             />
             <Button 
               percent={percents.opacityButton}
@@ -138,7 +138,7 @@ export default class StudioComponents extends Component {
               toggleButtonsShadow={this.state.toggleButtonsShadow}
               toggleButtonsBorder={this.state.toggleButtonsBorder}
               palette={Muted} 
-              buttonText="Click Me!" 
+              paletteBackground={LightMuted}
             />
             <Button 
               percent={percents.opacityButton}
@@ -146,7 +146,7 @@ export default class StudioComponents extends Component {
               toggleButtonsShadow={this.state.toggleButtonsShadow}
               toggleButtonsBorder={this.state.toggleButtonsBorder}
               palette={DarkMuted} 
-              buttonText="Click Me!" 
+              paletteBackground={LightMuted}
             />
           </div>
         </div>

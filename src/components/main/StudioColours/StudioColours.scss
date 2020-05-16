@@ -41,6 +41,11 @@
         width: 75px;
         @include tablet {
           width: 128px;
+          font-size: 18px;
+        }
+        @include laptop{
+          width: 128px;
+          font-size: 18px;
         }
       }
     }

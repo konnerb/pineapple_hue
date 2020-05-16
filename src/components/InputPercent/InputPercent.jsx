@@ -7,7 +7,7 @@ export default function InputPercent({ handlePercentChange, percents, nameInput,
   <>
     <div className="input">
       <label 
-          className={isAAA && isAAA !== undefined ? "input__opacity white" : "input__opacity"}
+          className={isAAA === 'AAA' && isAAA !== undefined ? "input__opacity" : "input__opacity white"}
           >{percents >= 0 ? percents : defaultInputValue}
         </label>
       <input 

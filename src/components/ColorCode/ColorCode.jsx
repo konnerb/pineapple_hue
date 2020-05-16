@@ -29,10 +29,10 @@ export default function ColorCode(
         ( (isToggled === true && codeType === 'hex') || colorCode === true ) 
         ? hslToHex(h, ( (s * 1000)  / 1000 ), ( (l * 1000) / 1000) )
         : palette[paletteName]._hex
-
+        
 return (
   <>  
-  <div className={isAAA && isAAA !== undefined ? "color-code white" : "color-code"}>
+  <div className={isAAA === 'AAA' && isAAA !== undefined ? "color-code" : "color-code white"}>
 
     { (colorCode === true || codeType === 'hex') && 
       <p className="color-code__value">Hex: {hex}</p>
