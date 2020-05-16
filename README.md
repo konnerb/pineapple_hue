@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/85030c5b-8ee9-466a-97d9-63de54a9329c/deploy-status)](https://app.netlify.com/sites/pineapplehue/deploys)
+
 ## Welcome to the repo of pinapplehue!
 
 pinapplehue is a visual colour tool developed in React that utilizes [react-dropzone](https://www.npmjs.com/package/react-dropzone) for handling the image uploads and [vibrant.js](https://www.npmjs.com/package/node-vibrant) to parse the image data into colour palettes. 
