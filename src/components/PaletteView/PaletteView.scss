@@ -6,10 +6,10 @@
   align-items: center;
   height: 40vh;
   width: 100vw;
-    @include tablet {
-      height: 100vh;
-      width: 100vw;
-    }
+  @include tablet {
+    height: 100vh;
+    width: 100vw;
+  }
   &__color {
     display: flex;
     flex-direction: column;
@@ -32,9 +32,9 @@
     height: 41vh;
     vertical-align: middle;
     overflow: hidden;
-      @include tablet {
-          height: 101vh;
-      }
+    @include tablet {
+        height: 101vh;
+    }
   }
 }
 .svg {

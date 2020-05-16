@@ -2,10 +2,10 @@
 
 .upload-wrapper {
   position: relative;
-    @include laptop {
-      top: 30%;
-      height: 100%;
-    }
+  @include laptop {
+    top: 30%;
+    height: 100%;
+  }
   &__input-box {
     width: 100% !important;
     @include tablet {

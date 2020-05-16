@@ -6,9 +6,9 @@
   display: flex;
   flex-direction: column;
   background-color: $yellow;
-    @include laptop { 
-      height: 100vh;
-    }
+  @include laptop { 
+    height: 100vh;
+  }
   &__upload-image {
     align-items: center;
     justify-content: space-between;

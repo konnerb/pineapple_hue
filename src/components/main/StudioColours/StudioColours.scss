@@ -32,13 +32,13 @@
       //align-self: flex-end;
       width: 95%;
       justify-content: space-between;
-        @include tablet {
-          width: 50%;
-        }
+      @include tablet {
+        width: 50%;
+      }
       & .color-code__value {
         font-weight: 500;
         text-align: start;
-        width: 75px;
+        width: 77px;
         @include tablet {
           width: 128px;
           font-size: 18px;
@@ -70,10 +70,10 @@
       background-color: transparent;
       width: 20px;
       height: 20px;
-        @include tablet {
-          top: 32px;
-          right: 110px;
-        }
+      @include tablet {
+        top: 32px;
+        right: 110px;
+      }
     }
 }
 .color_top-right {

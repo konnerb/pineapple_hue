@@ -20,9 +20,9 @@ input[type=range] {
     margin: 10px 0;
     width: 100%;
     background-color: transparent;
-      @include tablet {
-        height: 40px;
-      }
+    @include tablet {
+      height: 40px;
+    }
   }
   input[type=range]:focus {
     outline: none;
@@ -36,9 +36,9 @@ input[type=range] {
     background: $light-grey;
     border-radius: 5px;
     border: 1px solid #000000;
-      @include tablet {
-        height: 10px;
-      }
+    @include tablet {
+      height: 10px;
+    }
   }
   input[type=range]::-webkit-slider-thumb {
     box-shadow: 1px 1px 1px #000000;
@@ -50,11 +50,11 @@ input[type=range] {
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -8px;
-      @include tablet {
-        height: 30px;
-        width: 15px;
-        margin-top: -11px;
-      }
+    @include tablet {
+      height: 30px;
+      width: 15px;
+      margin-top: -11px;
+    }
   }
   input[type=range]:focus::-webkit-slider-runnable-track {
     background: $light-grey;
@@ -68,9 +68,9 @@ input[type=range] {
     background: $light-grey;
     border-radius: 5px;
     border: 1px solid #000000;
-      @include tablet {
-        height: 10px;
-      }
+    @include tablet {
+      height: 10px;
+    }
   }
   input[type=range]::-moz-range-thumb {
     box-shadow: 1px 1px 1px #000000;
@@ -80,9 +80,9 @@ input[type=range] {
     border-radius: 5px;
     background: #FFFFFF;
     cursor: pointer;
-      @include tablet {
-        height: 30px;
-      }
+    @include tablet {
+      height: 30px;
+    }
   }
   input[type=range]::-ms-track {
     width: 100%;
@@ -92,9 +92,9 @@ input[type=range] {
     background: transparent;
     border-color: transparent;
     color: transparent;
-      @include tablet {
-        height: 10px;
-      }
+    @include tablet {
+      height: 10px;
+    }
   }
   input[type=range]::-ms-fill-lower {
     background: $light-grey;
@@ -117,9 +117,9 @@ input[type=range] {
     border-radius: 5px;
     background: #FFFFFF;
     cursor: pointer;
-      @include tablet {
-        height: 30px;
-      }
+    @include tablet {
+      height: 30px;
+    }
   }
   input[type=range]:focus::-ms-fill-lower {
     background: $light-grey;
