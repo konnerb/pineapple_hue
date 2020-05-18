@@ -38,7 +38,7 @@ export default class Main extends Component {
   //Safely updates original Vibrant.js HSL values to whole numbers
 
   modifyPalette = () => {
-    
+
     const clonePalette = this.state.palette
     let newPalette = {}
 

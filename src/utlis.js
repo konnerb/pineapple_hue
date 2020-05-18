@@ -1,3 +1,20 @@
+
+//Luminanace is a helper function for breaking down the required values for comparison in the contrast function
+
+const luminanace = (r, g, b) => {
+  let color = [r, g, b].map(value => {
+    value /= 255;
+    return value <= 0.03928
+      ? value / 12.92
+      : Math.pow( (value + 0.055) / 1.055, 2.4 );
+  });
+  return color[0] * 0.2126 + color[1] * 0.7152 + color[2] * 0.0722;
+}
+
+//findRating is a helpter function that returns a string value of AAA, AA, or fail when contrast rating is enabled.
+
+const findRating = (ratio => ratio >= 7.00 ? 'AAA' : ratio >= 5.00 && ratio <= 7.00 ? 'AA' : 'fail')
+
 //Converts HSL values to RGB
 
   export const hslToRgb = (h, s, l, isComa = true ) => {
@@ -75,22 +92,6 @@
   
     return "#" + r + g + b;
   }
-
-//Luminanace is a helper function for breaking down the required values for comparison in the contrast function
-
-    const luminanace = (r, g, b) => {
-      let color = [r, g, b].map(value => {
-        value /= 255;
-        return value <= 0.03928
-          ? value / 12.92
-          : Math.pow( (value + 0.055) / 1.055, 2.4 );
-      });
-      return color[0] * 0.2126 + color[1] * 0.7152 + color[2] * 0.0722;
-    }
-  
-//findRating is a helpter function that returns a string value of AAA, AA, or fail when contrast rating is enabled.
-
-    const findRating = (ratio => ratio >= 7.00 ? 'AAA' : ratio >= 5.00 && ratio <= 7.00 ? 'AA' : 'fail')
 
 //Contrast function returns the WCAG contrast ratio between colors
   

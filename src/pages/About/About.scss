@@ -23,17 +23,17 @@
     @include laptop {
       font-size: 1rem;
       //font-weight: 500;
-      top: 35%;
+      top: 30%;
     }
   }
   &__text {
-    //text-align: center;
     color: black;
-    &:last-child {
-      text-align: end;
-    }
   }
   &__text a {
     color: black;
   }
+}
+
+.hero__upload-pineapple {
+  margin-right: 0%
 }
