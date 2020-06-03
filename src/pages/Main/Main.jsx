@@ -6,7 +6,7 @@ import PaletteView from '../../components/PaletteView/PaletteView';
 import Studio from '../../components/main/Studio/Studio';
 import StudioComponents from '../../components/main/StudioComponents/StudioComponents';
 import Footer from '../../components/Footer/Footer';
-import { roundHue, roundSl } from '../../utlis'
+import { roundHue, roundSl } from '../../utlis';
 
 export default class Main extends Component {
   constructor(props) {

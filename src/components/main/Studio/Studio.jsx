@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Studio.scss'
-import StudioPaletteBar from '../StudioPaletteBar/StudioPaletteBar'
-import StudioColours from '../StudioColours/StudioColours'
+import './Studio.scss';
+import StudioPaletteBar from '../StudioPaletteBar/StudioPaletteBar';
+import StudioColours from '../StudioColours/StudioColours';
 
 export default class Studio extends Component {
   constructor(props) {

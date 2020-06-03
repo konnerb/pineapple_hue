@@ -1,8 +1,8 @@
 import React from 'react';
 import './Footer.scss';
 
-export default function Footer() {
-  return (
+const Footer = () => (
+
   <div className="footer">
     <div className="footer__svg-container">
       <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
@@ -12,5 +12,7 @@ export default function Footer() {
       </svg>
     </div>
   </div>
-  )
-}
+
+)
+
+export default Footer;

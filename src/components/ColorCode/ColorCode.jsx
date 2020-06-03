@@ -26,9 +26,9 @@ export default function ColorCode(
   const rgb = hslToRgb(h, ( (s * 1000)  / 1000 ), ( (l * 1000) / 1000), true );
 
   const hex = 
-        ( (isToggled === true && codeType === 'hex') || colorCode === true ) 
-        ? hslToHex(h, ( (s * 1000)  / 1000 ), ( (l * 1000) / 1000) )
-        : palette[paletteName]._hex
+    ( (isToggled === true && codeType === 'hex') || colorCode === true ) 
+    ? hslToHex(h, ( (s * 1000)  / 1000 ), ( (l * 1000) / 1000) )
+    : palette[paletteName]._hex
         
 return (
   <>  

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './StudioComponents.scss'
-import Button from '../../Button/Button'
-import StyleBar from '../../StyleBar/StyleBar'
-import Icons from '../../Icons/Icons'
-import Image from '../../Image/Image'
-import InputPercent from '../../InputPercent/InputPercent'
-import store from '../../../store'
+import './StudioComponents.scss';
+import Button from '../../Button/Button';
+import StyleBar from '../../StyleBar/StyleBar';
+import Icons from '../../Icons/Icons';
+import Image from '../../Image/Image';
+import InputPercent from '../../InputPercent/InputPercent';
+import store from '../../../store';
 import { contrast, roundHue, roundSl } from '../../../utlis';
 
 export default class StudioComponents extends Component {

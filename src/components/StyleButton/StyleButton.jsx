@@ -1,9 +1,8 @@
 import React from 'react';
-import './StyleButton.scss'
+import './StyleButton.scss';
 
-export default function StyleButton({ handleToggle, toggleType, buttonText, isAAA }) {
+const StyleButton = ({ handleToggle, toggleType, buttonText, isAAA }) => (
 
-  return (
   <> 
     <div>
       <button className={isAAA === 'AAA' && isAAA !== undefined ? "style-button" : "style-button white"}
@@ -13,5 +12,7 @@ export default function StyleButton({ handleToggle, toggleType, buttonText, isAA
       </button>
     </div>
   </>
-  )
-} 
+  
+)
+
+export default StyleButton;

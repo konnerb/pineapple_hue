@@ -1,6 +1,6 @@
 import React from 'react';
 import './PaletteView.scss';
-import ColorCode from '../ColorCode/ColorCode'
+import ColorCode from '../ColorCode/ColorCode';
 import { contrast } from '../../utlis';
 
 export default function PaletteView({ palette, colorCode, codeType, togglePalette }) {

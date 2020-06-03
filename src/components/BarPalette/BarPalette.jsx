@@ -1,8 +1,7 @@
 import React from 'react';
-import './BarPalette.scss'
+import './BarPalette.scss';
 
-export default function BarPalette({ palette, borderRadiusType  }) {
-  return (
+const BarPalette = ({ palette, borderRadiusType  }) => (
   <>
     { palette &&
       <div className="palette">
@@ -18,5 +17,6 @@ export default function BarPalette({ palette, borderRadiusType  }) {
       </div>
     }
   </>
-  )
-} 
+)
+
+export default BarPalette;

@@ -1,5 +1,5 @@
-import React, { useCallback, useMemo } from 'react'
-import { useDropzone } from 'react-dropzone'
+import React, { useCallback, useMemo } from 'react';
+import { useDropzone } from 'react-dropzone';
 import './UploadImage.scss';
 
 function UploadImage({ fetchImgData }) {

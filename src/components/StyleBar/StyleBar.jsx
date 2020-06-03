@@ -2,7 +2,7 @@ import React from 'react';
 import './StyleBar.scss';
 import StyleButton from '../StyleButton/StyleButton';
 
-export default function StyleBar(
+const StyleBar = (
 
   {   
     opacityType, 
@@ -15,16 +15,16 @@ export default function StyleBar(
     palette, 
     isImage,
     isAAA
-  }) {
-
-  return (
+  }) => (
+    
   <>
-    <div className="buttons" style={{
-        backgroundColor: `hsl(${palette.Vibrant.hsl.toString()})`,
-        borderRadius: isImage && `25px 25px 0px 0px`,
-        flexDirection: isImage && `row`,
-        padding: isImage && `20px 0px`
-        }}
+    <div 
+      className="buttons" style={{
+      backgroundColor: `hsl(${palette.Vibrant.hsl.toString()})`,
+      borderRadius: isImage && `25px 25px 0px 0px`,
+      flexDirection: isImage && `row`,
+      padding: isImage && `20px 0px`
+      }}
     >
 
       <StyleButton 
@@ -56,5 +56,6 @@ export default function StyleBar(
   
     </div>
   </>
-  )
-} 
+)
+
+export default StyleBar;
