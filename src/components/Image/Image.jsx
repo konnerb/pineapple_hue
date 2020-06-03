@@ -1,7 +1,7 @@
 import React from 'react';
 import './Image.scss';
 
-export default function Image(
+const Image = (
   
   { 
     imageName, 
@@ -9,9 +9,8 @@ export default function Image(
     image, 
     toggleImagesBorder, 
     toggleImagesShadow 
-  }) {
+  }) => (
 
-  return (
   <>  
     <div className="image">
       <img 
@@ -26,5 +25,7 @@ export default function Image(
       />
     </div>
   </>
-  )
-} 
+  
+);
+
+export default Image;

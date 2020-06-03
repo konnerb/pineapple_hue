@@ -110,6 +110,6 @@ function UploadImage({ fetchImgData }) {
       </div>
     </>
     )
-  }
+  };
 
   export default UploadImage;

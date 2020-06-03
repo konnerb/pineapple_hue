@@ -20,6 +20,6 @@ const InputPercent = ({ handlePercentChange, percents, nameInput, defaultInputVa
       </input>
     </div>
   </>
-)
+);
 
 export default InputPercent;

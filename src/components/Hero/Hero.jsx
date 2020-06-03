@@ -1,6 +1,6 @@
 import React from 'react';
 import './Hero.scss';
-import UploadImage from '../../components/UploadImage/UploadImage'
+import UploadImage from '../../components/UploadImage/UploadImage';
 
 const Hero = ({ fetchImgData, palette }) => (
 
@@ -21,6 +21,6 @@ const Hero = ({ fetchImgData, palette }) => (
     }
   </section>
   
-)
+);
 
-  export default Hero
+export default Hero;

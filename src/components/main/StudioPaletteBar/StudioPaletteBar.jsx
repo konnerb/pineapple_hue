@@ -40,6 +40,6 @@ const StudioPaletteBar = ({ palette }) => (
     </div>
   }
   </>
-)
+);
 
 export default StudioPaletteBar;

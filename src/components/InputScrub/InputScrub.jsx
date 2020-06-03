@@ -38,6 +38,6 @@ const InputScrub = ({ palette, handleChange, paletteType, isAAA }) => (
     </div>
   }
   </>
-)
+);
 
 export default InputScrub;

@@ -287,4 +287,4 @@ export default class StudioComponents extends Component {
   }
   </>
   )}
-} 
+};

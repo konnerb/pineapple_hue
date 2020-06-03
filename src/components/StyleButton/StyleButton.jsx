@@ -13,6 +13,6 @@ const StyleButton = ({ handleToggle, toggleType, buttonText, isAAA }) => (
     </div>
   </>
   
-)
+);
 
 export default StyleButton;

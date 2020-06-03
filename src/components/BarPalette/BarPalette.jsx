@@ -17,6 +17,6 @@ const BarPalette = ({ palette, borderRadiusType  }) => (
       </div>
     }
   </>
-)
+);
 
 export default BarPalette;

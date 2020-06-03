@@ -1,7 +1,7 @@
 import React from 'react';
 import './Icons.scss';
 
-export default function Icons(
+const Icons = (
 
   { 
     iconName, 
@@ -10,9 +10,8 @@ export default function Icons(
     toggleIconsBorder, 
     toggleOpacity, 
     toggleIconsShadow 
-  }) {
+  }) => (
 
-  return (
   <>  
     <div className="icon">
       <img 
@@ -28,5 +27,7 @@ export default function Icons(
       />
     </div>
   </>
-  )
-} 
+
+  );
+
+  export default Icons;

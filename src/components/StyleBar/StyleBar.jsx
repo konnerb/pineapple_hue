@@ -56,6 +56,6 @@ const StyleBar = (
   
     </div>
   </>
-)
+);
 
 export default StyleBar;

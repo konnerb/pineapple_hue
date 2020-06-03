@@ -18,6 +18,6 @@ const About = () => (
     </article>
   </section>
   
-)
+);
 
 export default About;
