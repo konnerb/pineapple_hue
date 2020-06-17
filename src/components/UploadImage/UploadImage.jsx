@@ -17,7 +17,7 @@ function UploadImage({ fetchImgData }) {
         }
         reader.readAsDataURL(blob)
       })
-  }, [])
+  }, [fetchImgData])
 
     const {
       getRootProps, 
@@ -83,7 +83,12 @@ function UploadImage({ fetchImgData }) {
       ...(isDragReject ? rejectStyle : {})
     }), [
       isDragActive,
-      isDragReject
+      isDragReject,
+      isDragAccept, 
+      baseStyle,
+      activeStyle,
+      acceptStyle,
+      rejectStyle
     ]);
 
     return (
