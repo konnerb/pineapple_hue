@@ -97,16 +97,44 @@ const store = {
       title: "soundcloud"
     }
   ],
-  components: [
-    {
-      buttons: {
-        button1: [1,2,3,4],
-        button2: [1,2,3,4]
+  components: {
+    vibrantButtons: [
+      {
+        palette: 'Vibrant',
+        paletteBackground: 'LightVibrant'
       },
-      icons: [1,2],
-      images: [1,2]
-    }
-  ]
+      {
+        palette: 'DarkVibrant',
+        paletteBackground: 'LightVibrant'
+      },
+      {
+        palette: 'Muted',
+        paletteBackground: 'LightVibrant'
+      },
+      {
+        palette: 'DarkMuted',
+        paletteBackground: 'LightVibrant'
+      },
+    ],
+    mutedButtons: [
+      {
+        palette: 'Vibrant',
+        paletteBackground: 'LightMuted'
+      },
+      {
+        palette: 'DarkVibrant',
+        paletteBackground: 'LightMuted'
+      },
+      {
+        palette: 'Muted',
+        paletteBackground: 'LightMuted'
+      },
+      {
+        palette: 'DarkMuted',
+        paletteBackground: 'LightMuted'
+      },
+    ],
+  }
 }
 
 export default store;

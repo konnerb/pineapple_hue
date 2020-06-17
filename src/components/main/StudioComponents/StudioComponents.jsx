@@ -39,8 +39,8 @@ export default class StudioComponents extends Component {
   render() {
 
     const { images, icons } = store;
-    const { Vibrant, LightVibrant, DarkVibrant, Muted, LightMuted, DarkMuted } = this.props.palette;
-    const { handlePercentChange, percents } = this.props;
+    const { Vibrant, LightVibrant, LightMuted } = this.props.palette;
+    const { handlePercentChange, percents, palette } = this.props;
 
     const isAAA = contrast( Vibrant && Vibrant.hsl, [0, 1, 1], true )
       
@@ -63,7 +63,7 @@ export default class StudioComponents extends Component {
           toggleShadow={this.state.toggleButtonsShadow}
           toggleBorder={this.state.toggleButtonsBorder}
           toggleOpacity={this.state.toggleButtonsOpacity}
-          palette={this.props.palette} 
+          palette={palette} 
           handleToggle={this.handleToggle}
           isAAA={isAAA}
         />
@@ -80,74 +80,32 @@ export default class StudioComponents extends Component {
           <div className="studio-components__buttons buttons-top" 
             style={{backgroundColor: `hsl(${LightVibrant.hsl.toString()})` }}
           >
-              <Button 
-                percent={percents.opacityButton}
-                toggleOpacity={this.state.toggleButtonsOpacity}
-                toggleButtonsShadow={this.state.toggleButtonsShadow}
-                toggleButtonsBorder={this.state.toggleButtonsBorder}
-                palette={Vibrant} 
-                paletteBackground={LightVibrant}
-              />
-              <Button 
-                percent={percents.opacityButton}
-                toggleOpacity={this.state.toggleButtonsOpacity}
-                toggleButtonsShadow={this.state.toggleButtonsShadow}
-                toggleButtonsBorder={this.state.toggleButtonsBorder}
-                palette={DarkVibrant} 
-                paletteBackground={LightVibrant}
-              />
-              <Button 
-                percent={percents.opacityButton}
-                toggleOpacity={this.state.toggleButtonsOpacity}
-                toggleButtonsShadow={this.state.toggleButtonsShadow}
-                toggleButtonsBorder={this.state.toggleButtonsBorder}
-                palette={Muted} 
-                paletteBackground={LightVibrant}
-              />
-              <Button 
-                percent={percents.opacityButton}
-                toggleOpacity={this.state.toggleButtonsOpacity}
-                toggleButtonsShadow={this.state.toggleButtonsShadow}
-                toggleButtonsBorder={this.state.toggleButtonsBorder}
-                palette={DarkMuted} 
-                paletteBackground={LightVibrant}
-              />
+          {store.components.vibrantButtons.map((content, i) => (
+            <Button 
+              key={i}
+              percent={percents.opacityButton}
+              toggleOpacity={this.state.toggleButtonsOpacity}
+              toggleButtonsShadow={this.state.toggleButtonsShadow}
+              toggleButtonsBorder={this.state.toggleButtonsBorder}
+              palette={palette[content.palette]} 
+              paletteBackground={palette[content.paletteBackground]}
+            />
+          ))}
           </div>
           <div className="studio-components__buttons buttons-bottom" 
             style={{backgroundColor: `hsl(${LightMuted.hsl.toString()})` }}
           >
+          {store.components.mutedButtons.map((content, i) => (
             <Button 
+              key={i}
               percent={percents.opacityButton}
               toggleOpacity={this.state.toggleButtonsOpacity}
               toggleButtonsShadow={this.state.toggleButtonsShadow}
               toggleButtonsBorder={this.state.toggleButtonsBorder}
-              palette={Vibrant} 
-              paletteBackground={LightMuted}
+              palette={palette[content.palette]} 
+              paletteBackground={palette[content.paletteBackground]}
             />
-            <Button 
-              percent={percents.opacityButton}
-              toggleOpacity={this.state.toggleButtonsOpacity}
-              toggleButtonsShadow={this.state.toggleButtonsShadow}
-              toggleButtonsBorder={this.state.toggleButtonsBorder}
-              palette={DarkVibrant} 
-              paletteBackground={LightMuted}
-            />
-            <Button 
-              percent={percents.opacityButton}
-              toggleOpacity={this.state.toggleButtonsOpacity}
-              toggleButtonsShadow={this.state.toggleButtonsShadow}
-              toggleButtonsBorder={this.state.toggleButtonsBorder}
-              palette={Muted} 
-              paletteBackground={LightMuted}
-            />
-            <Button 
-              percent={percents.opacityButton}
-              toggleOpacity={this.state.toggleButtonsOpacity}
-              toggleButtonsShadow={this.state.toggleButtonsShadow}
-              toggleButtonsBorder={this.state.toggleButtonsBorder}
-              palette={DarkMuted} 
-              paletteBackground={LightMuted}
-            />
+          ))}
           </div>
         </div>
       </article>
@@ -167,7 +125,7 @@ export default class StudioComponents extends Component {
           toggleShadow={this.state.toggleIconsShadow}
           toggleBorder={this.state.toggleIconsBorder}
           toggleOpacity={this.state.toggleIconsOpacity}
-          palette={this.props.palette}
+          palette={palette}
           handleToggle={this.handleToggle}
           isAAA={isAAA}
         />
@@ -234,7 +192,7 @@ export default class StudioComponents extends Component {
             toggleShadow={this.state.toggleImagesShadow}
             toggleBorder={this.state.toggleImagesBorder}
             toggleOpacity={this.state.toggleImagesOpacity}
-            palette={this.props.palette} 
+            palette={palette} 
             handleToggle={this.handleToggle}
             isAAA={isAAA}
           />
