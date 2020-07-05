@@ -14,4 +14,12 @@ In the near future, contrast ratio helpers will be implemented to guide the pers
 
 Additionally, more elements could be added, such as cards, Loti animations, and even an option to view uploaded images amongst different backgrounds.
 
+## How to run locally
+
+```bash
+git clone https://github.com/konnerb/pineapple_hue.git
+cd pineapple_hue
+npm i && npm start
+```
+
 
