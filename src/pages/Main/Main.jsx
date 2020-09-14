@@ -11,12 +11,19 @@ import { roundHue, roundSl } from '../../utlis';
 const Main = () => {
 
     const [palette, setPalette] = useState([])
-    const [test, setTest] = useState(false)
+    const [fetchImgBoolean, setfetchImgBoolean] = useState(false)
     const [percents, setPercents] = useState({})
     const [togglePalette, setTogglePalette] = useState(false)
 
-  //Fetches Image Data from React-DropZone UploadPage Component and sets state
+    useEffect(() => {
+      const data = localStorage.getItem("my-palette")
+      if(data) {
+        setPalette(JSON.parse(data))
+      }
+    }, [])
 
+  //Fetches Image Data from React-DropZone UploadPage Component and sets state
+  
   const fetchImgData = (img) => {
     if (!img) return;
     Vibrant.from(img)
@@ -26,23 +33,28 @@ const Main = () => {
       } else {
         setPalette(newPalette)
         if (palette) {
-          setTest(!test)
+          setfetchImgBoolean(!fetchImgBoolean)
         }
       }
     })
   }
+
+  useEffect(() => {
+    modifyPalette(palette)
+  }, [fetchImgBoolean])
+  
   //Safely updates original Vibrant.js HSL values to whole numbers
 
 const modifyPalette = (modPalette) => {   
   if (modPalette.Vibrant) {
     const clonePalette = modPalette
-    
     let newPalette = {}
     newPalette = {
       ...clonePalette,
       Vibrant: {
         ...clonePalette.Vibrant,
         _titleTextColor: clonePalette.Vibrant._titleTextColor,
+        hex: clonePalette.Vibrant.hex,
         _hex: clonePalette.Vibrant._hex,
         _hsl: clonePalette.Vibrant._hsl,
         hsl: 
@@ -53,6 +65,7 @@ const modifyPalette = (modPalette) => {
       LightVibrant: {
         ...clonePalette.LightVibrant,
         _titleTextColor: clonePalette.LightVibrant._titleTextColor,
+        hex: clonePalette.LightVibrant.hex,
         _hex: clonePalette.LightVibrant._hex,
         _hsl: clonePalette.LightVibrant._hsl,
         hsl: 
@@ -63,6 +76,7 @@ const modifyPalette = (modPalette) => {
       DarkVibrant: {
         ...clonePalette.DarkVibrant,
         _titleTextColor: clonePalette.DarkVibrant._titleTextColor,
+        hex: clonePalette.DarkVibrant.hex,
         _hex: clonePalette.DarkVibrant._hex,
         _hsl: clonePalette.DarkVibrant._hsl,
         hsl: 
@@ -73,6 +87,7 @@ const modifyPalette = (modPalette) => {
       Muted: {
         ...clonePalette.Muted,
         _titleTextColor: clonePalette.Muted._titleTextColor,
+        hex: clonePalette.Muted.hex,
         _hex: clonePalette.Muted._hex,
         _hsl: clonePalette.Muted._hsl,
         hsl: 
@@ -83,6 +98,7 @@ const modifyPalette = (modPalette) => {
       LightMuted: {
         ...clonePalette.LightMuted,
         _titleTextColor: clonePalette.LightMuted._titleTextColor,
+        hex: clonePalette.LightMuted.hex,
         _hex: clonePalette.LightMuted._hex,
         _hsl: clonePalette.LightMuted._hsl,
         hsl: 
@@ -93,6 +109,7 @@ const modifyPalette = (modPalette) => {
       DarkMuted: {
         ...clonePalette.DarkMuted,
         _titleTextColor: clonePalette.DarkMuted._titleTextColor,
+        hex: clonePalette.DarkMuted.hex,
         _hex: clonePalette.DarkMuted._hex,
         _hsl: clonePalette.DarkMuted._hsl,
         hsl: 
@@ -103,10 +120,6 @@ const modifyPalette = (modPalette) => {
     }
     setPalette(newPalette)
   }}
-
-  useEffect(() => {
-    modifyPalette(palette)
-  },[test])
 
   //Safely updates Palette HSL colors from InputScrub Component and updates state
 
@@ -143,6 +156,10 @@ const modifyPalette = (modPalette) => {
     setTogglePalette(!toggleStatus);     
   }
   
+  useEffect(() => {
+    localStorage.setItem("my-palette", JSON.stringify(palette))
+  }, [palette])
+
   return (
   <> 
     <section className="hero-component"> 
