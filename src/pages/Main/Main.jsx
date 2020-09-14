@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as Vibrant from 'node-vibrant';
 import './Main.scss';
 import Hero from '../../components/Hero/Hero';
@@ -11,6 +11,7 @@ import { roundHue, roundSl } from '../../utlis';
 const Main = () => {
 
     const [palette, setPalette] = useState([])
+    const [test, setTest] = useState(false)
     const [percents, setPercents] = useState({})
     const [togglePalette, setTogglePalette] = useState(false)
 
@@ -19,75 +20,98 @@ const Main = () => {
   const fetchImgData = (img) => {
     if (!img) return;
     Vibrant.from(img)
-    .getPalette((err, palette) => {
+    .getPalette((err, newPalette) => {
       if(err) {
       console.log(err);
       } else {
-        setPalette(palette)
-        modifyPalette()
+        setPalette(newPalette)
+        if (palette) {
+          setTest(!test)
+        }
       }
     })
   }
-
   //Safely updates original Vibrant.js HSL values to whole numbers
 
-  const modifyPalette = () => {
-
-    const clonePalette = palette
+const modifyPalette = (modPalette) => {   
+  if (modPalette.Vibrant) {
+    const clonePalette = modPalette
+    
     let newPalette = {}
-    if (palette.Vibrant) {
-      newPalette = {
-        ...clonePalette,
-        Vibrant: {
-          ...clonePalette.Vibrant,
-          hsl: 
-            [roundHue(clonePalette.Vibrant.hsl[0]), 
-            roundSl(clonePalette.Vibrant.hsl[1]), 
-            roundSl(clonePalette.Vibrant.hsl[2])]
-        },
-        LightVibrant: {
-          ...clonePalette.LightVibrant,
-          hsl: 
-            [roundHue(clonePalette.LightVibrant.hsl[0]), 
-            roundSl(clonePalette.LightVibrant.hsl[1]), 
-            roundSl(clonePalette.LightVibrant.hsl[2])]
-        },
-        DarkVibrant: {
-          ...clonePalette.DarkVibrant,
-          hsl: 
-            [roundHue(clonePalette.DarkVibrant.hsl[0]), 
-            roundSl(clonePalette.DarkVibrant.hsl[1]), 
-            roundSl(clonePalette.DarkVibrant.hsl[2])]
-        },
-        Muted: {
-          ...clonePalette.Muted,
-          hsl: 
-            [roundHue(clonePalette.Muted.hsl[0]), 
-            roundSl(clonePalette.Muted.hsl[1]), 
-            roundSl(clonePalette.Muted.hsl[2])]
-        },
-        LightMuted: {
-          ...clonePalette.LightMuted,
-          hsl: 
-            [roundHue(clonePalette.LightMuted.hsl[0]), 
-            roundSl(clonePalette.LightMuted.hsl[1]), 
-            roundSl(clonePalette.LightMuted.hsl[2])]
-        },
-        DarkMuted: {
-          ...clonePalette.DarkMuted,
-          hsl: 
-            [roundHue(clonePalette.DarkMuted.hsl[0]), 
-            roundSl(clonePalette.DarkMuted.hsl[1]), 
-            roundSl(clonePalette.DarkMuted.hsl[2])]
-        }
+    newPalette = {
+      ...clonePalette,
+      Vibrant: {
+        ...clonePalette.Vibrant,
+        _titleTextColor: clonePalette.Vibrant._titleTextColor,
+        _hex: clonePalette.Vibrant._hex,
+        _hsl: clonePalette.Vibrant._hsl,
+        hsl: 
+        [roundHue(clonePalette.Vibrant.hsl[0]), 
+        roundSl(clonePalette.Vibrant.hsl[1]), 
+        roundSl(clonePalette.Vibrant.hsl[2])]
+      },
+      LightVibrant: {
+        ...clonePalette.LightVibrant,
+        _titleTextColor: clonePalette.LightVibrant._titleTextColor,
+        _hex: clonePalette.LightVibrant._hex,
+        _hsl: clonePalette.LightVibrant._hsl,
+        hsl: 
+        [roundHue(clonePalette.LightVibrant.hsl[0]), 
+        roundSl(clonePalette.LightVibrant.hsl[1]), 
+        roundSl(clonePalette.LightVibrant.hsl[2])]
+      },
+      DarkVibrant: {
+        ...clonePalette.DarkVibrant,
+        _titleTextColor: clonePalette.DarkVibrant._titleTextColor,
+        _hex: clonePalette.DarkVibrant._hex,
+        _hsl: clonePalette.DarkVibrant._hsl,
+        hsl: 
+        [roundHue(clonePalette.DarkVibrant.hsl[0]), 
+        roundSl(clonePalette.DarkVibrant.hsl[1]), 
+        roundSl(clonePalette.DarkVibrant.hsl[2])]
+      },
+      Muted: {
+        ...clonePalette.Muted,
+        _titleTextColor: clonePalette.Muted._titleTextColor,
+        _hex: clonePalette.Muted._hex,
+        _hsl: clonePalette.Muted._hsl,
+        hsl: 
+        [roundHue(clonePalette.Muted.hsl[0]), 
+        roundSl(clonePalette.Muted.hsl[1]), 
+        roundSl(clonePalette.Muted.hsl[2])]
+      },
+      LightMuted: {
+        ...clonePalette.LightMuted,
+        _titleTextColor: clonePalette.LightMuted._titleTextColor,
+        _hex: clonePalette.LightMuted._hex,
+        _hsl: clonePalette.LightMuted._hsl,
+        hsl: 
+        [roundHue(clonePalette.LightMuted.hsl[0]), 
+        roundSl(clonePalette.LightMuted.hsl[1]), 
+        roundSl(clonePalette.LightMuted.hsl[2])]
+      },
+      DarkMuted: {
+        ...clonePalette.DarkMuted,
+        _titleTextColor: clonePalette.DarkMuted._titleTextColor,
+        _hex: clonePalette.DarkMuted._hex,
+        _hsl: clonePalette.DarkMuted._hsl,
+        hsl: 
+        [roundHue(clonePalette.DarkMuted.hsl[0]), 
+        roundSl(clonePalette.DarkMuted.hsl[1]), 
+        roundSl(clonePalette.DarkMuted.hsl[2])]
       }
+    }
     setPalette(newPalette)
-  }
-  }
+  }}
+
+  useEffect(() => {
+    modifyPalette(palette)
+  },[test])
 
   //Safely updates Palette HSL colors from InputScrub Component and updates state
 
   const handlePaletteUpdate = (paletteName) => {
+    if (palette.Vibrant ) {
     const clonePalette = palette
     const key = Object.keys(paletteName)[0]; 
     setPalette({
@@ -100,6 +124,7 @@ const Main = () => {
           paletteName[key]]
       }  
     })
+  }
   }
 
   //Handles opacity percent change on Icon, Button, and Image Components

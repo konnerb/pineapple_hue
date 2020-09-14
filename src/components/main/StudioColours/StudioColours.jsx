@@ -5,14 +5,14 @@ import InputScrub from '../../InputScrub/InputScrub';
 import ColorCode from '../../ColorCode/ColorCode';
 import { contrast } from '../../../utlis';
 
-export default function StudioColours(
+const StudioColours = (
 
   { 
-    handleChange, 
-    toggleStudioPalette, 
+    palette,
     toggle,
-    palette
-  }) {
+    handleChange, 
+    toggleStudioPalette
+  }) => {
     
   const isAAA = (colour => contrast( palette[colour].hsl, [0, 1, 1], true ) )
 
@@ -82,3 +82,5 @@ export default function StudioColours(
     </>
   )
 };
+
+export default StudioColours;
