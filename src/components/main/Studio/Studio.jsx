@@ -3,16 +3,16 @@ import './Studio.scss';
 import StudioPaletteBar from '../StudioPaletteBar/StudioPaletteBar';
 import StudioColours from '../StudioColours/StudioColours';
 
-const Studio = ({palette, handlePaletteUpdate}) => {
-      const [updatedPalette, setUpdatePalette] = useState({})
-      const [toggle, setToggle] = useState({
-        Virbant: false,
-        LightVibrant: false,
-        DarkVibrant: false,
-        Muted: false,
-        LightMuted: false,
-        DarkMuted: false
-      })
+const Studio = ({ palette, handlePaletteUpdate }) => {
+  const [updatedPalette, setUpdatePalette] = useState({})
+  const [toggle, setToggle] = useState({
+    Virbant: false,
+    LightVibrant: false,
+    DarkVibrant: false,
+    Muted: false,
+    LightMuted: false,
+    DarkMuted: false
+  })
 
   useEffect(() => {
     handlePaletteUpdate(updatedPalette)

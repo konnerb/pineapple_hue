@@ -11,8 +11,8 @@ import { roundHue, roundSl } from '../../utlis';
 const Main = () => {
 
     const [palette, setPalette] = useState([])
-    const [fetchImgBoolean, setfetchImgBoolean] = useState(false)
     const [percents, setPercents] = useState({})
+    const [fetchImgBoolean, setfetchImgBoolean] = useState(false)
     const [togglePalette, setTogglePalette] = useState(false)
 
     useEffect(() => {
@@ -61,6 +61,10 @@ const modifyPalette = (modPalette) => {
         hex: clonePalette.Vibrant.hex,
         _hex: clonePalette.Vibrant._hex,
         _hsl: clonePalette.Vibrant._hsl,
+        hslVibrantBackground:
+        [roundHue(clonePalette.Vibrant.hsl[0]), 
+        roundSl(clonePalette.Vibrant.hsl[1]), 
+        roundSl(clonePalette.Vibrant.hsl[2] * 1.25)],
         hsl: 
         [roundHue(clonePalette.Vibrant.hsl[0]), 
         roundSl(clonePalette.Vibrant.hsl[1]), 
@@ -129,19 +133,38 @@ const modifyPalette = (modPalette) => {
 
   const handlePaletteUpdate = (paletteName) => {
     if (palette.Vibrant ) {
-    const clonePalette = palette
-    const key = Object.keys(paletteName)[0]; 
-    setPalette({
-      ...clonePalette,
-      [key]: {
-        ...clonePalette[key],
-        hsl: 
-          [clonePalette[key].hsl[0], 
-          clonePalette[key].hsl[1], 
-          paletteName[key]]
-      }  
-    })
-  }
+      const clonePalette = palette;
+      const key = Object.keys(paletteName)[0]; 
+      const newVibrantKey = Math.round((paletteName[key].replace(/[%]/g, "")) * 1.25) + "%";
+      
+      if(key === "Vibrant") {
+        setPalette({
+          ...clonePalette,
+          [key]: {
+            ...clonePalette[key],
+            hslVibrantBackground:
+              [clonePalette[key].hsl[0], 
+              clonePalette[key].hsl[1], 
+              newVibrantKey],
+            hsl: 
+              [clonePalette[key].hsl[0], 
+              clonePalette[key].hsl[1], 
+              paletteName[key]]
+          }  
+        })
+      } else {
+        setPalette({
+          ...clonePalette,
+          [key]: {
+            ...clonePalette[key],
+            hsl: 
+              [clonePalette[key].hsl[0], 
+              clonePalette[key].hsl[1], 
+              paletteName[key]]
+          }  
+        })
+      }
+    }
   }
 
   //Handles opacity percent change on Icon, Button, and Image Components
