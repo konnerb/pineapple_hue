@@ -3,7 +3,7 @@ import './PaletteView.scss';
 import ColorCode from '../ColorCode/ColorCode';
 import { contrast } from '../../utlis';
 
-export default function PaletteView({ palette, colorCode, codeType, togglePalette }) {
+const PaletteView = ({ palette, colorCode, codeType, togglePalette }) => {
 
   const isAAA = (colour => contrast( palette[colour].hsl, [0, 1, 1], true ) )
       
@@ -55,3 +55,5 @@ export default function PaletteView({ palette, colorCode, codeType, togglePalett
   </>
   )
 };
+
+export default PaletteView;

@@ -8,7 +8,9 @@ import InputPercent from '../../InputPercent/InputPercent';
 import store from '../../../store';
 import { contrast } from '../../../utlis';
 
-const StudioComponents = ({
+const StudioComponents = (
+
+  {
   handlePercentChange, 
   percents, 
   palette,
@@ -17,7 +19,8 @@ const StudioComponents = ({
     LightVibrant, 
     LightMuted 
   }
-}) => {
+  }) => {
+
   const [toggle, setToggle] = useState({
     ButtonsOpacity: false,
     IconsOpacity: false,
@@ -31,11 +34,15 @@ const StudioComponents = ({
     IconsBorder: false,
     ImagesBorder: false
   })
+
   //Handles toggle for StyleBar/Style Button Components
 
   const handleToggle = (toggleType) => {
     let toggleStatus = toggle[toggleType]
-    setToggle({ [toggleType]: !toggleStatus }); 
+    setToggle({
+      ...toggle,
+      [toggleType]: !toggleStatus
+    }); 
   }
 
   const isAAA = contrast( Vibrant && Vibrant.hslVibrant, [0, 1, 1], true )
@@ -174,8 +181,8 @@ const StudioComponents = ({
         <div className="studio-components__images-buttons">
             <StyleBar 
               opacityType="ImagesOpacity"
-              shadowType="magesShadow"
-              borderType="magesBorder"
+              shadowType="ImagesShadow"
+              borderType="ImagesBorder"
               isImage={true}
               toggleShadow={toggle.ImagesShadow}
               toggleBorder={toggle.ImagesBorder}

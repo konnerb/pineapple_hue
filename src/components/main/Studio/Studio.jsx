@@ -4,6 +4,7 @@ import StudioPaletteBar from '../StudioPaletteBar/StudioPaletteBar';
 import StudioColours from '../StudioColours/StudioColours';
 
 const Studio = ({ palette, handlePaletteUpdate }) => {
+  
   const [updatedPalette, setUpdatePalette] = useState({})
   const [toggle, setToggle] = useState({
     Virbant: false,

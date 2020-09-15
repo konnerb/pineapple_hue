@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import { useDropzone } from 'react-dropzone';
 import './UploadImage.scss';
 
-function UploadImage({ fetchImgData }) {
+const UploadImage = ({ fetchImgData }) => {
 
 //const [img, setImg] = useState([])
 //const [palette, setPalette] = useState({})

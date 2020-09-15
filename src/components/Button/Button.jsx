@@ -2,8 +2,8 @@ import React from 'react';
 import './Button.scss';
 import { contrast } from '../../utlis';
 
-export default function Button(
-    
+const Button = ( 
+  
   { 
     palette, 
     percent, 
@@ -12,7 +12,7 @@ export default function Button(
     toggleOpacity,
     paletteType,
     paletteBackground
-  }) {
+  }) => {
 
   const isAAA = contrast( palette.hsl, [0, 1, 1], true )
 
@@ -30,10 +30,12 @@ export default function Button(
           boxShadow: toggleButtonsShadow ? `5px 10px #888888` : `none`,
           border: toggleButtonsBorder ? `2px solid black` : `none`
         }}
-      >{contrast(palette.hsl, paletteBackground.hsl, true )}
+      >{contrast(palette.hsl, paletteBackground.hsl, true)}
       </button>
     </div>
   }
   </>
   )
 };
+
+export default Button;

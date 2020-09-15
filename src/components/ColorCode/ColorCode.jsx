@@ -2,8 +2,8 @@ import React from 'react';
 import './ColorCode.scss';
 import { hslToHex, hslToRgb, roundHue, contrast } from '../../utlis';
 
-export default function ColorCode(
-    
+const ColorCode = (
+  
   { 
     palette, 
     paletteName, 
@@ -11,7 +11,7 @@ export default function ColorCode(
     codeType, 
     isToggled, 
     isAAA
-  }) {
+  }) => {
     
   const h = palette[paletteName] && palette[paletteName].hsl[0];
   const s = palette[paletteName] && parseFloat(palette[paletteName].hsl[1]);
@@ -51,3 +51,5 @@ return (
   </>
   )
 }; 
+
+export default ColorCode;

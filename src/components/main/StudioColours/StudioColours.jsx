@@ -5,13 +5,7 @@ import InputScrub from '../../InputScrub/InputScrub';
 import ColorCode from '../../ColorCode/ColorCode';
 import { contrast } from '../../../utlis';
 
-const StudioColours = (
-  { 
-    palette,
-    toggle,
-    handleChange, 
-    toggleStudioPalette
-  }) => {
+const StudioColours = ({ palette, toggle, handleChange, toggleStudioPalette }) => {
 
   const isAAA = (colour => contrast( palette[colour].hsl, [0, 1, 1], true ) )
 
