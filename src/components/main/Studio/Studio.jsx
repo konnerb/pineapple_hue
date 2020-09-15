@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Studio.scss';
 import StudioPaletteBar from '../StudioPaletteBar/StudioPaletteBar';
 import StudioColours from '../StudioColours/StudioColours';
@@ -14,6 +14,10 @@ const Studio = ({palette, handlePaletteUpdate}) => {
         DarkMuted: false
       })
 
+  useEffect(() => {
+    handlePaletteUpdate(updatedPalette)
+  }, [updatedPalette])
+  
   /*Handles Palette Change From InputScrub, updates Studio State, then handlePaletteUpdate fetches the newPalette Data and
   updates the Main Component palette state
   */
@@ -24,10 +28,6 @@ const Studio = ({palette, handlePaletteUpdate}) => {
     newPalette[paletteName] = value + "%";
     setUpdatePalette(newPalette)
   }
-
-  useEffect(() => {
-    handlePaletteUpdate(updatedPalette)
-  }, [updatedPalette])
 
   //Toggles StudioWebsite Componets color palette to adjust InputScrub Component
   

@@ -22,6 +22,14 @@ const Main = () => {
       }
     }, [])
 
+    useEffect(() => {
+      modifyPalette(palette)
+    }, [fetchImgBoolean])
+
+    useEffect(() => {
+      localStorage.setItem("my-palette", JSON.stringify(palette))
+    }, [palette])
+
   //Fetches Image Data from React-DropZone UploadPage Component and sets state
   
   const fetchImgData = (img) => {
@@ -38,10 +46,6 @@ const Main = () => {
       }
     })
   }
-
-  useEffect(() => {
-    modifyPalette(palette)
-  }, [fetchImgBoolean])
   
   //Safely updates original Vibrant.js HSL values to whole numbers
 
@@ -155,10 +159,6 @@ const modifyPalette = (modPalette) => {
     let toggleStatus = togglePalette
     setTogglePalette(!toggleStatus);     
   }
-  
-  useEffect(() => {
-    localStorage.setItem("my-palette", JSON.stringify(palette))
-  }, [palette])
 
   return (
   <> 

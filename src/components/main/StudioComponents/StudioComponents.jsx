@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './StudioComponents.scss';
 import Button from '../../Button/Button';
 import StyleBar from '../../StyleBar/StyleBar';
@@ -8,41 +8,38 @@ import InputPercent from '../../InputPercent/InputPercent';
 import store from '../../../store';
 import { contrast, roundHue, roundSl } from '../../../utlis';
 
-export default class StudioComponents extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-    toggleButtonsOpacity: false,
-    toggleIconsOpacity: false,
-    toggleImagesOpacity: false,
-    
-    toggleButtonsShadow: false,
-    toggleIconsShadow: false,
-    toggleImagesShadow: false,
-    
-    toggleButtonsBorder: false,
-    toggleIconsBorder: false,
-    toggleImagesBorder: false
-    }
-    this.handleToggle = this.handleToggle.bind(this);
+const StudioComponents = ({
+  handlePercentChange, 
+  percents, 
+  palette,
+  palette: {
+    Vibrant, 
+    LightVibrant, 
+    LightMuted 
   }
+}) => {
+  const [toggle, setToggle] = useState({
+    ButtonsOpacity: false,
+    IconsOpacity: false,
+    ImagesOpacity: false,
 
+    ButtonsShadow: false,
+    IconsShadow: false,
+    ImagesShadow: false,
+
+    ButtonsBorder: false,
+    IconsBorder: false,
+    ImagesBorder: false
+  })
   //Handles toggle for StyleBar/Style Button Components
 
-  handleToggle(toggleType) {
-    let toggleStatus = this.state[toggleType]
-    this.setState({
-      [toggleType]: !toggleStatus
-    }); 
+  const handleToggle = (toggleType) => {
+    let toggleStatus = toggle[toggleType]
+    setToggle({ [toggleType]: !toggleStatus }); 
   }
 
-  render() {
-
-    const { images, icons } = store;
-    const { Vibrant, LightVibrant, LightMuted } = this.props.palette;
-    const { handlePercentChange, percents, palette } = this.props;
-
-    const isAAA = contrast( Vibrant && Vibrant.hsl, [0, 1, 1], true )
+  const isAAA = contrast( Vibrant && Vibrant.hsl, [0, 1, 1], true )
+  const { icons, images } = store
       
   return (
   <>
@@ -57,17 +54,17 @@ export default class StudioComponents extends Component {
         }}
       > 
         <StyleBar 
-          opacityType="toggleButtonsOpacity"
-          shadowType="toggleButtonsShadow"
-          borderType="toggleButtonsBorder"
-          toggleShadow={this.state.toggleButtonsShadow}
-          toggleBorder={this.state.toggleButtonsBorder}
-          toggleOpacity={this.state.toggleButtonsOpacity}
+          opacityType="ButtonsOpacity"
+          shadowType="ButtonsShadow"
+          borderType="ButtonsBorder"
+          toggleShadow={toggle.ButtonsShadow}
+          toggleBorder={toggle.ButtonsBorder}
+          toggleOpacity={toggle.ButtonsOpacity}
           palette={palette} 
-          handleToggle={this.handleToggle}
+          handleToggle={handleToggle}
           isAAA={isAAA}
         />
-        {this.state.toggleButtonsOpacity && 
+        {toggle.ButtonsOpacity && 
           <InputPercent 
             percents={percents.opacityButton}
             handlePercentChange={handlePercentChange}
@@ -84,9 +81,9 @@ export default class StudioComponents extends Component {
             <Button 
               key={i}
               percent={percents.opacityButton}
-              toggleOpacity={this.state.toggleButtonsOpacity}
-              toggleButtonsShadow={this.state.toggleButtonsShadow}
-              toggleButtonsBorder={this.state.toggleButtonsBorder}
+              toggleOpacity={toggle.ButtonsOpacity}
+              toggleButtonsShadow={toggle.ButtonsShadow}
+              toggleButtonsBorder={toggle.ButtonsBorder}
               palette={palette[content.palette]} 
               paletteBackground={palette[content.paletteBackground]}
             />
@@ -99,9 +96,9 @@ export default class StudioComponents extends Component {
             <Button 
               key={i}
               percent={percents.opacityButton}
-              toggleOpacity={this.state.toggleButtonsOpacity}
-              toggleButtonsShadow={this.state.toggleButtonsShadow}
-              toggleButtonsBorder={this.state.toggleButtonsBorder}
+              toggleOpacity={toggle.ButtonsOpacity}
+              toggleButtonsShadow={toggle.ButtonsShadow}
+              toggleButtonsBorder={toggle.ButtonsBorder}
               palette={palette[content.palette]} 
               paletteBackground={palette[content.paletteBackground]}
             />
@@ -119,17 +116,17 @@ export default class StudioComponents extends Component {
         }}
       >
         <StyleBar 
-          opacityType="toggleIconsOpacity"
-          shadowType="toggleIconsShadow"
-          borderType="toggleIconsBorder"
-          toggleShadow={this.state.toggleIconsShadow}
-          toggleBorder={this.state.toggleIconsBorder}
-          toggleOpacity={this.state.toggleIconsOpacity}
+          opacityType="IconsOpacity"
+          shadowType="IconsShadow"
+          borderType="IconsBorder"
+          toggleShadow={toggle.IconsShadow}
+          toggleBorder={toggle.IconsBorder}
+          toggleOpacity={toggle.IconsOpacity}
           palette={palette}
-          handleToggle={this.handleToggle}
+          handleToggle={handleToggle}
           isAAA={isAAA}
         />
-        {this.state.toggleIconsOpacity && 
+        {toggle.IconsOpacity && 
           <InputPercent 
             percents={percents.iconOpacity}
             handlePercentChange={handlePercentChange}
@@ -148,9 +145,9 @@ export default class StudioComponents extends Component {
                 palette={Vibrant} 
                 icon={icon}
                 percent={percents.iconOpacity}
-                toggleOpacity={this.state.toggleIconsOpacity}
-                toggleIconsShadow={this.state.toggleIconsShadow}
-                toggleIconsBorder={this.state.toggleIconsBorder}
+                toggleOpacity={toggle.IconsOpacity}
+                toggleIconsShadow={toggle.IconsShadow}
+                toggleIconsBorder={toggle.IconsBorder}
                 iconName={title}
               />
             ))}
@@ -165,9 +162,9 @@ export default class StudioComponents extends Component {
                 icon={icon}
                 iconName={title}      
                 percent={percents.iconOpacity}
-                toggleOpacity={this.state.toggleIconsOpacity}
-                toggleIconsShadow={this.state.toggleIconsShadow}
-                toggleIconsBorder={this.state.toggleIconsBorder}
+                toggleOpacity={toggle.IconsOpacity}
+                toggleIconsShadow={toggle.IconsShadow}
+                toggleIconsBorder={toggle.IconsBorder}
                 palette={Vibrant} 
               />
             ))}
@@ -185,18 +182,18 @@ export default class StudioComponents extends Component {
       >
       <div className="studio-components__images-buttons">
           <StyleBar 
-            opacityType="toggleImagesOpacity"
-            shadowType="toggleImagesShadow"
-            borderType="toggleImagesBorder"
+            opacityType="ImagesOpacity"
+            shadowType="magesShadow"
+            borderType="magesBorder"
             isImage={true}
-            toggleShadow={this.state.toggleImagesShadow}
-            toggleBorder={this.state.toggleImagesBorder}
-            toggleOpacity={this.state.toggleImagesOpacity}
+            toggleShadow={toggle.ImagesShadow}
+            toggleBorder={toggle.ImagesBorder}
+            toggleOpacity={toggle.ImagesOpacity}
             palette={palette} 
-            handleToggle={this.handleToggle}
+            handleToggle={handleToggle}
             isAAA={isAAA}
           />
-          {this.state.toggleImagesOpacity && 
+          {toggle.ImagesOpacity && 
             <InputPercent 
               isImage={true}
               percents={percents.imageOpacity}
@@ -217,8 +214,8 @@ export default class StudioComponents extends Component {
               image={image}
               imageName={title}
               percent={percents.imageOpacity}
-              toggleImagesShadow={this.state.toggleImagesShadow}
-              toggleImagesBorder={this.state.toggleImagesBorder}
+              toggleImagesShadow={toggle.ImagesShadow}
+              toggleImagesBorder={toggle.ImagesBorder}
               palette={Vibrant} 
             />
           ))}
@@ -233,8 +230,8 @@ export default class StudioComponents extends Component {
                 image={image}
                 imageName={title}
                 percent={percents.imageOpacity}
-                toggleImagesShadow={this.state.toggleImagesShadow}
-                toggleImagesBorder={this.state.toggleImagesBorder}
+                toggleImagesShadow={toggle.ImagesShadow}
+                toggleImagesBorder={toggle.ImagesBorder}
                 palette={Vibrant} 
               />
           ))}
@@ -244,5 +241,7 @@ export default class StudioComponents extends Component {
     </section>
   }
   </>
-  )}
+  )
 };
+
+export default StudioComponents;

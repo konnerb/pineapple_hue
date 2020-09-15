@@ -10,7 +10,7 @@ const BarPalette = ({ palette, borderRadiusType  }) => (
             borderRadius: 
               `${borderRadiusType === 'topLeft' ? '25px 0px 0px 0px' : 
                   borderRadiusType === 'bottomLeft' ? '0px 0px 0px 25px' : 'none'}`,
-            color: `${palette.titleTextColor}`,
+            color: `${palette._titleTextColor}`,
         }}>
           <p>Hex:{palette._hex}</p>
         </div>
