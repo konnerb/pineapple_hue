@@ -17,6 +17,7 @@ const Studio = ({ palette, handlePaletteUpdate }) => {
 
   useEffect(() => {
     handlePaletteUpdate(updatedPalette)
+    // eslint-disable-next-line
   }, [updatedPalette])
   
   /*Handles Palette Change From InputScrub, updates Studio State, then handlePaletteUpdate fetches the newPalette Data and

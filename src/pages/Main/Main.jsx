@@ -24,6 +24,7 @@ const Main = () => {
 
     useEffect(() => {
       modifyPalette(palette)
+    // eslint-disable-next-line
     }, [fetchImgBoolean])
 
     useEffect(() => {
