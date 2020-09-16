@@ -2,13 +2,17 @@ import React, { useCallback, useMemo } from 'react';
 import { useDropzone } from 'react-dropzone';
 import './UploadImage.scss';
 
-const UploadImage = ({ fetchImgData }) => {
+interface Props {
+  fetchImgData: any
+}
+
+const UploadImage: React.FC<Props> = ({ fetchImgData }) => {
 
 //const [img, setImg] = useState([])
 //const [palette, setPalette] = useState({})
 
   const onDrop = useCallback(acceptedFiles => {
-    acceptedFiles.forEach((blob) => {
+    acceptedFiles.forEach((blob: any) => {
       const reader = new FileReader()
         reader.onabort = () => console.log('file reading was aborted')
         reader.onerror = () => console.log('file reading has failed')
@@ -31,16 +35,16 @@ const UploadImage = ({ fetchImgData }) => {
       onDrop,
       accept: 'image/jpeg, image/png',
       //multiple: 'true',
-      maxSize: '3000000'
+      maxSize: 3000000
     })
 
-    const acceptedFilesItems = acceptedFiles.map(file => (
+    const acceptedFilesItems = acceptedFiles.map((file: any) => (
       <li key={file.path}>
         {file.path} - {file.size} bytes
       </li>
     ));
   
-    const rejectedFilesItems = rejectedFiles.map(file => (
+    const rejectedFilesItems = rejectedFiles.map((file: any) => (
       <li key={file.path}>
         {file.path} - {file.size} bytes
       </li>
@@ -50,7 +54,7 @@ const UploadImage = ({ fetchImgData }) => {
       width: '55%',
       flex: 1,
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'column' as 'column',
       alignItems: 'center',
       padding: '20px',
       marginBottom: '16px',

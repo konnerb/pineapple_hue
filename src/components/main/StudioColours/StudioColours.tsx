@@ -5,9 +5,16 @@ import InputScrub from '../../InputScrub/InputScrub';
 import ColorCode from '../../ColorCode/ColorCode';
 import { contrast } from '../../../utlis';
 
-const StudioColours = ({ palette, toggle, handleChange, toggleStudioPalette }) => {
+interface Props {
+  palette: any, 
+  toggle: any, 
+  handleChange: any, 
+  toggleStudioPalette: any
+}
 
-  const isAAA = (colour => contrast( palette[colour].hsl, [0, 1, 1], true ) )
+const StudioColours: React.FC<Props> = ({ palette, toggle, handleChange, toggleStudioPalette }) => {
+
+  const isAAA: any = ((colour: string) => contrast( palette[colour].hsl, [0, 1, 1], true ) )
 
   return (
     <> 

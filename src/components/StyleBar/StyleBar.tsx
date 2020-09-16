@@ -2,7 +2,20 @@ import React from 'react';
 import './StyleBar.scss';
 import StyleButton from '../StyleButton/StyleButton';
 
-const StyleBar = (
+
+interface Props {
+  opacityType: string, 
+  shadowType: string, 
+  borderType: string, 
+  handleToggle: any, 
+  toggleShadow: boolean, 
+  toggleBorder: boolean, 
+  toggleOpacity: boolean,
+  palette: any, 
+  isImage?: boolean,
+  isAAA: string
+}
+const StyleBar: React.FC<Props> = (
 
   {   
     opacityType, 
@@ -21,9 +34,9 @@ const StyleBar = (
     <div 
       className="buttons" style={{
       backgroundColor: `hsl(${palette.Vibrant.hsl.toString()})`,
-      borderRadius: isImage && `25px 25px 0px 0px`,
-      flexDirection: isImage && `row`,
-      padding: isImage && `20px 0px`
+      borderRadius: isImage ? `25px 25px 0px 0px` : "",
+      flexDirection: isImage ? `row` : "initial",
+      padding: isImage ? `20px 0px` : ""
       }}
     >
 

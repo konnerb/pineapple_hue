@@ -3,10 +3,24 @@ import './Studio.scss';
 import StudioPaletteBar from '../StudioPaletteBar/StudioPaletteBar';
 import StudioColours from '../StudioColours/StudioColours';
 
-const Studio = ({ palette, handlePaletteUpdate }) => {
+interface Props {
+  palette: any,
+  handlePaletteUpdate: any
+}
+
+type toggleState = {
+  Virbant: boolean,
+  LightVibrant: boolean,
+  DarkVibrant: boolean,
+  Muted: boolean,
+  LightMuted: boolean,
+  DarkMuted: boolean
+}
+
+const Studio: React.FC<Props> = ({ palette, handlePaletteUpdate }) => {
   
   const [updatedPalette, setUpdatePalette] = useState({})
-  const [toggle, setToggle] = useState({
+  const [toggle, setToggle] = useState<toggleState>({
     Virbant: false,
     LightVibrant: false,
     DarkVibrant: false,
@@ -24,7 +38,7 @@ const Studio = ({ palette, handlePaletteUpdate }) => {
   updates the Main Component palette state
   */
 
-  const handleChange = (event, paletteName) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>, paletteName: string) => {
     const { target: { value} } = event;
     let newPalette = {};
     newPalette[paletteName] = value + "%";
@@ -33,14 +47,14 @@ const Studio = ({ palette, handlePaletteUpdate }) => {
 
   //Toggles StudioWebsite Componets color palette to adjust InputScrub Component
   
-  const toggleStudioPalette = (toggleType) => {
+  const toggleStudioPalette = (toggleType: any) => {
     let toggleStatus = toggle[toggleType]
-    setToggle({[toggleType]: !toggleStatus}); 
+    setToggle({...toggle, [toggleType]: !toggleStatus}); 
   }
 
   return (
     <>
-    { palette.Vibrant && 
+    { palette?.Vibrant && 
       <section className="studio">
         <StudioPaletteBar 
           palette={palette}

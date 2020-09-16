@@ -1,7 +1,14 @@
 import React from 'react';
 import './StyleButton.scss';
 
-const StyleButton = ({ handleToggle, toggleType, buttonText, isAAA }) => (
+interface Props {
+  handleToggle: any, 
+  toggleType?: string, 
+  buttonText: string, 
+  isAAA: any
+}
+
+const StyleButton: React.FC<Props> = ({ handleToggle, toggleType, buttonText, isAAA }) => (
 
   <> 
     <div>

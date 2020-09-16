@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.scss';
 import { NavLink } from 'react-router-dom';
 
-const Header = () => (
+const Header: React.FC = () => (
 
   <header className="header">
     <NavLink to="/" className="header__title links"><h1>Pineapplehue</h1></NavLink>

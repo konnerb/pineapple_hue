@@ -1,20 +1,72 @@
 import React, { useState, useEffect } from 'react';
 import * as Vibrant from 'node-vibrant';
+import { roundHue, roundSl } from '../../utlis';
+
 import './Main.scss';
 import Hero from '../../components/Hero/Hero';
 import PaletteView from '../../components/PaletteView/PaletteView';
 import Studio from '../../components/main/Studio/Studio';
 import StudioComponents from '../../components/main/StudioComponents/StudioComponents';
 import Footer from '../../components/Footer/Footer';
-import { roundHue, roundSl } from '../../utlis';
 
-const Main = () => {
+type paletteType = {
+  Vibrant: {
+    _titleTextColor: string
+    hex: string
+    _hex: string,
+    _hsl: string[],
+    hslVibrantBackground: string[]
+    hsl: string[]
+  },
+  LightVibrant: {
+    _titleTextColor: string
+    hex: string
+    _hex: string,
+    _hsl: string[],
+    hslVibrantBackground: string[]
+    hsl: string[]
+  },
+  DarkVibrant: {
+    _titleTextColor: string
+    hex: string
+    _hex: string,
+    _hsl: string[],
+    hslVibrantBackground: string[]
+    hsl: string[]
+  },
+  Muted: {
+    _titleTextColor: string
+    hex: string
+    _hex: string,
+    _hsl: string[],
+    hslVibrantBackground: string[]
+    hsl: string[]
+  },
+  LightMuted: {
+    _titleTextColor: string
+    hex: string
+    _hex: string,
+    _hsl: string[],
+    hslVibrantBackground: string[]
+    hsl: string[]
+  },
+  DarkMuted: {
+    _titleTextColor: string
+    hex: string
+    _hex: string,
+    _hsl: string[],
+    hslVibrantBackground: string[]
+    hsl: string[]
+  }
+}
 
-    const [palette, setPalette] = useState([])
+const Main: React.FC = () => {
+
+    const [palette, setPalette] = useState<paletteType>()
     const [percents, setPercents] = useState({})
     const [fetchImgBoolean, setfetchImgBoolean] = useState(false)
     const [togglePalette, setTogglePalette] = useState(false)
-
+ 
     useEffect(() => {
       const data = localStorage.getItem("my-palette")
       if(data) {
@@ -33,10 +85,10 @@ const Main = () => {
 
   //Fetches Image Data from React-DropZone UploadPage Component and sets state
   
-  const fetchImgData = (img) => {
+  const fetchImgData = (img: any) => {
     if (!img) return;
     Vibrant.from(img)
-    .getPalette((err, newPalette) => {
+    .getPalette((err: string, newPalette: any) => {
       if(err) {
       console.log(err);
       } else {
@@ -50,10 +102,10 @@ const Main = () => {
   
   //Safely updates original Vibrant.js HSL values to whole numbers
 
-const modifyPalette = (modPalette) => {   
-  if (modPalette.Vibrant) {
+const modifyPalette = (modPalette: any) => {   
+  if (modPalette?.Vibrant) {
     const clonePalette = modPalette
-    let newPalette = {}
+    let newPalette: any = {}
     newPalette = {
       ...clonePalette,
       Vibrant: {
@@ -132,8 +184,8 @@ const modifyPalette = (modPalette) => {
 
   //Safely updates Palette HSL colors from InputScrub Component and updates state
 
-  const handlePaletteUpdate = (paletteName) => {
-    if (palette.Vibrant ) {
+  const handlePaletteUpdate = (paletteName: string) => {
+    if (palette?.Vibrant ) {
       const clonePalette = palette;
       const key = Object.keys(paletteName)[0]; 
       const newVibrantKey = Math.round((paletteName[key].replace(/[%]/g, "")) * 1.25) + "%";
@@ -170,7 +222,7 @@ const modifyPalette = (modPalette) => {
 
   //Handles opacity percent change on Icon, Button, and Image Components
 
-  const handlePercentChange = (event, nameInput) => {
+  const handlePercentChange = (event: any, nameInput: string) => {
     const { target: { value} } = event;
     let percents = {};
     percents[nameInput] = Math.round(value * 100) / 100;
@@ -208,7 +260,7 @@ const modifyPalette = (modPalette) => {
         percents={percents}
         handlePercentChange={handlePercentChange}
       />  
-      { palette.Vibrant &&
+      { palette?.Vibrant &&
         <div className="new-palette__container">
           <button 
             className="new-palette__button"

@@ -1,7 +1,15 @@
 import React from 'react';
 import './Image.scss';
 
-const Image = (
+interface Props {
+  imageName: string, 
+  percent: number, 
+  image: any, 
+  toggleImagesBorder: boolean, 
+  toggleImagesShadow: boolean 
+}
+
+const Image: React.FC<Props> = (
   
   { 
     imageName, 

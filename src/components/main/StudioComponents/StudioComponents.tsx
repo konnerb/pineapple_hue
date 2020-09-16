@@ -8,17 +8,18 @@ import InputPercent from '../../InputPercent/InputPercent';
 import store from '../../../store';
 import { contrast } from '../../../utlis';
 
-const StudioComponents = (
+interface Props {
+  handlePercentChange: any, 
+  percents: any, 
+  palette: any
+}
+
+const StudioComponents: React.FC<Props> = (
 
   {
   handlePercentChange, 
   percents, 
-  palette,
-  palette: {
-    Vibrant, 
-    LightVibrant, 
-    LightMuted 
-  }
+  palette
   }) => {
 
   const [toggle, setToggle] = useState({
@@ -37,7 +38,7 @@ const StudioComponents = (
 
   //Handles toggle for StyleBar/Style Button Components
 
-  const handleToggle = (toggleType) => {
+  const handleToggle = (toggleType: string) => {
     let toggleStatus = toggle[toggleType]
     setToggle({
       ...toggle,
@@ -45,16 +46,16 @@ const StudioComponents = (
     }); 
   }
 
-  const isAAA = contrast( Vibrant && Vibrant.hslVibrant, [0, 1, 1], true )
   const { icons, images } = store
+  const isAAA: any = contrast( palette?.Vibrant && palette?.Vibrant?.hslVibrant, [0, 1, 1], true )
 
   return (
     <>
-    { Vibrant && 
+    { palette?.Vibrant && 
       <section className="studio-components">
         <article className="studio-components__buttons-section"
           style={{backgroundColor: 
-            `hsl(${Vibrant.hslVibrantBackground})`
+            `hsl(${palette.Vibrant.hslVibrantBackground})`
           }}
         > 
           <StyleBar 
@@ -79,7 +80,7 @@ const StudioComponents = (
           }
           <div className="studio-components__button-preview">
             <div className="studio-components__buttons buttons-top" 
-              style={{backgroundColor: `hsl(${LightVibrant.hsl.toString()})` }}
+              style={{backgroundColor: `hsl(${palette.LightVibrant.hsl.toString()})` }}
             >
             {store.components.vibrantButtons.map((content, i) => (
               <Button 
@@ -94,7 +95,7 @@ const StudioComponents = (
             ))}
             </div>
             <div className="studio-components__buttons buttons-bottom" 
-              style={{backgroundColor: `hsl(${LightMuted.hsl.toString()})` }}
+              style={{backgroundColor: `hsl(${palette.LightMuted.hsl.toString()})` }}
             >
             {store.components.mutedButtons.map((content, i) => (
               <Button 
@@ -113,7 +114,7 @@ const StudioComponents = (
         
         <article className="studio-components__icons-section"
           style={{backgroundColor: 
-            `hsl(${Vibrant.hslVibrantBackground})`
+            `hsl(${palette.Vibrant.hslVibrantBackground})`
           }}
         >
           <StyleBar 
@@ -138,12 +139,12 @@ const StudioComponents = (
           }
           <div className="studio-components__icons-preview">
             <div className="studio-components__icons icons-top" 
-              style={{backgroundColor: `hsl(${LightVibrant.hsl.toString()})` }}
+              style={{backgroundColor: `hsl(${palette.LightVibrant.hsl.toString()})` }}
             >
               {icons.map(({ icon, title }, i) => (
                 <Icons 
                   key={i}
-                  palette={Vibrant} 
+                  //palette={Vibrant} 
                   icon={icon}
                   percent={percents.iconOpacity}
                   toggleOpacity={toggle.IconsOpacity}
@@ -155,7 +156,7 @@ const StudioComponents = (
             </div>
 
             <div className="studio-components__icons icons-bottom" 
-              style={{backgroundColor: `hsl(${LightMuted.hsl.toString()})`}}
+              style={{backgroundColor: `hsl(${palette.LightMuted.hsl.toString()})`}}
             >
               {icons.map(({ icon, title }, i) => (
                 <Icons 
@@ -166,7 +167,7 @@ const StudioComponents = (
                   toggleOpacity={toggle.IconsOpacity}
                   toggleIconsShadow={toggle.IconsShadow}
                   toggleIconsBorder={toggle.IconsBorder}
-                  palette={Vibrant} 
+                  //palette={Vibrant} 
                 />
               ))}
             </div>
@@ -175,7 +176,7 @@ const StudioComponents = (
 
         <article className="studio-components__images-section"
           style={{backgroundColor: 
-            `hsl(${Vibrant.hslVibrantBackground})`
+            `hsl(${palette.Vibrant.hslVibrantBackground})`
           }}
         >
         <div className="studio-components__images-buttons">
@@ -193,7 +194,7 @@ const StudioComponents = (
             />
             {toggle.ImagesOpacity && 
               <InputPercent 
-                isImage={true}
+                //isImage={true}
                 percents={percents.imageOpacity}
                 handlePercentChange={handlePercentChange}
                 nameInput="imageOpacity"
@@ -204,7 +205,7 @@ const StudioComponents = (
         </div>
         <div className="studio-components__images-preview">
           <div className="studio-components__images image_top" 
-            style={{backgroundColor: `hsl(${LightVibrant.hsl.toString()})` }}
+            style={{backgroundColor: `hsl(${palette.LightVibrant.hsl.toString()})` }}
           >   
             {images.map(({ image, title }, i) => (
               <Image 
@@ -214,13 +215,13 @@ const StudioComponents = (
                 percent={percents.imageOpacity}
                 toggleImagesShadow={toggle.ImagesShadow}
                 toggleImagesBorder={toggle.ImagesBorder}
-                palette={Vibrant} 
+                //palette={Vibrant} 
               />
             ))}
           </div>
 
           <div className="studio-components__images image_bottom" 
-            style={{backgroundColor: `hsl(${LightMuted.hsl.toString()})` }}
+            style={{backgroundColor: `hsl(${palette.LightMuted.hsl.toString()})` }}
           >
             {images.map(({ image, title }, i) => (
                 <Image 
@@ -230,7 +231,7 @@ const StudioComponents = (
                   percent={percents.imageOpacity}
                   toggleImagesShadow={toggle.ImagesShadow}
                   toggleImagesBorder={toggle.ImagesBorder}
-                  palette={Vibrant} 
+                  //palette={Vibrant} 
                 />
             ))}
           </div>

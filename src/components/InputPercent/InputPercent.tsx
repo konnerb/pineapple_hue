@@ -1,7 +1,24 @@
 import React from 'react';
 import './InputPercent.scss';
 
-const InputPercent = ({ handlePercentChange, percents, nameInput, defaultInputValue, isAAA}) => (
+interface Props {
+  percents: number,
+  nameInput: string,
+  defaultInputValue: string,
+  isAAA: string
+  handlePercentChange: any
+}
+
+const InputPercent: React.FC<Props> = (
+
+  { 
+    handlePercentChange,
+    percents,
+    nameInput,
+    defaultInputValue,
+    isAAA
+  }) => (
+
   <>
     <div className="input">
       <label 

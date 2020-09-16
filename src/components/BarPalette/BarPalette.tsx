@@ -1,7 +1,12 @@
 import React from 'react';
 import './BarPalette.scss';
 
-const BarPalette = ({ palette, borderRadiusType  }) => (
+interface Props {
+  palette: any,
+  borderRadiusType?: string
+}
+
+const BarPalette: React.FC<Props> = ({ palette, borderRadiusType  }) => (
   <>
     { palette &&
       <div className="palette">

@@ -2,7 +2,7 @@ import React from 'react';
 import './About.scss';
 import Hero from '../../components/Hero/Hero';
 
-const About = () => (
+const About: React.FC = () => (
 
   <section className="about">
     <Hero /> 

@@ -5,8 +5,7 @@ import Main from './pages/Main/Main'
 import About from './pages/About/About'
 import Header from './components/Header/Header'
 
-function App() {
-  return (  
+const App: React.FC = () => (  
   <>
     <div className="app">
       <BrowserRouter>
@@ -18,7 +17,6 @@ function App() {
       </BrowserRouter>
     </div>
   </>
-  )
-}
+)
 
 export default App;

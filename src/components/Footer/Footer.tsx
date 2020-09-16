@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.scss';
 
-const Footer = () => (
+const Footer: React.FC = () => (
 
   <div className="footer">
     <div className="footer__svg-container">

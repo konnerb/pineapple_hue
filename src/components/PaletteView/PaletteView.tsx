@@ -3,13 +3,20 @@ import './PaletteView.scss';
 import ColorCode from '../ColorCode/ColorCode';
 import { contrast } from '../../utlis';
 
-const PaletteView = ({ palette, colorCode, codeType, togglePalette }) => {
 
-  const isAAA = (colour => contrast( palette[colour].hsl, [0, 1, 1], true ) )
+interface Props {
+  palette: any, 
+  colorCode: boolean, 
+  codeType: string, 
+  togglePalette?: boolean 
+}
+const PaletteView: React.FC<Props> = ({ palette, colorCode, codeType, togglePalette }) => {
+
+  const isAAA: any = ((colour: any) => contrast( palette[colour].hsl, [0, 1, 1], true ) )
       
   return (
   <>  
-  { palette.Vibrant &&
+  { palette?.Vibrant &&
     <section className="paletteView">
         <div className="paletteView__svg-container top">
             <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">

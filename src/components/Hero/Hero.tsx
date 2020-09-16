@@ -1,8 +1,13 @@
 import React from 'react';
 import './Hero.scss';
-import UploadImage from '../../components/UploadImage/UploadImage';
+import UploadImage from '../UploadImage/UploadImage';
 
-const Hero = ({ fetchImgData, palette }) => (
+interface Props {
+  fetchImgData?: any,
+  palette?: any
+}
+
+const Hero: React.FC<Props> = ({ fetchImgData, palette }) => (
 
   <section className="hero">
     <div className="hero__upload-image">

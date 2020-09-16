@@ -2,7 +2,11 @@ import React from 'react';
 import './StudioPaletteBar.scss';
 import BarPalette from '../../BarPalette/BarPalette';
 
-const StudioPaletteBar = ({ palette }) => (
+interface Props {
+  palette: any
+}
+
+const StudioPaletteBar: React.FC<Props> = ({ palette }) => (
   <>
   { palette.Vibrant &&  
     <div className="bar">

@@ -1,7 +1,14 @@
 import React from 'react';
 import './InputScrub.scss';
 
-const InputScrub = ({ palette, handleChange, paletteType, isAAA }) => (
+interface Props {
+  palette: any
+  paletteType: string, 
+  isAAA: string, 
+  handleChange: (defaultValue: any, paletteType: string) => void, 
+}
+
+const InputScrub: React.FC<Props> = ({ palette, paletteType, isAAA, handleChange}) => (
 
   <>
   { palette &&
