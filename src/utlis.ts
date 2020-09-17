@@ -78,19 +78,19 @@ const findRating = ((ratio: number) => ratio >= 7.00 ? 'AAA' : ratio >= 5.00 && 
       r = c; g = 0; b = x;
     }
     // Having obtained RGB, convert channels to hex
-    let newR = Math.round((r + m) * 255).toString(16);
-    let newG = Math.round((g + m) * 255).toString(16);
-    let newB = Math.round((b + m) * 255).toString(16);
+    let stringR = Math.round((r + m) * 255).toString(16);
+    let stringG = Math.round((g + m) * 255).toString(16);
+    let stringB = Math.round((b + m) * 255).toString(16);
   
     // Prepend 0s, if necessary
-    if (newR.length === 1)
-      newR = "0" + r;
-    if (newG.length === 1)
-      newG = "0" + g;
-    if (newB.length === 1)
-      newB = "0" + b;
+    if (stringR.length === 1)
+      stringR = "0" + stringR;
+    if (stringG.length === 1)
+      stringG = "0" + stringG;
+    if (stringB.length === 1)
+      stringB = "0" + stringB;
   
-    return "#" + newR + newG + newB;
+    return "#" + stringR + stringG + stringB;
   }
 
 //Contrast function returns the WCAG contrast ratio between colors
