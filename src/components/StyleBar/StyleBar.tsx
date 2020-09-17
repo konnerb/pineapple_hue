@@ -34,11 +34,12 @@ const StyleBar: React.FC<Props> = (
     
   <>
     <div 
-      className="buttons" style={{
-      backgroundColor: `hsl(${palette.Vibrant.hsl.toString()})`,
-      borderRadius: isImage ? `25px 25px 0px 0px` : "",
-      flexDirection: isImage ? `row` : "initial",
-      padding: isImage ? `20px 0px` : ""
+      className="buttons" 
+      style={{
+        backgroundColor: `hsl(${palette.Vibrant.hsl.toString()})`,
+        borderRadius: `${isImage && '25px 25px 0px 0px'}`,
+        flexDirection: isImage ? 'row' : 'column',
+        padding: `${isImage && '20px 0px'}`
       }}
     >
 
