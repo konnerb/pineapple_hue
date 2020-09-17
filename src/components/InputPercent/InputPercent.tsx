@@ -1,12 +1,13 @@
 import React from 'react';
 import './InputPercent.scss';
+import { isAAAType } from '../../types';
 
 interface Props {
-  percents: number,
-  nameInput: string,
-  defaultInputValue: string,
-  isAAA: string
-  handlePercentChange: any
+  percents: number;
+  nameInput: string;
+  defaultInputValue: string;
+  isAAA: isAAAType;
+  handlePercentChange: (defaultValue: React.ChangeEvent<HTMLInputElement>, paletteType: string) => void;
 }
 
 const InputPercent: React.FC<Props> = (

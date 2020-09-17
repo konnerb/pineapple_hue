@@ -8,57 +8,7 @@ import PaletteView from '../../components/PaletteView/PaletteView';
 import Studio from '../../components/main/Studio/Studio';
 import StudioComponents from '../../components/main/StudioComponents/StudioComponents';
 import Footer from '../../components/Footer/Footer';
-
-type paletteType = {
-  Vibrant: {
-    _titleTextColor: string
-    hex: string
-    _hex: string,
-    _hsl: string[],
-    hslVibrantBackground: string[]
-    hsl: string[]
-  },
-  LightVibrant: {
-    _titleTextColor: string
-    hex: string
-    _hex: string,
-    _hsl: string[],
-    hslVibrantBackground: string[]
-    hsl: string[]
-  },
-  DarkVibrant: {
-    _titleTextColor: string
-    hex: string
-    _hex: string,
-    _hsl: string[],
-    hslVibrantBackground: string[]
-    hsl: string[]
-  },
-  Muted: {
-    _titleTextColor: string
-    hex: string
-    _hex: string,
-    _hsl: string[],
-    hslVibrantBackground: string[]
-    hsl: string[]
-  },
-  LightMuted: {
-    _titleTextColor: string
-    hex: string
-    _hex: string,
-    _hsl: string[],
-    hslVibrantBackground: string[]
-    hsl: string[]
-  },
-  DarkMuted: {
-    _titleTextColor: string
-    hex: string
-    _hex: string,
-    _hsl: string[],
-    hslVibrantBackground: string[]
-    hsl: string[]
-  }
-}
+import { paletteType } from '../../types';
 
 const Main: React.FC = () => {
 
@@ -241,7 +191,7 @@ const modifyPalette = (modPalette: any) => {
     <section className="hero-component"> 
       <Hero 
       fetchImgData={fetchImgData} 
-      palette={palette} 
+      palette={palette}  
       />
     </section>
 
@@ -273,7 +223,7 @@ const modifyPalette = (modPalette: any) => {
               palette={palette} 
               togglePalette={togglePalette}
               colorCode={true}
-              codeType=''
+              codeType=' '
             />
           }
         </div>

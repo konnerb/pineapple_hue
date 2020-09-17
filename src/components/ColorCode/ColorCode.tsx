@@ -1,14 +1,16 @@
 import React from 'react';
-import './ColorCode.scss';
 import { hslToHex, hslToRgb, roundHue, contrast } from '../../utlis';
 
+import './ColorCode.scss';
+import { isAAAType, codeTyped, paletteNameType } from '../../types';
+
 interface Props {
-  palette: any, 
-  paletteName: string, 
-  colorCode: boolean, 
-  codeType: string, 
-  isToggled?: boolean, 
-  isAAA: string
+  palette: any;
+  paletteName: paletteNameType | string;
+  colorCode: boolean;
+  codeType: codeTyped;
+  isToggled?: boolean;
+  isAAA: isAAAType;
 }
 
 const ColorCode: React.FC<Props> = (

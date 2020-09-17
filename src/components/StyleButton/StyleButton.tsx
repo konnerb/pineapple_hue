@@ -1,11 +1,13 @@
 import React from 'react';
+
 import './StyleButton.scss';
+import { isAAAType } from '../../types';
 
 interface Props {
-  handleToggle: any, 
-  toggleType?: string, 
-  buttonText: string, 
-  isAAA: any
+  handleToggle: any; 
+  toggleType?: string; 
+  buttonText: string; 
+  isAAA: isAAAType;
 }
 
 const StyleButton: React.FC<Props> = ({ handleToggle, toggleType, buttonText, isAAA }) => (

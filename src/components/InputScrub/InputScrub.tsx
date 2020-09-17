@@ -1,11 +1,12 @@
 import React from 'react';
 import './InputScrub.scss';
+import { isAAAType } from '../../types';
 
 interface Props {
-  palette: any
-  paletteType: string, 
-  isAAA: string, 
-  handleChange: (defaultValue: any, paletteType: string) => void, 
+  palette: any;
+  paletteType: string; 
+  isAAA: isAAAType; 
+  handleChange: (defaultValue: React.ChangeEvent<HTMLInputElement>, paletteType: string) => void;
 }
 
 const InputScrub: React.FC<Props> = ({ palette, paletteType, isAAA, handleChange}) => (

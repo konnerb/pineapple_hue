@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
 import { useDropzone } from 'react-dropzone';
+
 import './UploadImage.scss';
 
 interface Props {
@@ -7,9 +8,6 @@ interface Props {
 }
 
 const UploadImage: React.FC<Props> = ({ fetchImgData }) => {
-
-//const [img, setImg] = useState([])
-//const [palette, setPalette] = useState({})
 
   const onDrop = useCallback(acceptedFiles => {
     acceptedFiles.forEach((blob: any) => {

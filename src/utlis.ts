@@ -1,7 +1,7 @@
 
 //Luminanace is a helper function for breaking down the required values for comparison in the contrast function
 
-const luminanace = (r: any, g: any, b: any) => {
+const luminanace = (r: number | string, g: number | string, b: number | string) => {
   let color = [r, g, b].map((value: any) => {
     value /= 255;
     return value <= 0.03928
@@ -17,7 +17,7 @@ const findRating = ((ratio: number) => ratio >= 7.00 ? 'AAA' : ratio >= 5.00 && 
 
 //Converts HSL values to RGB
 
-  export const hslToRgb = (h: any, s: any, l: any, isComa: boolean = true ) => {
+  export const hslToRgb = (h: number, s: number, l: number, isComa: boolean = true ) => {
     s /= 100;
     l /= 100;
   
@@ -52,7 +52,7 @@ const findRating = ((ratio: number) => ratio >= 7.00 ? 'AAA' : ratio >= 5.00 && 
 
 //Converts HSL values to HEX
   
-  export const hslToHex = (h: any, s: any, l: any) => {
+  export const hslToHex = (h: number, s: number, l: number) => {
 
     s /= 100;
     l /= 100;

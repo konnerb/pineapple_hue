@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { contrast } from '../../../utlis';
+
 import './StudioComponents.scss';
 import Button from '../../Button/Button';
 import StyleBar from '../../StyleBar/StyleBar';
@@ -6,12 +8,12 @@ import Icons from '../../Icons/Icons';
 import Image from '../../Image/Image';
 import InputPercent from '../../InputPercent/InputPercent';
 import store from '../../../store';
-import { contrast } from '../../../utlis';
+import { paletteType } from '../../../types';
 
 interface Props {
-  handlePercentChange: any, 
-  percents: any, 
-  palette: any
+  handlePercentChange: any; 
+  percents: any; 
+  palette: paletteType | undefined;
 }
 
 const StudioComponents: React.FC<Props> = (
@@ -47,7 +49,7 @@ const StudioComponents: React.FC<Props> = (
   }
 
   const { icons, images } = store
-  const isAAA: any = contrast( palette?.Vibrant && palette?.Vibrant?.hslVibrant, [0, 1, 1], true )
+  const isAAA: any = contrast( palette && palette.Vibrant.hslVibrantBackground, [0, 1, 1], true )
 
   return (
     <>

@@ -1,18 +1,20 @@
 import React from 'react';
+import { contrast } from '../../utlis';
+
 import './PaletteView.scss';
 import ColorCode from '../ColorCode/ColorCode';
-import { contrast } from '../../utlis';
+import { codeTyped, paletteNameType, paletteType } from '../../types';
 
 
 interface Props {
-  palette: any, 
-  colorCode: boolean, 
-  codeType: string, 
-  togglePalette?: boolean 
+  palette: paletteType | undefined; 
+  colorCode: boolean; 
+  codeType: codeTyped; 
+  togglePalette?: boolean;
 }
 const PaletteView: React.FC<Props> = ({ palette, colorCode, codeType, togglePalette }) => {
 
-  const isAAA: any = ((colour: any) => contrast( palette[colour].hsl, [0, 1, 1], true ) )
+  const isAAA: any = ((colour: paletteNameType) => contrast( palette && palette[colour].hsl, [0, 1, 1], true ) )
       
   return (
   <>  

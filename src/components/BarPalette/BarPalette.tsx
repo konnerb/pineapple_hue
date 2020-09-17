@@ -1,9 +1,10 @@
 import React from 'react';
+
 import './BarPalette.scss';
 
 interface Props {
-  palette: any,
-  borderRadiusType?: string
+  palette: any;
+  borderRadiusType?: 'topLeft' | 'bottomLeft';
 }
 
 const BarPalette: React.FC<Props> = ({ palette, borderRadiusType  }) => (

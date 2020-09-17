@@ -2,12 +2,12 @@ import React from 'react';
 import './Icons.scss';
 
 interface Props {
-  iconName: string, 
-  icon: string, 
-  percent: number,
-  toggleIconsBorder: boolean, 
-  toggleOpacity: boolean, 
-  toggleIconsShadow: boolean
+  iconName: string; 
+  icon: string; 
+  percent: number;
+  toggleIconsBorder: boolean; 
+  toggleOpacity: boolean; 
+  toggleIconsShadow: boolean;
 }
 
 const Icons: React.FC<Props> = (

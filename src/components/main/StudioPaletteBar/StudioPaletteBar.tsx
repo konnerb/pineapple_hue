@@ -1,9 +1,11 @@
 import React from 'react';
+
 import './StudioPaletteBar.scss';
 import BarPalette from '../../BarPalette/BarPalette';
+import { paletteType } from '../../../types';
 
 interface Props {
-  palette: any
+  palette: paletteType;
 }
 
 const StudioPaletteBar: React.FC<Props> = ({ palette }) => (

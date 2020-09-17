@@ -1,15 +1,17 @@
 import React from 'react';
-import './Button.scss';
 import { contrast } from '../../utlis';
 
+import './Button.scss';
+import { paletteNameType } from '../../types';
+
 interface Props {
-  palette: any, 
-  paletteType?: string,
-  percent: string, 
-  toggleButtonsShadow: boolean, 
-  toggleButtonsBorder: boolean, 
-  toggleOpacity: boolean,
-  paletteBackground: any
+  palette: any; 
+  paletteType?: paletteNameType;
+  percent: string; 
+  toggleButtonsShadow: boolean; 
+  toggleButtonsBorder: boolean; 
+  toggleOpacity: boolean;
+  paletteBackground: any;
 }
 
 const Button: React.FC<Props> = ( 
@@ -24,7 +26,7 @@ const Button: React.FC<Props> = (
     paletteBackground
   }) => {
 
-  const isAAA = contrast( palette.hsl, [0, 1, 1], true )
+  const isAAA = contrast( palette && palette.hsl, [0, 1, 1], true )
 
   return (
   <>  

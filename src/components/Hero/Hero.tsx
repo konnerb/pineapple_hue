@@ -1,10 +1,11 @@
 import React from 'react';
+
 import './Hero.scss';
 import UploadImage from '../UploadImage/UploadImage';
 
 interface Props {
-  fetchImgData?: any,
-  palette?: any
+  fetchImgData?: any;
+  palette?: any;
 }
 
 const Hero: React.FC<Props> = ({ fetchImgData, palette }) => (

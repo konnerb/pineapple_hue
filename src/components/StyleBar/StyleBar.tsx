@@ -1,19 +1,21 @@
 import React from 'react';
+
 import './StyleBar.scss';
 import StyleButton from '../StyleButton/StyleButton';
+import { isAAAType, paletteType } from '../../types';
 
 
 interface Props {
-  opacityType: string, 
-  shadowType: string, 
-  borderType: string, 
-  handleToggle: any, 
-  toggleShadow: boolean, 
-  toggleBorder: boolean, 
-  toggleOpacity: boolean,
-  palette: any, 
-  isImage?: boolean,
-  isAAA: string
+  opacityType: string; 
+  shadowType: string; 
+  borderType: string; 
+  handleToggle: any; 
+  toggleShadow: boolean; 
+  toggleBorder: boolean; 
+  toggleOpacity: boolean;
+  palette: paletteType; 
+  isImage?: boolean;
+  isAAA: isAAAType;
 }
 const StyleBar: React.FC<Props> = (
 

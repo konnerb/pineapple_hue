@@ -1,24 +1,26 @@
 import React from 'react';
+import { contrast } from '../../../utlis';
+
 import './StudioColours.scss';
 import StyleButton from '../../StyleButton/StyleButton';
 import InputScrub from '../../InputScrub/InputScrub';
 import ColorCode from '../../ColorCode/ColorCode';
-import { contrast } from '../../../utlis';
+import { paletteType, paletteNameType } from '../../../types';
 
 interface Props {
-  palette: any, 
-  toggle: any, 
-  handleChange: any, 
-  toggleStudioPalette: any
+  palette: paletteType;
+  toggle: any;
+  handleChange: any;
+  toggleStudioPalette: any;
 }
 
 const StudioColours: React.FC<Props> = ({ palette, toggle, handleChange, toggleStudioPalette }) => {
 
-  const isAAA: any = ((colour: string) => contrast( palette[colour].hsl, [0, 1, 1], true ) )
+  const isAAA: any = ((colour: paletteNameType) => contrast( palette && palette[colour].hsl, [0, 1, 1], true ) )
 
   return (
     <> 
-    { palette.Vibrant &&
+    { palette?.Vibrant &&
       <div className="website">
         {Object.keys(palette).map((colour, i) => (
           <div 

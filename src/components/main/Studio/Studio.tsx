@@ -1,26 +1,19 @@
 import React, { useState, useEffect } from 'react';
+
 import './Studio.scss';
 import StudioPaletteBar from '../StudioPaletteBar/StudioPaletteBar';
 import StudioColours from '../StudioColours/StudioColours';
+import { paletteType } from '../../../types';
 
 interface Props {
-  palette: any,
-  handlePaletteUpdate: any
-}
-
-type toggleState = {
-  Virbant: boolean,
-  LightVibrant: boolean,
-  DarkVibrant: boolean,
-  Muted: boolean,
-  LightMuted: boolean,
-  DarkMuted: boolean
+  palette: paletteType | undefined;
+  handlePaletteUpdate: any;
 }
 
 const Studio: React.FC<Props> = ({ palette, handlePaletteUpdate }) => {
   
   const [updatedPalette, setUpdatePalette] = useState({})
-  const [toggle, setToggle] = useState<toggleState>({
+  const [toggle, setToggle] = useState({
     Virbant: false,
     LightVibrant: false,
     DarkVibrant: false,
