@@ -95,8 +95,7 @@ const findRating = ((ratio: number) => ratio >= 7.00 ? 'AAA' : ratio >= 5.00 && 
 
 //Contrast function returns the WCAG contrast ratio between colors
   
-  export const contrast = (hsl1?: any, hsl2?: any, rating: boolean = false) => {
-    
+  export const contrast = (hsl1: any, hsl2: any, rating: boolean = false) => {
     let lumHsl1 = hsl1 ? hslToRgb(hsl1[0], ( (parseFloat(hsl1[1]) * 1000) / 1000), ( (parseFloat(hsl1[2]) * 1000) / 1000), false) : [];
     let lumHsl2 = hsl2 ? hslToRgb(hsl2[0], ( (parseFloat(hsl2[1]) * 1000) / 1000), ( (parseFloat(hsl2[2]) * 1000) / 1000), false) : [];
 

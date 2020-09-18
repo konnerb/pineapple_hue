@@ -26,9 +26,22 @@
       top: 30%;
     }
   }
+
+  &__credits-container {
+    display: flex;
+  }
+
   &__text {
     color: black;
+    & :nth-last-child(1) {
+      padding-right: 1.5rem;
+    }
   }
+  
+  &__credits {
+    color: black;
+  }
+
   &__text a {
     color: black;
   }
