@@ -18,9 +18,13 @@ const Main: React.FC = () => {
     const [togglePalette, setTogglePalette] = useState(false)
  
     useEffect(() => {
-      const data = localStorage.getItem("my-palette")
-      if(data) {
-        setPalette(JSON.parse(data))
+      try {
+        const data = localStorage.getItem("my-palette")
+        if(data) {
+          setPalette(JSON.parse(data))
+        }
+      } catch (error) {
+          console.error("Denied access To Local Storage", error)
       }
     }, [])
 
@@ -30,7 +34,11 @@ const Main: React.FC = () => {
     }, [fetchImgBoolean])
 
     useEffect(() => {
-      localStorage.setItem("my-palette", JSON.stringify(palette))
+      try {
+        localStorage.setItem("my-palette", JSON.stringify(palette))
+      } catch (error) {
+          console.error("Denied access To Local Storage", error)
+      }
     }, [palette])
 
   //Fetches Image Data from React-DropZone UploadPage Component and sets state
@@ -173,7 +181,7 @@ const modifyPalette = (modPalette: any) => {
   //Handles opacity percent change on Icon, Button, and Image Components
 
   const handlePercentChange = (event: any, nameInput: string) => {
-    const { target: { value} } = event;
+    const { target: { value } } = event;
     let percents = {};
     percents[nameInput] = Math.round(value * 100) / 100;
     setPercents(percents);
