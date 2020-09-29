@@ -3,7 +3,7 @@ import './Image.scss';
 
 interface Props {
   imageName: string; 
-  percent: number; 
+  opacity: number | undefined; 
   image: any; 
   toggleImagesBorder: boolean; 
   toggleImagesShadow: boolean;
@@ -13,7 +13,7 @@ const Image: React.FC<Props> = (
   
   { 
     imageName, 
-    percent, 
+    opacity,
     image, 
     toggleImagesBorder, 
     toggleImagesShadow 
@@ -23,10 +23,10 @@ const Image: React.FC<Props> = (
     <div className="image">
       <img 
         src={image} 
-        alt={`${imageName} has an opacity of ${percent ? percent * 100 + " percent" : "80 percent"}, ${toggleImagesBorder ? "a 3 pixel solid black border" : "no border"}, and ${toggleImagesShadow ? "a 5 pixel by 10 pixel light-grey shadow" : "no shadow"}`}
+        alt={`${imageName} has an opacity of ${opacity ? opacity * 100 + " percent" : "80 percent"}, ${toggleImagesBorder ? "a 3 pixel solid black border" : "no border"}, and ${toggleImagesShadow ? "a 5 pixel by 10 pixel light-grey shadow" : "no shadow"}`}
         className="image__the-image" 
         style ={{
-          opacity: `${percent}`,
+          opacity: `${opacity}`,
           boxShadow: toggleImagesShadow ? `5px 10px #888888` : `none`,
           border: toggleImagesBorder ? `3px solid black` : `none`
         }}

@@ -1,7 +1,7 @@
 
 //Luminanace is a helper function for breaking down the required values for comparison in the contrast function
 
-const luminanace = (r: number | string, g: number | string, b: number | string) => {
+const luminanace = (r: number | string, g: number | string, b: number | string): number => {
   let color = [r, g, b].map((value: any) => {
     value /= 255;
     return value <= 0.03928
@@ -17,7 +17,7 @@ const findRating = ((ratio: number) => ratio >= 7.00 ? 'AAA' : ratio >= 5.00 && 
 
 //Converts HSL values to RGB
 
-  export const hslToRgb = (h: number, s: number, l: number, isComa: boolean = true ) => {
+  export const hslToRgb = (h: number, s: number, l: number, isComa: boolean = true ): string | number[] => {
     s /= 100;
     l /= 100;
   
@@ -52,7 +52,7 @@ const findRating = ((ratio: number) => ratio >= 7.00 ? 'AAA' : ratio >= 5.00 && 
 
 //Converts HSL values to HEX
   
-  export const hslToHex = (h: number, s: number, l: number) => {
+  export const hslToHex = (h: number, s: number, l: number): string => {
 
     s /= 100;
     l /= 100;
@@ -112,8 +112,8 @@ const findRating = ((ratio: number) => ratio >= 7.00 ? 'AAA' : ratio >= 5.00 && 
 
 //RoundHue converts the a HSL hue value into a whole number
 
-  export const roundHue = (hue: number) => { return Math.round( (hue) * 360) }
+  export const roundHue = (hue: number): number => { return Math.round( (hue) * 360) }
 
 //RoundSL converts the a HSL saturation or lumanicty value into a whole number percentage
 
-  export const roundSl = (sl: number) => { return Math.round( (sl) * 100) + "%" }
+  export const roundSl = (sl: number): string => { return Math.round( (sl) * 100) + "%" }

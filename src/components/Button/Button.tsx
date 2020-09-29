@@ -7,7 +7,7 @@ import { paletteNameType } from '../../types';
 interface Props {
   palette: any; 
   paletteType?: paletteNameType;
-  percent: string; 
+  opacity: number | undefined; 
   toggleButtonsShadow: boolean; 
   toggleButtonsBorder: boolean; 
   toggleOpacity: boolean;
@@ -19,7 +19,7 @@ const Button: React.FC<Props> = (
   { 
     palette, 
     paletteType,
-    percent, 
+    opacity, 
     toggleButtonsShadow, 
     toggleButtonsBorder, 
     toggleOpacity,
@@ -38,7 +38,7 @@ const Button: React.FC<Props> = (
           backgroundColor: `hsl(${palette.hsl.toString()})`,
           fontSize: toggleOpacity ? "12px" : undefined,
           color: `${ (isAAA === 'AAA' && isAAA !== undefined) ? "black" : "white" }`,
-          opacity: percent ? `${percent}` : `100%`,
+          opacity: opacity ? `${opacity}` : `100%`,
           boxShadow: toggleButtonsShadow ? `5px 10px #888888` : `none`,
           border: toggleButtonsBorder ? `2px solid black` : `none`
         }}

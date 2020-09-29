@@ -8,19 +8,19 @@ import Icons from '../../Icons/Icons';
 import Image from '../../Image/Image';
 import InputPercent from '../../InputPercent/InputPercent';
 import store from '../../../store';
-import { paletteType } from '../../../types';
+import { paletteType, opacityType } from '../../../types';
 
 interface Props {
-  handlePercentChange: any; 
-  percents: any; 
+  handleOpacityChange: (event: React.ChangeEvent<HTMLInputElement>, nameInput: string) => void; 
+  opacity: opacityType; 
   palette: paletteType | undefined;
 }
 
 const StudioComponents: React.FC<Props> = (
 
   {
-  handlePercentChange, 
-  percents, 
+  handleOpacityChange, 
+  opacity, 
   palette
   }) => {
 
@@ -73,8 +73,8 @@ const StudioComponents: React.FC<Props> = (
           />
           {toggle.ButtonsOpacity && 
             <InputPercent 
-              percents={percents.opacityButton}
-              handlePercentChange={handlePercentChange}
+              opacity={opacity.opacityButton}
+              handlePercentChange={handleOpacityChange}
               nameInput="opacityButton"
               defaultInputValue="0.80"
               isAAA={isAAA}
@@ -87,7 +87,7 @@ const StudioComponents: React.FC<Props> = (
             {store.components.vibrantButtons.map((content, i) => (
               <Button 
                 key={i}
-                percent={percents.opacityButton}
+                opacity={opacity.opacityButton}
                 toggleOpacity={toggle.ButtonsOpacity}
                 toggleButtonsShadow={toggle.ButtonsShadow}
                 toggleButtonsBorder={toggle.ButtonsBorder}
@@ -102,7 +102,7 @@ const StudioComponents: React.FC<Props> = (
             {store.components.mutedButtons.map((content, i) => (
               <Button 
                 key={i}
-                percent={percents.opacityButton}
+                opacity={opacity.opacityButton}
                 toggleOpacity={toggle.ButtonsOpacity}
                 toggleButtonsShadow={toggle.ButtonsShadow}
                 toggleButtonsBorder={toggle.ButtonsBorder}
@@ -132,8 +132,8 @@ const StudioComponents: React.FC<Props> = (
           />
           {toggle.IconsOpacity && 
             <InputPercent 
-              percents={percents.iconOpacity}
-              handlePercentChange={handlePercentChange}
+              opacity={opacity.iconOpacity}
+              handlePercentChange={handleOpacityChange}
               nameInput="iconOpacity"
               defaultInputValue="0.80"
               isAAA={isAAA}
@@ -146,9 +146,8 @@ const StudioComponents: React.FC<Props> = (
               {icons.map(({ icon, title }, i) => (
                 <Icons 
                   key={i}
-                  //palette={Vibrant} 
                   icon={icon}
-                  percent={percents.iconOpacity}
+                  opacity={opacity.iconOpacity}
                   toggleOpacity={toggle.IconsOpacity}
                   toggleIconsShadow={toggle.IconsShadow}
                   toggleIconsBorder={toggle.IconsBorder}
@@ -165,11 +164,10 @@ const StudioComponents: React.FC<Props> = (
                   key={i}
                   icon={icon}
                   iconName={title}      
-                  percent={percents.iconOpacity}
+                  opacity={opacity.iconOpacity}
                   toggleOpacity={toggle.IconsOpacity}
                   toggleIconsShadow={toggle.IconsShadow}
                   toggleIconsBorder={toggle.IconsBorder}
-                  //palette={Vibrant} 
                 />
               ))}
             </div>
@@ -196,9 +194,8 @@ const StudioComponents: React.FC<Props> = (
             />
             {toggle.ImagesOpacity && 
               <InputPercent 
-                //isImage={true}
-                percents={percents.imageOpacity}
-                handlePercentChange={handlePercentChange}
+                opacity={opacity.imageOpacity}
+                handlePercentChange={handleOpacityChange}
                 nameInput="imageOpacity"
                 defaultInputValue="0.80"
                 isAAA={isAAA}
@@ -214,10 +211,9 @@ const StudioComponents: React.FC<Props> = (
                 key={i}
                 image={image}
                 imageName={title}
-                percent={percents.imageOpacity}
+                opacity={opacity.imageOpacity}
                 toggleImagesShadow={toggle.ImagesShadow}
                 toggleImagesBorder={toggle.ImagesBorder}
-                //palette={Vibrant} 
               />
             ))}
           </div>
@@ -230,10 +226,9 @@ const StudioComponents: React.FC<Props> = (
                   key={i}
                   image={image}
                   imageName={title}
-                  percent={percents.imageOpacity}
+                  opacity={opacity.imageOpacity}
                   toggleImagesShadow={toggle.ImagesShadow}
                   toggleImagesBorder={toggle.ImagesBorder}
-                  //palette={Vibrant} 
                 />
             ))}
           </div>

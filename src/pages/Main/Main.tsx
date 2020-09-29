@@ -8,12 +8,12 @@ import PaletteView from '../../components/PaletteView/PaletteView';
 import Studio from '../../components/main/Studio/Studio';
 import StudioComponents from '../../components/main/StudioComponents/StudioComponents';
 import Footer from '../../components/Footer/Footer';
-import { paletteType } from '../../types';
+import { opacityType, paletteType } from '../../types';
 
 const Main: React.FC = () => {
 
     const [palette, setPalette] = useState<paletteType>()
-    const [percents, setPercents] = useState({})
+    const [opacity, setOpacity] = useState<opacityType>({})
     const [fetchImgBoolean, setfetchImgBoolean] = useState(false)
     const [togglePalette, setTogglePalette] = useState(false)
  
@@ -148,7 +148,7 @@ const modifyPalette = (modPalette: any) => {
       const key = Object.keys(paletteName)[0]; 
       const newVibrantKey = Math.round((paletteName[key].replace(/[%]/g, "")) * 1.25) + "%";
       
-      if(key === "Vibrant") {
+      if(clonePalette.Vibrant && key === "Vibrant") {
         setPalette({
           ...clonePalette,
           [key]: {
@@ -180,11 +180,11 @@ const modifyPalette = (modPalette: any) => {
 
   //Handles opacity percent change on Icon, Button, and Image Components
 
-  const handlePercentChange = (event: any, nameInput: string) => {
-    const { target: { value } } = event;
-    let percents = {};
-    percents[nameInput] = Math.round(value * 100) / 100;
-    setPercents(percents);
+  const handleOpacityChange = (event: React.ChangeEvent<HTMLInputElement>, nameInput: string): void => {
+    const { target: { value } }: any = event;
+    let opacityPercent = {};
+    opacityPercent[nameInput] = Math.round(value * 100) / 100;
+    setOpacity(opacityPercent);
   }
 
   //Toggles PaletteView Component on or off
@@ -215,8 +215,8 @@ const modifyPalette = (modPalette: any) => {
       />
       <StudioComponents 
         palette={palette} 
-        percents={percents}
-        handlePercentChange={handlePercentChange}
+        opacity={opacity}
+        handleOpacityChange={handleOpacityChange}
       />  
       { palette?.Vibrant &&
         <div className="new-palette__container">

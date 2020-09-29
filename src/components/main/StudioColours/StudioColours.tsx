@@ -10,11 +10,11 @@ import { paletteType, paletteNameType } from '../../../types';
 interface Props {
   palette: paletteType;
   toggle: any;
-  handleChange: any;
+  handleColourChange: (defaultValue: React.ChangeEvent<HTMLInputElement>, paletteType: string) => void;
   toggleStudioPalette: any;
 }
 
-const StudioColours: React.FC<Props> = ({ palette, toggle, handleChange, toggleStudioPalette }) => {
+const StudioColours: React.FC<Props> = ({ palette, toggle, handleColourChange, toggleStudioPalette }) => {
 
   const isAAA: any = ((colour: paletteNameType) => contrast( palette && palette[colour].hsl, [0, 1, 1], true ) )
 
@@ -52,7 +52,7 @@ const StudioColours: React.FC<Props> = ({ palette, toggle, handleChange, toggleS
                   isAAA={isAAA(colour)}
                 />
                 <InputScrub 
-                  handleChange={handleChange} 
+                  handleColourChange={handleColourChange} 
                   paletteType={colour} 
                   palette={palette[colour]}
                   isAAA={isAAA(colour)}

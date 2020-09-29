@@ -12,7 +12,7 @@ interface Props {
 
 const Studio: React.FC<Props> = ({ palette, handlePaletteUpdate }) => {
   
-  const [updatedPalette, setUpdatePalette] = useState({})
+  const [updatedColourPalette, setUpdatedPalette] = useState({})
   const [toggle, setToggle] = useState({
     Virbant: false,
     LightVibrant: false,
@@ -23,19 +23,19 @@ const Studio: React.FC<Props> = ({ palette, handlePaletteUpdate }) => {
   })
 
   useEffect(() => {
-    handlePaletteUpdate(updatedPalette)
+    handlePaletteUpdate(updatedColourPalette)
     // eslint-disable-next-line
-  }, [updatedPalette])
+  }, [updatedColourPalette])
   
   /*Handles Palette Change From InputScrub, updates Studio State, then handlePaletteUpdate fetches the newPalette Data and
   updates the Main Component palette state
   */
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>, paletteName: string) => {
-    const { target: { value} } = event;
-    let newPalette = {};
-    newPalette[paletteName] = value + "%";
-    setUpdatePalette(newPalette)
+  const handleColourChange = (event: React.ChangeEvent<HTMLInputElement>, paletteName: string) => {
+    const { target: { value } } = event;
+    let newColourPalette = {} ;
+    newColourPalette[paletteName] = value + "%";
+    setUpdatedPalette(newColourPalette)
   }
 
   //Toggles StudioWebsite Componets color palette to adjust InputScrub Component
@@ -56,7 +56,7 @@ const Studio: React.FC<Props> = ({ palette, handlePaletteUpdate }) => {
         <StudioColours 
           palette={palette}
           toggle={toggle}
-          handleChange={handleChange} 
+          handleColourChange={handleColourChange} 
           toggleStudioPalette={toggleStudioPalette}
         />
       </section>

@@ -3,7 +3,7 @@ import './InputPercent.scss';
 import { isAAAType } from '../../types';
 
 interface Props {
-  percents: number;
+  opacity: number | undefined;
   nameInput: string;
   defaultInputValue: string;
   isAAA: isAAAType;
@@ -14,7 +14,7 @@ const InputPercent: React.FC<Props> = (
 
   { 
     handlePercentChange,
-    percents,
+    opacity,
     nameInput,
     defaultInputValue,
     isAAA
@@ -24,7 +24,7 @@ const InputPercent: React.FC<Props> = (
     <div className="input">
       <label 
         className={isAAA === 'AAA' && isAAA !== undefined ? "input__opacity" : "input__opacity white"}
-        >{percents >= 0 ? percents : defaultInputValue}
+        >{opacity && opacity >= 0 ? opacity : defaultInputValue}
       </label>
       <input 
         className="input__percent"

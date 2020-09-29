@@ -92,6 +92,12 @@ export type paletteType = {
   } 
 };
 
+export type opacityType = {
+  opacityButton?: number | undefined;
+  iconOpacity?: number | undefined;
+  imageOpacity?: number | undefined;
+  }
+
 export type isAAAType = "AAA" | "AA" | "fail";
 export type codeTyped = "hex" | "rgb" | "hsl" | "contrast" | " ";
 export type paletteNameType = "Vibrant" | "LightVibrant" | "DarkVibrant" | "Muted" | "LightMuted" | "DarkMuted";

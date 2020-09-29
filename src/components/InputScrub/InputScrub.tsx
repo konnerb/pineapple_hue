@@ -6,10 +6,10 @@ interface Props {
   palette: any;
   paletteType: string; 
   isAAA: isAAAType; 
-  handleChange: (defaultValue: React.ChangeEvent<HTMLInputElement>, paletteType: string) => void;
+  handleColourChange: (defaultValue: React.ChangeEvent<HTMLInputElement>, paletteType: string) => void;
 }
 
-const InputScrub: React.FC<Props> = ({ palette, paletteType, isAAA, handleChange}) => (
+const InputScrub: React.FC<Props> = ({ palette, paletteType, isAAA, handleColourChange }) => (
 
   <>
   { palette &&
@@ -27,7 +27,7 @@ const InputScrub: React.FC<Props> = ({ palette, paletteType, isAAA, handleChange
           min="1" 
           max="100" 
           defaultValue={parseFloat(palette.hsl[2])} 
-          onChange={defaultValue => handleChange(defaultValue, paletteType)}
+          onChange={defaultValue => handleColourChange(defaultValue, paletteType)}
         >
         </input>
       </div>
