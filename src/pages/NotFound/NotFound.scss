@@ -1,0 +1,37 @@
+@import '../../styles/base';
+
+.notFound {
+  width: 100%;
+  position: relative;
+  & .hero__upload-image {
+    @include laptop {
+      justify-content: center;
+    }
+  }
+
+  &__text-container {
+    position: absolute;
+    font-size: 0.9rem;
+    top: 42%;
+    width: 100%;
+    max-width: 700px;
+    @include global-padding;
+    @include tablet {
+      //font-size: 1.25rem;
+      top: 50%;
+    }
+    @include laptop {
+      font-size: 1rem;
+      //font-weight: 500;
+      top: 30%;
+    }
+  }
+
+  &__text {
+    color: black;
+  }
+}
+
+.hero__upload-pineapple {
+  margin-right: 0%
+}
