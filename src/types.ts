@@ -48,47 +48,47 @@ export interface paletteTypeInt  {
 
 export type paletteType = {
   Vibrant: {
-    _titleTextColor: string;
+    titleTextColor: string;
     hex: string;
     _hex: string;
     _hsl: number[];
     hslVibrantBackground: string[];
-    hsl: string[];
+    hsl: any[];
   },
   LightVibrant: {
-    _titleTextColor: string;
+    titleTextColor: string;
     hex: string;
     _hex: string;
     _hsl: number[];
-    hsl: string[];
+    hsl: any[];
   },
   DarkVibrant: {
-    _titleTextColor: string;
+    titleTextColor: string;
     hex: string;
     _hex: string;
     _hsl: number[];
-    hsl: string[];
+    hsl: any[];
   },
   Muted: {
-    _titleTextColor: string;
+    titleTextColor: string;
     hex: string;
     _hex: string;
     _hsl: number[];
-    hsl: string[];
+    hsl: any[];
   },
   LightMuted: {
-    _titleTextColor: string;
+    titleTextColor: string;
     hex: string;
     _hex: string;
     _hsl: number[];
-    hsl: string[];
+    hsl: any[];
   },
   DarkMuted: {
-    _titleTextColor: string;
+    titleTextColor: string;
     hex: string;
     _hex: string;
     _hsl: number[];
-    hsl: string[];
+    hsl: any[];
   } 
 };
 

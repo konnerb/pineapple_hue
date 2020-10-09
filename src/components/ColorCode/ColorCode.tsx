@@ -23,7 +23,7 @@ const ColorCode: React.FC<Props> = (
     isToggled, 
     isAAA
   }) => {
-    
+  console.log(codeType)
   const h = palette[paletteName] && palette[paletteName].hsl[0];
   const s = palette[paletteName] && parseFloat(palette[paletteName].hsl[1]);
   const l = palette[paletteName] && parseFloat(palette[paletteName].hsl[2]);
@@ -41,9 +41,14 @@ const ColorCode: React.FC<Props> = (
     ? hslToHex(h, ( (s * 1000)  / 1000 ), ( (l * 1000) / 1000) )
     : palette[paletteName]._hex
         
+  const useAAAColour = 
+      (isAAA === 'AAA' 
+      && isAAA !== undefined 
+      ? "color-code" 
+      : "color-code white")
 return (
   <>  
-  <div className={isAAA === 'AAA' && isAAA !== undefined ? "color-code" : "color-code white"}>
+  <div className={useAAAColour}>
 
     { (colorCode === true || codeType === 'hex') && 
       <p className="color-code__value">Hex: {hex}</p>

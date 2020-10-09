@@ -12,9 +12,9 @@ import { opacityType, paletteType } from '../../types';
 
 const Main: React.FC = () => {
 
+    const [originalPalette, setOriginalPalette] = useState<paletteType>()
     const [palette, setPalette] = useState<paletteType>()
     const [opacity, setOpacity] = useState<opacityType>({})
-    const [fetchImgBoolean, setfetchImgBoolean] = useState(false)
     const [togglePalette, setTogglePalette] = useState(false)
  
     useEffect(() => {
@@ -29,20 +29,23 @@ const Main: React.FC = () => {
     }, [])
 
     useEffect(() => {
-      modifyPalette(palette)
-    // eslint-disable-next-line
-    }, [fetchImgBoolean])
+      modifyPalette(originalPalette)
+    }, [originalPalette])
 
     useEffect(() => {
-      try {
-        localStorage.setItem("my-palette", JSON.stringify(palette))
-      } catch (error) {
-          console.error("Denied access To Local Storage", error)
-      }
+      const timer = setTimeout(() => {
+        if(palette) {
+          try {
+            localStorage.setItem("my-palette", JSON.stringify(palette))
+          } catch (error) {
+              console.error("Denied access To Local Storage", error)
+          }
+        }
+      }, 2000)
+      return () => clearTimeout(timer)
     }, [palette])
 
   //Fetches Image Data from React-DropZone UploadPage Component and sets state
-  
   const fetchImgData = (img: any) => {
     if (!img) return;
     Vibrant.from(img)
@@ -50,100 +53,95 @@ const Main: React.FC = () => {
       if(err) {
       console.log(err);
       } else {
-        setPalette(newPalette)
-        if (palette) {
-          setfetchImgBoolean(!fetchImgBoolean)
-        }
+        setOriginalPalette(newPalette)
       }
     })
   }
   
-  //Safely updates original Vibrant.js HSL values to whole numbers
-
-const modifyPalette = (modPalette: any) => {   
-  if (modPalette?.Vibrant) {
-    const clonePalette = modPalette
-    let newPalette: any = {}
-    newPalette = {
-      ...clonePalette,
-      Vibrant: {
-        ...clonePalette.Vibrant,
-        _titleTextColor: clonePalette.Vibrant._titleTextColor,
-        hex: clonePalette.Vibrant.hex,
-        _hex: clonePalette.Vibrant._hex,
-        _hsl: clonePalette.Vibrant._hsl,
-        hslVibrantBackground:
-        [roundHue(clonePalette.Vibrant.hsl[0]), 
-        roundSl(clonePalette.Vibrant.hsl[1]), 
-        roundSl(clonePalette.Vibrant.hsl[2] * 1.25)],
-        hsl: 
-        [roundHue(clonePalette.Vibrant.hsl[0]), 
-        roundSl(clonePalette.Vibrant.hsl[1]), 
-        roundSl(clonePalette.Vibrant.hsl[2])]
-      },
-      LightVibrant: {
-        ...clonePalette.LightVibrant,
-        _titleTextColor: clonePalette.LightVibrant._titleTextColor,
-        hex: clonePalette.LightVibrant.hex,
-        _hex: clonePalette.LightVibrant._hex,
-        _hsl: clonePalette.LightVibrant._hsl,
-        hsl: 
-        [roundHue(clonePalette.LightVibrant.hsl[0]), 
-        roundSl(clonePalette.LightVibrant.hsl[1]), 
-        roundSl(clonePalette.LightVibrant.hsl[2])]
-      },
-      DarkVibrant: {
-        ...clonePalette.DarkVibrant,
-        _titleTextColor: clonePalette.DarkVibrant._titleTextColor,
-        hex: clonePalette.DarkVibrant.hex,
-        _hex: clonePalette.DarkVibrant._hex,
-        _hsl: clonePalette.DarkVibrant._hsl,
-        hsl: 
-        [roundHue(clonePalette.DarkVibrant.hsl[0]), 
-        roundSl(clonePalette.DarkVibrant.hsl[1]), 
-        roundSl(clonePalette.DarkVibrant.hsl[2])]
-      },
-      Muted: {
-        ...clonePalette.Muted,
-        _titleTextColor: clonePalette.Muted._titleTextColor,
-        hex: clonePalette.Muted.hex,
-        _hex: clonePalette.Muted._hex,
-        _hsl: clonePalette.Muted._hsl,
-        hsl: 
-        [roundHue(clonePalette.Muted.hsl[0]), 
-        roundSl(clonePalette.Muted.hsl[1]), 
-        roundSl(clonePalette.Muted.hsl[2])]
-      },
-      LightMuted: {
-        ...clonePalette.LightMuted,
-        _titleTextColor: clonePalette.LightMuted._titleTextColor,
-        hex: clonePalette.LightMuted.hex,
-        _hex: clonePalette.LightMuted._hex,
-        _hsl: clonePalette.LightMuted._hsl,
-        hsl: 
-        [roundHue(clonePalette.LightMuted.hsl[0]), 
-        roundSl(clonePalette.LightMuted.hsl[1]), 
-        roundSl(clonePalette.LightMuted.hsl[2])]
-      },
-      DarkMuted: {
-        ...clonePalette.DarkMuted,
-        _titleTextColor: clonePalette.DarkMuted._titleTextColor,
-        hex: clonePalette.DarkMuted.hex,
-        _hex: clonePalette.DarkMuted._hex,
-        _hsl: clonePalette.DarkMuted._hsl,
-        hsl: 
-        [roundHue(clonePalette.DarkMuted.hsl[0]), 
-        roundSl(clonePalette.DarkMuted.hsl[1]), 
-        roundSl(clonePalette.DarkMuted.hsl[2])]
+   //Safely updates original Vibrant.js HSL values to whole number
+  const modifyPalette = (orgPalette: any) => {   
+    if (orgPalette?.Vibrant) {
+      const clonePalette = orgPalette
+      let newPalette: any = {}
+      newPalette = {
+        ...clonePalette,
+        Vibrant: {
+          ...clonePalette.Vibrant,
+          _titleTextColor: clonePalette.Vibrant.titleTextColor,
+          hex: clonePalette.Vibrant.hex,
+          _hex: clonePalette.Vibrant._hex,
+          _hsl: clonePalette.Vibrant.hsl,
+          hslVibrantBackground:
+            [roundHue(clonePalette.Vibrant.hsl[0]), 
+            roundSl(clonePalette.Vibrant.hsl[1]), 
+            roundSl(clonePalette.Vibrant.hsl[2] * 1.25)],
+          hsl: 
+            [roundHue(clonePalette.Vibrant.hsl[0]), 
+            roundSl(clonePalette.Vibrant.hsl[1]), 
+            roundSl(clonePalette.Vibrant.hsl[2])]
+        },
+        LightVibrant: {
+          ...clonePalette.LightVibrant,
+          _titleTextColor: clonePalette.LightVibrant.titleTextColor,
+          hex: clonePalette.LightVibrant.hex,
+          _hex: clonePalette.LightVibrant._hex,
+          _hsl: clonePalette.LightVibrant.hsl,
+          hsl: 
+            [roundHue(clonePalette.LightVibrant.hsl[0]), 
+            roundSl(clonePalette.LightVibrant.hsl[1]), 
+            roundSl(clonePalette.LightVibrant.hsl[2])]
+        },
+        DarkVibrant: {
+          ...clonePalette.DarkVibrant,
+          _titleTextColor: clonePalette.DarkVibrant.titleTextColor,
+          hex: clonePalette.DarkVibrant.hex,
+          _hex: clonePalette.DarkVibrant._hex,
+          _hsl: clonePalette.DarkVibrant.hsl,
+          hsl: 
+            [roundHue(clonePalette.DarkVibrant.hsl[0]), 
+            roundSl(clonePalette.DarkVibrant.hsl[1]), 
+            roundSl(clonePalette.DarkVibrant.hsl[2])]
+        },
+        Muted: {
+          ...clonePalette.Muted,
+          _titleTextColor: clonePalette.Muted.titleTextColor,
+          hex: clonePalette.Muted.hex,
+          _hex: clonePalette.Muted._hex,
+          _hsl: clonePalette.Muted.hsl,
+          hsl: 
+            [roundHue(clonePalette.Muted.hsl[0]), 
+            roundSl(clonePalette.Muted.hsl[1]), 
+            roundSl(clonePalette.Muted.hsl[2])]
+        },
+        LightMuted: {
+          ...clonePalette.LightMuted,
+          _titleTextColor: clonePalette.LightMuted.titleTextColor,
+          hex: clonePalette.LightMuted.hex,
+          _hex: clonePalette.LightMuted._hex,
+          _hsl: clonePalette.LightMuted.hsl,
+          hsl: 
+            [roundHue(clonePalette.LightMuted.hsl[0]), 
+            roundSl(clonePalette.LightMuted.hsl[1]), 
+            roundSl(clonePalette.LightMuted.hsl[2])]
+        },
+        DarkMuted: {
+          ...clonePalette.DarkMuted,
+          _titleTextColor: clonePalette.DarkMuted.titleTextColor,
+          hex: clonePalette.DarkMuted.hex,
+          _hex: clonePalette.DarkMuted._hex,
+          _hsl: clonePalette.DarkMuted.hsl,
+          hsl: 
+            [roundHue(clonePalette.DarkMuted.hsl[0]), 
+            roundSl(clonePalette.DarkMuted.hsl[1]), 
+            roundSl(clonePalette.DarkMuted.hsl[2])]
+        }
       }
-    }
     setPalette(newPalette)
   }}
 
   //Safely updates Palette HSL colors from InputScrub Component and updates state
-
   const handlePaletteUpdate = (paletteName: string) => {
-    if (palette?.Vibrant ) {
+    if (Object.keys(paletteName).length !== 0 && palette?.Vibrant ) {
       const clonePalette = palette;
       const key = Object.keys(paletteName)[0]; 
       const newVibrantKey = Math.round((paletteName[key].replace(/[%]/g, "")) * 1.25) + "%";
@@ -179,7 +177,6 @@ const modifyPalette = (modPalette: any) => {
   }
 
   //Handles opacity percent change on Icon, Button, and Image Components
-
   const handleOpacityChange = (event: React.ChangeEvent<HTMLInputElement>, nameInput: string): void => {
     const { target: { value } }: any = event;
     let opacityPercent = {};
@@ -188,7 +185,6 @@ const modifyPalette = (modPalette: any) => {
   }
 
   //Toggles PaletteView Component on or off
-  
   const handleTogglePalette = () => {
     let toggleStatus = togglePalette
     setTogglePalette(!toggleStatus);     
@@ -203,40 +199,40 @@ const modifyPalette = (modPalette: any) => {
       />
     </section>
 
-    <main className="main">
-      <PaletteView 
-        palette={palette} 
-        colorCode={false}
-        codeType='hex'
-      />
-      <Studio 
-        palette={palette} 
-        handlePaletteUpdate={handlePaletteUpdate} 
-      />
-      <StudioComponents 
-        palette={palette} 
-        opacity={opacity}
-        handleOpacityChange={handleOpacityChange}
-      />  
-      { palette?.Vibrant &&
-        <div className="new-palette__container">
-          <button 
-            className="new-palette__button"
-            onClick={() => handleTogglePalette()}
-          > {togglePalette ? `Whoa!` : `What's your pineapplehue!?`}
-          </button>
+    { palette?.Vibrant &&
+      <main className="main">
+        <PaletteView 
+          palette={palette} 
+          colorCode={false}
+          codeType='hex'
+          />
+        <Studio 
+          palette={palette} 
+          handlePaletteUpdate={handlePaletteUpdate} 
+          />
+        <StudioComponents 
+          palette={palette} 
+          opacity={opacity}
+          handleOpacityChange={handleOpacityChange}
+          />  
+          <div className="new-palette__container">
+            <button 
+              className="new-palette__button"
+              onClick={() => handleTogglePalette()}
+            > {togglePalette ? `Whoa!` : `What's your pineapplehue!?`}
+            </button>
 
-          { togglePalette &&
-            <PaletteView 
-              palette={palette} 
-              togglePalette={togglePalette}
-              colorCode={true}
-              codeType=' '
-            />
-          }
-        </div>
-      }
-    </main>
+            { togglePalette &&
+              <PaletteView 
+                palette={palette} 
+                togglePalette={togglePalette}
+                colorCode={true}
+                codeType=' '
+              />
+            }
+          </div>
+      </main>
+    }
 
     <footer className="hero">
       <Footer />

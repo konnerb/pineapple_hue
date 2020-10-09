@@ -9,7 +9,6 @@ const Main = lazy(() => import('./pages/Main/Main'));
 const About = lazy(() => import('./pages/About/About'));
 const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
 
-
 const App: React.FC = () => { 
 
   const defaultOptions = {
@@ -42,7 +41,7 @@ const App: React.FC = () => {
           <DelayedRender delay={500}>
             <div className="app__lotti" >
             <Lottie 
-              options={defaultOptions}
+              options={ defaultOptions }
               height={400}
               width={400}
             />
@@ -53,7 +52,7 @@ const App: React.FC = () => {
         <Header />
           <Switch> 
             <Route path="/" exact component={ Main } />
-            <Route path="/about" component={ About } />
+            <Route path="/about" exact component={ About } />
             <Route path="*" component={ NotFound } />
           </Switch> 
       </Suspense>

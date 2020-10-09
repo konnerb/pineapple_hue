@@ -38,7 +38,10 @@ const PaletteView: React.FC<Props> = ({ palette, colorCode, codeType, togglePale
                 ? `hsl(${palette[colour].hsl.toString()})`
                 : `${palette[colour].hex}`,
 
-              color: `${palette[colour].titleTextColor}`
+              color: 
+                togglePalette
+                ? undefined
+                : `${palette[colour]._titleTextColor}`
             }}
           >
             <ColorCode 
