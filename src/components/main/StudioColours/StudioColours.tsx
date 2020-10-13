@@ -22,12 +22,12 @@ const StudioColours: React.FC<Props> = ({ palette, toggle, handleColourChange, t
     <> 
     { palette?.Vibrant &&
       <div className="website">
-        {Object.entries(palette).map(([colour]) => (
+        {Object.keys(palette).map((colour, i) => (
           <div 
-            key={colour}
+            key={i}
             className={ 
-              colour === 'Vibrant' ? "website__color color_top-right" 
-              : colour === 'DarkMuted' ? "website__color color_bottom-right" 
+              i === 0 ? "website__color color_top-right" 
+              : i === 5 ? "website__color color_bottom-right" 
               : "website__color"}
               style={{
                 backgroundColor: `hsl(${palette[colour].hsl.toString()})`,

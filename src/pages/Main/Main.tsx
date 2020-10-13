@@ -61,7 +61,7 @@ const Main: React.FC = () => {
    //Safely updates original Vibrant.js HSL values to whole number
   const modifyPalette = (orgPalette: any) => {   
     if (orgPalette?.Vibrant) {
-      const clonePalette = orgPalette
+      const clonePalette = { ...orgPalette }
       let newPalette: any = {}
       newPalette = {
         ...clonePalette,
@@ -142,7 +142,7 @@ const Main: React.FC = () => {
   //Safely updates Palette HSL colors from InputScrub Component and updates state
   const handlePaletteUpdate = (paletteName: string) => {
     if (Object.keys(paletteName).length !== 0 && palette?.Vibrant ) {
-      const clonePalette = palette;
+      const clonePalette = { ...palette };
       const key = Object.keys(paletteName)[0]; 
       const newVibrantKey = Math.round((paletteName[key].replace(/[%]/g, "")) * 1.25) + "%";
       

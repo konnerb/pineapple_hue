@@ -31,7 +31,7 @@ const UploadImage: React.FC<Props> = ({ fetchImgData }) => {
       isDragReject
       } = useDropzone({
       onDrop,
-      accept: 'image/jpeg, image/png',
+      accept: 'image/jpeg, image/jpg, image/png',
       //multiple: 'true',
       maxSize: 3000000
     })
