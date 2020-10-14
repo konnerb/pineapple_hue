@@ -31,7 +31,7 @@ const Main: React.FC = () => {
     useEffect(() => {
       const timer = setTimeout(() => {
         modifyPalette(originalPalette)
-      }, 2000)
+      }, 1000)
       return () => clearTimeout(timer)
     }, [originalPalette])
 
@@ -56,6 +56,7 @@ const Main: React.FC = () => {
       if(err) {
       console.log(err);
       } else {
+        setPalette(undefined)
         setOriginalPalette(newPalette)
       }
     })
@@ -202,7 +203,7 @@ const Main: React.FC = () => {
       />
 
     { palette?.Vibrant &&
-      <main className="main">
+      <main className="main" >
         <PaletteView 
           palette={palette} 
           colorCode={false}
