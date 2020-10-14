@@ -6,8 +6,9 @@
     top: 30%;
     height: 100%;
   }
-  &__input-box {
+  &__input-box {  
     width: 100% !important;
+    cursor: pointer;
     @include tablet {
       justify-content: center;
       height: 120px;

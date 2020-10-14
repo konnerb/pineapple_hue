@@ -19,7 +19,7 @@ const Main: React.FC = () => {
  
     useEffect(() => {
       try {
-        const data = localStorage.getItem("my-palette")
+        const data = sessionStorage.getItem("my-palette")
         if(data) {
           setPalette(JSON.parse(data))
         }
@@ -29,14 +29,17 @@ const Main: React.FC = () => {
     }, [])
 
     useEffect(() => {
-      modifyPalette(originalPalette)
+      const timer = setTimeout(() => {
+        modifyPalette(originalPalette)
+      }, 2000)
+      return () => clearTimeout(timer)
     }, [originalPalette])
 
     useEffect(() => {
       const timer = setTimeout(() => {
         if(palette) {
           try {
-            localStorage.setItem("my-palette", JSON.stringify(palette))
+            sessionStorage.setItem("my-palette", JSON.stringify(palette))
           } catch (error) {
               console.error("Denied access To Local Storage", error)
           }
@@ -192,12 +195,11 @@ const Main: React.FC = () => {
 
   return (
   <> 
-    <section className="hero-component"> 
       <Hero 
       fetchImgData={fetchImgData} 
       palette={palette}  
+      ogPalette={originalPalette}
       />
-    </section>
 
     { palette?.Vibrant &&
       <main className="main">
@@ -227,17 +229,12 @@ const Main: React.FC = () => {
                 palette={palette} 
                 togglePalette={togglePalette}
                 colorCode={true}
-                codeType=' '
               />
             }
           </div>
       </main>
     }
-
-    <footer className="hero">
-      <Footer />
-    </footer>
-    
+    <Footer />
   </>
   );
 }

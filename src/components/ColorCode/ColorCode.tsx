@@ -23,7 +23,6 @@ const ColorCode: React.FC<Props> = (
     isToggled, 
     isAAA
   }) => {
-  console.log(codeType)
   const h = palette[paletteName] && palette[paletteName].hsl[0];
   const s = palette[paletteName] && parseFloat(palette[paletteName].hsl[1]);
   const l = palette[paletteName] && parseFloat(palette[paletteName].hsl[2]);

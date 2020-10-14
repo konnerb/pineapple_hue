@@ -6,7 +6,7 @@ import Hero from '../../components/Hero/Hero';
 const About: React.FC = () => (
 
   <section className="about">
-    <Hero /> 
+    <Hero renderUpload/> 
     <article className="about__text-container">
       <h3 className="about__text">Hmmmm... What is pineapplehue?</h3>
       <p className="about__text">

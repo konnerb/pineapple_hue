@@ -12,4 +12,13 @@
       width: 50px !important;
     }
   }
+  &__svg-loader {   
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    @include tablet {
+      width: 50px !important;
+      height: 50px;
+    }
+  }
 }

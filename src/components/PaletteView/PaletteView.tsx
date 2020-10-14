@@ -9,7 +9,7 @@ import { codeTyped, paletteNameType, paletteType } from '../../types';
 interface Props {
   palette: paletteType | undefined; 
   colorCode: boolean; 
-  codeType: codeTyped; 
+  codeType?: codeTyped; 
   togglePalette?: boolean;
 }
 const PaletteView: React.FC<Props> = ({ palette, colorCode, codeType, togglePalette }) => {

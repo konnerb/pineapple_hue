@@ -99,5 +99,5 @@ export type opacityType = {
   }
 
 export type isAAAType = "AAA" | "AA" | "fail";
-export type codeTyped = "hex" | "rgb" | "hsl" | "contrast" | " ";
+export type codeTyped = "hex" | "rgb" | "hsl" | "contrast" | undefined;
 export type paletteNameType = "Vibrant" | "LightVibrant" | "DarkVibrant" | "Muted" | "LightMuted" | "DarkMuted";

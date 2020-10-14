@@ -2,18 +2,47 @@
 
 .hero {
   position: relative;
-  width: 100vw;
   display: flex;
   flex-direction: column;
+  width: 100vw; 
   background-color: $yellow;
   @include laptop { 
     height: 100vh;
+  }
+  &__south-arrow {
+    z-index: 1;
+    position: fixed;
+    font-size: 3rem;
+    bottom: 35%;
+    color: #53E0B3;
+    opacity: 0.07;
+    left: 50%;
+    bottom: 3%;
+    animation-delay: 2s;
+    animation: floatArrow 5s linear infinite ;
+    @keyframes floatArrow {
+      0% {
+        transform: translatey(0%);
+      }
+      50% {
+        transform: translatey(15%);
+        opacity: 0.4;
+      }
+      100% {
+        transform: translatey(0%);
+      }
+    }
+    @include tablet {
+      font-size: 5.5rem;
+      bottom: 3%;
+    }
   }
   &__upload-image {
     align-items: center;
     justify-content: space-between;
     padding: 16px 16px;  
     height: 275px;
+    z-index: 5;
     @include laptop {
       height: 100%;
       display: flex;
@@ -40,6 +69,7 @@
     vertical-align: middle;
     overflow: hidden;
     transform: rotate(180deg);
+    //z-index: -2;
   }
   &__upload-reminder{
     background-color: rgb(250, 250, 250);

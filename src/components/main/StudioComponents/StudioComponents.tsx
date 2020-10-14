@@ -152,6 +152,7 @@ const StudioComponents: React.FC<Props> = (
                   toggleIconsShadow={toggle.IconsShadow}
                   toggleIconsBorder={toggle.IconsBorder}
                   iconName={title}
+                  onLoadColor={`hsl(${palette.Vibrant.hslVibrantBackground})`}
                 />
               ))}
             </div>
@@ -168,6 +169,7 @@ const StudioComponents: React.FC<Props> = (
                   toggleOpacity={toggle.IconsOpacity}
                   toggleIconsShadow={toggle.IconsShadow}
                   toggleIconsBorder={toggle.IconsBorder}
+                  onLoadColor={`hsl(${palette.Vibrant.hslVibrantBackground})`}
                 />
               ))}
             </div>
@@ -214,6 +216,7 @@ const StudioComponents: React.FC<Props> = (
                 opacity={opacity.imageOpacity}
                 toggleImagesShadow={toggle.ImagesShadow}
                 toggleImagesBorder={toggle.ImagesBorder}
+                onLoadColor={`hsl(${palette.Vibrant.hslVibrantBackground})`}
               />
             ))}
           </div>
@@ -229,6 +232,7 @@ const StudioComponents: React.FC<Props> = (
                   opacity={opacity.imageOpacity}
                   toggleImagesShadow={toggle.ImagesShadow}
                   toggleImagesBorder={toggle.ImagesBorder}
+                  onLoadColor={`hsl(${palette.Vibrant.hslVibrantBackground})`}
                 />
             ))}
           </div>
