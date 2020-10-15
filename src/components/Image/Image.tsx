@@ -28,7 +28,7 @@ const Image: React.FC<Props> = (
         <div className="image">
           { !imgLoaded && 
             <div 
-              className="image__the-image" 
+              className="image__content" 
               style={{
                 backgroundColor: onLoadColor,
               }}
@@ -38,7 +38,7 @@ const Image: React.FC<Props> = (
             src={image} 
             onLoad={() => setImgLoaded(true)}
             alt={`${imageName} has an opacity of ${opacity ? opacity * 100 + " percent" : "80 percent"}, ${toggleImagesBorder ? "a 3 pixel solid black border" : "no border"}, and ${toggleImagesShadow ? "a 5 pixel by 10 pixel light-grey shadow" : "no shadow"}`}
-            className="image__the-image" 
+            className="image__content" 
             style ={{
               opacity: `${opacity}`,
               boxShadow: toggleImagesShadow ? `5px 10px #888888` : `none`,
