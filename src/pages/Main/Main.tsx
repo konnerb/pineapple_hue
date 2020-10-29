@@ -12,41 +12,44 @@ import { opacityType, paletteType } from '../../types';
 
 const Main: React.FC = () => {
 
-    const [originalPalette, setOriginalPalette] = useState<paletteType>()
-    const [palette, setPalette] = useState<paletteType>()
-    const [opacity, setOpacity] = useState<opacityType>({})
-    const [togglePalette, setTogglePalette] = useState(false)
- 
-    useEffect(() => {
-      try {
-        const data = sessionStorage.getItem("my-palette")
-        if(data) {
-          setPalette(JSON.parse(data))
-        }
-      } catch (error) {
-          console.error("Denied access To Local Storage", error)
+  const [originalPalette, setOriginalPalette] = useState<paletteType>()
+  const [palette, setPalette] = useState<paletteType>()
+  const [opacity, setOpacity] = useState<opacityType>({})
+  const [togglePalette, setTogglePalette] = useState(false)
+
+  //Sets palette state if 'my-palette' exists in sessionStorage when page mounts
+  useEffect(() => {
+    try {
+      const data = sessionStorage.getItem("my-palette")
+      if(data) {
+        setPalette(JSON.parse(data))
       }
-    }, [])
+    } catch (error) {
+        console.error("Denied access To Local Storage", error)
+    }
+  }, [])
 
-    useEffect(() => {
-      const timer = setTimeout(() => {
-        modifyPalette(originalPalette)
-      }, 1000)
-      return () => clearTimeout(timer)
-    }, [originalPalette])
+  //Runs modifyPalette function when originalPalette is updated 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      modifyPalette(originalPalette)
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [originalPalette])
 
-    useEffect(() => {
-      const timer = setTimeout(() => {
-        if(palette) {
-          try {
-            sessionStorage.setItem("my-palette", JSON.stringify(palette))
-          } catch (error) {
-              console.error("Denied access To Local Storage", error)
-          }
+  //Updated Palette to sessionStorage every two seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if(palette) {
+        try {
+          sessionStorage.setItem("my-palette", JSON.stringify(palette))
+        } catch (error) {
+            console.error("Denied access To Local Storage", error)
         }
-      }, 2000)
-      return () => clearTimeout(timer)
-    }, [palette])
+      }
+    }, 2000)
+    return () => clearTimeout(timer)
+  }, [palette])
 
   //Fetches Image Data from React-DropZone UploadPage Component and sets state
   const fetchImgData = (img: any) => {
@@ -62,7 +65,7 @@ const Main: React.FC = () => {
     })
   }
   
-   //Safely updates original Vibrant.js HSL values to whole number
+  //Safely updates original Vibrant.js HSL values to whole number
   const modifyPalette = (orgPalette: any) => {   
     if (orgPalette?.Vibrant) {
       const clonePalette = { ...orgPalette }
@@ -149,7 +152,20 @@ const Main: React.FC = () => {
       const clonePalette = { ...palette };
       const key = Object.keys(paletteName)[0]; 
       const newVibrantKey = Math.round((paletteName[key].replace(/[%]/g, "")) * 1.25) + "%";
-      
+      console.log({
+        ...clonePalette,
+        [key]: {
+          ...clonePalette[key],
+          hslVibrantBackground:
+            [clonePalette[key].hsl[0], 
+            clonePalette[key].hsl[1], 
+            newVibrantKey],
+          hsl: 
+            [clonePalette[key].hsl[0], 
+            clonePalette[key].hsl[1], 
+            paletteName[key]]
+        }  
+      })
       if(clonePalette.Vibrant && key === "Vibrant") {
         setPalette({
           ...clonePalette,

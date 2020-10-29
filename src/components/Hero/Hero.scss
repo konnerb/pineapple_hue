@@ -38,7 +38,7 @@
     }
   }
   &__upload-image {
-    align-items: center;
+    //align-items: center;
     justify-content: space-between;
     padding: 16px 16px;  
     height: 275px;
@@ -74,7 +74,6 @@
     vertical-align: middle;
     overflow: hidden;
     transform: rotate(180deg);
-    //z-index: -2;
   }
   &__upload-reminder{
     background-color: rgb(250, 250, 250);
@@ -90,6 +89,22 @@
     @include laptop {
         font-size: 40px;
     }
+  }
+  &__input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    @include tablet {
+      justify-content: center;
+    }
+    @include laptop {
+      justify-content: none;
+      width: 20%;
+    }
+  }
+  &__lotti {
+    width: 25%;
+    position: relative;
   }
 }
 .svg {

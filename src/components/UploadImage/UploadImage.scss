@@ -2,6 +2,7 @@
 
 .upload-wrapper {
   position: relative;
+  width: 100%;
   @include laptop {
     top: 30%;
     height: 100%;
@@ -10,12 +11,12 @@
     width: 100% !important;
     cursor: pointer;
     @include tablet {
+      width: 100% !important;
       justify-content: center;
       height: 120px;
     }
     @include laptop {
       justify-content: none;
-      width: 55% !important;
       height: none;
     }
   }
@@ -24,5 +25,11 @@
   }
   &__file-name {
     margin-left: 30px;
+  }
+  &__file-name li {
+    list-style-position:inside;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

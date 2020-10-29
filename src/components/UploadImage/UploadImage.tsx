@@ -49,9 +49,10 @@ const UploadImage: React.FC<Props> = ({ fetchImgData }) => {
     ));
 
     const baseStyle = {
-      width: '55%',
-      flex: 1,
+      //width: '75%',
+      //height: '100%',
       display: 'flex',
+      flex: 1,
       flexDirection: 'column' as 'column',
       alignItems: 'center',
       padding: '20px',
@@ -103,16 +104,16 @@ const UploadImage: React.FC<Props> = ({ fetchImgData }) => {
             <p>Drop image here ...</p> :
             <p>Drag 'n' drop image here, or click to select image</p>
           }
-          </div>
+        </div>
           <aside className="upload-wrapper__aside">
-              <h4 className="upload-wrapper__status-type">Accepted files</h4>
-              <ul className="upload-wrapper__file-name">
-                {acceptedFilesItems}
-              </ul>
-              <h4 className="upload-wrapper__status-type">Rejected files</h4>
-              <ul className="upload-wrapper__file-name">
-                {rejectedFilesItems}
-              </ul>
+            <h4 className="upload-wrapper__status-type">Accepted files</h4>
+            <ul className="upload-wrapper__file-name">
+              {acceptedFilesItems}
+            </ul>
+            <h4 className="upload-wrapper__status-type">Rejected files</h4>
+            <ul className="upload-wrapper__file-name">
+              {rejectedFilesItems}
+            </ul>
           </aside>
       </div>
     </>
