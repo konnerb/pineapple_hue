@@ -9,19 +9,17 @@
   width: 100vw; 
   z-index: 1;
   background-color: $light-grey;
-  animation: fadein 2s;
-  @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-}
-.new-palette {
-  &__container {    
+  //animation: fadein 2s;
+  //@keyframes fadein {
+  //  from { opacity: 0; }
+  //  to   { opacity: 1; }
+  //}
+  &__palette-container {    
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  &__button {
+  &__palette-button {
     height: 70px;
     width: 250px;
     border-radius: 20px;

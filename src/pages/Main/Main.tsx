@@ -234,9 +234,9 @@ const Main: React.FC = () => {
           opacity={opacity}
           handleOpacityChange={handleOpacityChange}
           />  
-          <div className="new-palette__container">
+          <div className="main__palette-container">
             <button 
-              className="new-palette__button"
+              className="main__palette-button"
               onClick={() => handleTogglePalette()}
             > {togglePalette ? `Whoa!` : `What's your pineapplehue!?`}
             </button>
