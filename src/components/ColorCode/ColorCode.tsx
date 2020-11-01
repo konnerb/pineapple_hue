@@ -24,12 +24,9 @@ const ColorCode: React.FC<Props> = (
     isAAA
   }) => {
 
-  const [isCopied, setIsCopied] = useState({
-    hex: false,
-    rgb: false,
-    hsl: false,
-  })
+  const [isCopied, setIsCopied] = useState({ hex: false, rgb: false, hsl: false })
   
+  //Sets all key/values of isCopied to false after 1 second
   useEffect(() => { 
     const timer = setTimeout(() => {
       setIsCopied({
@@ -40,7 +37,8 @@ const ColorCode: React.FC<Props> = (
     }, 1000);
     return () => clearInterval(timer); 
   }, [isCopied]);
-  
+
+  //Copies color code value to users clipboard when clicked and updates isCopied state
   const copyToClipboard = (key: string, value: any) => {
     
     let toggleIsCopied = isCopied[key]
@@ -54,10 +52,12 @@ const ColorCode: React.FC<Props> = (
     document.body.removeChild(el);
   };
 
+  //Parses Hsl array into individual h,s,l values
   const h = palette[paletteName] && palette[paletteName].hsl[0];
   const s = palette[paletteName] && parseFloat(palette[paletteName].hsl[1]);
   const l = palette[paletteName] && parseFloat(palette[paletteName].hsl[2]);
 
+  //Parses original Hsl array into individual h,s,l values and for ColorContrast function
   const h2 = palette[paletteName] && roundHue(palette[paletteName]._hsl[0]);
   const s2 = palette[paletteName] && Math.round( (palette[paletteName]._hsl[1]) * 100);
   const l2 = palette[paletteName] && Math.round( (palette[paletteName]._hsl[2]) * 100);
@@ -71,18 +71,17 @@ const ColorCode: React.FC<Props> = (
     ? hslToHex(h, ( (s * 1000)  / 1000 ), ( (l * 1000) / 1000) )
     : palette[paletteName]._hex
 
+  const useAAAColour = 
+  (isAAA === 'AAA' 
+  && isAAA !== undefined 
+  ? "color-code" 
+  : "color-code white")
     
-    const useAAAColour = 
-    (isAAA === 'AAA' 
-    && isAAA !== undefined 
-    ? "color-code" 
-    : "color-code white")
-    
-    const hslToString = `${h + ', ' + s + '%, ' + l + '%'}`
+  const hslToString = `${h + ', ' + s + '%, ' + l + '%'}`
 
-    const renderHex = isCopied.hex ? 'Copied Hex !' : `Hex: ${hex}`;
-    const renderRgb = isCopied.rgb ? 'Copied Rgb !' : `Rgb:(${rgb})`
-    const renderHsl = isCopied.hsl ? 'Copied Hsl !' : `Hsl:(${hslToString})`;
+  const renderHex = isCopied.hex ? 'Copied Hex !' : `Hex: ${hex}`;
+  const renderRgb = isCopied.rgb ? 'Copied Rgb !' : `Rgb:(${rgb})`
+  const renderHsl = isCopied.hsl ? 'Copied Hsl !' : `Hsl:(${hslToString})`;
 
 return (
   <>  

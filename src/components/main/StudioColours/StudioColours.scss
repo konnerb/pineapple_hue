@@ -39,6 +39,9 @@
         font-weight: 500;
         text-align: start;
         width: 78px;
+        &:hover {
+          letter-spacing: normal;
+        }
         @include tablet {
           width: 128px;
           font-size: 18px;
