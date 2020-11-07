@@ -4,10 +4,16 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Lottie from 'react-lottie';
 import lottieLoader from './assets/loader/loader_yellow.json';
+import { loadImages } from './utlis'
 
 const Main = lazy(() => import('./pages/Main/Main'));
 const About = lazy(() => import('./pages/About/About'));
 const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
+
+const importAll = (r:any) => {
+  return r.keys().map(r);
+}
+const images = importAll(require.context('./assets/images', false, /\.(png|jpe?g|svg)$/));
 
 const App: React.FC = () => { 
 
@@ -19,6 +25,9 @@ const App: React.FC = () => {
       preserveAspectRatio: "xMidYMid slice"
     }
   };
+  
+  const [image, setImage] = useState(true);
+  loadImages(images,() => setImage(!image)) 
 
   const useDelayedRender = (delay: number) => {
     const [delayed, setDelayed] = useState(true);
