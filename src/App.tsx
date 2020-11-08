@@ -1,19 +1,15 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
-import './App.scss';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
 import Lottie from 'react-lottie';
+import LoadImages from './customHooks/LoadImages';
+
+import './App.scss';
+import Header from './components/Header/Header';
+import Main from './pages/Main/Main';
+import About from './pages/About/About';
+import NotFound from './pages/NotFound/NotFound';
 import lottieLoader from './assets/loader/loader_yellow.json';
-import { loadImages } from './utlis'
 
-const Main = lazy(() => import('./pages/Main/Main'));
-const About = lazy(() => import('./pages/About/About'));
-const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
-
-const importAll = (r:any) => {
-  return r.keys().map(r);
-}
-const images = importAll(require.context('./assets/images', false, /\.(png|jpe?g|svg)$/));
 
 const App: React.FC = () => { 
 
@@ -26,8 +22,7 @@ const App: React.FC = () => {
     }
   };
   
-  const [image, setImage] = useState(true);
-  loadImages(images,() => setImage(!image)) 
+  const isImages = LoadImages() 
 
   const useDelayedRender = (delay: number) => {
     const [delayed, setDelayed] = useState(true);
@@ -44,28 +39,26 @@ const App: React.FC = () => {
   return (
   <>
     <div className="app">
-      <BrowserRouter>
-      <Suspense 
-        fallback={
-          <DelayedRender delay={500}>
+        {!isImages
+        ? (<DelayedRender delay={500}>
             <div className="app__lotti" >
             <Lottie 
               options={ defaultOptions }
               height={400}
               width={400}
-            />
+              />
             </div>
-          </DelayedRender>
+          </DelayedRender>)
+
+        : (<BrowserRouter>
+            <Header />
+            <Switch> 
+              <Route path="/" exact component={ Main } />
+              <Route path="/about" exact component={ About } />
+              <Route path="*" component={ NotFound } />
+            </Switch>
+          </BrowserRouter>)
         }
-      >
-        <Header />
-          <Switch> 
-            <Route path="/" exact component={ Main } />
-            <Route path="/about" exact component={ About } />
-            <Route path="*" component={ NotFound } />
-          </Switch> 
-      </Suspense>
-      </BrowserRouter>
     </div>
   </>
   )

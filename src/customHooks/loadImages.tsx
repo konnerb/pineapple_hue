@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 const importAll = (r:any) => {
   return r.keys().map(r);
@@ -6,25 +6,24 @@ const importAll = (r:any) => {
 
 const images = importAll(require.context('../assets/images', false, /\.(png|jpe?g|svg)$/));
 
-
-const loadImages = (paths: any, whenLoaded: any) => {
+const loadImages = (whenLoaded: any) => {
   const imgs = [];
   const img0: any = [];
-  paths.forEach((path:any) => {
+  images.forEach((path:any) => {
     const img = new Image();
     img.onload = () => {
       imgs.push(img);
       img0.push({path, img});
-      if (imgs.length === paths.length) whenLoaded(img0)
+      if (imgs.length === images.length) whenLoaded(img0)
     };
     img.src = path;
   });
 }
 
-export const loadImage = (imagesFolder: any): Boolean => {
-  const [image, setImage] = useState(false);
-  if(imagesFolder) {
-    loadImages(imagesFolder, () => setImage(true)) 
-  } 
+const LoadImages = (): Boolean => {
+  const [image, setImage] = React.useState(false);
+  loadImages(() => setImage(true)) 
   return image && image;
 }
+
+export default LoadImages;
