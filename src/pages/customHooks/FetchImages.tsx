@@ -22,10 +22,10 @@ const loadImages = (whenLoaded: any) => {
   });
 }
 
-const LoadImages = (): Boolean => {
+const FetchImages = (): Boolean => {
   const [image, setImage] = React.useState(false);
   loadImages(() => setImage(true)) 
   return image && image;
 }
 
-export default LoadImages;
+export default FetchImages;
