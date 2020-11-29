@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Lottie from 'react-lottie';
-import LoadImages from './customHooks/LoadImages';
+import LoadImages from './customHooks/FetchImages';
 
 import './App.scss';
 import Header from './components/Header/Header';
