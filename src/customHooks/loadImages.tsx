@@ -4,8 +4,10 @@ const importAll = (r:any) => {
   return r.keys().map(r);
 }
 
+//Imports required images from assets from folder
 const images = importAll(require.context('../assets/images', false, /\.(png|jpe?g|svg)$/));
 
+//Loads all images and when finihsed new images array
 const loadImages = (whenLoaded: any) => {
   const imgs = [];
   const img0: any = [];
