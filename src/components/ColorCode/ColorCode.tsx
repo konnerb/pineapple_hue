@@ -110,7 +110,7 @@ return (
     }
     { codeType === 'contrast' && 
       <p 
-        className="color-code__value"
+        className="color-code__value contrast"
       >Contrast: {colorContrast}:1
       </p>
     }

@@ -24,7 +24,7 @@ const StudioColours: React.FC<Props> = ({ palette, toggle, handleColourChange, t
       <div className="website">
         {Object.keys(palette).map((colour, i) => (
           <div 
-            key={i}
+            key={colour + '_' + i}
             className={ 
               i === 0 ? "website__color color_top-right" 
               : i === 5 ? "website__color color_bottom-right" 

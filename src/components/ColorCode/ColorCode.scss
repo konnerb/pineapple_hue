@@ -1,20 +1,35 @@
 @import '../../styles/base';
 
 .color-code {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 2;
+  //border: 2px solid white;
+  &:hover {
+    cursor: pointer;
+    &::after {
+      content: '';
+      position: absolute;
+      //border: 2px solid red;
+      left: -30px;
+      top: -10px;
+      height: calc(100% + 20px);
+      width: calc(100% + 60px);
+      z-index: -1;
+      cursor: default;
+    }
+  }
   &__value {
     text-align: center;  
     font-size: 11px;
     letter-spacing: normal;
     padding: 0px 2px;
     transition: letter-spacing 0.3s ease-in-out;
-    &:hover {
-      letter-spacing: 1.25px;
-      cursor: pointer;
-    }
+     &:hover {
+       letter-spacing: 1.25px;
+     }
     @include tablet {
       padding: 0px;
       font-size: 15px;
@@ -35,4 +50,8 @@
   @include tablet {
     display: block;
   }
+}
+
+.contrast {
+  cursor: default;
 }

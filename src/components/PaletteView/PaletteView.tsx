@@ -30,7 +30,7 @@ const PaletteView: React.FC<Props> = ({ palette, colorCode, codeType, togglePale
 
         { Object.keys(palette).map((colour, i) => (
           <div 
-            key={i}
+            key={colour + '_' + i}
             className="paletteView__color"  
             style={{
               backgroundColor: 

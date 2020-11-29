@@ -25,15 +25,10 @@
     box-shadow: 0 10px 3px black inset;
     font-size: 7px;
     font-weight: 500; 
-    transition: flex 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &:hover {
-      flex-grow: 3;
+      flex-grow: 2;
     }
-    //animation: fadein 2s;
-    //@keyframes fadein {
-    //  from { opacity: 0; }
-    //  to   { opacity: 1; }
-    //}
     @include tablet {
       font-size: 22px;
     }
@@ -46,7 +41,7 @@
     vertical-align: middle;
     overflow: hidden;
     @include tablet {
-        height: 101vh;
+      height: 101vh;
     }
   }
 }
